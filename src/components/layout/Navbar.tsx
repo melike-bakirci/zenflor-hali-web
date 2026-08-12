@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home, Phone, MessageCircle } from 'lucide-react';
 import LanguageSwitcher from '../ui/LanguageSwitcher';
 import './Navbar.css';
 
@@ -29,7 +29,33 @@ const Navbar: React.FC = () => {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`} role="banner">
       {/* Top Dark Bar */}
       <div className="navbar__topbar">
-        <div className="container navbar__topbar-inner">
+        <div className="navbar__topbar-inner">
+          <div className="navbar__topbar-left">
+            <a
+              href="https://maps.app.goo.gl/cyQwTaXrGfFNJmyTA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar__topbar-item"
+              title="Adres"
+            >
+              <Home size={14} />
+              <span>Leman Sk. No:4, Sancaktepe</span>
+            </a>
+            <a href="tel:+905302708487" className="navbar__topbar-item" title="Bizi Arayın">
+              <Phone size={14} />
+              <span>+90 (530) 270 84 87</span>
+            </a>
+            <a
+              href="https://wa.me/905302708487"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar__topbar-item navbar__topbar-whatsapp"
+              title="WhatsApp İletişim"
+            >
+              <MessageCircle size={14} />
+              <span>+90 (530) 270 84 87</span>
+            </a>
+          </div>
           <LanguageSwitcher />
         </div>
       </div>

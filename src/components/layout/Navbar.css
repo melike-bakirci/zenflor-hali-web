@@ -1,4 +1,4 @@
-﻿/* Navbar base */
+/* Navbar base */
 .navbar {
   position: fixed;
   top: 0;
@@ -16,22 +16,49 @@
 
 /* Topbar */
 .navbar__topbar {
-  background: #1a1a1a;
+  background: #111827;
   color: #9ca3af;
-  height: 32px;
+  min-height: 34px;
   display: flex;
   align-items: center;
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  padding: 0.25rem 0;
 }
 
 .navbar__topbar-inner {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
+  max-width: 100%;
   padding: 0 1.5rem;
+}
+
+.navbar__topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.navbar__topbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 150ms ease;
+  font-weight: 500;
+}
+
+.navbar__topbar-item:hover {
+  color: #ffffff;
+}
+
+.navbar__topbar-whatsapp:hover {
+  color: #25d366;
 }
 
 /* Main nav */
