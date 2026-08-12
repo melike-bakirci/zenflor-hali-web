@@ -50,3 +50,9 @@
 .breadcrumb__home-icon {
   flex-shrink: 0;
 }
+
+.page-breadcrumb-container {
+  padding-top: 1.25rem;
+  padding-bottom: 0.25rem;
+}
+

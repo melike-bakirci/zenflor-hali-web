@@ -45,17 +45,21 @@ const Contact: React.FC = () => {
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
-            <Breadcrumb
-              items={[
-                { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
-                { label: t('nav.contact') },
-              ]}
-            />
             <h1 className="page-hero__title font-display">{t('contact.title')}</h1>
             <p className="page-hero__subtitle">{t('contact.subtitle')}</p>
           </div>
         </div>
       </div>
+
+      <div className="container page-breadcrumb-container">
+        <Breadcrumb
+          items={[
+            { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+            { label: t('nav.contact') },
+          ]}
+        />
+      </div>
+
 
       <section className="section contact__section">
         <div className="container contact__grid">

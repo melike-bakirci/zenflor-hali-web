@@ -32,7 +32,6 @@
   font-size: 11px;
   text-decoration: none;
   font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -125,7 +124,6 @@
   color: rgba(255, 255, 255, 0.8);
   transition: color var(--transition-fast);
   white-space: nowrap;
-  text-transform: uppercase;
 }
 
 .navbar__separator {

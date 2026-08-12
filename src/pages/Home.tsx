@@ -10,23 +10,16 @@ import { cimHaliProducts } from '../data/cimHaliProducts';
 import { blogPosts } from '../data/blogPosts';
 import './Home.css';
 
-const STATS = [
-  { value: '20+', labelKey: 'home.statsYears' },
-  { value: '2.500+', labelKey: 'home.statsProjects' },
-  { value: '80+', labelKey: 'home.statsProducts' },
-  { value: '4.200+', labelKey: 'home.statsClients' },
-];
-
 const HERO_SLIDES = [
   {
     title: 'En Uygun Karo Halı',
     subtitle: 'KARO HALI',
-    image: '', // Kullanıcı tarafından eklenecek
+    image: '/images/hero-karo-hali.jpeg',
   },
   {
     title: 'Kaliteli Çim Halı Çözümleri',
     subtitle: 'ÇİM HALI',
-    image: '', // Kullanıcı tarafından eklenecek
+    image: '/images/hero-cim-hali.jpeg',
   },
 ];
 
@@ -75,7 +68,7 @@ const Home: React.FC = () => {
             >
               <div className="hero-slide__overlay"></div>
             </div>
-            
+
             <div className="container hero-slide__content">
               <span className="hero-slide__subtitle">{slide.subtitle}</span>
               <h1 className="hero-slide__title">{slide.title}</h1>

@@ -17,17 +17,21 @@ const Blog: React.FC = () => {
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
-            <Breadcrumb
-              items={[
-                { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
-                { label: t('nav.blog') },
-              ]}
-            />
             <h1 className="page-hero__title font-display">{t('blog.title')}</h1>
             <p className="page-hero__subtitle">{t('blog.subtitle')}</p>
           </div>
         </div>
       </div>
+
+      <div className="container page-breadcrumb-container">
+        <Breadcrumb
+          items={[
+            { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+            { label: t('nav.blog') },
+          ]}
+        />
+      </div>
+
 
       <section className="section">
         <div className="container">

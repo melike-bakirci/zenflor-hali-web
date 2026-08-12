@@ -17,17 +17,21 @@ const KaroHali: React.FC = () => {
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
-            <Breadcrumb
-              items={[
-                { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
-                { label: t('products.karoHali') },
-              ]}
-            />
             <h1 className="page-hero__title font-display">{t('products.karoHali')}</h1>
             <p className="page-hero__subtitle">{t('products.karoHaliSubtitle')}</p>
           </div>
         </div>
       </div>
+
+      <div className="container page-breadcrumb-container">
+        <Breadcrumb
+          items={[
+            { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+            { label: t('products.karoHali') },
+          ]}
+        />
+      </div>
+
 
       {/* Products */}
       <section className="section">
