@@ -10,11 +10,12 @@
     --color-primary-hover: #855A5C;
     --color-primary-light: #855A5C;
     --color-secondary: #D3D3D3;
-    --navbar-height: 100px;
-    --container-max: 1200px;
+    --navbar-height: 90px;
+    --container-max: 1240px;
   }
 
   html {
+    font-size: 87.5%;
     scroll-behavior: smooth;
   }
 

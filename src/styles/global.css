@@ -18,12 +18,12 @@
 
 /* === SECTION === */
 .section {
-  padding: 5rem 0;
+  padding: 3.5rem 0;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: 3rem 0;
+    padding: 2.25rem 0;
   }
 }
 
@@ -62,19 +62,19 @@
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 @media (max-width: 1200px) {

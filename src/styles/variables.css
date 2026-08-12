@@ -73,6 +73,6 @@
   --transition-slow: 400ms ease;
 
   /* === LAYOUT === */
-  --container-max: 1200px;
-  --navbar-height: 100px;
+  --container-max: 1240px;
+  --navbar-height: 90px;
 }

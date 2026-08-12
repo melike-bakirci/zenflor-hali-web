@@ -61,7 +61,7 @@
 
 /* Main nav */
 .navbar__main {
-  height: 76px;
+  height: 66px;
   background: #ffffff;
   border-bottom: 1px solid #f3f4f6;
   display: flex;
@@ -92,8 +92,8 @@
 }
 
 .navbar__logo-icon {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   background: #66101F;
   color: #fff;
   display: flex;
@@ -101,15 +101,15 @@
   justify-content: center;
   border-radius: 6px;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 800;
   flex-shrink: 0;
 }
 
 .navbar__logo-img {
-  height: 54px;
+  height: 46px;
   width: auto;
-  max-width: 240px;
+  max-width: 220px;
   object-fit: contain;
 }
 
