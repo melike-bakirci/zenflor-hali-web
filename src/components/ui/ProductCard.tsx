@@ -10,15 +10,7 @@ interface ProductCardProps {
   basePath: string;
 }
 
-// SVG gradient placeholder when no real image
-const PlaceholderImage: React.FC<{ category: Product['category'] }> = ({ category }) => (
-  <div className={`product-card__placeholder product-card__placeholder--${category}`} aria-hidden="true">
-    <div className="product-card__placeholder-pattern" />
-    <div className="product-card__placeholder-icon">
-      {category === 'karo-hali' ? '▦' : '🌿'}
-    </div>
-  </div>
-);
+// Removed explicit SVG placeholder since images will fill the area cleanly with background colors.
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
   const { i18n, t } = useTranslation();
@@ -41,9 +33,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
             (e.currentTarget.nextSibling as HTMLElement)?.removeAttribute('style');
           }}
         />
-        <PlaceholderImage category={product.category} />
         {product.featured && (
-          <span className="product-card__badge badge badge-primary">
+          <span className="product-card__badge badge-dark">
             {isEn ? 'Featured' : 'Öne Çıkan'}
           </span>
         )}
@@ -55,8 +46,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
       </div>
 
       <div className="product-card__body">
+        <div className="product-card__meta">
+          <span className="product-card__category">{product.category === 'karo-hali' ? 'Karo Halı' : 'Çim Halı'}</span>
+        </div>
         <h3 className="product-card__name">{name}</h3>
-        <p className="product-card__desc">{shortDesc}</p>
         <div className="product-card__footer">
           {priceFeature && (
             <span className="product-card__price">{priceFeature.value}</span>

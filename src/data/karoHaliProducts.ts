@@ -14,7 +14,7 @@ export const karoHaliProducts: Product[] = [
       'ILICA 22, 3.5 mm hav yüksekliği ve %100 Polipropilen Fiber yapısı ile ekonomik ve dayanıklı tufting düz ilmekli karo halı çözümüdür. Saf bitüm tabanı ve dokumasız kumaş birincil tabanı ile uzun ömürlü kullanım sunar.',
     descriptionEn:
       'ILICA 22 is an economical and durable tufted plain loop carpet tile solution featuring 3.5 mm pile height and 100% Polypropylene Fiber. Provides long-lasting performance with primary non-woven backing and pure bitumen secondary backing.',
-    image: '/images/karo-hali-1.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -59,7 +59,7 @@ export const karoHaliProducts: Product[] = [
       'ILICA 23, modern plank formatındaki (25 cm x 100 cm) ebadı ve yüksek aşınma direnci ile ofis ve ticari alanlarda şık zemin tasarımları oluşturmanıza olanak tanır.',
     descriptionEn:
       'ILICA 23 allows you to create elegant floor designs in offices and commercial spaces with its modern plank size (25 cm x 100 cm) and high wear resistance.',
-    image: '/images/karo-hali-2.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -104,7 +104,7 @@ export const karoHaliProducts: Product[] = [
       'ILICA 24, 400 g/m² hav ağırlığı ve 3200 g/m² toplam ağırlığı ile dayanıklı, kolay temizlenebilen ve konforlu bir karo halı deneyimi sunar.',
     descriptionEn:
       'ILICA 24 delivers a durable, easy-to-clean, and comfortable carpet tile experience with 400 g/m² pile weight and 3200 g/m² total weight.',
-    image: '/images/karo-hali-3.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -149,7 +149,7 @@ export const karoHaliProducts: Product[] = [
       'ILICA 25, modern mimarinin vazgeçilmez zemin kaplama çözümlerinden biridir. Plank formatı sayesinde balıksırtı veya tuğla deseni gibi yaratıcı uygulamalara uygundur.',
     descriptionEn:
       'ILICA 25 is one of the essential floor covering solutions of modern architecture. Thanks to its plank format, it is suitable for creative applications like herringbone or brick patterns.',
-    image: '/images/karo-hali-4.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -196,7 +196,7 @@ export const karoHaliProducts: Product[] = [
       'DEVİN 50, 4 mm hav yüksekliği, 550 g/m² hav ağırlığı ve 50 cm x 50 cm standart kare ebadıyla yoğun kullanım alanlarında yüksek performans gösterir.',
     descriptionEn:
       'DEVIN 50 shows high performance in heavy usage areas with its 4 mm pile height, 550 g/m² pile weight, and standard 50 cm x 50 cm square size.',
-    image: '/images/karo-hali-5.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -241,7 +241,7 @@ export const karoHaliProducts: Product[] = [
       'KIRAÇ 50, 550 g/m² hav ağırlığı, saf bitüm tabanı ve 50x50 cm ebadıyla kurumsal mekanlarda şık ve dayanıklı bir zemin çözümü sunar.',
     descriptionEn:
       'KIRAC 50 offers a stylish and durable floor solution in corporate spaces with 550 g/m² pile weight, pure bitumen backing, and 50x50 cm dimensions.',
-    image: '/images/karo-hali-6.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -288,7 +288,7 @@ export const karoHaliProducts: Product[] = [
       'SEDEF 42, 3.5 mm hav yüksekliği, 420 g/m² hav ağırlığı ve saf bitüm ikincil tabanıyla projelerinizde yüksek maliyet avantajı ve konfor sunar.',
     descriptionEn:
       'SEDEF 42 offers high cost advantage and comfort in your projects with 3.5 mm pile height, 420 g/m² pile weight, and pure bitumen secondary backing.',
-    image: '/images/karo-hali-1.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -333,7 +333,7 @@ export const karoHaliProducts: Product[] = [
       'SEDEF 43, 50 cm x 50 cm ebadı ve dayanıklı yapısı ile ofis, toplantı salonu ve idari binalarda ekonomik zemin çözümü sağlar.',
     descriptionEn:
       'SEDEF 43 provides an economical flooring solution in offices, meeting rooms, and administrative buildings with its 50 cm x 50 cm dimensions and durable structure.',
-    image: '/images/karo-hali-2.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -380,7 +380,7 @@ export const karoHaliProducts: Product[] = [
       'VERA 01, 3 mm hav yüksekliği ve 100% Polipropilen iplik yapısıyla 32 adetlik (8 m²) avantajlı paket seçeneği sunan düz ilmekli zemin kaplamasıdır.',
     descriptionEn:
       'VERA 01 is a plain loop carpet tile featuring 3 mm pile height and 100% Polypropylene yarn with an advantageous 32-piece (8 m²) packaging option.',
-    image: '/images/karo-hali-3.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -423,7 +423,7 @@ export const karoHaliProducts: Product[] = [
       'VERA 02, 50 cm x 50 cm ebatlarında bitüm tabanlı dokusuyla ticari projelerde hızlı montaj ve kolay bakım kolaylığı sağlar.',
     descriptionEn:
       'VERA 02 provides fast installation and easy maintenance in commercial projects with its 50 cm x 50 cm dimensions and bitumen backing.',
-    image: '/images/karo-hali-4.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -468,7 +468,7 @@ export const karoHaliProducts: Product[] = [
       'AKIN 08, 3 mm hav yüksekliği ve 5.5 mm toplam yüksekliği ile yüksek insan trafiğine ve aşınmaya karşı koruma sağlar.',
     descriptionEn:
       'AKIN 08 provides protection against heavy foot traffic and wear with 3 mm pile height and 5.5 mm total height.',
-    image: '/images/karo-hali-5.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 PP' },
@@ -511,7 +511,7 @@ export const karoHaliProducts: Product[] = [
       'AKIN 09, 420 g/m² hav ağırlığı ve bitüm tabanıyla ticari alanlarda uzun ömürlü kullanım sunar.',
     descriptionEn:
       'AKIN 09 offers long-lasting use in commercial areas with 420 g/m² pile weight and bitumen backing.',
-    image: '/images/karo-hali-6.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 PP' },
@@ -554,7 +554,7 @@ export const karoHaliProducts: Product[] = [
       'AKIN 10, pratik 32 adetlik ambalaj yapısı ve şık rengiyle kamu binaları ve ofis ortamları için idealdir.',
     descriptionEn:
       'AKIN 10 is ideal for public buildings and office environments with its practical 32-piece packaging and stylish color.',
-    image: '/images/karo-hali-1.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 PP' },
@@ -597,7 +597,7 @@ export const karoHaliProducts: Product[] = [
       'AKIN 11, dayanıklı ilmek dokusu ve kolay temizlenebilir yapısı sayesinde her türlü iç mekanda rahatlıkla tercih edilebilir.',
     descriptionEn:
       'AKIN 11 can be easily preferred in any interior space thanks to its durable loop texture and easy-to-clean structure.',
-    image: '/images/karo-hali-2.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 PP' },
@@ -642,7 +642,7 @@ export const karoHaliProducts: Product[] = [
       'HARMAN 18, 1/12 inç hassas ilmek aralığı, 580 g/m² yüksek hav ağırlığı ve yumuşatılmış konforlu ikincil tabanı ile adım konforunu ve ses yalıtımını en üst seviyeye çıkarır.',
     descriptionEn:
       'HARMAN 18 maximizes walking comfort and sound insulation with 1/12 inch precision gauge, 580 g/m² high pile weight, and cushioned comfortable secondary backing.',
-    image: '/images/karo-hali-3.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -687,7 +687,7 @@ export const karoHaliProducts: Product[] = [
       'HARMAN 19, 4400 g/m² toplam ağırlığı ve akustik konfor sağlayan özel yumuşatılmış taban teknolojisi ile premium projeler için mükemmel bir tercihtir.',
     descriptionEn:
       'HARMAN 19 is an excellent choice for premium projects with 4400 g/m² total weight and special cushioned backing technology providing acoustic comfort.',
-    image: '/images/karo-hali-4.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -732,7 +732,7 @@ export const karoHaliProducts: Product[] = [
       'HARMAN 20, yüksek yoğunluklu ilmek yapısı ve özel tabanı ile üst düzey yönetici odaları ve lüks otel alanları için geliştirilmiştir.',
     descriptionEn:
       'HARMAN 20 is developed for executive offices and luxury hotel areas with its high-density loop structure and special backing.',
-    image: '/images/karo-hali-5.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -777,7 +777,7 @@ export const karoHaliProducts: Product[] = [
       'HARMAN 21, 7.5 mm toplam yüksekliği ile bastığınızda hissettirdiği ekstra konforu uzun yıllar boyu muhafaza eder.',
     descriptionEn:
       'HARMAN 21 maintains the extra comfort felt underfoot for many years with its 7.5 mm total height.',
-    image: '/images/karo-hali-6.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -824,7 +824,7 @@ export const karoHaliProducts: Product[] = [
       'MERCAN 71, 1/12 inç ilmek aralığı, 450 g/m² hav ağırlığı ve saf bitüm tabanı ile şık ve dayanıklı bir zemin oluşturur.',
     descriptionEn:
       'MERCAN 71 creates a stylish and durable floor with 1/12 inch gauge, 450 g/m² pile weight, and pure bitumen backing.',
-    image: '/images/karo-hali-1.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -869,7 +869,7 @@ export const karoHaliProducts: Product[] = [
       'MERCAN 72, 50 cm x 50 cm ebatlarında 20 adetlik paketlerde sunulan ekonomik ve modern karo halıdır.',
     descriptionEn:
       'MERCAN 72 is an economical and modern carpet tile offered in packages of 20 pieces in 50 cm x 50 cm dimensions.',
-    image: '/images/karo-hali-2.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -914,7 +914,7 @@ export const karoHaliProducts: Product[] = [
       'MERCAN 73, leke tutmayan polipropilen elyaf dokusuyla yoğun insan sirkülasyonunun olduğu ortamlarda pratik çözümler sağlar.',
     descriptionEn:
       'MERCAN 73 provides practical solutions in environments with heavy human circulation thanks to its stain-resistant polypropylene fiber texture.',
-    image: '/images/karo-hali-3.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
@@ -961,7 +961,7 @@ export const karoHaliProducts: Product[] = [
       'LODOS 98, Dokuma Bukle Hav yapısı, 660 g/m² hav ağırlığı, Polyflex ikincil tabanı ve Ticari Sınıf 32 sertifikası ile ağır ticari alanlar için tasarlanmış yüksek performanslı bir üründür.',
     descriptionEn:
       'LODOS 98 is a high-performance product designed for heavy commercial areas with Woven Loop Pile structure, 660 g/m² pile weight, Polyflex secondary backing, and Commercial Class 32 certification.',
-    image: '/images/karo-hali-4.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1008,7 +1008,7 @@ export const karoHaliProducts: Product[] = [
       'LODOS 99, 660 g/m² hav ağırlığı ve Ticari Sınıf 32 dayanıklılığı ile yoğun trafiğe sahip projelerde aranan zemin çözümüdür.',
     descriptionEn:
       'LODOS 99 is the sought-after flooring solution in heavy traffic projects with 660 g/m² pile weight and Commercial Class 32 durability.',
-    image: '/images/karo-hali-5.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1057,7 +1057,7 @@ export const karoHaliProducts: Product[] = [
       'YADE 88, 6.0 mm toplam yüksekliği, PA/PES Dokumasız birincil tabanı ve Dokumasız Kumaşlı Polyflex ikincil tabanı ile üst seviye dayanıklılık sunar. Ticari Sınıf 32 standartlarındadır.',
     descriptionEn:
       'YADE 88 delivers top-level durability with 6.0 mm total height, PA/PES Non-woven primary backing, and Non-woven Fabric Polyflex secondary backing. Meets Commercial Class 32 standards.',
-    image: '/images/karo-hali-6.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1104,7 +1104,7 @@ export const karoHaliProducts: Product[] = [
       'YADE 89, 3800 g/m² toplam ağırlığı ve Ticari Sınıf 32 kalitesiyle modern ofis projelerinin vazgeçilmez zemin ürünüdür.',
     descriptionEn:
       'YADE 89 is an essential flooring product for modern office projects with 3800 g/m² total weight and Commercial Class 32 quality.',
-    image: '/images/karo-hali-1.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1153,7 +1153,7 @@ export const karoHaliProducts: Product[] = [
       'LAVİN 90, Çoklu Rulo yapısı, 690 g/m² yüksek hav ağırlığı ve Polyflex tabanı ile yüksek trafikli ticari alanlar için tasarlanmış dayanıklı bir seri üyesidir.',
     descriptionEn:
       'LAVIN 90 is a durable series member designed for high-traffic commercial areas with Multi-Roll structure, 690 g/m² high pile weight, and Polyflex backing.',
-    image: '/images/karo-hali-2.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Çoklu Rulo' },
       { label: 'İplik Cinsi', value: '%100 PP' },
@@ -1200,7 +1200,7 @@ export const karoHaliProducts: Product[] = [
       'LAVİN 91, 4200 g/m² toplam ağırlığı ve Ticari Sınıf 32 belgesiyle üstün dayanıklılık ve modern şıklık sunar.',
     descriptionEn:
       'LAVIN 91 offers superior durability and modern elegance with 4200 g/m² total weight and Commercial Class 32 certification.',
-    image: '/images/karo-hali-3.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Çoklu Rulo' },
       { label: 'İplik Cinsi', value: '%100 PP' },
@@ -1247,7 +1247,7 @@ export const karoHaliProducts: Product[] = [
       'LAVİN 92, yüksek yoğunluklu bukle dokusuyla ticari projelerinize yüksek standart katar.',
     descriptionEn:
       'LAVIN 92 adds high standards to your commercial projects with its high-density loop structure.',
-    image: '/images/karo-hali-4.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Çoklu Rulo' },
       { label: 'İplik Cinsi', value: '%100 PP' },
@@ -1294,7 +1294,7 @@ export const karoHaliProducts: Product[] = [
       'LAVİN 93, 50 cm x 50 cm kare formatında üst seviye dayanıklılık sunan bir karo halıdır.',
     descriptionEn:
       'LAVIN 93 is a carpet tile offering top-level durability in 50 cm x 50 cm square format.',
-    image: '/images/karo-hali-5.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Çoklu Rulo' },
       { label: 'İplik Cinsi', value: '%100 PP' },
@@ -1341,7 +1341,7 @@ export const karoHaliProducts: Product[] = [
       'LAVİN 94, zarif görünümü ve Ticari Sınıf 32 dayanıklılığı ile prestijli mimari projelere değer katar.',
     descriptionEn:
       'LAVIN 94 adds value to prestigious architectural projects with its elegant appearance and Commercial Class 32 durability.',
-    image: '/images/karo-hali-6.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Çoklu Rulo' },
       { label: 'İplik Cinsi', value: '%100 PP' },
@@ -1390,7 +1390,7 @@ export const karoHaliProducts: Product[] = [
       'ZEN 65, Dokuma Bukle Hav dokusu, PA/PES dokumasız birincil tabanı ve Dokumasız Kumaşlı Polyflex ikincil tabanı ile Hafif Ticari Sınıf 22 alanlar için idealdir.',
     descriptionEn:
       'ZEN 65 is ideal for Light Commercial Class 22 areas with Woven Loop Pile texture, PA/PES non-woven primary backing, and Non-woven Fabric Polyflex secondary backing.',
-    image: '/images/karo-hali-1.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1437,7 +1437,7 @@ export const karoHaliProducts: Product[] = [
       'ZEN 66, 360 g/m² hav ağırlığı ve ekonomik bütçesi ile hafif ticari mekanlar ve boutik alanlar için uygundur.',
     descriptionEn:
       'ZEN 66 is suitable for light commercial spaces and boutique areas with 360 g/m² pile weight and economic budget.',
-    image: '/images/karo-hali-2.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1484,7 +1484,7 @@ export const karoHaliProducts: Product[] = [
       'ZEN 67, 50 cm x 50 cm ebadında hafif ticari zeminlerin fonksiyonel ve şık tamamlayıcısıdır.',
     descriptionEn:
       'ZEN 67 is a functional and stylish complement to light commercial floors in 50 cm x 50 cm dimensions.',
-    image: '/images/karo-hali-3.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1531,7 +1531,7 @@ export const karoHaliProducts: Product[] = [
       'ZEN 68, kolay döşenebilen ve temizlenen bukle dokulu 50x50 cm karo halı modelidir.',
     descriptionEn:
       'ZEN 68 is an easily installed and cleanable loop pile 50x50 cm carpet tile model.',
-    image: '/images/karo-hali-4.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1578,7 +1578,7 @@ export const karoHaliProducts: Product[] = [
       'ZEN 69, dayanıklı dokumasız tabanı ve 1/10 inç ilmek hassasiyetiyle uzun ömürlü kullanım sunar.',
     descriptionEn:
       'ZEN 69 offers long-lasting use with durable non-woven backing and 1/10 inch loop precision.',
-    image: '/images/karo-hali-5.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1627,7 +1627,7 @@ export const karoHaliProducts: Product[] = [
       'NAZEN 53, modern çizgili deseni, Dokuma Bukle Hav yapısı ve Dokumasız Kumaşlı Polyflex ikincil tabanıyla mekanlara dinamik bir görünüm kazandırır.',
     descriptionEn:
       'NAZEN 53 adds a dynamic look to spaces with its modern stripe pattern, Woven Loop Pile structure, and Non-woven Fabric Polyflex secondary backing.',
-    image: '/images/karo-hali-6.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1674,7 +1674,7 @@ export const karoHaliProducts: Product[] = [
       'NAZEN 54, çizgili tasarımı sayesinde koridor ve çalışma alanlarında alanları daha geniş gösterme imkanı sunar.',
     descriptionEn:
       'NAZEN 54 offers the opportunity to make areas look wider in corridors and workspaces thanks to its striped design.',
-    image: '/images/karo-hali-1.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1721,7 +1721,7 @@ export const karoHaliProducts: Product[] = [
       'NAZEN 55, 50 cm x 50 cm ebadı ve leke tutmaz yapısıyla pratik ve estetik bir çözümdür.',
     descriptionEn:
       'NAZEN 55 is a practical and aesthetic solution with its 50 cm x 50 cm dimensions and stain-resistant structure.',
-    image: '/images/karo-hali-2.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1768,7 +1768,7 @@ export const karoHaliProducts: Product[] = [
       'NAZEN 56, kaliteli ilmek yapısı ve modern tonlarıyla mekanlarınıza şıklık getirir.',
     descriptionEn:
       'NAZEN 56 brings elegance to your spaces with its quality loop structure and modern tones.',
-    image: '/images/karo-hali-3.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1817,7 +1817,7 @@ export const karoHaliProducts: Product[] = [
       'GİZ 29, zengin çoklu çizgi kombinasyonu ve Polyflex ikincil tabanıyla sıra dışı, dinamik zemin konseptleri oluşturmak isteyen mimarlar için tasarlanmıştır.',
     descriptionEn:
       'GIZ 29 is designed for architects looking to create extraordinary, dynamic floor concepts with rich multi-stripe combination and Polyflex secondary backing.',
-    image: '/images/karo-hali-4.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -1866,7 +1866,7 @@ export const karoHaliProducts: Product[] = [
       'ALAZ 07, %100 Çözeltide Boyanmış Naylon (Solution Dyed Nylon) iplik teknolojisi, PA/PES Dokumasız-Colback birincil tabanı ve Yoğun Ticari Sınıf 33 sertifikası ile en yüksek trafik alanlarında dahi deforme olmayan amiral gemisi karo halıdır.',
     descriptionEn:
       'ALAZ 07 is a flagship carpet tile that does not deform even in highest traffic areas with 100% Solution Dyed Nylon yarn technology, PA/PES Non-woven-Colback primary backing, and Heavy Commercial Class 33 certification.',
-    image: '/images/karo-hali-5.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Çözeltide Boyanmış Naylon' },
@@ -1915,7 +1915,7 @@ export const karoHaliProducts: Product[] = [
       'ÇINAR 79, %100 PA SDN (Poliamit Solution Dyed Nylon) iplik teknolojisi, 510 g/m² hav ağırlığı ve Yoğun Ticari Sınıf 33 dayanıklılığı ile havalimanları, bankalar ve büyük ofisler için ideal çözümdür.',
     descriptionEn:
       'CINAR 79 is an ideal solution for airports, banks, and large offices with 100% PA SDN (Polyamide Solution Dyed Nylon) yarn technology, 510 g/m² pile weight, and Heavy Commercial Class 33 durability.',
-    image: '/images/karo-hali-6.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 PA SDN' },
@@ -1962,7 +1962,7 @@ export const karoHaliProducts: Product[] = [
       'ÇINAR 80, leke tutmaz %100 PA SDN iplik yapısı, 5.2 mm toplam yüksekliği ve Polyflex tabanı ile uzun ömürlü bir yatırımdır.',
     descriptionEn:
       'CINAR 80 is a long-lasting investment with stain-resistant 100% PA SDN yarn structure, 5.2 mm total height, and Polyflex backing.',
-    image: '/images/karo-hali-1.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 PA SDN' },
@@ -2009,7 +2009,7 @@ export const karoHaliProducts: Product[] = [
       'ÇINAR 81, yüksek teknolojili poliamit yapısı ve üst düzey performans özellikleriyle prestijli binalar için tasarlanmıştır.',
     descriptionEn:
       'CINAR 81 is designed for prestigious buildings with high-tech polyamide structure and top-level performance features.',
-    image: '/images/karo-hali-2.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 PA SDN' },
@@ -2058,7 +2058,7 @@ export const karoHaliProducts: Product[] = [
       'TAN 30, Bükümlü Bukle Hav yapısı, %100 Naylon PA-6 premium iplik kalitesi, Polyflex tabanı ve Sınıf 33 kullanım kategorisi ile en üst segment karo halı konforunu sunar.',
     descriptionEn:
       'TAN 30 offers top-segment carpet tile comfort with Twisted Loop Pile structure, 100% Nylon PA-6 premium yarn quality, Polyflex backing, and Class 33 usage category.',
-    image: '/images/karo-hali-3.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
@@ -2105,7 +2105,7 @@ export const karoHaliProducts: Product[] = [
       'TAN 31, 550 g/m² hav ağırlığı ve elastik Naylon PA-6 iplik dokusu ile yoğun insan trafiğinde yumuşaklığını ve şıklığını kaybetmez.',
     descriptionEn:
       'TAN 31 maintains its softness and elegance in heavy human traffic with 550 g/m² pile weight and elastic Nylon PA-6 yarn texture.',
-    image: '/images/karo-hali-4.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
@@ -2152,7 +2152,7 @@ export const karoHaliProducts: Product[] = [
       'TAN 32, üst düzey projelerde, otel ve yönetim katlarında sıklıkla tercih edilen elit zemin kaplama alternatifidir.',
     descriptionEn:
       'TAN 32 is an elite flooring alternative often preferred in top-level projects, hotels, and executive floors.',
-    image: '/images/karo-hali-5.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
@@ -2199,7 +2199,7 @@ export const karoHaliProducts: Product[] = [
       'TAN 33, 4100 g/m² toplam ağırlığı ve Sınıf 33 dayanıklılığı ile uzun seneler formunu ve renk canlılığını korur.',
     descriptionEn:
       'TAN 33 retains its form and color vibrancy for many years with 4100 g/m² total weight and Class 33 durability.',
-    image: '/images/karo-hali-6.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
@@ -2246,7 +2246,7 @@ export const karoHaliProducts: Product[] = [
       'TAN 34, 50 cm x 50 cm standart kare ebatlarında pratik döşeme avantajı sunan üst kalite üründür.',
     descriptionEn:
       'TAN 34 is a top-quality product offering practical installation advantage in 50 cm x 50 cm standard square sizes.',
-    image: '/images/karo-hali-1.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
@@ -2293,7 +2293,7 @@ export const karoHaliProducts: Product[] = [
       'TAN 35, Naylon PA-6 fiber kalitesiyle aşınma ve yıpranmaya karşı üstün direnç sunar.',
     descriptionEn:
       'TAN 35 offers superior resistance against wear and tear with Nylon PA-6 fiber quality.',
-    image: '/images/karo-hali-2.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
@@ -2340,7 +2340,7 @@ export const karoHaliProducts: Product[] = [
       'TAN 36, 5.8 mm toplam yüksekliği ile hem konforlu bir yürüme hissi hem de şık bir estetik vadeder.',
     descriptionEn:
       'TAN 36 promises both a comfortable walking feeling and a stylish aesthetic with its 5.8 mm total height.',
-    image: '/images/karo-hali-3.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
@@ -2387,7 +2387,7 @@ export const karoHaliProducts: Product[] = [
       'TAN 37, Sınıf 33 performans kategorisinde yer alan üst düzey dayanıklı bükümlü bukle karo halıdır.',
     descriptionEn:
       'TAN 37 is a top-level durable twisted loop carpet tile in Class 33 performance category.',
-    image: '/images/karo-hali-4.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
@@ -2434,7 +2434,7 @@ export const karoHaliProducts: Product[] = [
       'TAN 38, yüksek iplik kalitesi ve sağlam Polyflex tabanı sayesinde uzun ömürlü kullanım garantisi sunar.',
     descriptionEn:
       'TAN 38 offers a guarantee of long-lasting use thanks to its high yarn quality and solid Polyflex backing.',
-    image: '/images/karo-hali-5.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
@@ -2481,7 +2481,7 @@ export const karoHaliProducts: Product[] = [
       'TAN 39, şık dokusu ve üstün teknik özellikleriyle mekanlarınızda benzersiz bir konfor atmosferi oluşturur.',
     descriptionEn:
       'TAN 39 creates a unique comfort atmosphere in your spaces with its elegant texture and superior technical specifications.',
-    image: '/images/karo-hali-6.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
@@ -2530,7 +2530,7 @@ export const karoHaliProducts: Product[] = [
       'İNCİ 86, 600 g/m² yüksek hav ağırlığı, PA/PES Dokumasız birincil tabanı ve Dokumasız Kumaşlı Polyflex ikincil tabanı ile Ticari Sınıf 32 kalitesini mekanlarınıza taşır.',
     descriptionEn:
       'INCI 86 brings Commercial Class 32 quality to your spaces with 600 g/m² high pile weight, PA/PES Non-woven primary backing, and Non-woven Fabric Polyflex secondary backing.',
-    image: '/images/karo-hali-1.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },
@@ -2577,7 +2577,7 @@ export const karoHaliProducts: Product[] = [
       'İNCİ 87, 3.2 mm hav yüksekliği ve zengin görünümüyle ofis, konferans salonu ve kurum projelerinde konforlu bir tercih sunar.',
     descriptionEn:
       'INCI 87 offers a comfortable choice for office, conference hall, and corporate projects with 3.2 mm pile height and rich appearance.',
-    image: '/images/karo-hali-2.jpg',
+    image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
       { label: 'İplik Cinsi', value: '%100 Polipropilen' },

@@ -8,12 +8,7 @@ import { cimHaliProducts } from '../data/cimHaliProducts';
 import type { Product } from '../types/product';
 import './ProductDetail.css';
 
-const PlaceholderBg: React.FC<{ category: Product['category'] }> = ({ category }) => (
-  <div className={`pd-placeholder pd-placeholder--${category}`} aria-hidden="true">
-    <div className="pd-placeholder__pattern" />
-    <span className="pd-placeholder__icon">{category === 'karo-hali' ? '▦' : '🌿'}</span>
-  </div>
-);
+// Removed explicit PlaceholderBg to match cleaner architectural design
 
 const CimHaliDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -60,9 +55,8 @@ const CimHaliDetail: React.FC = () => {
                 (e.currentTarget.nextSibling as HTMLElement)?.removeAttribute('style');
               }}
             />
-            <PlaceholderBg category={product.category} />
             {product.featured && (
-              <span className="pd-badge badge badge-primary">
+              <span className="pd-badge badge-dark">
                 {isEn ? 'Featured' : 'Öne Çıkan'}
               </span>
             )}
@@ -98,7 +92,7 @@ const CimHaliDetail: React.FC = () => {
             {/* CTA */}
             <div className="pd-actions">
               <Link to="/iletisim" className="btn btn-primary btn-lg" id="product-info-request">
-                <Mail size={18} /> {t('products.infoRequest')}
+                <Mail size={18} /> {isEn ? 'Sample Request' : 'Numune Talebi'}
               </Link>
               <Link to="/cim-hali" className="btn btn-outline btn-lg">
                 {t('products.allProducts')}

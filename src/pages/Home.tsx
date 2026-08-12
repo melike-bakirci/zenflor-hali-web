@@ -12,12 +12,12 @@ import './Home.css';
 
 const HERO_SLIDES = [
   {
-    title: 'En Uygun Karo Halı',
+    title: 'Ofis ve Mekanlarınıza Değer Katan Karo Halı Modellerimiz',
     subtitle: 'KARO HALI',
     image: '/images/hero-karo-hali.jpeg',
   },
   {
-    title: 'Kaliteli Çim Halı Çözümleri',
+    title: 'Bahçe ve Dış Mekanlarınıza Değer Katan Çim Halı Modellerimiz',
     subtitle: 'ÇİM HALI',
     image: '/images/hero-cim-hali.jpeg',
   },

@@ -23,11 +23,13 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    @apply text-neutral-900 bg-white;
+    @apply text-slate-900 bg-slate-50;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    line-height: 1.3;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 
   a {

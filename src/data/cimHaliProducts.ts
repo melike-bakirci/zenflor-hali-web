@@ -13,7 +13,7 @@ export const cimHaliProducts: Product[] = [
       'Filiz 7 - Düz Yeşil, 7 mm hav yüksekliği ve canlı yeşil rengiyle ekonomik ve estetik çim halı çözümleri sunar. 2m ve 4m en alternatifleriyle balkon, teras ve peyzaj alanlarında pratik kullanım sağlar.',
     descriptionEn:
       'Filiz 7 - Straight Green offers economical and aesthetic artificial grass solutions with 7 mm pile height and vibrant green color. It provides practical use in balconies, terraces and landscaping areas with 2m and 4m width options.',
-    image: '/images/cim-hali-1.jpg',
+    image: '/images/hero-cim-hali.jpeg',
     features: [
       { label: 'Hav Boyutu', value: '7 mm' },
       { label: 'Renk', value: 'Yeşil' },
@@ -44,7 +44,7 @@ export const cimHaliProducts: Product[] = [
       'Filiz 7 - Mavi, 7 mm hav yüksekliği ve dikkat çekici mavi rengiyle çocuk oyun alanları, konsept mekanlar ve dekoratif peyzaj düzenlemeleri için özel olarak geliştirilmiştir.',
     descriptionEn:
       'Filiz 7 - Blue is specially developed for children play areas, concept venues and decorative landscape arrangements with its 7 mm pile height and eye-catching blue color.',
-    image: '/images/cim-hali-2.jpg',
+    image: '/images/hero-cim-hali.jpeg',
     features: [
       { label: 'Hav Boyutu', value: '7 mm' },
       { label: 'Renk', value: 'Mavi' },
@@ -75,7 +75,7 @@ export const cimHaliProducts: Product[] = [
       'Ladin 20 - Düz Yeşil, 20 mm hav yüksekliği ile bahçe ve açık alan peyzaj uygulamalarında doğal dokunuş ve konfor sunan dayanıklı çim halı modelidir.',
     descriptionEn:
       'Ladin 20 - Straight Green is a durable artificial grass model providing natural touch and comfort in garden and outdoor landscape applications with 20 mm pile height.',
-    image: '/images/cim-hali-3.jpg',
+    image: '/images/hero-cim-hali.jpeg',
     features: [
       { label: 'Hav Boyutu', value: '20 mm' },
       { label: 'Renk', value: 'Yeşil' },
@@ -106,7 +106,7 @@ export const cimHaliProducts: Product[] = [
       'Ladin 20 - Sarı Otlu, 20 mm hav yüksekliği ve sarı otlu dokusu sayesinde gerçek çim görünümüne son derece yakın bir estetik sunar. Bahçe, teras ve peyzaj projeleri için mükemmeldir.',
     descriptionEn:
       'Ladin 20 - Yellow Grass offers an aesthetic extremely close to real grass look thanks to its 20 mm pile height and yellow thatch texture. Perfect for gardens, terraces and landscape projects.',
-    image: '/images/cim-hali-4.jpg',
+    image: '/images/hero-cim-hali.jpeg',
     features: [
       { label: 'Hav Boyutu', value: '20 mm' },
       { label: 'Renk', value: 'Yeşil (Sarı Otlu)' },
@@ -137,7 +137,7 @@ export const cimHaliProducts: Product[] = [
       'Hazal 30 (4\'lük), 30 mm hav yüksekliği ve 4 metre genişliğiyle geniş alan kaplamalarında eksiz ve şık bir görünüm sağlar. Yüksek basma mukavemetine sahiptir.',
     descriptionEn:
       'Hazal 30 (4m) provides a seamless and stylish look in large area coverings with its 30 mm pile height and 4 meters width. Features high traffic resistance.',
-    image: '/images/cim-hali-5.jpg',
+    image: '/images/hero-cim-hali.jpeg',
     features: [
       { label: 'Hav Boyutu', value: '30 mm' },
       { label: 'Renk', value: 'Yeşil' },
@@ -168,7 +168,7 @@ export const cimHaliProducts: Product[] = [
       'Hazal 30 (1\'lik), 30 mm hav yüksekliği ve 1 metre eniyle dar koridorlar, yürüyüş yolları ve pratik peyzaj düzenlemeleri için ideal çözümdür.',
     descriptionEn:
       'Hazal 30 (1m) is an ideal solution for narrow corridors, walkways and practical landscape arrangements with its 30 mm pile height and 1 meter width.',
-    image: '/images/cim-hali-6.jpg',
+    image: '/images/hero-cim-hali.jpeg',
     features: [
       { label: 'Hav Boyutu', value: '30 mm' },
       { label: 'Renk', value: 'Yeşil' },
@@ -199,7 +199,7 @@ export const cimHaliProducts: Product[] = [
       'Vaha 35 Düz Yeşil Lüx (Soft), 35 mm hav yüksekliği ve ipeksi soft dokusuyla üst düzey konfor ve estetik sunar. Lüks konut bahçeleri, çocuk oyun alanları ve teraslar için mükemmel bir seçimdir.',
     descriptionEn:
       'Vaha 35 Straight Green Lux (Soft) offers high-level comfort and aesthetics with its 35 mm pile height and silky soft touch. Excellent choice for luxury residential gardens, play areas and terraces.',
-    image: '/images/cim-hali-1.jpg',
+    image: '/images/hero-cim-hali.jpeg',
     features: [
       { label: 'Hav Boyutu', value: '35 mm' },
       { label: 'Renk', value: 'Yeşil' },
@@ -230,7 +230,7 @@ export const cimHaliProducts: Product[] = [
       'Ilgın 40 Düz Yeşil Lüx (Soft), 40 mm dolgun hav yüksekliği ve ultra soft yapısıyla ayağınızın altında eşsiz bir yumuşaklık ve görünüm sunan üst segment peyzaj çimidir.',
     descriptionEn:
       'Ilgın 40 Straight Green Lux (Soft) is a top-segment landscape turf providing unmatched softness and visual appeal underfoot with its 40 mm plush pile height and ultra soft structure.',
-    image: '/images/cim-hali-2.jpg',
+    image: '/images/hero-cim-hali.jpeg',
     features: [
       { label: 'Hav Boyutu', value: '40 mm' },
       { label: 'Renk', value: 'Yeşil' },
@@ -261,7 +261,7 @@ export const cimHaliProducts: Product[] = [
       'Efsun 40 - Düz Yeşil, 40 mm hav yüksekliği ile yüksek yoğunluklu dokumaya sahip, uzun ömürlü ve zengin görünümlü bir sentetik çim modelidir.',
     descriptionEn:
       'Efsun 40 - Straight Green is a long-lasting and rich-looking synthetic grass model with 40 mm pile height and high density weave.',
-    image: '/images/cim-hali-3.jpg',
+    image: '/images/hero-cim-hali.jpeg',
     features: [
       { label: 'Hav Boyutu', value: '40 mm' },
       { label: 'Renk', value: 'Yeşil' },
@@ -292,7 +292,7 @@ export const cimHaliProducts: Product[] = [
       'Efsun 40 - Sarı Otlu, 40 mm hav yüksekliği ve sarı otlu 4 renkli dokuma teknolojisiyle kır çimi doğallığını bahçelerinize taşır. Yüksek UV dayanımı ve esnekliğe sahiptir.',
     descriptionEn:
       'Efsun 40 - Yellow Grass brings meadow grass naturalness to your garden with 40 mm pile height and 4-color weaving technology with yellow thatch. Features high UV resistance and flexibility.',
-    image: '/images/cim-hali-4.jpg',
+    image: '/images/hero-cim-hali.jpeg',
     features: [
       { label: 'Hav Boyutu', value: '40 mm' },
       { label: 'Renk', value: 'Yeşil (Sarı Otlu)' },
