@@ -1,9 +1,9 @@
 /* ===== QUOTE CTA BANNER ===== */
 .quote-cta {
-  background: #f8f9fa;
-  padding: 3.75rem 0;
-  border-top: 1px solid #D3D3D3;
-  border-bottom: 1px solid #D3D3D3;
+  background: var(--color-bg-surface, #f8fafc);
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--color-border, #e2e8f0);
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
   width: 100%;
 }
 
@@ -18,7 +18,7 @@
 .quote-cta__title {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
-  color: #0f172a;
+  color: var(--color-text-primary, #0f172a);
   letter-spacing: -0.025em;
   line-height: 1.25;
   margin: 0;
@@ -26,8 +26,8 @@
 
 .quote-cta__subtitle {
   font-size: 1rem;
-  color: #475569;
-  max-width: 620px;
+  color: var(--color-text-secondary, #475569);
+  max-width: 640px;
   line-height: 1.65;
   margin: 0;
 }
@@ -42,29 +42,31 @@
 }
 
 .quote-cta .btn-primary {
-  background-color: #66101F;
+  background-color: var(--color-primary, #66101F);
   color: #ffffff;
-  border: 1px solid #66101F;
-  box-shadow: 0 4px 14px rgba(102, 16, 31, 0.25);
-  transition: all 0.25s ease;
+  border: 1px solid var(--color-primary, #66101F);
+  box-shadow: var(--shadow-primary-sm, 0 4px 14px rgba(102, 16, 31, 0.2));
+  transition: all var(--transition-base, 250ms cubic-bezier(0.16, 1, 0.3, 1));
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  border-radius: var(--radius-btn, 8px);
 }
 
 .quote-cta .btn-primary:hover {
-  background-color: #855A5C;
-  border-color: #855A5C;
+  background-color: #500b17;
+  border-color: #500b17;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(133, 90, 92, 0.35);
+  box-shadow: var(--shadow-primary, 0 8px 24px rgba(102, 16, 31, 0.3));
 }
 
 .quote-cta .btn-whatsapp {
   background-color: #ffffff;
   color: #128C7E;
   border: 1.5px solid #25D366;
-  transition: all 0.25s ease;
+  border-radius: var(--radius-btn, 8px);
+  transition: all var(--transition-base, 250ms cubic-bezier(0.16, 1, 0.3, 1));
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -80,7 +82,7 @@
 
 @media (max-width: 768px) {
   .quote-cta {
-    padding: 2.75rem 0;
+    padding: 3rem 0;
   }
 
   .quote-cta__title {
@@ -98,3 +100,4 @@
     justify-content: center;
   }
 }
+

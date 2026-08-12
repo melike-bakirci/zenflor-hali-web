@@ -1,5 +1,5 @@
-﻿.section-title {
-  margin-bottom: 2.5rem;
+.section-title {
+  margin-bottom: 2.25rem;
 }
 
 .section-title--center {
@@ -9,11 +9,11 @@
 .section-title::before {
   content: '';
   display: block;
-  width: 36px;
+  width: 40px;
   height: 3px;
-  background: #66101F;
+  background: var(--color-primary, #66101F);
   margin-bottom: 0.875rem;
-  border-radius: 2px;
+  border-radius: 9999px;
 }
 
 .section-title--center::before {
@@ -22,17 +22,24 @@
 }
 
 .section-title__heading {
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  font-weight: 700;
-  color: #111827;
-  line-height: 1.2;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 800;
+  color: var(--color-text-primary, #0f172a);
+  line-height: 1.25;
   margin: 0 0 0.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .section-title__subtitle {
-  font-size: 0.9375rem;
-  color: #6b7280;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary, #475569);
   line-height: 1.6;
   margin: 0;
+  max-width: 680px;
 }
+
+.section-title--center .section-title__subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+

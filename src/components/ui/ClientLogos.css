@@ -5,7 +5,7 @@
 .client-logos__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 1.25rem;
 }
 
 @media (max-width: 1024px) {
@@ -21,27 +21,27 @@
 }
 
 .client-logos__card {
-  background: #ffffff;
-  border: 1px solid rgba(211, 211, 211, 0.5);
-  border-radius: 12px;
-  padding: 14px 16px;
+  background: var(--color-bg-card, #ffffff);
+  border: 1px solid var(--color-border-card, rgba(226, 232, 240, 0.9));
+  border-radius: var(--radius-card, 12px);
+  padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
-  gap: 12px;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  gap: 0.875rem;
+  transition: all var(--transition-base, 250ms cubic-bezier(0.16, 1, 0.3, 1));
+  box-shadow: var(--shadow-card, 0 4px 14px rgba(15, 23, 42, 0.04));
 }
 
 .client-logos__card:hover {
-  border-color: rgba(102, 16, 31, 0.3);
-  box-shadow: 0 8px 20px rgba(102, 16, 31, 0.08);
-  transform: translateY(-2px);
+  border-color: var(--color-border-hover, rgba(102, 16, 31, 0.35));
+  box-shadow: var(--shadow-card-hover, 0 12px 28px rgba(102, 16, 31, 0.12));
+  transform: translateY(-3px);
 }
 
 .client-logos__badge {
   width: 54px;
   height: 40px;
-  border-radius: 8px;
+  border-radius: var(--radius-btn, 8px);
   border: 1px solid;
   display: flex;
   align-items: center;
@@ -69,9 +69,10 @@
 .client-logos__name {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--color-text-primary, #0f172a);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 

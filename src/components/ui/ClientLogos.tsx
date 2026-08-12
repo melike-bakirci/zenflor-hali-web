@@ -13,7 +13,6 @@ interface ClientLogosProps {
 const ClientLogos: React.FC<ClientLogosProps> = ({
   title,
   subtitle,
-  isEn = false,
   limit,
 }) => {
   const clientsToDisplay = limit ? referenceClients.slice(0, limit) : referenceClients;

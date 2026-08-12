@@ -5,25 +5,25 @@
 /* === CONTAINER === */
 .container {
   width: 100%;
-  max-width: var(--container-max);
+  max-width: var(--container-max, 1240px);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
   }
 }
 
 /* === SECTION === */
 .section {
-  padding: 3.5rem 0;
+  padding: 4.5rem 0;
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: 2.25rem 0;
+    padding: 3rem 0;
   }
 }
 
@@ -56,25 +56,23 @@
   padding-bottom: 0;
 }
 
-
-
-/* === GRID UTILITIES (used in JSX className) === */
+/* === GRID UTILITIES === */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 @media (max-width: 1200px) {
@@ -91,35 +89,36 @@
 
 /* === CARD (used by className="card") === */
 .card {
-  background: #ffffff;
-  border: 1px solid #D3D3D3;
-  border-radius: 0.5rem;
+  background: var(--color-bg-card, #ffffff);
+  border: 1px solid var(--color-border-card, rgba(226, 232, 240, 0.9));
+  border-radius: var(--radius-card, 12px);
   overflow: hidden;
-  transition: all 250ms ease;
+  transition: all var(--transition-base, 250ms ease);
+  box-shadow: var(--shadow-card, 0 4px 14px rgba(15, 23, 42, 0.04));
 }
 
 .card:hover {
-  border-color: #855A5C;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(102, 16, 31, 0.12);
+  border-color: var(--color-border-hover, rgba(102, 16, 31, 0.35));
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover, 0 12px 28px rgba(102, 16, 31, 0.12));
 }
 
 /* === BADGE === */
 .badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.2rem 0.6rem;
-  border-radius: 9999px;
-  font-size: 0.7rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-badge, 9999px);
+  font-size: 0.725rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .badge-primary {
-  background: #66101F;
+  background: var(--color-primary, #66101F);
   color: #ffffff;
-  border: 1px solid #66101F;
+  border: 1px solid var(--color-primary, #66101F);
 }
 
 .badge-secondary {
@@ -132,42 +131,47 @@
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
-  border-radius: 0.375rem;
-  font-size: 0.8125rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-btn, 8px);
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  transition: all 200ms ease;
+  letter-spacing: 0.03em;
+  transition: all var(--transition-base, 250ms ease);
   cursor: pointer;
   border: none;
-  font-family: 'Inter', system-ui, sans-serif;
-  text-transform: uppercase;
+  font-family: var(--font-body, 'Inter', system-ui, sans-serif);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .btn-primary {
-  background: #66101F;
-  color: #fff;
+  background: var(--color-primary, #66101F);
+  color: #ffffff;
+  border: 1px solid var(--color-primary, #66101F);
+  box-shadow: var(--shadow-primary-sm, 0 4px 14px rgba(102, 16, 31, 0.2));
 }
 
 .btn-primary:hover {
-  background: #855A5C;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(102, 16, 31, 0.3);
+  background: #500b17;
+  border-color: #500b17;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary, 0 8px 24px rgba(102, 16, 31, 0.3));
 }
 
 .btn-outline {
   background: transparent;
-  color: #66101F;
-  border: 1px solid #D3D3D3;
+  color: var(--color-primary, #66101F);
+  border: 1.5px solid var(--color-border, #e2e8f0);
 }
 
 .btn-outline:hover {
-  background: rgba(211, 211, 211, 0.2);
-  border-color: #855A5C;
-  color: #66101F;
-  transform: translateY(-1px);
+  background: rgba(102, 16, 31, 0.05);
+  border-color: var(--color-primary, #66101F);
+  color: var(--color-primary, #66101F);
+  transform: translateY(-2px);
 }
 
 .btn-lg {
@@ -177,5 +181,6 @@
 
 /* === FONT UTILITY === */
 .font-display {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-display, 'Inter', system-ui, sans-serif);
 }
+

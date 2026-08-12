@@ -11,19 +11,19 @@
 }
 
 .navbar--scrolled {
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
 }
 
 /* Topbar */
 .navbar__topbar {
-  background: #66101F;
-  color: #D3D3D3;
-  min-height: 34px;
+  background: var(--color-primary, #66101F);
+  color: #e2e8f0;
+  min-height: 36px;
   display: flex;
   align-items: center;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
-  padding: 0.25rem 0;
+  padding: 0.3rem 0;
 }
 
 .navbar__topbar-inner {
@@ -45,7 +45,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #D3D3D3;
+  color: #e2e8f0;
   text-decoration: none;
   transition: color 150ms ease;
   font-weight: 500;
@@ -56,14 +56,14 @@
 }
 
 .navbar__topbar-whatsapp:hover {
-  color: #D3D3D3;
+  color: #ffffff;
 }
 
 /* Main nav */
 .navbar__main {
   height: 66px;
   background: #ffffff;
-  border-bottom: 1px solid #f3f4f6;
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
   display: flex;
   align-items: center;
 }
@@ -94,13 +94,13 @@
 .navbar__logo-icon {
   width: 34px;
   height: 34px;
-  background: #66101F;
+  background: var(--color-primary, #66101F);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
-  font-family: 'Inter', sans-serif;
+  border-radius: var(--radius-btn, 8px);
+  font-family: var(--font-display, 'Inter', sans-serif);
   font-size: 0.95rem;
   font-weight: 800;
   flex-shrink: 0;
@@ -122,13 +122,13 @@
 .navbar__logo-name {
   font-size: 1.15rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #111827;
+  letter-spacing: 0.08em;
+  color: var(--color-text-primary, #0f172a);
 }
 
 .navbar__logo-tagline {
   font-size: 0.725rem;
-  color: #6b7280;
+  color: var(--color-text-muted, #64748b);
   letter-spacing: 0.04em;
   font-weight: 500;
 }
@@ -155,31 +155,31 @@
 
 .navbar__link {
   position: relative;
-  padding: 0.4rem 0.75rem;
-  font-size: 0.8125rem;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #374151;
+  color: var(--color-text-secondary, #475569);
   transition: color 150ms ease;
   white-space: nowrap;
   letter-spacing: 0.02em;
-  border-radius: 6px;
+  border-radius: var(--radius-btn, 8px);
 }
 
 .navbar__link::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0.75rem;
-  right: 0.75rem;
+  left: 0.85rem;
+  right: 0.85rem;
   height: 2px;
-  background: #66101F;
+  background: var(--color-primary, #66101F);
   transform: scaleX(0);
   transition: transform 200ms ease;
-  border-radius: 1px;
+  border-radius: 9999px;
 }
 
 .navbar__link:hover {
-  color: #66101F;
+  color: var(--color-primary, #66101F);
 }
 
 .navbar__link:hover::after {
@@ -187,7 +187,7 @@
 }
 
 .navbar__link--active {
-  color: #66101F !important;
+  color: var(--color-primary, #66101F) !important;
 }
 
 .navbar__link--active::after {
@@ -197,25 +197,25 @@
 /* Mobile toggle */
 .navbar__mobile-toggle {
   display: none;
-  color: #374151;
+  color: var(--color-text-primary, #0f172a);
   padding: 0.5rem;
-  border-radius: 6px;
+  border-radius: var(--radius-btn, 8px);
   transition: background 150ms ease;
 }
 
 .navbar__mobile-toggle:hover {
-  background: #f3f4f6;
+  background: var(--color-bg-surface, #f8fafc);
 }
 
 /* Mobile menu */
 .navbar__mobile {
   position: fixed;
-  top: 100px;
+  top: 102px;
   left: 0;
   right: 0;
   background: #ffffff;
-  border-bottom: 1px solid #f3f4f6;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
   padding: 0.75rem 0 1.25rem;
   animation: fadeInUp 0.2s ease forwards;
   z-index: 999;
@@ -231,24 +231,24 @@
   padding: 0.75rem 1rem;
   font-size: 0.9375rem;
   font-weight: 500;
-  color: #374151;
-  border-radius: 8px;
+  color: var(--color-text-secondary, #475569);
+  border-radius: var(--radius-btn, 8px);
   transition: color 150ms ease, background 150ms ease;
 }
 
 .navbar__mobile-link:hover {
-  color: #66101F;
+  color: var(--color-primary, #66101F);
   background: rgba(102, 16, 31, 0.05);
 }
 
 .navbar__mobile-link--active {
-  color: #66101F !important;
+  color: var(--color-primary, #66101F) !important;
   background: rgba(102, 16, 31, 0.08);
 }
 
 .navbar__mobile-bottom {
   padding: 0.75rem 1.75rem 0;
-  border-top: 1px solid #f3f4f6;
+  border-top: 1px solid var(--color-border, #e2e8f0);
   margin-top: 0.75rem;
 }
 
@@ -272,4 +272,5 @@
     display: none;
   }
 }
+
 
