@@ -51,12 +51,12 @@
   justify-content: center;
 }
 
-.pd-placeholder--karo-hali {
-  background: linear-gradient(135deg, #1a0a0d 0%, #2d1117 50%, #1a0a0d 100%);
+.pd-hero--karo .pd-hero__bg {
+  background: linear-gradient(135deg, #ffffff 0%, #D3D3D3 50%, #ffffff 100%);
 }
 
-.pd-placeholder--cim-hali {
-  background: linear-gradient(135deg, #0a1a0a 0%, #0d2d11 50%, #0a1a0a 100%);
+.pd-hero--cim .pd-hero__bg {
+  background: linear-gradient(135deg, #ffffff 0%, #D3D3D3 50%, #ffffff 100%);
 }
 
 .pd-placeholder__pattern {

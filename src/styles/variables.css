@@ -1,29 +1,29 @@
 :root {
   /* === BRAND COLORS === */
   --color-primary: #66101F;
-  --color-primary-hover: #8B1A2E;
-  --color-primary-light: #9B2235;
+  --color-primary-hover: #855A5C;
+  --color-primary-light: #855A5C;
   --color-secondary: #D3D3D3;
-  --color-secondary-dark: #B0B0B0;
+  --color-secondary-dark: #b0b0b0;
 
   /* === BACKGROUND === */
-  --color-bg: #0A0A0A;
-  --color-bg-surface: #111111;
-  --color-bg-card: #161616;
-  --color-bg-elevated: #1C1C1C;
+  --color-bg: #ffffff;
+  --color-bg-surface: #f9f9f9;
+  --color-bg-card: #ffffff;
+  --color-bg-elevated: #ffffff;
 
   /* === TEXT === */
-  --color-text-primary: #F5F5F5;
-  --color-text-secondary: #B0B0B0;
-  --color-text-muted: #6B6B6B;
+  --color-text-primary: #111111;
+  --color-text-secondary: #333333;
+  --color-text-muted: #666666;
 
   /* === BORDERS === */
-  --color-border: rgba(211, 211, 211, 0.1);
-  --color-border-hover: rgba(211, 211, 211, 0.25);
+  --color-border: #D3D3D3;
+  --color-border-hover: #b0b0b0;
 
   /* === TYPOGRAPHY === */
   --font-body: 'Inter', system-ui, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'Inter', system-ui, sans-serif;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
