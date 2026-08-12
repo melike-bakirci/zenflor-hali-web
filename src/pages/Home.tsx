@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, Shield, Headphones, Layers, Star } from 'lucide-react';
+import { ArrowRight, Shield, Headphones, Layers, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ProductCard from '../components/ui/ProductCard';
 import BlogCard from '../components/ui/BlogCard';
@@ -24,6 +24,19 @@ const FEATURES = [
   { icon: <Star size={28} />, titleKey: 'home.feature4Title', descKey: 'home.feature4Desc' },
 ];
 
+const HERO_SLIDES = [
+  {
+    title: 'En Uygun Karo Halı',
+    subtitle: 'KARO HALI',
+    image: '', // Kullanıcı tarafından eklenecek
+  },
+  {
+    title: 'Kaliteli Çim Halı Çözümleri',
+    subtitle: 'ÇİM HALI',
+    image: '', // Kullanıcı tarafından eklenecek
+  },
+];
+
 const Home: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
@@ -40,55 +53,59 @@ const Home: React.FC = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
+  };
+
   const featuredKaro = karoHaliProducts.filter((p) => p.featured).slice(0, 3);
   const featuredCim = cimHaliProducts.filter((p) => p.featured).slice(0, 3);
   const latestPosts = blogPosts.slice(0, 3);
 
   return (
     <div className="home page-enter">
-      {/* ===== HERO ===== */}
-      <section className="hero" ref={heroRef} aria-label="Hero bölümü">
-        <div className="hero__bg">
-          <div className="hero__bg-grid" aria-hidden="true" />
-          <div className="hero__bg-radial" aria-hidden="true" />
-        </div>
-
-        <div className="container hero__content">
-          <div className="hero__badge">
-            <span className="badge badge-primary">✦ Premium Zemin Çözümleri</span>
+      {/* ===== HERO SLIDER ===== */}
+      <section className="hero-slider" aria-label="Hero slider">
+        {HERO_SLIDES.map((slide, index) => (
+          <div
+            key={index}
+            className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+          >
+            <div
+              className="hero-slide__bg"
+              style={{ backgroundImage: `url(${slide.image})` }}
+            >
+              <div className="hero-slide__overlay"></div>
+            </div>
+            
+            <div className="container hero-slide__content">
+              <span className="hero-slide__subtitle">{slide.subtitle}</span>
+              <h1 className="hero-slide__title">{slide.title}</h1>
+            </div>
           </div>
-          <h1 className="hero__title">
-            <span className="hero__title-line">{t('home.heroTitle')}</span>
-            <br />
-            <span className="hero__title-accent text-gradient font-display">
-              {t('home.heroTitleAccent')}
-            </span>
-          </h1>
-          <p className="hero__subtitle">{t('home.heroSubtitle')}</p>
+        ))}
 
-          <div className="hero__actions">
-            <Link to="/karo-hali" className="btn btn-primary btn-lg" id="hero-cta-primary">
-              {t('home.heroCtaPrimary')} <ArrowRight size={18} />
-            </Link>
-            <Link to="/hakkimizda" className="btn btn-outline btn-lg" id="hero-cta-secondary">
-              {t('home.heroCtaSecondary')}
-            </Link>
-          </div>
+        <button className="hero-slider__nav hero-slider__nav--prev" onClick={prevSlide} aria-label="Önceki Slayt">
+          <ChevronLeft size={32} />
+        </button>
+        <button className="hero-slider__nav hero-slider__nav--next" onClick={nextSlide} aria-label="Sonraki Slayt">
+          <ChevronRight size={32} />
+        </button>
 
-          {/* Stats */}
-          <div className="hero__stats">
-            {STATS.map((s) => (
-              <div key={s.labelKey} className="hero__stat">
-                <span className="hero__stat-value">{s.value}</span>
-                <span className="hero__stat-label">{t(s.labelKey)}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="hero__scroll" aria-hidden="true">
-          <div className="hero__scroll-dot" />
+        <div className="hero-slider__dots">
+          {HERO_SLIDES.map((_, index) => (
+            <button
+              key={index}
+              className={`hero-slider__dot ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`Slayt ${index + 1}`}
+            />
+          ))}
         </div>
       </section>
 
