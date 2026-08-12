@@ -56,15 +56,17 @@ const Footer: React.FC = () => {
             <address className="footer__contact-list">
               <div className="footer__contact-item">
                 <MapPin size={16} className="footer__contact-icon" />
-                <span>Bağcılar Organize Sanayi, İstanbul, Türkiye</span>
+                <a href="https://maps.app.goo.gl/cyQwTaXrGfFNJmyTA" target="_blank" rel="noopener noreferrer">
+                  Leman Sk. No:4, Sancaktepe/İstanbul
+                </a>
               </div>
               <div className="footer__contact-item">
                 <Phone size={16} className="footer__contact-icon" />
-                <a href="tel:+902121234567">+90 (212) 123 45 67</a>
+                <a href="tel:+905302708487">+90 (530) 270 84 87</a>
               </div>
               <div className="footer__contact-item">
                 <Mail size={16} className="footer__contact-icon" />
-                <a href="mailto:info@karohali.com.tr">info@karohali.com.tr</a>
+                <a href="mailto:zenflormarket@gmail.com">zenflormarket@gmail.com</a>
               </div>
               <div className="footer__contact-item">
                 <Clock size={16} className="footer__contact-icon" />
