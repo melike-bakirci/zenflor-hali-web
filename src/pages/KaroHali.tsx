@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SectionTitle from '../components/ui/SectionTitle';
 import ProductCard from '../components/ui/ProductCard';
 import Breadcrumb from '../components/ui/Breadcrumb';
+import Pagination from '../components/ui/Pagination';
 import { karoHaliProducts } from '../data/karoHaliProducts';
 import './ProductList.css';
+
+const ITEMS_PER_PAGE = 12;
 
 const KaroHali: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(karoHaliProducts.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentProducts = karoHaliProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
     <div className="product-list page-enter">
@@ -41,10 +49,16 @@ const KaroHali: React.FC = () => {
             subtitle={isEn ? `${karoHaliProducts.length} different products` : `${karoHaliProducts.length} farklı ürün`}
           />
           <div className="grid-4">
-            {karoHaliProducts.map((product) => (
+            {currentProducts.map((product) => (
               <ProductCard key={product.id} product={product} basePath="/karo-hali" />
             ))}
           </div>
+
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={(page) => setCurrentPage(page)}
+          />
         </div>
       </section>
 
