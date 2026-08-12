@@ -16,7 +16,6 @@ const CimHali: React.FC = () => {
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
-            <span className="badge badge-primary">🌿 {isEn ? 'Artificial Grass' : 'Çim Halı'}</span>
             <h1 className="page-hero__title font-display">{t('products.cimHali')}</h1>
             <p className="page-hero__subtitle">{t('products.cimHaliSubtitle')}</p>
           </div>
@@ -27,7 +26,6 @@ const CimHali: React.FC = () => {
       <section className="section">
         <div className="container">
           <SectionTitle
-            tag={isEn ? 'Collection' : 'Koleksiyon'}
             title={isEn ? 'All Artificial Grass Products' : 'Tüm Çim Halı Ürünleri'}
             subtitle={isEn ? `${cimHaliProducts.length} different products` : `${cimHaliProducts.length} farklı ürün`}
           />

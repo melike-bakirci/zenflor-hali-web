@@ -11,22 +11,6 @@ const VALUES = [
   { icon: <Leaf size={22} />, key: 'about.value4' },
 ];
 
-const TEAM = [
-  { name: 'Ahmet Yılmaz', role: 'Genel Müdür', roleEn: 'General Manager' },
-  { name: 'Fatma Kaya', role: 'Satış Direktörü', roleEn: 'Sales Director' },
-  { name: 'Mehmet Demir', role: 'Teknik Müdür', roleEn: 'Technical Manager' },
-  { name: 'Zeynep Arslan', role: 'Tasarım Uzmanı', roleEn: 'Design Specialist' },
-];
-
-const CERTS = [
-  'ISO 9001:2015 Kalite Yönetim Sistemi',
-  'ISO 14001:2015 Çevre Yönetim Sistemi',
-  'Woolmark Lisanslı Üretici',
-  'LEED v4 Uyumlu Ürün Sertifikası',
-  'TSE Belgeli Ürünler',
-  'Türk Loydu Onaylı',
-];
-
 const About: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
@@ -38,9 +22,6 @@ const About: React.FC = () => {
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
-            <span className="badge badge-primary">
-              {isEn ? 'Since 2005' : '2005\'ten Beri'}
-            </span>
             <h1 className="page-hero__title font-display">{t('about.title')}</h1>
             <p className="page-hero__subtitle">{t('about.subtitle')}</p>
           </div>
@@ -52,7 +33,6 @@ const About: React.FC = () => {
         <div className="container about__story-grid">
           <div className="about__story-text">
             <SectionTitle
-              tag={isEn ? 'Our Story' : 'Hikayemiz'}
               title={t('about.story')}
             />
             <p className="about__para">{t('about.storyText1')}</p>
@@ -98,7 +78,6 @@ const About: React.FC = () => {
       <section className="section about__mission-section">
         <div className="container">
           <SectionTitle
-            tag={isEn ? 'Mission & Vision' : 'Misyon & Vizyon'}
             title={t('about.missionTitle')}
             center
           />
@@ -125,7 +104,6 @@ const About: React.FC = () => {
       <section className="section about__values-section">
         <div className="container">
           <SectionTitle
-            tag={isEn ? 'Values' : 'Değerler'}
             title={t('about.valuesTitle')}
             center
           />
@@ -134,47 +112,6 @@ const About: React.FC = () => {
               <div key={i} className="about__value-item" id={`value-${i + 1}`}>
                 <div className="about__value-icon">{v.icon}</div>
                 <span className="about__value-label">{t(v.key)}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="section about__team-section">
-        <div className="container">
-          <SectionTitle
-            tag={isEn ? 'Team' : 'Ekip'}
-            title={t('about.teamTitle')}
-            center
-          />
-          <div className="about__team-grid">
-            {TEAM.map((member, i) => (
-              <div key={i} className="about__team-card" id={`team-member-${i + 1}`}>
-                <div className="about__team-avatar">
-                  <span>{member.name.charAt(0)}</span>
-                </div>
-                <h3 className="about__team-name">{member.name}</h3>
-                <p className="about__team-role">{isEn ? member.roleEn : member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certificates */}
-      <section className="section about__certs-section">
-        <div className="container">
-          <SectionTitle
-            tag={isEn ? 'Certificates' : 'Belgeler'}
-            title={t('about.certTitle')}
-            center
-          />
-          <div className="about__certs-grid">
-            {CERTS.map((cert, i) => (
-              <div key={i} className="about__cert-item" id={`cert-${i + 1}`}>
-                <CheckCircle size={20} className="about__cert-icon" />
-                <span>{cert}</span>
               </div>
             ))}
           </div>

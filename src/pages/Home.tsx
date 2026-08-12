@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, Shield, Headphones, Layers, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ProductCard from '../components/ui/ProductCard';
 import BlogCard from '../components/ui/BlogCard';
@@ -15,13 +15,6 @@ const STATS = [
   { value: '2.500+', labelKey: 'home.statsProjects' },
   { value: '80+', labelKey: 'home.statsProducts' },
   { value: '4.200+', labelKey: 'home.statsClients' },
-];
-
-const FEATURES = [
-  { icon: <Shield size={28} />, titleKey: 'home.feature1Title', descKey: 'home.feature1Desc' },
-  { icon: <Headphones size={28} />, titleKey: 'home.feature2Title', descKey: 'home.feature2Desc' },
-  { icon: <Layers size={28} />, titleKey: 'home.feature3Title', descKey: 'home.feature3Desc' },
-  { icon: <Star size={28} />, titleKey: 'home.feature4Title', descKey: 'home.feature4Desc' },
 ];
 
 const HERO_SLIDES = [
@@ -113,7 +106,6 @@ const Home: React.FC = () => {
       <section className="section home__categories" id="categories">
         <div className="container">
           <SectionTitle
-            tag="Koleksiyonlar"
             title={t('home.categoriesTitle')}
             subtitle={t('home.categoriesSubtitle')}
             center
@@ -153,7 +145,6 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              tag={isEn ? 'Carpet Tiles' : 'Karo Halı'}
               title={t('home.featuredTitle')}
               subtitle={t('home.featuredSubtitle')}
             />
@@ -169,26 +160,11 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ===== DIVIDER BANNER ===== */}
-      <div className="home__banner" aria-hidden="true">
-        <div className="container home__banner-inner">
-          <p className="home__banner-text">
-            {isEn
-              ? 'Professional flooring solutions for your corporate projects'
-              : 'Kurumsal projeleriniz için profesyonel zemin çözümleri'}
-          </p>
-          <Link to="/iletisim" className="btn btn-primary">
-            {t('products.infoRequest')} <ArrowRight size={16} />
-          </Link>
-        </div>
-      </div>
-
       {/* ===== FEATURED CIM HALI ===== */}
       <section className="section home__featured" id="featured-cim">
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              tag={isEn ? 'Artificial Grass' : 'Çim Halı'}
               title={isEn ? 'Artificial Grass Collection' : 'Çim Halı Koleksiyonu'}
               subtitle={isEn ? 'Premium synthetic grass solutions' : 'Premium sentetik çim çözümleri'}
             />
@@ -204,33 +180,11 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ===== WHY US ===== */}
-      <section className="section home__why" id="why-us">
-        <div className="container">
-          <SectionTitle
-            tag={isEn ? 'Why Us' : 'Neden Biz'}
-            title={t('home.whyUsTitle')}
-            subtitle={t('home.whyUsSubtitle')}
-            center
-          />
-          <div className="home__features">
-            {FEATURES.map((f, i) => (
-              <div key={i} className="home__feature-card" id={`feature-${i + 1}`}>
-                <div className="home__feature-icon">{f.icon}</div>
-                <h3 className="home__feature-title">{t(f.titleKey)}</h3>
-                <p className="home__feature-desc">{t(f.descKey)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ===== BLOG ===== */}
       <section className="section home__blog" id="home-blog">
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              tag="Blog"
               title={t('blog.title')}
               subtitle={t('blog.subtitle')}
             />

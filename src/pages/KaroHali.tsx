@@ -16,7 +16,6 @@ const KaroHali: React.FC = () => {
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
-            <span className="badge badge-primary">▦ {isEn ? 'Carpet Tiles' : 'Karo Halı'}</span>
             <h1 className="page-hero__title font-display">{t('products.karoHali')}</h1>
             <p className="page-hero__subtitle">{t('products.karoHaliSubtitle')}</p>
           </div>
@@ -27,8 +26,7 @@ const KaroHali: React.FC = () => {
       <section className="section">
         <div className="container">
           <SectionTitle
-            tag={isEn ? 'Collection' : 'Koleksiyon'}
-            title={isEn ? 'All Carpet Tile Products' : 'Tüm Karo Halı Ürünleri'}
+            title={t('products.allProducts')}
             subtitle={isEn ? `${karoHaliProducts.length} different products` : `${karoHaliProducts.length} farklı ürün`}
           />
           <div className="grid-3">
