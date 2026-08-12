@@ -1,4 +1,4 @@
-﻿.contact__section {
+.contact__section {
   padding-bottom: 0;
 }
 
@@ -22,15 +22,15 @@
   align-items: flex-start;
   gap: 1rem;
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #D3D3D3;
   border-radius: 8px;
   transition: all 250ms ease;
 }
 
 .contact__info-item:hover {
-  border-color: rgba(102,16,31,0.25);
+  border-color: #855A5C;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(102, 16, 31, 0.08);
 }
 
 .contact__info-icon {
@@ -66,7 +66,7 @@
 .contact__form-wrapper {
   padding: 2.5rem;
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #D3D3D3;
   border-radius: 12px;
 }
 
@@ -104,7 +104,7 @@
 
 .contact__input {
   background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #D3D3D3;
   border-radius: 6px;
   padding: 0.75rem 1rem;
   font-family: 'Inter', system-ui, sans-serif;
@@ -117,12 +117,12 @@
 .contact__input:focus {
   outline: none;
   border-color: #66101F;
-  box-shadow: 0 0 0 3px rgba(102,16,31,0.1);
+  box-shadow: 0 0 0 3px rgba(102, 16, 31, 0.15);
   background: #ffffff;
 }
 
 .contact__input::placeholder {
-  color: #9ca3af;
+  color: #855A5C;
 }
 
 .contact__textarea {
@@ -149,8 +149,8 @@
 .contact__success-icon {
   width: 56px;
   height: 56px;
-  background: rgba(5, 150, 105, 0.12);
-  color: #059669;
+  background: rgba(102, 16, 31, 0.12);
+  color: #66101F;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -164,7 +164,7 @@
   width: 100%;
   height: 400px;
   background: #f3f4f6;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #D3D3D3;
 }
 
 /* Responsive */

@@ -16,8 +16,8 @@
 
 /* Topbar */
 .navbar__topbar {
-  background: #111827;
-  color: #9ca3af;
+  background: #66101F;
+  color: #D3D3D3;
   min-height: 34px;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #9ca3af;
+  color: #D3D3D3;
   text-decoration: none;
   transition: color 150ms ease;
   font-weight: 500;
@@ -58,7 +58,7 @@
 }
 
 .navbar__topbar-whatsapp:hover {
-  color: #25d366;
+  color: #D3D3D3;
 }
 
 /* Main nav */

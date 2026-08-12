@@ -1,17 +1,18 @@
-﻿/* ===== PAGE HERO (shared across pages) ===== */
+/* ===== PAGE HERO (shared across pages) ===== */
 .page-hero {
   position: relative;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(135deg, #f3f4f6 0%, #D3D3D3 50%, #e2d8d9 100%);
   padding: 80px 0 72px;
   overflow: hidden;
+  border-bottom: 1px solid #D3D3D3;
 }
 
 .page-hero__bg {
   position: absolute;
   inset: 0;
-  opacity: 0.04;
+  opacity: 0.25;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1' opacity='1'%3E%3Cpath d='M20 10 C35 20 35 30 20 40 C5 30 5 20 20 10 Z'/%3E%3Cpath d='M60 50 C75 60 75 70 60 80 C45 70 45 60 60 50 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%2366101F' stroke-width='1' opacity='0.3'%3E%3Cpath d='M20 10 C35 20 35 30 20 40 C5 30 5 20 20 10 Z'/%3E%3Cpath d='M60 50 C75 60 75 70 60 80 C45 70 45 60 60 50 Z'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 80px 80px;
   background-repeat: repeat;
 }
@@ -39,13 +40,13 @@
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
   line-height: 1.15;
-  color: #ffffff;
+  color: #111827;
   letter-spacing: -0.025em;
 }
 
 .page-hero__subtitle {
   font-size: 0.9375rem;
-  color: rgba(255,255,255,0.65);
+  color: #4b5563;
   line-height: 1.65;
 }
 
@@ -74,7 +75,7 @@
   display: flex;
   gap: 2.5rem;
   padding-top: 1.75rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #D3D3D3;
   margin-top: 0.5rem;
 }
 
@@ -95,7 +96,7 @@
 
 .about__story-stat-label {
   font-size: 0.7rem;
-  color: #9ca3af;
+  color: #855A5C;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 600;
@@ -111,13 +112,13 @@
 .about__story-card {
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #D3D3D3;
 }
 
 .about__story-card--main {
   position: relative;
   height: 260px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #D3D3D3 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,14 +161,14 @@
 
 .about__year-text {
   font-size: 0.7rem;
-  color: #9ca3af;
+  color: #855A5C;
   letter-spacing: 0.1em;
 }
 
 .about__story-card--accent {
-  background: rgba(102,16,31,0.05);
+  background: rgba(102, 16, 31, 0.05);
   padding: 1.5rem 2rem;
-  border-color: rgba(102,16,31,0.1);
+  border-color: rgba(102, 16, 31, 0.2);
 }
 
 .about__quote {
@@ -193,7 +194,7 @@
 .about__mv-card {
   padding: 2.5rem;
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #D3D3D3;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -202,15 +203,15 @@
 }
 
 .about__mv-card:hover {
-  border-color: rgba(102,16,31,0.3);
+  border-color: #855A5C;
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+  box-shadow: 0 8px 24px rgba(102, 16, 31, 0.08);
 }
 
 .about__mv-icon {
   width: 56px;
   height: 56px;
-  background: rgba(102,16,31,0.08);
+  background: rgba(102, 16, 31, 0.08);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -219,8 +220,8 @@
 }
 
 .about__mv-icon--vision {
-  background: rgba(59,130,246,0.08);
-  color: #3b82f6;
+  background: rgba(133, 90, 92, 0.12);
+  color: #855A5C;
 }
 
 .about__mv-title {
@@ -247,7 +248,7 @@
 .about__value-item {
   padding: 2rem 1.5rem;
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #D3D3D3;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -258,15 +259,15 @@
 }
 
 .about__value-item:hover {
-  border-color: rgba(102,16,31,0.3);
-  background: rgba(102,16,31,0.02);
+  border-color: #855A5C;
+  background: rgba(102, 16, 31, 0.02);
   transform: translateY(-3px);
 }
 
 .about__value-icon {
   width: 44px;
   height: 44px;
-  background: rgba(102,16,31,0.08);
+  background: rgba(102, 16, 31, 0.08);
   border-radius: 8px;
   display: flex;
   align-items: center;

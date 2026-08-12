@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, CheckCircle, Mail } from 'lucide-react';
+import { ArrowLeft, Mail } from 'lucide-react';
 import ProductCard from '../components/ui/ProductCard';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import { karoHaliProducts } from '../data/karoHaliProducts';
@@ -81,9 +81,7 @@ const KaroHaliDetail: React.FC = () => {
                 {features.map((f) => (
                   <div key={f.label} className="pd-feature">
                     <span className="pd-feature-label">{f.label}</span>
-                    <span className="pd-feature-value">
-                      <CheckCircle size={14} /> {f.value}
-                    </span>
+                    <span className="pd-feature-value">{f.value}</span>
                   </div>
                 ))}
               </div>

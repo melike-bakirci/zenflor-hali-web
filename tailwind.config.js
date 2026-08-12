@@ -9,10 +9,12 @@ export default {
       colors: {
         primary: {
           DEFAULT: '#66101F',
-          hover: '#7d2535',
-          light: '#a0404e',
-          dark: '#4a0c17',
+          hover: '#855A5C',
+          light: '#855A5C',
+          dark: '#66101F',
         },
+        secondary: '#D3D3D3',
+        accent: '#855A5C',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

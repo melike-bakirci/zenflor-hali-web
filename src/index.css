@@ -7,8 +7,8 @@
 @layer base {
   :root {
     --color-primary: #66101F;
-    --color-primary-hover: #7d2535;
-    --color-primary-light: #a0404e;
+    --color-primary-hover: #855A5C;
+    --color-primary-light: #855A5C;
     --color-secondary: #D3D3D3;
     --navbar-height: 100px;
     --container-max: 1280px;
@@ -86,7 +86,7 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #a0404e, #66101F);
+    background: linear-gradient(135deg, #855A5C, #66101F);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

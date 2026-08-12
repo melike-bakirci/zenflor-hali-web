@@ -33,11 +33,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
             (e.currentTarget.nextSibling as HTMLElement)?.removeAttribute('style');
           }}
         />
-        {product.featured && (
-          <span className="product-card__badge badge-dark">
-            {isEn ? 'Featured' : 'Öne Çıkan'}
-          </span>
-        )}
+        {/* Removed featured badge per user request */}
         <div className="product-card__overlay">
           <span className="btn btn-primary product-card__cta">
             {t('products.viewDetails')} <ArrowRight size={16} />
@@ -50,6 +46,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
           <span className="product-card__category">{product.category === 'karo-hali' ? 'Karo Halı' : 'Çim Halı'}</span>
         </div>
         <h3 className="product-card__name">{name}</h3>
+        {shortDesc && <p className="product-card__desc">{shortDesc}</p>}
         <div className="product-card__footer">
           {priceFeature && (
             <span className="product-card__price">{priceFeature.value}</span>

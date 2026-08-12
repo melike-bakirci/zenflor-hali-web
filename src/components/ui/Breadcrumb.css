@@ -1,4 +1,4 @@
-﻿.breadcrumb {
+.breadcrumb {
   margin: 0.875rem 0 0;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .breadcrumb__separator {
-  color: #9ca3af;
+  color: #D3D3D3;
   flex-shrink: 0;
 }
 
