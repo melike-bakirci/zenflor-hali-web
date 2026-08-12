@@ -143,7 +143,7 @@ export const karoHaliProducts: Product[] = [
     ],
     tags: ['Yün', 'VIP', 'Lüks', 'Plaid'],
     tagsEn: ['Wool', 'VIP', 'Luxury', 'Plaid'],
-    featured: false,
+    featured: true,
   },
   {
     id: 'kh-005',

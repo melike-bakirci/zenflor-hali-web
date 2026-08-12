@@ -143,7 +143,7 @@ export const cimHaliProducts: Product[] = [
     ],
     tags: ['Peyzaj', 'Gerçekçi', 'Büyük Alan'],
     tagsEn: ['Landscape', 'Realistic', 'Large Area'],
-    featured: false,
+    featured: true,
   },
   {
     id: 'ch-005',
