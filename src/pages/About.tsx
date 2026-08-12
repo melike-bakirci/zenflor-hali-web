@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Target, Eye, Leaf, Award, CheckCircle } from 'lucide-react';
+import { Target, Eye, Leaf, Award, CheckCircle, Globe } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import './About.css';
@@ -75,11 +75,21 @@ const About: React.FC = () => {
               </div>
             </div>
             <div className="about__story-card about__story-card--accent">
-              <p className="about__quote">
-                {isEn
-                  ? '"Quality in every square centimeter."'
-                  : '"Her santimetrekarede kalite."'}
-              </p>
+              <div className="about__web-links">
+                {[1, 2, 3, 4].map((item) => (
+                  <a
+                    key={item}
+                    href="https://mineflofiyatlar.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="about__web-icon-link"
+                    title="Mineflo & PVC Sitemiz"
+                    aria-label="Mineflo & PVC Sitemiz"
+                  >
+                    <Globe size={26} />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>

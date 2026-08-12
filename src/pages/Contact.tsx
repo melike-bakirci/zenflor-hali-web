@@ -69,42 +69,40 @@ const Contact: React.FC = () => {
             <SectionTitle title={isEn ? 'Contact Information' : 'İletişim Bilgilerimiz'} />
 
             <div className="contact__info-list">
-              <div className="contact__info-item card">
+              <a
+                href="https://maps.app.goo.gl/cyQwTaXrGfFNJmyTA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact__info-item card"
+              >
                 <div className="contact__info-icon">
                   <MapPin size={24} />
                 </div>
                 <div>
                   <h3 className="contact__info-title">{t('contact.address')}</h3>
-                  <p className="contact__info-desc">
-                    <a href="https://maps.app.goo.gl/cyQwTaXrGfFNJmyTA" target="_blank" rel="noopener noreferrer">
-                      Leman Sk. No:4, Sancaktepe/İstanbul
-                    </a>
-                  </p>
+                  <p className="contact__info-desc">Leman Sk. No:4, Sancaktepe/İstanbul</p>
                 </div>
-              </div>
+              </a>
 
-              <div className="contact__info-item card">
+              <a href="tel:+905302708487" className="contact__info-item card">
                 <div className="contact__info-icon">
                   <Phone size={24} />
                 </div>
                 <div>
                   <h3 className="contact__info-title">{t('contact.phone')}</h3>
-                  <p className="contact__info-desc">
-                    <a href="tel:+905302708487">+90 (530) 270 84 87</a>                  </p>
+                  <p className="contact__info-desc">+90 (530) 270 84 87</p>
                 </div>
-              </div>
+              </a>
 
-              <div className="contact__info-item card">
+              <a href="mailto:zenflormarket@gmail.com" className="contact__info-item card">
                 <div className="contact__info-icon">
                   <Mail size={24} />
                 </div>
                 <div>
                   <h3 className="contact__info-title">{t('contact.email')}</h3>
-                  <p className="contact__info-desc">
-                    <a href="mailto:zenflormarket@gmail.com">zenflormarket@gmail.com</a>
-                  </p>
+                  <p className="contact__info-desc">zenflormarket@gmail.com</p>
                 </div>
-              </div>
+              </a>
 
               <div className="contact__info-item card">
                 <div className="contact__info-icon">
