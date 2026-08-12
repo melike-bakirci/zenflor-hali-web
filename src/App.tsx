@@ -12,6 +12,7 @@ import CimHaliDetail from './pages/CimHaliDetail';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -37,7 +38,7 @@ const App: React.FC = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/iletisim" element={<Contact />} />
-          <Route path="*" element={<Home />} /> {/* Fallback to home */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </BrowserRouter>
