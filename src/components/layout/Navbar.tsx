@@ -27,44 +27,49 @@ const Navbar: React.FC = () => {
 
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`} role="banner">
-      <div className="container navbar__inner">
-        {/* Logo */}
-        <Link to="/" className="navbar__logo" aria-label="Karo Halı Ana Sayfa">
-          <span className="navbar__logo-icon">K</span>
-          <div className="navbar__logo-text">
-            <span className="navbar__logo-name">KARO HALI</span>
-            <span className="navbar__logo-tagline">Premium Zemin Çözümleri</span>
-          </div>
-        </Link>
-
-        {/* Desktop nav */}
-        <nav className="navbar__links" aria-label="Ana navigasyon">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.end}
-              className={({ isActive }) =>
-                `navbar__link ${isActive ? 'navbar__link--active' : ''}`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
-
-        <div className="navbar__actions">
+      {/* Top Dark Bar */}
+      <div className="navbar__topbar">
+        <div className="container navbar__topbar-inner">
           <LanguageSwitcher />
-          <Link to="/iletisim" className="btn btn-primary navbar__cta">
-            {t('products.infoRequest')}
+        </div>
+      </div>
+
+      <div className="navbar__main">
+        <div className="navbar__brand-wrapper">
+          <Link to="/" className="navbar__logo" aria-label="Karo Halı Ana Sayfa">
+            <span className="navbar__logo-icon">K</span>
+            <div className="navbar__logo-text">
+              <span className="navbar__logo-name">KARO HALI</span>
+              <span className="navbar__logo-tagline">Premium Zemin Çözümleri</span>
+            </div>
           </Link>
+        </div>
+
+        <div className="navbar__nav-wrapper">
+          <nav className="navbar__links" aria-label="Ana navigasyon">
+            {navLinks.map((link, index) => (
+              <React.Fragment key={link.to}>
+                <NavLink
+                  to={link.to}
+                  end={link.end}
+                  className={({ isActive }) =>
+                    `navbar__link ${isActive ? 'navbar__link--active' : ''}`
+                  }
+                >
+                  {link.label}
+                </NavLink>
+                {index < navLinks.length - 1 && <span className="navbar__separator">•</span>}
+              </React.Fragment>
+            ))}
+          </nav>
+
           <button
             className="navbar__mobile-toggle"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menüyü aç/kapat"
             id="mobile-menu-toggle"
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <X size={22} color="#fff" /> : <Menu size={22} color="#fff" />}
           </button>
         </div>
       </div>
