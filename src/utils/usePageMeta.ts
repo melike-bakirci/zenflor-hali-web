@@ -3,12 +3,13 @@ import { useEffect } from 'react';
 interface PageMetaOptions {
   title?: string;
   description?: string;
+  canonicalUrl?: string;
 }
 
 const DEFAULT_TITLE = 'Zenflor - Karo Halı ve Çim Halı Çözümleri';
 const DEFAULT_DESC = 'Karo halı ve çim halı alanında kaliteli, estetik ve kurumsal zemin kaplama çözümleri.';
 
-export const usePageMeta = ({ title, description }: PageMetaOptions = {}) => {
+export const usePageMeta = ({ title, description, canonicalUrl }: PageMetaOptions = {}) => {
   useEffect(() => {
     // 1. Update Document Title
     const fullTitle = title ? `${title} | Zenflor` : DEFAULT_TITLE;
@@ -32,7 +33,20 @@ export const usePageMeta = ({ title, description }: PageMetaOptions = {}) => {
     // 3. Update OpenGraph Tags
     setMetaTag('meta[property="og:title"]', 'property', 'og:title', fullTitle);
     setMetaTag('meta[property="og:description"]', 'property', 'og:description', metaDesc);
-  }, [title, description]);
+
+    // 4. Update Canonical Link
+    const currentUrl = canonicalUrl || (window.location.origin + window.location.pathname);
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', currentUrl);
+
+    // 5. Update OpenGraph URL
+    setMetaTag('meta[property="og:url"]', 'property', 'og:url', currentUrl);
+  }, [title, description, canonicalUrl]);
 };
 
 export default usePageMeta;
