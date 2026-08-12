@@ -5,22 +5,22 @@
 .contact__grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: var(--space-12);
-  margin-bottom: var(--space-20);
+  gap: var(--space-16);
+  margin-bottom: var(--space-24);
 }
 
 /* Info */
 .contact__info-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-6);
 }
 
 .contact__info-item {
-  padding: var(--space-6);
+  padding: var(--space-8);
   display: flex;
   align-items: flex-start;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .contact__info-icon {
@@ -33,13 +33,13 @@
   font-size: var(--text-base);
   font-weight: 700;
   color: var(--color-text-primary);
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-2);
 }
 
 .contact__info-desc {
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.75;
 }
 
 .contact__info-desc a {
@@ -52,7 +52,7 @@
 
 /* Form */
 .contact__form-wrapper {
-  padding: var(--space-10);
+  padding: var(--space-12);
 }
 
 .contact__form-title {

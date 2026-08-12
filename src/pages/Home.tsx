@@ -49,8 +49,8 @@ const Home: React.FC = () => {
     setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
   };
 
-  const featuredKaro = karoHaliProducts.filter((p) => p.featured).slice(0, 3);
-  const featuredCim = cimHaliProducts.filter((p) => p.featured).slice(0, 3);
+  const featuredKaro = karoHaliProducts.filter((p) => p.featured).slice(0, 4);
+  const featuredCim = cimHaliProducts.filter((p) => p.featured).slice(0, 4);
   const latestPosts = blogPosts.slice(0, 3);
 
   return (
@@ -167,7 +167,7 @@ const Home: React.FC = () => {
               {t('common.viewAll')} <ArrowRight size={16} />
             </Link>
           </div>
-          <div className="grid-3">
+          <div className="grid-4">
             {featuredKaro.map((p) => (
               <ProductCard key={p.id} product={p} basePath="/karo-hali" />
             ))}
@@ -187,7 +187,7 @@ const Home: React.FC = () => {
               {t('common.viewAll')} <ArrowRight size={16} />
             </Link>
           </div>
-          <div className="grid-3">
+          <div className="grid-4">
             {featuredCim.map((p) => (
               <ProductCard key={p.id} product={p} basePath="/cim-hali" />
             ))}

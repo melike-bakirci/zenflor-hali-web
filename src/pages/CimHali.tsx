@@ -40,7 +40,7 @@ const CimHali: React.FC = () => {
             title={isEn ? 'All Artificial Grass Products' : 'Tüm Çim Halı Ürünleri'}
             subtitle={isEn ? `${cimHaliProducts.length} different products` : `${cimHaliProducts.length} farklı ürün`}
           />
-          <div className="grid-3">
+          <div className="grid-4">
             {cimHaliProducts.map((product) => (
               <ProductCard key={product.id} product={product} basePath="/cim-hali" />
             ))}

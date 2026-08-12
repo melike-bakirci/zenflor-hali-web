@@ -44,14 +44,14 @@
 .about__story-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
+  gap: var(--space-20);
   align-items: center;
 }
 
 .about__story-text {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-6);
 }
 
 .about__para {
@@ -178,17 +178,17 @@
 .about__mv-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-6);
+  gap: var(--space-8);
 }
 
 .about__mv-card {
-  padding: var(--space-10);
+  padding: var(--space-12);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-2xl);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
   transition: all var(--transition-base);
 }
 
@@ -230,18 +230,18 @@
 .about__values-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-4);
+  gap: var(--space-6);
 }
 
 .about__value-item {
-  padding: var(--space-8);
+  padding: var(--space-10) var(--space-8);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-4);
   text-align: center;
   transition: all var(--transition-base);
 }
@@ -272,18 +272,18 @@
 .about__team-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-6);
+  gap: var(--space-8);
 }
 
 .about__team-card {
-  padding: var(--space-8) var(--space-6);
+  padding: var(--space-10) var(--space-8);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-4);
   text-align: center;
   transition: all var(--transition-base);
 }
@@ -326,14 +326,14 @@
 .about__certs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  gap: var(--space-6);
 }
 
 .about__cert-item {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-5) var(--space-6);
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-8);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);

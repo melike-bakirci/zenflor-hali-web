@@ -40,7 +40,7 @@ const KaroHali: React.FC = () => {
             title={t('products.allProducts')}
             subtitle={isEn ? `${karoHaliProducts.length} different products` : `${karoHaliProducts.length} farklı ürün`}
           />
-          <div className="grid-3">
+          <div className="grid-4">
             {karoHaliProducts.map((product) => (
               <ProductCard key={product.id} product={product} basePath="/karo-hali" />
             ))}

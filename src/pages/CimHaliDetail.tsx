@@ -28,7 +28,7 @@ const CimHaliDetail: React.FC = () => {
   const features = isEn ? product.featuresEn : product.features;
   const tags = isEn ? product.tagsEn : product.tags;
 
-  const others = cimHaliProducts.filter((p) => p.slug !== slug).slice(0, 3);
+  const others = cimHaliProducts.filter((p) => p.slug !== slug).slice(0, 4);
 
   return (
     <div className="product-detail page-enter">
@@ -111,7 +111,7 @@ const CimHaliDetail: React.FC = () => {
         {/* Other Products */}
         <section className="pd-others">
           <h2 className="pd-others-title">{t('products.otherProducts')}</h2>
-          <div className="grid-3">
+          <div className="grid-4">
             {others.map((p) => (
               <ProductCard key={p.id} product={p} basePath="/cim-hali" />
             ))}
