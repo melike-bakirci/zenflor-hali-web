@@ -142,6 +142,69 @@ a.contact__info-item:hover .contact__info-desc {
   }
 }
 
+/* Social Media Card */
+.contact__socials-card {
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  border: 1px solid #D3D3D3;
+  border-radius: 8px;
+}
+
+.contact__socials-grid {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contact__social-link {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  transition: all 200ms ease;
+  text-decoration: none;
+}
+
+.contact__social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact__social-link--instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.contact__social-link--linkedin:hover {
+  background: #0077b5;
+  color: #ffffff;
+  border-color: #0077b5;
+}
+
+.contact__social-link--facebook:hover {
+  background: #1877f2;
+  color: #ffffff;
+  border-color: #1877f2;
+}
+
+.contact__social-link--youtube:hover {
+  background: #ff0000;
+  color: #ffffff;
+  border-color: #ff0000;
+}
+
+.contact__social-link--tiktok:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
 /* Form */
 .contact__form-wrapper {
   padding: 2.5rem;
@@ -150,12 +213,8 @@ a.contact__info-item:hover .contact__info-desc {
   border-radius: 12px;
 }
 
-.contact__form-title {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #111827;
-  margin-bottom: 2rem;
-  letter-spacing: -0.02em;
+.contact__form-wrapper .section-title {
+  margin-bottom: 1.75rem;
 }
 
 .contact__form {
