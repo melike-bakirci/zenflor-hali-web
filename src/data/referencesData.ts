@@ -49,10 +49,10 @@ export const referenceClients: ReferenceClient[] = [
   },
   {
     id: 'client-3',
-    name: 'Rönesans Holding',
+    name: 'Zen Holding',
     industry: 'İnşaat & Taahhüt',
     industryEn: 'Construction & Contracting',
-    logoText: 'RÖNESANS',
+    logoText: 'ZEN',
     accentColor: '#B91C1C',
     location: 'İstanbul',
   },

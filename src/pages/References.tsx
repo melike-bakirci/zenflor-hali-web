@@ -56,7 +56,7 @@ const References: React.FC = () => {
         <div className="container">
           <ClientLogos
             limit={4}
-            title={isEn ? 'Our Corporate Partners & Clients' : 'Birlikte Çalıştığımız Kurumlar & Markalar'}
+            title={isEn ? 'Our Corporate Partners & Clients' : 'Değerli Müşterilerimiz'}
             subtitle={
               isEn
                 ? 'Selected corporate clients who trust our carpet tile and flooring solutions'
