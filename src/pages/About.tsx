@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Target, Eye, Leaf, Award, CheckCircle } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
+import Breadcrumb from '../components/ui/Breadcrumb';
 import './About.css';
 
 const VALUES = [
@@ -22,6 +23,12 @@ const About: React.FC = () => {
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
+            <Breadcrumb
+              items={[
+                { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+                { label: t('nav.about') },
+              ]}
+            />
             <h1 className="page-hero__title font-display">{t('about.title')}</h1>
             <p className="page-hero__subtitle">{t('about.subtitle')}</p>
           </div>

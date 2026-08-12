@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, CheckCircle, Tag, Mail } from 'lucide-react';
 import ProductCard from '../components/ui/ProductCard';
+import Breadcrumb from '../components/ui/Breadcrumb';
 import { cimHaliProducts } from '../data/cimHaliProducts';
 import type { Product } from '../types/product';
 import './ProductDetail.css';
@@ -33,6 +34,13 @@ const CimHaliDetail: React.FC = () => {
     <div className="product-detail page-enter">
       <div className="container">
         {/* Breadcrumb */}
+        <Breadcrumb
+          items={[
+            { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+            { label: t('products.cimHali'), url: '/cim-hali' },
+            { label: name },
+          ]}
+        />
         <nav className="pd-breadcrumb" aria-label="Breadcrumb">
           <Link to="/cim-hali" className="pd-breadcrumb__back">
             <ArrowLeft size={16} /> {t('products.backToList')}

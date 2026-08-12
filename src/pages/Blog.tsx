@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SectionTitle from '../components/ui/SectionTitle';
 import BlogCard from '../components/ui/BlogCard';
+import Breadcrumb from '../components/ui/Breadcrumb';
 import { blogPosts } from '../data/blogPosts';
 import './Blog.css';
 
@@ -16,6 +17,12 @@ const Blog: React.FC = () => {
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
+            <Breadcrumb
+              items={[
+                { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+                { label: t('nav.blog') },
+              ]}
+            />
             <h1 className="page-hero__title font-display">{t('blog.title')}</h1>
             <p className="page-hero__subtitle">{t('blog.subtitle')}</p>
           </div>

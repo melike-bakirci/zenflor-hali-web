@@ -23,7 +23,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   );
 
   return (
-    <article className="blog-card card" id={`blog-${post.id}`}>
+    <Link to={`/blog/${post.slug}`} className="blog-card card" id={`blog-${post.id}`}>
       <div className="blog-card__image-wrap">
         <img
           src={post.image}
@@ -53,11 +53,11 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
         </div>
         <h3 className="blog-card__title">{title}</h3>
         <p className="blog-card__excerpt">{excerpt}</p>
-        <Link to={`/blog/${post.slug}`} className="blog-card__link">
+        <span className="blog-card__link">
           {t('blog.readMore')} <ArrowRight size={14} />
-        </Link>
+        </span>
       </div>
-    </article>
+    </Link>
   );
 };
 

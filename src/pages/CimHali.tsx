@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SectionTitle from '../components/ui/SectionTitle';
 import ProductCard from '../components/ui/ProductCard';
+import Breadcrumb from '../components/ui/Breadcrumb';
 import { cimHaliProducts } from '../data/cimHaliProducts';
 import './ProductList.css';
 
@@ -12,10 +13,16 @@ const CimHali: React.FC = () => {
   return (
     <div className="product-list page-enter">
       {/* Page Hero */}
-      <div className="page-hero page-hero--green">
+      <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
+            <Breadcrumb
+              items={[
+                { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+                { label: t('products.cimHali') },
+              ]}
+            />
             <h1 className="page-hero__title font-display">{t('products.cimHali')}</h1>
             <p className="page-hero__subtitle">{t('products.cimHaliSubtitle')}</p>
           </div>

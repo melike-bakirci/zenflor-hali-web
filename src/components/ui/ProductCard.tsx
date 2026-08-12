@@ -29,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
   const tags = isEn ? product.tagsEn : product.tags;
 
   return (
-    <article className="product-card card" id={`product-${product.id}`}>
+    <Link to={`${basePath}/${product.slug}`} className="product-card card" id={`product-${product.id}`}>
       <div className="product-card__image-wrap">
         <img
           src={product.image}
@@ -47,13 +47,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
           </span>
         )}
         <div className="product-card__overlay">
-          <Link
-            to={`${basePath}/${product.slug}`}
-            className="btn btn-primary product-card__cta"
-            aria-label={`${name} detaylarını incele`}
-          >
+          <span className="btn btn-primary product-card__cta">
             {t('products.viewDetails')} <ArrowRight size={16} />
-          </Link>
+          </span>
         </div>
       </div>
 
@@ -67,11 +63,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
         </div>
         <h3 className="product-card__name">{name}</h3>
         <p className="product-card__desc">{shortDesc}</p>
-        <Link to={`${basePath}/${product.slug}`} className="product-card__link">
+        <span className="product-card__link">
           {t('products.viewDetails')} <ArrowRight size={14} />
-        </Link>
+        </span>
       </div>
-    </article>
+    </Link>
   );
 };
 

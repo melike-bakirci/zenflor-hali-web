@@ -234,7 +234,7 @@ ul, ol {
 
 /* === PAGE TRANSITION === */
 .page-enter {
-  animation: fadeInUp 0.4s ease forwards;
+  animation: none;
 }
 
 /* === BADGE === */

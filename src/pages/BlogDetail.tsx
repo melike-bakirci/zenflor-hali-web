@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
+import Breadcrumb from '../components/ui/Breadcrumb';
 import { blogPosts } from '../data/blogPosts';
 import ReactMarkdown from 'react-markdown';
 import './BlogDetail.css';
@@ -26,6 +27,13 @@ const BlogDetail: React.FC = () => {
   return (
     <div className="blog-detail page-enter">
       <div className="container blog-detail__container">
+        <Breadcrumb
+          items={[
+            { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+            { label: t('nav.blog'), url: '/blog' },
+            { label: title },
+          ]}
+        />
         <nav className="blog-detail__breadcrumb" aria-label="Breadcrumb">
           <Link to="/blog" className="blog-detail__back">
             <ArrowLeft size={16} /> {t('blog.backToBlog')}
