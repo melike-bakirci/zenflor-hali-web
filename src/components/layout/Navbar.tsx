@@ -63,7 +63,12 @@ const Navbar: React.FC = () => {
       <div className="navbar__main">
         <div className="navbar__main-inner container">
           <div className="navbar__brand-wrapper">
-            <Link to="/" className="navbar__logo" aria-label="Karo Halı Ana Sayfa">
+            <Link
+              to="/"
+              className="navbar__logo"
+              aria-label="Karo Halı Ana Sayfa"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <img src="/images/logo.png" alt="Karo Halı" className="navbar__logo-img" />
               <div className="navbar__logo-text">
                 <span className="navbar__logo-name">ZenFlor</span>

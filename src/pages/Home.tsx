@@ -72,6 +72,14 @@ const Home: React.FC = () => {
             <div className="container hero-slide__content">
               <span className="hero-slide__subtitle">{slide.subtitle}</span>
               <h1 className="hero-slide__title">{slide.title}</h1>
+              <div className="hero-slide__actions">
+                <Link to="/iletisim" className="hero-btn hero-btn--primary">
+                  <span>{t('home.heroCtaContact', 'İletişim')}</span>
+                </Link>
+                <a href="tel:+905302708487" className="hero-btn hero-btn--outline">
+                  <span>{t('home.heroCtaQuote', 'Teklif Al')}</span>
+                </a>
+              </div>
             </div>
           </div>
         ))}

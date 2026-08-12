@@ -49,7 +49,12 @@ const Footer: React.FC = () => {
         <div className="container footer__grid">
           {/* Brand */}
           <div className="footer__brand">
-            <Link to="/" className="footer__logo" aria-label="ZenFlor Ana Sayfa">
+            <Link
+              to="/"
+              className="footer__logo"
+              aria-label="ZenFlor Ana Sayfa"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <img src="/images/logo.png" alt="ZenFlor Karo Halı" className="footer__logo-img" />
               <div className="footer__logo-text">
                 <span className="footer__logo-name">ZenFlor</span>
