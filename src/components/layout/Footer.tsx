@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               </div>
             </Link>
             <p className="footer__about">
-              Karo halı ve çim halı alanında 20 yılı aşkın deneyimimizle kurumsal ve bireysel projelere en kaliteli zemin çözümlerini sunuyoruz.
+              Karo halı ve çim halının yanı sıra mineflo, PVC zemin kaplama, laminant parke ve epoksi zemin kaplama alanlarında 20 yılı aşkın deneyimimizle kurumsal ve bireysel projelere en kaliteli zemin çözümlerini sunuyoruz.
             </p>
             <div className="footer__socials">
               <a href="https://www.instagram.com/zenflormarket/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="footer__social-link" title="Instagram">

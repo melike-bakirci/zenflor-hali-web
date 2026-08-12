@@ -41,8 +41,8 @@
     "title": "Hakkımızda",
     "subtitle": "Zemin kaplama sektöründe güvenilir çözüm ortağınız",
     "story": "Hikayemiz",
-    "storyText1": "2005 yılında İstanbul'da kurulan firmamız, karo halı ve çim halı alanında 20 yılı aşkın deneyimiyle sektörün önde gelen markalarından biri haline gelmiştir.",
-    "storyText2": "Kaliteyi ön planda tutarak, müşterilerimize en iyi zemin çözümlerini sunmayı hedefleyen firmamız; kurumsal ve bireysel projelerde güvenilir bir iş ortağı olmayı başarmıştır.",
+    "storyText1": "2006'dan bu yana İstanbul merkezli faaliyet gösteren firmamız; zemin kaplama sektöründe kalite, güven ve müşteri memnuniyetini ön planda tutarak hizmet vermektedir. İstanbul'da kurulmuş olsak da bugün Türkiye'nin dört bir yanına ürün ve hizmet ulaştırarak, bireysel ve kurumsal projelere profesyonel çözümler sunuyoruz.",
+    "storyText2": "Başta karo halı ve çim halı olmak üzere; Mineflo, PVC zemin kaplama, laminant parke ve epoksi zemin kaplama ürünlerinde geniş ürün yelpazemizle müşterilerimizin tüm zemin ihtiyaçlarına cevap veriyoruz. Yılların verdiği tecrübe, kaliteli ürün anlayışımız ve uzman ekibimizle her projeye özel çözümler üretiyor; dayanıklı, estetik ve uzun ömürlü zemin uygulamaları sunuyoruz. Türkiye genelinde güvenilir hizmet anlayışımız ve satış sonrası desteğimizle, müşterilerimizin ilk tercih ettiği firmalardan biri olmayı sürdürüyoruz.",
     "missionTitle": "Misyon & Vizyon",
     "missionText": "Zemin kaplama sektöründe inovatif, sürdürülebilir ve estetik çözümler sunarak müşteri memnuniyetini en yüksek düzeyde tutmak.",
     "visionText": "Türkiye'nin en güvenilir zemin kaplama markası olarak uluslararası pazarlarda da tanınan bir konuma ulaşmak.",
@@ -60,7 +60,7 @@
     "karoHali": "Karo Halı",
     "karoHaliSubtitle": "Modüler karo halı koleksiyonumuz",
     "cimHali": "Çim Halı",
-    "cimHaliSubtitle": "Sentetik çim koleksiyonumuz",
+    "cimHaliSubtitle": "Sentetik çim halı koleksiyonumuz",
     "features": "Özellikler",
     "viewDetails": "Detayları İncele",
     "allProducts": "Tüm Ürünler",
@@ -81,7 +81,7 @@
     "showingProducts": "{{count}} ürün gösteriliyor"
   },
   "blog": {
-    "title": "Blog Yazılarımız",
+    "title": "Blog",
     "subtitle": "Zemin kaplama dünyasından haberler ve ipuçları",
     "readMore": "Devamını Oku",
     "author": "Yazar",
@@ -130,7 +130,7 @@
   "floatingContact": {
     "whatsapp": "WhatsApp ile Yazın",
     "whatsappShort": "WhatsApp",
-    "call": "Bizi Arayın",
+    "call": "Bizi",
     "callShort": "Hemen Ara",
     "defaultMessage": "Merhaba, ürünleriniz ve hizmetleriniz hakkında bilgi almak istiyorum."
   }

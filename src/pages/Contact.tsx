@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
 
           {/* Info */}
           <div className="contact__info">
-            <SectionTitle title={isEn ? 'Contact Information' : 'İletişim Bilgileri'} />
+            <SectionTitle title={isEn ? 'Contact Information' : 'İletişim Bilgilerimiz'} />
 
             <div className="contact__info-list">
               <div className="contact__info-item card">

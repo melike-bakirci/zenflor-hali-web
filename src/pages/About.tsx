@@ -51,15 +51,15 @@ const About: React.FC = () => {
 
             <div className="about__story-stats">
               <div className="about__story-stat">
-                <span className="about__story-stat-value">20+</span>
+                <span className="about__story-stat-value">20</span>
                 <span className="about__story-stat-label">{t('home.statsYears')}</span>
               </div>
               <div className="about__story-stat">
-                <span className="about__story-stat-value">2.500+</span>
+                <span className="about__story-stat-value">10.000+</span>
                 <span className="about__story-stat-label">{t('home.statsProjects')}</span>
               </div>
               <div className="about__story-stat">
-                <span className="about__story-stat-value">80+</span>
+                <span className="about__story-stat-value">500+</span>
                 <span className="about__story-stat-label">{t('home.statsProducts')}</span>
               </div>
             </div>
@@ -69,9 +69,9 @@ const About: React.FC = () => {
             <div className="about__story-card about__story-card--main">
               <div className="about__story-card-pattern" aria-hidden="true" />
               <div className="about__story-card-content">
-                <span className="about__logo-big">K</span>
-                <span className="about__brand-text">KARO HALI</span>
-                <span className="about__year-text">EST. 2005</span>
+                <span className="about__logo-big">ZenFlor</span>
+                <span className="about__brand-text">Karo & Çim Halı Çözümleri</span>
+                <span className="about__year-text">2005'ten beri...</span>
               </div>
             </div>
             <div className="about__story-card about__story-card--accent">
@@ -97,14 +97,14 @@ const About: React.FC = () => {
               <div className="about__mv-icon">
                 <Target size={32} />
               </div>
-              <h2 className="about__mv-title">{isEn ? 'Mission' : 'Misyon'}</h2>
+              <h2 className="about__mv-title">{isEn ? 'Mission' : 'Misyonumuz'}</h2>
               <p className="about__mv-text">{t('about.missionText')}</p>
             </div>
             <div className="about__mv-card" id="vision-card">
               <div className="about__mv-icon about__mv-icon--vision">
                 <Eye size={32} />
               </div>
-              <h2 className="about__mv-title">{isEn ? 'Vision' : 'Vizyon'}</h2>
+              <h2 className="about__mv-title">{isEn ? 'Vision' : 'Vizyonumuz'}</h2>
               <p className="about__mv-text">{t('about.visionText')}</p>
             </div>
           </div>
