@@ -77,9 +77,7 @@ const CimHaliDetail: React.FC = () => {
                 {activeTab === 'description' && (
                   <div className="pd-tab-pane pd-desc-pane">
                     <p className="pd-desc-text">
-                      {isEn
-                        ? 'Detailed product description will be listed here.'
-                        : 'Detaylı ürün açıklaması bu alanda yer alacaktır.'}
+                      {description}
                     </p>
                   </div>
                 )}
@@ -113,7 +111,7 @@ const CimHaliDetail: React.FC = () => {
             )}
 
             {/* Metrekare & Fiyat Hesaplayıcı */}
-            <AreaCalculator unitPriceText={priceFeature?.value} />
+            <AreaCalculator unitPriceText={priceFeature?.value} productName={name} />
 
             {/* CTA */}
             <div className="pd-actions">
