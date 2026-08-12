@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Target, Eye, Leaf, Award, CheckCircle, Globe } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import Breadcrumb from '../components/ui/Breadcrumb';
+import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
 import usePageMeta from '../utils/usePageMeta';
 import './About.css';
 
@@ -146,6 +147,16 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Quote CTA Banner */}
+      <QuoteCtaBanner
+        title={isEn ? 'Get a Quote for Your Corporate Flooring Projects!' : 'Kurumsal Zemin Projeleriniz İçin Teklif Alın!'}
+        subtitle={
+          isEn
+            ? 'We offer the ideal flooring solution and quote for your commercial spaces with over 20 years of experience and expert team.'
+            : '20 yılı aşkın tecrübemiz ve uzman ekibimizle ticari alanlarınız için en doğru zemin kaplama çözümünü ve teklifini sunuyoruz.'
+        }
+      />
     </div>
   );
 };

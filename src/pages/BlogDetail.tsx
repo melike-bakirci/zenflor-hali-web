@@ -6,6 +6,7 @@ import Breadcrumb from '../components/ui/Breadcrumb';
 import { blogPosts } from '../data/blogPosts';
 import ReactMarkdown from 'react-markdown';
 import ShareButtons from '../components/ui/ShareButtons';
+import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
 import usePageMeta from '../utils/usePageMeta';
 import './BlogDetail.css';
 
@@ -106,6 +107,16 @@ const BlogDetail: React.FC = () => {
           </div>
         </article>
       </div>
+
+      {/* Quote CTA Banner */}
+      <QuoteCtaBanner
+        title={isEn ? 'Get a Quote for Your Project Related to This Topic!' : 'Okuduğunuz Konuyla İlgili Projeniz İçin Teklif Alın!'}
+        subtitle={
+          isEn
+            ? 'Request project-specific discounted price quotes for carpet tiles, acoustic flooring, and artificial grass models mentioned in our guide.'
+            : 'Rehberimizde incelediğiniz ürünler, akustik karo halılar ve çim halı modelleri için projenize özel indirimli fiyat teklifi isteyin.'
+        }
+      />
     </div>
   );
 };

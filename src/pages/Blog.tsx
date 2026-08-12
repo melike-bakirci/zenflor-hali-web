@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import SectionTitle from '../components/ui/SectionTitle';
 import BlogCard from '../components/ui/BlogCard';
 import Breadcrumb from '../components/ui/Breadcrumb';
+import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
 import { blogPosts } from '../data/blogPosts';
 import usePageMeta from '../utils/usePageMeta';
 import './Blog.css';
@@ -88,6 +89,16 @@ const Blog: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Quote CTA Banner */}
+      <QuoteCtaBanner
+        title={isEn ? 'Get a Free Quote for Your Flooring Project!' : 'Zemin Projeniz İçin Teklif Alın!'}
+        subtitle={
+          isEn
+            ? 'Get detailed information and quick price quotes for your carpet tile and artificial grass project application processes.'
+            : 'Karo halı ve çim halı seçimleriniz ile proje uygulama süreçleri hakkında detaylı bilgi ve hızlı fiyat teklifi alın.'
+        }
+      />
     </div>
   );
 };

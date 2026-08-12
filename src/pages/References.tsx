@@ -14,6 +14,7 @@ import ReferenceCard from '../components/ui/ReferenceCard';
 import ReferenceModal from '../components/ui/ReferenceModal';
 import ClientLogos from '../components/ui/ClientLogos';
 import Breadcrumb from '../components/ui/Breadcrumb';
+import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
 import { referenceProjects, type ReferenceProject } from '../data/referencesData';
 import usePageMeta from '../utils/usePageMeta';
 import './References.css';
@@ -102,48 +103,15 @@ const References: React.FC = () => {
         </div>
       </section>
 
-      {/* Corporate Call To Action Banner */}
-      <section className="references-cta">
-        <div className="container references-cta__inner">
-          <div className="references-cta__content">
-            <h2 className="references-cta__title">
-              {isEn ? 'Planning a Flooring Project for Your Office or Hotel?' : 'Ofisiniz veya Oteliniz İçin Zemin Projeniz mi Var?'}
-            </h2>
-            <p className="references-cta__desc">
-              {isEn
-                ? 'Get free on-site measurement, physical carpet tile samples, and expert quote for your corporate projects.'
-                : 'Kurumsal projeleriniz için ücretsiz yerinde keşif, fiziksel karo halı numune gönderimi ve özel teklif alın.'}
-            </p>
-            <div className="references-cta__features">
-              <div className="ref-cta-feat">
-                <CheckCircle size={16} />
-                <span>Ücretsiz Yerinde Keşif</span>
-              </div>
-              <div className="ref-cta-feat">
-                <CheckCircle size={16} />
-                <span>Fiziksel Numune Kataloğu</span>
-              </div>
-              <div className="ref-cta-feat">
-                <CheckCircle size={16} />
-                <span>Profesyonel Montaj Hizmeti</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="references-cta__actions">
-            <Link to="/iletisim" className="btn btn-primary btn-lg references-cta__btn">
-              <PhoneCall size={18} />
-              <span>{isEn ? 'Get Project Quote' : 'Proje Teklifi Alın'}</span>
-            </Link>
-            <a
-              href="tel:+905302708487"
-              className="btn btn-outline references-cta__phone"
-            >
-              <span>+90 530 270 84 87</span>
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* Quote CTA Banner */}
+      <QuoteCtaBanner
+        title={isEn ? 'Let Us Prepare a Quote for Your Project Too!' : 'Sizin Projeniz İçin De Teklif Hazırlayalım!'}
+        subtitle={
+          isEn
+            ? 'Benefit from free on-site measurement, sample catalogs, and competitive quotes for your space, just like our hundreds of completed corporate projects.'
+            : 'Tamamladığımız yüzlerce kurumsal zemin projesi gibi, alanınıza özel ücretsiz yerinde keşif, numune kataloğu ve en uygun fiyat teklifi fırsatından yararlanın.'
+        }
+      />
 
       {/* Lightbox / Modal */}
       <ReferenceModal

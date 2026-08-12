@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import Breadcrumb from '../components/ui/Breadcrumb';
+import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
 import usePageMeta from '../utils/usePageMeta';
 import './Contact.css';
 
@@ -223,6 +224,16 @@ const Contact: React.FC = () => {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
+
+      {/* Quote CTA Banner */}
+      <QuoteCtaBanner
+        title={isEn ? 'Get a Direct Quote for Your Project!' : 'Projeniz İçin Doğrudan Teklif Alın!'}
+        subtitle={
+          isEn
+            ? 'Reach out via our phone line or WhatsApp to speak directly with our team and receive an immediate quote.'
+            : 'Müşteri temsilcimizle görüşmek ve anında teklif almak için telefon hattımızdan veya WhatsApp üzerinden bize ulaşın.'
+        }
+      />
     </div>
   );
 };

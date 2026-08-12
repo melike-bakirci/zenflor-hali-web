@@ -12,6 +12,7 @@ import { karoHaliProducts } from '../data/karoHaliProducts';
 import { cimHaliProducts } from '../data/cimHaliProducts';
 import { blogPosts } from '../data/blogPosts';
 import { referenceProjects, type ReferenceProject } from '../data/referencesData';
+import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
 import usePageMeta from '../utils/usePageMeta';
 import './Home.css';
 
@@ -287,21 +288,14 @@ const Home: React.FC = () => {
       </section>
 
       {/* ===== CTA BOTTOM ===== */}
-      <section className="home__cta" id="home-cta">
-        <div className="container home__cta-inner">
-          <h2 className="home__cta-title font-display">
-            {isEn ? 'Get a Quote for Your Project' : 'Projeniz için Teklif Alın!'}
-          </h2>
-          <p className="home__cta-subtitle">
-            {isEn
-              ? 'Contact us with your project details and get an expert consultation.'
-              : 'Proje detaylarınızla birlikte iletişime geçin, uzman danışmanlık alın.'}
-          </p>
-          <Link to="/iletisim" className="btn btn-primary btn-lg" id="bottom-cta">
-            {t('nav.contact')} <ArrowRight size={18} />
-          </Link>
-        </div>
-      </section>
+      <QuoteCtaBanner
+        title={isEn ? 'Get a Quote for Your Project!' : 'Projeniz için Teklif Alın!'}
+        subtitle={
+          isEn
+            ? 'Contact us with your project details and get expert consultation and immediate quote.'
+            : 'Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın.'
+        }
+      />
 
       {/* Modal */}
       <ReferenceModal

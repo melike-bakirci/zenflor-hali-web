@@ -8,6 +8,7 @@ import ProductFilterBar from '../components/ui/ProductFilterBar';
 import ProductSidebarFilter from '../components/ui/ProductSidebarFilter';
 import { cimHaliProducts } from '../data/cimHaliProducts';
 import { filterAndSortProducts, type FilterState, type SortOption } from '../utils/productUtils';
+import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
 import usePageMeta from '../utils/usePageMeta';
 import './ProductList.css';
 
@@ -155,22 +156,15 @@ const CimHali: React.FC = () => {
         </div>
       </section>
 
-      {/* Info banner */}
-      <div className="product-list__info">
-        <div className="container product-list__info-inner">
-          <div className="product-list__info-text">
-            <h2>{isEn ? 'Need a Custom Solution?' : 'Özel Çözüm mü Arıyorsunuz?'}</h2>
-            <p>
-              {isEn
-                ? 'Contact us for sports fields, landscaping and large-area projects.'
-                : 'Spor alanı, peyzaj ve büyük alan projeleri için bizimle iletişime geçin.'}
-            </p>
-          </div>
-          <a href="/iletisim" className="btn btn-primary">
-            {t('products.infoRequest')}
-          </a>
-        </div>
-      </div>
+      {/* Quote CTA Banner */}
+      <QuoteCtaBanner
+        title={isEn ? 'Get a Quote for Your Artificial Grass Project!' : 'Çim Halı Projeniz İçin Teklif Alın!'}
+        subtitle={
+          isEn
+            ? 'Get custom artificial grass price quotes suited to your garden, balcony, terrace, landscape, or sports field dimensions.'
+            : 'Bahçe, balkon, teras, peyzaj ve spor sahası alanlarınız için ölçülerinize özel sentetik çim halı fiyat teklifi alın.'
+        }
+      />
     </div>
   );
 };

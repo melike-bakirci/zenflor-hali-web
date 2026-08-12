@@ -1,0 +1,100 @@
+/* ===== QUOTE CTA BANNER ===== */
+.quote-cta {
+  background: #f8f9fa;
+  padding: 3.75rem 0;
+  border-top: 1px solid #D3D3D3;
+  border-bottom: 1px solid #D3D3D3;
+  width: 100%;
+}
+
+.quote-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+}
+
+.quote-cta__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.quote-cta__subtitle {
+  font-size: 1rem;
+  color: #475569;
+  max-width: 620px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.quote-cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.quote-cta .btn-primary {
+  background-color: #66101F;
+  color: #ffffff;
+  border: 1px solid #66101F;
+  box-shadow: 0 4px 14px rgba(102, 16, 31, 0.25);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.quote-cta .btn-primary:hover {
+  background-color: #855A5C;
+  border-color: #855A5C;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(133, 90, 92, 0.35);
+}
+
+.quote-cta .btn-whatsapp {
+  background-color: #ffffff;
+  color: #128C7E;
+  border: 1.5px solid #25D366;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.quote-cta .btn-whatsapp:hover {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+@media (max-width: 768px) {
+  .quote-cta {
+    padding: 2.75rem 0;
+  }
+
+  .quote-cta__title {
+    font-size: 1.55rem;
+  }
+
+  .quote-cta__actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .quote-cta__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

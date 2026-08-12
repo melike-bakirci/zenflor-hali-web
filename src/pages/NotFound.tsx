@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Home as HomeIcon, Mail, ArrowRight, Grid, Trees, Compass } from 'lucide-react';
 import Breadcrumb from '../components/ui/Breadcrumb';
+import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
 import usePageMeta from '../utils/usePageMeta';
 import './NotFound.css';
 
@@ -106,6 +107,16 @@ const NotFound: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Quote CTA Banner */}
+      <QuoteCtaBanner
+        title={isEn ? 'Would You Like to Get a Quote for Your Project?' : 'Projeniz İçin Teklif Almak İster misiniz?'}
+        subtitle={
+          isEn
+            ? 'You may not have found the exact page, but you can contact us immediately to get the best carpet tile and artificial grass price quote for your project.'
+            : 'Aradığınız sayfayı bulamamış olabilirsiniz ama projeniz için en uygun karo halı ve çim halı fiyat teklifini anında almak için bize ulaşabilirsiniz.'
+        }
+      />
     </div>
   );
 };
