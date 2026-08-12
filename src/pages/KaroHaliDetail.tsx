@@ -8,6 +8,8 @@ import { karoHaliProducts } from '../data/karoHaliProducts';
 import type { Product } from '../types/product';
 import './ProductDetail.css';
 
+import ProductImageZoom from '../components/ui/ProductImageZoom';
+
 // Removed explicit PlaceholderBg to match cleaner architectural design
 
 const KaroHaliDetail: React.FC = () => {
@@ -45,22 +47,11 @@ const KaroHaliDetail: React.FC = () => {
         {/* Main */}
         <div className="pd-main">
           {/* Image */}
-          <div className="pd-image-wrap">
-            <img
-              src={product.image}
-              alt={name}
-              className="pd-image"
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).style.display = 'none';
-                (e.currentTarget.nextSibling as HTMLElement)?.removeAttribute('style');
-              }}
-            />
-            {product.featured && (
-              <span className="pd-badge badge-dark">
-                {isEn ? 'Featured' : 'Öne Çıkan'}
-              </span>
-            )}
-          </div>
+          <ProductImageZoom
+            src={product.image}
+            alt={name}
+            badge={product.featured ? (isEn ? 'Featured' : 'Öne Çıkan') : undefined}
+          />
 
           {/* Info */}
           <div className="pd-info">

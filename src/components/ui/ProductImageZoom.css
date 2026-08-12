@@ -1,0 +1,175 @@
+/* Main Image Wrap Trigger */
+.pd-zoom-trigger {
+  position: relative;
+  cursor: zoom-in;
+}
+
+.pd-zoom-trigger:hover .pd-image {
+  transform: scale(1.02);
+}
+
+.pd-zoom-trigger .pd-image {
+  transition: transform 300ms ease;
+}
+
+/* Minimalist Magnifier Button Overlay on Product Image */
+.pd-magnifier-btn {
+  position: absolute;
+  bottom: 0.875rem;
+  right: 0.875rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(17, 24, 39, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+
+.pd-magnifier-btn:hover {
+  background: #66101F;
+  border-color: #855A5C;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(102, 16, 31, 0.35);
+}
+
+/* === MINIMALIST FULLSCREEN BACKDROP === */
+.pd-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(10, 10, 10, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: pdFadeIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pdFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Minimalist Top Bar Controls */
+.pd-minimal-topbar {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.pd-minimal-title {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  pointer-events: auto;
+}
+
+.pd-minimal-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  pointer-events: auto;
+}
+
+.pd-minimal-btn,
+.pd-minimal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.pd-minimal-btn:hover,
+.pd-minimal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.pd-minimal-close:hover {
+  background: #66101F;
+  border-color: #855A5C;
+}
+
+/* Minimalist Viewport */
+.pd-minimal-viewport {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: crosshair;
+  user-select: none;
+}
+
+.pd-minimal-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: transform 100ms ease-out;
+  border-radius: 4px;
+}
+
+/* Minimalist Bottom Hint */
+.pd-minimal-bottom-hint {
+  position: absolute;
+  bottom: 1.25rem;
+  z-index: 10000;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .pd-minimal-topbar {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+  .pd-minimal-title {
+    font-size: 0.8125rem;
+  }
+  .pd-minimal-bottom-hint {
+    display: none;
+  }
+}
