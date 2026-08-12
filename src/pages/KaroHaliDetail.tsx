@@ -8,6 +8,7 @@ import { karoHaliProducts } from '../data/karoHaliProducts';
 import './ProductDetail.css';
 
 import ProductImageZoom from '../components/ui/ProductImageZoom';
+import AreaCalculator from '../components/ui/AreaCalculator';
 
 // Removed explicit PlaceholderBg to match cleaner architectural design
 
@@ -63,6 +64,9 @@ const KaroHaliDetail: React.FC = () => {
                 <span className="pd-price-value">{priceFeature.value}</span>
               </div>
             )}
+
+            {/* Metrekare & Fiyat Hesaplayıcı */}
+            <AreaCalculator unitPriceText={priceFeature?.value} />
 
             {/* Features */}
             <div className="pd-features">
