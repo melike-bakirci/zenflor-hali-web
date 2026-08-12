@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import { blogPosts } from '../data/blogPosts';
 import ReactMarkdown from 'react-markdown';
+import ShareButtons from '../components/ui/ShareButtons';
 import usePageMeta from '../utils/usePageMeta';
 import './BlogDetail.css';
 
@@ -81,6 +82,9 @@ const BlogDetail: React.FC = () => {
              <ReactMarkdown>{content}</ReactMarkdown>
           </div>
           
+          {/* Share Buttons */}
+          <ShareButtons title={title} type="blog" />
+
           <div className="blog-detail__footer">
             <Link to="/blog" className="btn btn-outline">
               <ArrowLeft size={16} /> {t('blog.backToBlog')}

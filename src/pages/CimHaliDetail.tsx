@@ -9,6 +9,7 @@ import './ProductDetail.css';
 
 import ProductImageZoom from '../components/ui/ProductImageZoom';
 import AreaCalculator from '../components/ui/AreaCalculator';
+import ShareButtons from '../components/ui/ShareButtons';
 import usePageMeta from '../utils/usePageMeta';
 
 const CimHaliDetail: React.FC = () => {
@@ -130,6 +131,9 @@ const CimHaliDetail: React.FC = () => {
                 {t('products.allProducts')}
               </Link>
             </div>
+
+            {/* Share & Copy Link */}
+            <ShareButtons title={name} type="product" />
           </div>
         </div>
 
