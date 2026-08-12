@@ -124,6 +124,7 @@
     "viewAll": "Tümünü Gör",
     "loading": "Yükleniyor...",
     "notFound": "Sayfa bulunamadı",
-    "backHome": "Ana Sayfaya Dön"
+    "backHome": "Ana Sayfaya Dön",
+    "backToTop": "En Yukarı Çık"
   }
 }

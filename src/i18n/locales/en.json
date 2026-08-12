@@ -124,6 +124,7 @@
     "viewAll": "View All",
     "loading": "Loading...",
     "notFound": "Page not found",
-    "backHome": "Back to Home"
+    "backHome": "Back to Home",
+    "backToTop": "Scroll to Top"
   }
 }
