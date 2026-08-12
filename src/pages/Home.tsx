@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, Phone } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ProductCard from '../components/ui/ProductCard';
 import BlogCard from '../components/ui/BlogCard';
@@ -27,6 +27,7 @@ const HERO_SLIDES = [
 const Home: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
+  const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
 
   usePageMeta({
@@ -121,70 +122,62 @@ const Home: React.FC = () => {
           />
           <div className="home__cat-grid">
             {/* Karo Halı */}
-            <div className="home__cat-card">
+            <div
+              className="home__cat-card"
+              onClick={() => navigate('/karo-hali')}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') navigate('/karo-hali'); }}
+            >
               <div className="home__cat-img-wrapper">
                 <img src="/images/cat-karo-office.png" alt={t('home.karoHaliCat')} className="home__cat-img" />
               </div>
-              <div className="home__cat-sub-gallery">
-                <div className="home__cat-sub-item">
-                  <img src="/images/hero-karo-hali.jpeg" alt="Ofis Karo Halı" className="home__cat-sub-img" />
-                  <span className="home__cat-sub-label">Ofis Zemin</span>
-                </div>
-                <div className="home__cat-sub-item">
-                  <img src="/images/cat-karo-pattern.png" alt="Akustik Karo Halı" className="home__cat-sub-img" />
-                  <span className="home__cat-sub-label">Akustik Karo</span>
-                </div>
-              </div>
               <div className="home__cat-content">
                 <h3 className="home__cat-title">{t('home.karoHaliCat')}</h3>
+                <p className="home__cat-subtitle">Ofis, Ticari & Akustik Zemin Çözümleri</p>
                 <div className="home__cat-desc">
                   <p>
-                    Geniş renk ve desen seçenekleri ile öne çıkan <strong>karo halı çeşitleri</strong>, konforlu bir yürüme alanı sunarken yüksek ses yutma özelliği ile zeminde akustik sağlar. Özellikle ticari mekan zemin kaplama çözümü olarak <strong>karo halı uygulaması</strong>; kalite, renk ve desen çeşitliliği açısından günümüzde en çok tercih edilen malzemedir.
-                  </p>
-                  <p>
-                    İhtiyacınıza uygun <strong>ofis halısı</strong> ya da <strong>büro halısı</strong> modellerinde; <span className="home__highlight">en ucuz karo halı</span> ve <span className="home__highlight">ucuz karo halı</span> seçeneklerinden premium serilere kadar geniş bir ürün yelpazesi sunuyoruz. Her bütçeye hitap eden <span className="home__highlight">karo halı fiyatları</span> ve <span className="home__highlight">en uygun karo halı</span> alternatiflerimizi incelemek, projelerinize özel avantajlardan yararlanmak için hemen iletişime geçin!
-                  </p>
-                  <p className="home__cat-phone">
-                    <a href="tel:+905302708487">+90 530 270 84 87</a>
+                    Geniş renk ve desen seçenekleri ile öne çıkan <strong>karo halı çeşitleri</strong>, yüksek ses yutma özelliği ile mekanlarda akustik konfor sağlar. Ofis ve büro projeleriniz için bütçenize en uygun <strong>karo halı fiyatları</strong> ve premium modüler koleksiyonlarımızı keşfedin.
                   </p>
                 </div>
-                <Link to="/karo-hali" className="home__cat-link">
-                  DEVAMI <ChevronRight size={16} />
-                </Link>
+                <div className="home__cat-footer">
+                  <span className="btn btn-primary home__cat-btn">
+                    {isEn ? 'Explore Products' : 'Ürünleri İncele'} <ChevronRight size={16} />
+                  </span>
+                  <a href="tel:+905302708487" className="home__cat-phone" onClick={(e) => e.stopPropagation()}>
+                    <Phone size={14} /> +90 530 270 84 87
+                  </a>
+                </div>
               </div>
             </div>
 
             {/* Çim Halı */}
-            <div className="home__cat-card">
+            <div
+              className="home__cat-card"
+              onClick={() => navigate('/cim-hali')}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') navigate('/cim-hali'); }}
+            >
               <div className="home__cat-img-wrapper">
                 <img src="/images/cat-cim-landscape.png" alt={t('home.cimHaliCat')} className="home__cat-img" />
               </div>
-              <div className="home__cat-sub-gallery">
-                <div className="home__cat-sub-item">
-                  <img src="/images/hero-cim-hali.jpeg" alt="Peyzaj & Bahçe Çimi" className="home__cat-sub-img" />
-                  <span className="home__cat-sub-label">Peyzaj & Bahçe</span>
-                </div>
-                <div className="home__cat-sub-item">
-                  <img src="/images/cat-cim-balcony.png" alt="Balkon & Teras Çimi" className="home__cat-sub-img" />
-                  <span className="home__cat-sub-label">Balkon & Teras</span>
-                </div>
-              </div>
               <div className="home__cat-content">
                 <h3 className="home__cat-title">{t('home.cimHaliCat')}</h3>
+                <p className="home__cat-subtitle">Bahçe, Balkon, Teras & Peyzaj Çözümleri</p>
                 <div className="home__cat-desc">
                   <p>
-                    Doğal görünüm, farklı hav boyları ve sık iplik dokusuyla öne çıkan <strong>çim halı çeşitleri</strong>, konforlu bir kullanım alanı sunarken dört mevsim canlı ve bakımlı bir zemin oluşturur. Özellikle bahçe, balkon, teras, peyzaj ve spor alanlarında <strong>çim halı uygulaması</strong>; dayanıklılık, estetik ve kullanım kolaylığı açısından günümüzde en çok tercih edilen zemin kaplama çözümüdür.
-                  </p>
-                  <p>
-                    İhtiyacınıza uygun peyzaj ya da <strong>dekoratif çim halı</strong> modellerinde; <span className="home__highlight">en ucuz çim halı</span> ve ekonomik seçeneklerden premium serilere kadar geniş bir ürün yelpazesi sunuyoruz. Her bütçeye hitap eden <span className="home__highlight">çim halı fiyatları</span> ve en uygun alternatiflerimizi incelemek, projelerinize özel avantajlardan yararlanmak için hemen iletişime geçin!
-                  </p>
-                  <p className="home__cat-phone">
-                    <a href="tel:+905302708487">+90 530 270 84 87</a>
+                    Doğal görünümü, sık iplik dokusu ve farklı hav boylarıyla öne çıkan <strong>çim halı çeşitleri</strong>, dört mevsim canlı ve bakımlı bir zemin sunar. Bahçe, balkon, teras ve peyzaj alanlarınıza özel <strong>dekoratif çim halı</strong> seçeneklerimiz için hemen bilgi alın.
                   </p>
                 </div>
-                <Link to="/cim-hali" className="home__cat-link">
-                  DEVAMI <ChevronRight size={16} />
-                </Link>
+                <div className="home__cat-footer">
+                  <span className="btn btn-primary home__cat-btn">
+                    {isEn ? 'Explore Products' : 'Ürünleri İncele'} <ChevronRight size={16} />
+                  </span>
+                  <a href="tel:+905302708487" className="home__cat-phone" onClick={(e) => e.stopPropagation()}>
+                    <Phone size={14} /> +90 530 270 84 87
+                  </a>
+                </div>
               </div>
             </div>
           </div>
