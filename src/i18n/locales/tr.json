@@ -126,5 +126,12 @@
     "notFound": "Sayfa bulunamadı",
     "backHome": "Ana Sayfaya Dön",
     "backToTop": "En Yukarı Çık"
+  },
+  "floatingContact": {
+    "whatsapp": "WhatsApp ile Yazın",
+    "whatsappShort": "WhatsApp",
+    "call": "Hemen Arayın",
+    "callShort": "Hemen Ara",
+    "defaultMessage": "Merhaba, ürünleriniz ve hizmetleriniz hakkında bilgi almak istiyorum."
   }
 }

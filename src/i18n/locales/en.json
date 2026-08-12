@@ -126,5 +126,12 @@
     "notFound": "Page not found",
     "backHome": "Back to Home",
     "backToTop": "Scroll to Top"
+  },
+  "floatingContact": {
+    "whatsapp": "Chat on WhatsApp",
+    "whatsappShort": "WhatsApp",
+    "call": "Call Us Now",
+    "callShort": "Call Now",
+    "defaultMessage": "Hello, I would like to get information about your products and services."
   }
 }

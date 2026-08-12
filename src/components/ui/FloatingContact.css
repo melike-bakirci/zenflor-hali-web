@@ -1,0 +1,60 @@
+.floating-contact {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.floating-contact__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+.floating-contact__btn--whatsapp {
+  background-color: #25D366;
+}
+
+.floating-contact__btn--whatsapp:hover {
+  background-color: #20ba5a;
+  transform: scale(1.05);
+}
+
+.floating-contact__btn--call {
+  background-color: #66101F;
+}
+
+.floating-contact__btn--call:hover {
+  background-color: #520d19;
+  transform: scale(1.05);
+}
+
+.floating-contact__btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 640px) {
+  .floating-contact {
+    bottom: 16px;
+    left: 16px;
+    gap: 10px;
+  }
+
+  .floating-contact__btn {
+    width: 44px;
+    height: 44px;
+  }
+}
