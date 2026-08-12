@@ -11,9 +11,7 @@ const Contact: React.FC = () => {
 
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
-    subject: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,18 +22,36 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSczeA1IJbeRlC25dY_Mdk83-UWVmHIqcF4aXux-h28dwogWAQ/formResponse';
+
+    const formBody = new URLSearchParams();
+    formBody.append('entry.2005620554', formData.name);
+    formBody.append('entry.1166974658', formData.phone);
+    formBody.append('entry.839337160', formData.message);
+
+    try {
+      await fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody.toString(),
+      });
+
       setIsSubmitting(false);
       setSuccess(true);
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      setFormData({ name: '', phone: '', message: '' });
 
       setTimeout(() => setSuccess(false), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error('Form gönderim hatası:', error);
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -142,23 +158,7 @@ const Contact: React.FC = () => {
                     />
                   </div>
                   <div className="contact__form-group">
-                    <label htmlFor="email" className="contact__label">{t('contact.emailLabel')} *</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="contact__input"
-                      placeholder={t('contact.emailPlaceholder')}
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="contact__form-row">
-                  <div className="contact__form-group">
-                    <label htmlFor="phone" className="contact__label">{t('contact.phoneLabel')}</label>
+                    <label htmlFor="phone" className="contact__label">{t('contact.phoneLabel')} *</label>
                     <input
                       type="tel"
                       id="phone"
@@ -167,18 +167,7 @@ const Contact: React.FC = () => {
                       placeholder={t('contact.phonePlaceholder')}
                       value={formData.phone}
                       onChange={handleChange}
-                    />
-                  </div>
-                  <div className="contact__form-group">
-                    <label htmlFor="subject" className="contact__label">{t('contact.subjectLabel')}</label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      className="contact__input"
-                      placeholder={t('contact.subjectPlaceholder')}
-                      value={formData.subject}
-                      onChange={handleChange}
+                      required
                     />
                   </div>
                 </div>
