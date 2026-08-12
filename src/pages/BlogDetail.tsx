@@ -82,6 +82,20 @@ const BlogDetail: React.FC = () => {
              <ReactMarkdown>{content}</ReactMarkdown>
           </div>
           
+          {/* Tags */}
+          {post.tags && post.tags.length > 0 && (
+            <div className="blog-detail__tags">
+              <span className="blog-detail__tags-label">{isEn ? 'Tags:' : 'Etiketler:'}</span>
+              <div className="blog-detail__tags-list">
+                {post.tags.map((tag) => (
+                  <span key={tag} className="blog-detail__tag">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Share Buttons */}
           <ShareButtons title={title} type="blog" />
 

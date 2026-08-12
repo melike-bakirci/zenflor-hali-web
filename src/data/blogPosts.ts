@@ -13,6 +13,8 @@ export const blogPosts: BlogPost[] = [
     content: `
 Karo halı, ofis zemin kaplaması söz konusu olduğunda en esnek ve pratik çözümlerden biridir. Ancak doğru ürünü seçmek için birkaç temel faktörü göz önünde bulundurmak gerekir.
 
+![Karo Halı Uygulaması](/images/blog-karo-detail.png)
+
 ## 1. Trafik Yoğunluğunu Belirleyin
 
 Ofisinizdeki koridorlar, toplantı odaları ve giriş alanları farklı trafik yüklerine maruz kalır. Yoğun trafik alanları için twisted pile veya loop pile ürünler tercih edilmelidir.
@@ -35,6 +37,8 @@ Karo halının altına uygulanacak alt taban (underlayment), akustik ve termal k
     `,
     contentEn: `
 Carpet tiles are one of the most flexible and practical solutions when it comes to office flooring. However, you need to consider a few basic factors to choose the right product.
+
+![Carpet Tile Installation](/images/blog-karo-detail.png)
 
 ## 1. Determine Traffic Density
 
@@ -60,7 +64,7 @@ The underlayment to be applied under the carpet tile is of critical importance i
     date: '2024-03-15',
     category: 'Karo Halı',
     categoryEn: 'Carpet Tiles',
-    image: '/images/blog-1.jpg',
+    image: '/images/blog-1.png',
     readTime: 5,
     tags: ['Karo Halı', 'Ofis', 'Seçim Rehberi'],
   },
@@ -75,6 +79,8 @@ The underlayment to be applied under the carpet tile is of critical importance i
       'Seasonal maintenance tips to keep your synthetic grass looking like new for years.',
     content: `
 Sentetik çim, gerçek çime göre çok daha az bakım gerektirir. Ancak uzun ömürlü ve estetik görünümünü korumak için bazı rutin işlemler şarttır.
+
+![Sentetik Çim Detayı](/images/blog-cim-detail.png)
 
 ## İlkbahar Bakımı
 
@@ -100,6 +106,8 @@ Kar birikintilerini plastik kürekle temizleyin; metal kürek liflere zarar vere
     `,
     contentEn: `
 Synthetic grass requires much less maintenance than real grass. However, some routine procedures are necessary to maintain its long-lasting and aesthetic appearance.
+
+![Synthetic Grass Detail](/images/blog-cim-detail.png)
 
 ## Spring Maintenance
 
@@ -127,15 +135,15 @@ Clean snow accumulation with a plastic shovel; metal shovels can damage fibers. 
     date: '2024-04-22',
     category: 'Çim Halı',
     categoryEn: 'Artificial Grass',
-    image: '/images/blog-2.jpg',
+    image: '/images/blog-2.png',
     readTime: 6,
     tags: ['Çim Halı', 'Bakım', 'Mevsimsel'],
   },
   {
     id: 'bp-003',
     slug: 'zemin-kaplama-trendleri-2024',
-    title: '2024 Zemin Kaplama Trendleri: Kurumsal Mekanlarda Yeni Dalga',
-    titleEn: '2024 Flooring Trends: New Wave in Corporate Spaces',
+    title: '2026 Zemin Kaplama Trendleri: Kurumsal Mekanlarda Yeni Dalga',
+    titleEn: '2026 Flooring Trends: New Wave in Corporate Spaces',
     excerpt:
       'Bu yıl kurumsal mekanlarda öne çıkan zemin kaplama trendlerini ve renk paletlerini inceliyoruz.',
     excerptEn:
@@ -188,9 +196,9 @@ The replaceability of carpet tiles provides a great advantage in hybrid working 
     `,
     author: 'Karo Halı Editörü',
     date: '2024-05-10',
-    category: 'Sektör Haberleri',
-    categoryEn: 'Industry News',
-    image: '/images/blog-3.jpg',
+    category: 'Karo Halı',
+    categoryEn: 'Carpet Tiles',
+    image: '/images/blog-3.png',
     readTime: 7,
     tags: ['Trend', '2024', 'Kurumsal', 'Tasarım'],
   },

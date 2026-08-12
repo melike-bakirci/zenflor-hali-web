@@ -50,8 +50,18 @@
 
 .blog-card__category {
   position: absolute;
-  top: 0.625rem;
-  left: 0.625rem;
+  top: 0.75rem;
+  left: 0.75rem;
+  background-color: #66101F;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.725rem;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: none;
+  z-index: 2;
 }
 
 .blog-card__body {

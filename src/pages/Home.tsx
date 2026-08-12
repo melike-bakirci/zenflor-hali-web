@@ -123,7 +123,17 @@ const Home: React.FC = () => {
             {/* Karo Halı */}
             <div className="home__cat-card">
               <div className="home__cat-img-wrapper">
-                <img src="/images/hero-karo-hali.jpeg" alt={t('home.karoHaliCat')} className="home__cat-img" />
+                <img src="/images/cat-karo-office.png" alt={t('home.karoHaliCat')} className="home__cat-img" />
+              </div>
+              <div className="home__cat-sub-gallery">
+                <div className="home__cat-sub-item">
+                  <img src="/images/hero-karo-hali.jpeg" alt="Ofis Karo Halı" className="home__cat-sub-img" />
+                  <span className="home__cat-sub-label">Ofis Zemin</span>
+                </div>
+                <div className="home__cat-sub-item">
+                  <img src="/images/cat-karo-pattern.png" alt="Akustik Karo Halı" className="home__cat-sub-img" />
+                  <span className="home__cat-sub-label">Akustik Karo</span>
+                </div>
               </div>
               <div className="home__cat-content">
                 <h3 className="home__cat-title">{t('home.karoHaliCat')}</h3>
@@ -147,7 +157,17 @@ const Home: React.FC = () => {
             {/* Çim Halı */}
             <div className="home__cat-card">
               <div className="home__cat-img-wrapper">
-                <img src="/images/hero-cim-hali.jpeg" alt={t('home.cimHaliCat')} className="home__cat-img" />
+                <img src="/images/cat-cim-landscape.png" alt={t('home.cimHaliCat')} className="home__cat-img" />
+              </div>
+              <div className="home__cat-sub-gallery">
+                <div className="home__cat-sub-item">
+                  <img src="/images/hero-cim-hali.jpeg" alt="Peyzaj & Bahçe Çimi" className="home__cat-sub-img" />
+                  <span className="home__cat-sub-label">Peyzaj & Bahçe</span>
+                </div>
+                <div className="home__cat-sub-item">
+                  <img src="/images/cat-cim-balcony.png" alt="Balkon & Teras Çimi" className="home__cat-sub-img" />
+                  <span className="home__cat-sub-label">Balkon & Teras</span>
+                </div>
               </div>
               <div className="home__cat-content">
                 <h3 className="home__cat-title">{t('home.cimHaliCat')}</h3>
