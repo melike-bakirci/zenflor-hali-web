@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, Mail } from 'lucide-react';
@@ -10,12 +10,12 @@ import './ProductDetail.css';
 import ProductImageZoom from '../components/ui/ProductImageZoom';
 import AreaCalculator from '../components/ui/AreaCalculator';
 
-// Removed explicit PlaceholderBg to match cleaner architectural design
-
 const KaroHaliDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
+
+  const [activeTab, setActiveTab] = useState<'description' | 'features'>('description');
 
   const product = karoHaliProducts.find((p) => p.slug === slug);
   if (!product) return <Navigate to="/karo-hali" replace />;
@@ -46,12 +46,59 @@ const KaroHaliDetail: React.FC = () => {
 
         {/* Main */}
         <div className="pd-main">
-          {/* Image */}
-          <ProductImageZoom
-            src={product.image}
-            alt={name}
-            badge={product.featured ? (isEn ? 'Featured' : 'Öne Çıkan') : undefined}
-          />
+          {/* Left Column: Image & Tabbed Details */}
+          <div className="pd-media-col">
+            <ProductImageZoom
+              src={product.image}
+              alt={name}
+              badge={product.featured ? (isEn ? 'Featured' : 'Öne Çıkan') : undefined}
+            />
+
+            {/* Tabbed Section: Açıklama & Özellikler */}
+            <div className="pd-tabs-container">
+              <div className="pd-tabs-header">
+                <button
+                  type="button"
+                  className={`pd-tab-btn ${activeTab === 'description' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('description')}
+                >
+                  {isEn ? 'Description' : 'Açıklama'}
+                </button>
+                <button
+                  type="button"
+                  className={`pd-tab-btn ${activeTab === 'features' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('features')}
+                >
+                  {t('products.features')}
+                </button>
+              </div>
+
+              <div className="pd-tabs-content">
+                {activeTab === 'description' && (
+                  <div className="pd-tab-pane pd-desc-pane">
+                    <p className="pd-desc-text">
+                      {isEn
+                        ? 'Detailed product description will be listed here.'
+                        : 'Detaylı ürün açıklaması bu alanda yer alacaktır.'}
+                    </p>
+                  </div>
+                )}
+
+                {activeTab === 'features' && (
+                  <div className="pd-tab-pane pd-features-pane">
+                    <div className="pd-features-grid">
+                      {features.map((f) => (
+                        <div key={f.label} className="pd-feature">
+                          <span className="pd-feature-label">{f.label}</span>
+                          <span className="pd-feature-value">{f.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
 
           {/* Info */}
           <div className="pd-info">
@@ -67,19 +114,6 @@ const KaroHaliDetail: React.FC = () => {
 
             {/* Metrekare & Fiyat Hesaplayıcı */}
             <AreaCalculator unitPriceText={priceFeature?.value} />
-
-            {/* Features */}
-            <div className="pd-features">
-              <h2 className="pd-features-title">{t('products.features')}</h2>
-              <div className="pd-features-grid">
-                {features.map((f) => (
-                  <div key={f.label} className="pd-feature">
-                    <span className="pd-feature-label">{f.label}</span>
-                    <span className="pd-feature-value">{f.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             {/* CTA */}
             <div className="pd-actions">

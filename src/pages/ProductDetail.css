@@ -98,6 +98,70 @@
   letter-spacing: -0.02em;
 }
 
+/* Tabs Section */
+.pd-tabs-container {
+  margin: 1.5rem 0 2rem;
+}
+
+.pd-tabs-header {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 1.25rem;
+}
+
+.pd-tab-btn {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  position: relative;
+  transition: all 200ms ease;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.pd-tab-btn:hover {
+  color: #66101F;
+}
+
+.pd-tab-btn.active {
+  color: #66101F;
+  border-bottom-color: #66101F;
+}
+
+.pd-tabs-content {
+  min-height: 120px;
+}
+
+.pd-tab-pane {
+  animation: fadeIn 200ms ease-in-out;
+}
+
+.pd-desc-text {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.75;
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Features */
 .pd-features {
   margin-bottom: 2rem;
