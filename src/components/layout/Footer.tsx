@@ -60,19 +60,19 @@ const Footer: React.FC = () => {
               Karo halı ve çim halı alanında 20 yılı aşkın deneyimimizle kurumsal ve bireysel projelere en kaliteli zemin çözümlerini sunuyoruz.
             </p>
             <div className="footer__socials">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="footer__social-link" title="Instagram">
+              <a href="https://www.instagram.com/zenflormarket/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="footer__social-link" title="Instagram">
                 <InstagramIcon />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer__social-link" title="LinkedIn">
+              <a href="http://linkedin.com/company/zenflor" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer__social-link" title="LinkedIn">
                 <LinkedinIcon />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="footer__social-link" title="Facebook">
+              <a href="https://www.facebook.com/people/ZenFlor/61592694338862/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="footer__social-link" title="Facebook">
                 <FacebookIcon />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="footer__social-link" title="YouTube">
+              <a href="https://www.youtube.com/@zenflormarket" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="footer__social-link" title="YouTube">
                 <YoutubeIcon />
               </a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="footer__social-link" title="TikTok">
+              <a href="https://www.tiktok.com/@zenflormarket" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="footer__social-link" title="TikTok">
                 <TiktokIcon />
               </a>
             </div>
