@@ -134,15 +134,18 @@ const Contact: React.FC = () => {
 
           {/* Form */}
           <div className="contact__form-wrapper card">
-            <h2 className="contact__form-title font-display">{isEn ? 'Send us a Message' : 'Bize Mesaj Gönderin'}</h2>
-
             {success ? (
               <div className="contact__success">
                 <div className="contact__success-icon">✓</div>
-                <p>{t('contact.successMsg')}</p>
+                <h2 className="contact__form-title font-display" style={{ marginBottom: 0 }}>
+                  {isEn ? 'Message Sent!' : 'Mesajınız Alındı!'}
+                </h2>
+                <p className="contact__success-text">{t('contact.successMsg')}</p>
               </div>
             ) : (
-              <form className="contact__form" onSubmit={handleSubmit}>
+              <>
+                <h2 className="contact__form-title font-display">{isEn ? 'Send us a Message' : 'Bize Mesaj Gönderin'}</h2>
+                <form className="contact__form" onSubmit={handleSubmit}>
                 <div className="contact__form-row">
                   <div className="contact__form-group">
                     <label htmlFor="name" className="contact__label">{t('contact.nameLabel')} *</label>
@@ -192,6 +195,7 @@ const Contact: React.FC = () => {
                   )}
                 </button>
               </form>
+              </>
             )}
           </div>
 
@@ -202,7 +206,7 @@ const Contact: React.FC = () => {
       <section className="contact__map">
         <iframe
           title="Zenflor Google Maps Konumu"
-          src="https://maps.google.com/maps?q=Leman+Sk.+No:4,+Sancaktepe/İstanbul&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          src="https://maps.google.com/maps?q=Leman+Sk.+No:4,+Sancaktepe/İstanbul&t=&z=18&ie=UTF8&iwloc=&output=embed"
           width="100%"
           height="100%"
           style={{ border: 0 }}
