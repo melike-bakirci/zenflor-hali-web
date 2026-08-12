@@ -5,8 +5,9 @@ import ProductCard from '../components/ui/ProductCard';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import Pagination from '../components/ui/Pagination';
 import ProductFilterBar from '../components/ui/ProductFilterBar';
+import ProductSidebarFilter from '../components/ui/ProductSidebarFilter';
 import { karoHaliProducts } from '../data/karoHaliProducts';
-import { filterAndSortProducts, type SortOption } from '../utils/productUtils';
+import { filterAndSortProducts, type FilterState, type SortOption } from '../utils/productUtils';
 import './ProductList.css';
 
 const ITEMS_PER_PAGE = 12;
@@ -15,24 +16,50 @@ const KaroHali: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [sortOption, setSortOption] = useState<SortOption>('price-asc');
+
+  const [filters, setFilters] = useState<FilterState>({
+    searchQuery: '',
+    sortOption: 'price-asc',
+    selectedYarnTypes: [],
+    selectedColors: [],
+    selectedDimensions: [],
+    selectedBacking: [],
+    priceRange: [0, Infinity],
+  });
 
   const filteredProducts = useMemo(() => {
-    return filterAndSortProducts(karoHaliProducts, searchQuery, sortOption, isEn);
-  }, [searchQuery, sortOption, isEn]);
+    return filterAndSortProducts(karoHaliProducts, filters, isEn);
+  }, [filters, isEn]);
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE) || 1;
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const currentProducts = filteredProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   const handleSearchChange = (query: string) => {
-    setSearchQuery(query);
+    setFilters((prev) => ({ ...prev, searchQuery: query }));
     setCurrentPage(1);
   };
 
   const handleSortChange = (sort: SortOption) => {
-    setSortOption(sort);
+    setFilters((prev) => ({ ...prev, sortOption: sort }));
+    setCurrentPage(1);
+  };
+
+  const handleFilterChange = (newFilters: FilterState) => {
+    setFilters(newFilters);
+    setCurrentPage(1);
+  };
+
+  const handleResetFilters = () => {
+    setFilters({
+      searchQuery: '',
+      sortOption: 'price-asc',
+      selectedYarnTypes: [],
+      selectedColors: [],
+      selectedDimensions: [],
+      selectedBacking: [],
+      priceRange: [0, Infinity],
+    });
     setCurrentPage(1);
   };
 
@@ -66,46 +93,56 @@ const KaroHali: React.FC = () => {
             subtitle={isEn ? `${karoHaliProducts.length} different products` : `${karoHaliProducts.length} farklı ürün`}
           />
 
-          <ProductFilterBar
-            searchQuery={searchQuery}
-            onSearchChange={handleSearchChange}
-            sortOption={sortOption}
-            onSortChange={handleSortChange}
-            totalCount={filteredProducts.length}
-          />
+          <div className="product-page-layout">
+            {/* Left Sidebar Filter Bar */}
+            <ProductSidebarFilter
+              products={karoHaliProducts}
+              filters={filters}
+              onFilterChange={handleFilterChange}
+              onResetFilters={handleResetFilters}
+              isEn={isEn}
+            />
 
-          {filteredProducts.length > 0 ? (
-            <>
-              <div className="grid-4">
-                {currentProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} basePath="/karo-hali" />
-                ))}
-              </div>
+            {/* Main Product Content Area */}
+            <div className="product-page-main">
+              <ProductFilterBar
+                searchQuery={filters.searchQuery}
+                onSearchChange={handleSearchChange}
+                sortOption={filters.sortOption}
+                onSortChange={handleSortChange}
+                totalCount={filteredProducts.length}
+              />
 
-              {totalPages > 1 && (
-                <Pagination
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  onPageChange={(page) => setCurrentPage(page)}
-                />
+              {filteredProducts.length > 0 ? (
+                <>
+                  <div className="grid-4">
+                    {currentProducts.map((product) => (
+                      <ProductCard key={product.id} product={product} basePath="/karo-hali" />
+                    ))}
+                  </div>
+
+                  {totalPages > 1 && (
+                    <Pagination
+                      currentPage={currentPage}
+                      totalPages={totalPages}
+                      onPageChange={(page) => setCurrentPage(page)}
+                    />
+                  )}
+                </>
+              ) : (
+                <div className="no-products-found">
+                  <p>{t('products.noProductsFound')}</p>
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={handleResetFilters}
+                  >
+                    {t('products.clearSearch')}
+                  </button>
+                </div>
               )}
-            </>
-          ) : (
-            <div className="no-products-found">
-              <p>{t('products.noProductsFound')}</p>
-              <button
-                type="button"
-                className="btn btn-secondary"
-                onClick={() => {
-                  setSearchQuery('');
-                  setSortOption('price-asc');
-                  setCurrentPage(1);
-                }}
-              >
-                {t('products.clearSearch')}
-              </button>
             </div>
-          )}
+          </div>
         </div>
       </section>
 

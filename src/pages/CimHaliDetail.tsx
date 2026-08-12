@@ -5,7 +5,6 @@ import { ArrowLeft, Mail } from 'lucide-react';
 import ProductCard from '../components/ui/ProductCard';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import { cimHaliProducts } from '../data/cimHaliProducts';
-import type { Product } from '../types/product';
 import './ProductDetail.css';
 
 import ProductImageZoom from '../components/ui/ProductImageZoom';

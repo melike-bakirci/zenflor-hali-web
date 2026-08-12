@@ -17,7 +17,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -31,7 +31,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -62,7 +62,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -76,7 +76,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -107,7 +107,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -121,7 +121,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -152,7 +152,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -166,7 +166,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -199,7 +199,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '4 mm' },
       { label: 'Toplam Yükseklik', value: '6 mm' },
@@ -213,7 +213,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '4 mm' },
       { label: 'Total Height', value: '6 mm' },
@@ -244,7 +244,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '4 mm' },
       { label: 'Toplam Yükseklik', value: '6 mm' },
@@ -258,7 +258,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '4 mm' },
       { label: 'Total Height', value: '6 mm' },
@@ -291,7 +291,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -305,7 +305,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -336,7 +336,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -350,7 +350,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -383,7 +383,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3 mm' },
       { label: 'Toplam Yükseklik', value: '5 mm' },
@@ -396,7 +396,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3 mm' },
       { label: 'Total Height', value: '5 mm' },
@@ -426,7 +426,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3 mm' },
       { label: 'Toplam Yükseklik', value: '5 mm' },
@@ -439,7 +439,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3 mm' },
       { label: 'Total Height', value: '5 mm' },
@@ -471,7 +471,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 PP' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -484,7 +484,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Plain Loop' },
-      { label: 'Yarn Type', value: '100% PP' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -514,7 +514,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 PP' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -527,7 +527,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Plain Loop' },
-      { label: 'Yarn Type', value: '100% PP' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -557,7 +557,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 PP' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -570,7 +570,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Plain Loop' },
-      { label: 'Yarn Type', value: '100% PP' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -600,7 +600,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 PP' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -613,7 +613,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Plain Loop' },
-      { label: 'Yarn Type', value: '100% PP' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -645,7 +645,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/12 İnç' },
       { label: 'Hav Yüksekliği', value: '4 mm' },
       { label: 'Toplam Yükseklik', value: '7.5 mm' },
@@ -659,7 +659,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/12 Inch' },
       { label: 'Pile Height', value: '4 mm' },
       { label: 'Total Height', value: '7.5 mm' },
@@ -690,7 +690,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/12 İnç' },
       { label: 'Hav Yüksekliği', value: '4 mm' },
       { label: 'Toplam Yükseklik', value: '7.5 mm' },
@@ -704,7 +704,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/12 Inch' },
       { label: 'Pile Height', value: '4 mm' },
       { label: 'Total Height', value: '7.5 mm' },
@@ -735,7 +735,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/12 İnç' },
       { label: 'Hav Yüksekliği', value: '4 mm' },
       { label: 'Toplam Yükseklik', value: '7.5 mm' },
@@ -749,7 +749,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/12 Inch' },
       { label: 'Pile Height', value: '4 mm' },
       { label: 'Total Height', value: '7.5 mm' },
@@ -780,7 +780,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/12 İnç' },
       { label: 'Hav Yüksekliği', value: '4 mm' },
       { label: 'Toplam Yükseklik', value: '7.5 mm' },
@@ -794,7 +794,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/12 Inch' },
       { label: 'Pile Height', value: '4 mm' },
       { label: 'Total Height', value: '7.5 mm' },
@@ -827,7 +827,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/12 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -841,7 +841,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/12 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -872,7 +872,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/12 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -886,7 +886,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/12 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -917,7 +917,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Tufting Düz İlmekli' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen Fiber' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/12 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.5 mm' },
@@ -931,7 +931,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Tufted Plain Loop' },
-      { label: 'Yarn Type', value: '100% Polypropylene Fiber' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/12 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.5 mm' },
@@ -964,7 +964,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.0 mm' },
@@ -979,7 +979,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.0 mm' },
@@ -1011,7 +1011,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.0 mm' },
@@ -1026,7 +1026,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.0 mm' },
@@ -1060,7 +1060,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1075,7 +1075,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1107,7 +1107,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1122,7 +1122,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1156,7 +1156,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Çoklu Rulo' },
-      { label: 'İplik Cinsi', value: '%100 PP' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.0 mm' },
@@ -1171,7 +1171,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Multi-Roll' },
-      { label: 'Yarn Type', value: '100% PP' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.0 mm' },
@@ -1203,7 +1203,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Çoklu Rulo' },
-      { label: 'İplik Cinsi', value: '%100 PP' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.0 mm' },
@@ -1218,7 +1218,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Multi-Roll' },
-      { label: 'Yarn Type', value: '100% PP' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.0 mm' },
@@ -1250,7 +1250,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Çoklu Rulo' },
-      { label: 'İplik Cinsi', value: '%100 PP' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.0 mm' },
@@ -1265,7 +1265,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Multi-Roll' },
-      { label: 'Yarn Type', value: '100% PP' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.0 mm' },
@@ -1297,7 +1297,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Çoklu Rulo' },
-      { label: 'İplik Cinsi', value: '%100 PP' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.0 mm' },
@@ -1312,7 +1312,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Multi-Roll' },
-      { label: 'Yarn Type', value: '100% PP' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.0 mm' },
@@ -1344,7 +1344,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Çoklu Rulo' },
-      { label: 'İplik Cinsi', value: '%100 PP' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.0 mm' },
@@ -1359,7 +1359,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Multi-Roll' },
-      { label: 'Yarn Type', value: '100% PP' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.0 mm' },
@@ -1393,7 +1393,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1408,7 +1408,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1440,7 +1440,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1455,7 +1455,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1487,7 +1487,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1502,7 +1502,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1534,7 +1534,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1549,7 +1549,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1581,7 +1581,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1596,7 +1596,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1630,7 +1630,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1645,7 +1645,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1677,7 +1677,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1692,7 +1692,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1724,7 +1724,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1739,7 +1739,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1771,7 +1771,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1786,7 +1786,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1820,7 +1820,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '6.0 mm' },
@@ -1835,7 +1835,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '6.0 mm' },
@@ -1869,7 +1869,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Çözeltide Boyanmış Naylon' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.4 mm' },
@@ -1884,7 +1884,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Solution Dyed Nylon' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.4 mm' },
@@ -1918,7 +1918,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 PA SDN' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.2 mm' },
@@ -1933,7 +1933,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% PA SDN' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.2 mm' },
@@ -1965,7 +1965,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 PA SDN' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.2 mm' },
@@ -1980,7 +1980,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% PA SDN' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.2 mm' },
@@ -2012,7 +2012,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 PA SDN' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.5 mm' },
       { label: 'Toplam Yükseklik', value: '5.2 mm' },
@@ -2027,7 +2027,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% PA SDN' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.5 mm' },
       { label: 'Total Height', value: '5.2 mm' },
@@ -2061,7 +2061,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.8 mm' },
@@ -2076,7 +2076,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Twisted Loop Pile' },
-      { label: 'Yarn Type', value: '100% Nylon PA-6' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.8 mm' },
@@ -2108,7 +2108,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.8 mm' },
@@ -2123,7 +2123,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Twisted Loop Pile' },
-      { label: 'Yarn Type', value: '100% Nylon PA-6' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.8 mm' },
@@ -2155,7 +2155,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.8 mm' },
@@ -2170,7 +2170,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Twisted Loop Pile' },
-      { label: 'Yarn Type', value: '100% Nylon PA-6' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.8 mm' },
@@ -2202,7 +2202,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.8 mm' },
@@ -2217,7 +2217,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Twisted Loop Pile' },
-      { label: 'Yarn Type', value: '100% Nylon PA-6' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.8 mm' },
@@ -2249,7 +2249,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.8 mm' },
@@ -2264,7 +2264,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Twisted Loop Pile' },
-      { label: 'Yarn Type', value: '100% Nylon PA-6' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.8 mm' },
@@ -2296,7 +2296,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.8 mm' },
@@ -2311,7 +2311,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Twisted Loop Pile' },
-      { label: 'Yarn Type', value: '100% Nylon PA-6' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.8 mm' },
@@ -2343,7 +2343,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.8 mm' },
@@ -2358,7 +2358,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Twisted Loop Pile' },
-      { label: 'Yarn Type', value: '100% Nylon PA-6' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.8 mm' },
@@ -2390,7 +2390,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.8 mm' },
@@ -2405,7 +2405,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Twisted Loop Pile' },
-      { label: 'Yarn Type', value: '100% Nylon PA-6' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.8 mm' },
@@ -2437,7 +2437,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.8 mm' },
@@ -2452,7 +2452,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Twisted Loop Pile' },
-      { label: 'Yarn Type', value: '100% Nylon PA-6' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.8 mm' },
@@ -2484,7 +2484,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Bükümlü Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Naylon PA-6' },
+      { label: 'İplik Cinsi', value: '%100 Polyamide / Naylon (PA)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.0 mm' },
       { label: 'Toplam Yükseklik', value: '5.8 mm' },
@@ -2499,7 +2499,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Twisted Loop Pile' },
-      { label: 'Yarn Type', value: '100% Nylon PA-6' },
+      { label: 'Yarn Type', value: '100% Polyamide / Nylon (PA)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.0 mm' },
       { label: 'Total Height', value: '5.8 mm' },
@@ -2533,7 +2533,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.2 mm' },
       { label: 'Toplam Yükseklik', value: '5.4 mm' },
@@ -2548,7 +2548,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.2 mm' },
       { label: 'Total Height', value: '5.4 mm' },
@@ -2580,7 +2580,7 @@ export const karoHaliProducts: Product[] = [
     image: '/images/hero-karo-hali.jpeg',
     features: [
       { label: 'Yapı', value: 'Dokuma Bukle Hav' },
-      { label: 'İplik Cinsi', value: '%100 Polipropilen' },
+      { label: 'İplik Cinsi', value: '%100 Polipropilen (PP)' },
       { label: 'İlmek Aralığı', value: '1/10 İnç' },
       { label: 'Hav Yüksekliği', value: '3.2 mm' },
       { label: 'Toplam Yükseklik', value: '5.4 mm' },
@@ -2595,7 +2595,7 @@ export const karoHaliProducts: Product[] = [
     ],
     featuresEn: [
       { label: 'Structure', value: 'Woven Loop Pile' },
-      { label: 'Yarn Type', value: '100% Polypropylene' },
+      { label: 'Yarn Type', value: '100% Polypropylene (PP)' },
       { label: 'Gauge', value: '1/10 Inch' },
       { label: 'Pile Height', value: '3.2 mm' },
       { label: 'Total Height', value: '5.4 mm' },

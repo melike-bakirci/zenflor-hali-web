@@ -1,3 +1,46 @@
+/* Layout for Page with Left Sidebar Filter */
+.product-page-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.product-page-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Adjust product grid inside main layout */
+.product-page-main .grid-4 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1200px) {
+  .product-page-main .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .product-page-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .product-page-main .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .product-page-main .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
 .product-list__info {
   background: #f9fafb;
   border-top: 1px solid #D3D3D3;
