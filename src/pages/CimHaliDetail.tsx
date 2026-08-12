@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, CheckCircle, Tag, Mail } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Mail } from 'lucide-react';
 import ProductCard from '../components/ui/ProductCard';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import { cimHaliProducts } from '../data/cimHaliProducts';
@@ -26,7 +26,7 @@ const CimHaliDetail: React.FC = () => {
   const name = isEn ? product.nameEn : product.name;
   const description = isEn ? product.descriptionEn : product.description;
   const features = isEn ? product.featuresEn : product.features;
-  const tags = isEn ? product.tagsEn : product.tags;
+  const priceFeature = features.find((f) => f.label === 'Fiyat' || f.label === 'Price');
 
   const others = cimHaliProducts.filter((p) => p.slug !== slug).slice(0, 4);
 
@@ -70,16 +70,15 @@ const CimHaliDetail: React.FC = () => {
 
           {/* Info */}
           <div className="pd-info">
-            <div className="pd-tags">
-              {tags.map((tag) => (
-                <span key={tag} className="badge badge-secondary">
-                  <Tag size={11} /> {tag}
-                </span>
-              ))}
-            </div>
-
             <h1 className="pd-name font-display">{name}</h1>
             <p className="pd-desc">{description}</p>
+
+            {priceFeature && (
+              <div className="pd-price-box">
+                <span className="pd-price-label">{isEn ? 'Unit Price:' : 'Birim Fiyatı:'}</span>
+                <span className="pd-price-value">{priceFeature.value}</span>
+              </div>
+            )}
 
             {/* Features */}
             <div className="pd-features">

@@ -26,7 +26,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
 
   const name = isEn ? product.nameEn : product.name;
   const shortDesc = isEn ? product.shortDescEn : product.shortDesc;
-  const tags = isEn ? product.tagsEn : product.tags;
+  const features = isEn ? product.featuresEn : product.features;
+  const priceFeature = features?.find((f) => f.label === 'Fiyat' || f.label === 'Price');
 
   return (
     <Link to={`${basePath}/${product.slug}`} className="product-card card" id={`product-${product.id}`}>
@@ -54,18 +55,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
       </div>
 
       <div className="product-card__body">
-        <div className="product-card__tags">
-          {tags.slice(0, 3).map((tag) => (
-            <span key={tag} className="badge badge-secondary product-card__tag">
-              {tag}
-            </span>
-          ))}
-        </div>
         <h3 className="product-card__name">{name}</h3>
         <p className="product-card__desc">{shortDesc}</p>
-        <span className="product-card__link">
-          {t('products.viewDetails')} <ArrowRight size={14} />
-        </span>
+        <div className="product-card__footer">
+          {priceFeature && (
+            <span className="product-card__price">{priceFeature.value}</span>
+          )}
+          <span className="product-card__link">
+            {t('products.viewDetails')} <ArrowRight size={14} />
+          </span>
+        </div>
       </div>
     </Link>
   );
