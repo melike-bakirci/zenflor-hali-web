@@ -133,6 +133,10 @@ const Footer: React.FC = () => {
             <Link to="/gizlilik" className="footer__legal-link">{t('footer.privacy')}</Link>
             <span className="footer__legal-sep">·</span>
             <Link to="/kosullar" className="footer__legal-link">{t('footer.terms')}</Link>
+            <span className="footer__legal-sep">·</span>
+            <Link to="/kvkk" className="footer__legal-link">{t('footer.kvkk')}</Link>
+            <span className="footer__legal-sep">·</span>
+            <Link to="/cerez-politikasi" className="footer__legal-link">{t('footer.cookies')}</Link>
           </div>
         </div>
       </div>

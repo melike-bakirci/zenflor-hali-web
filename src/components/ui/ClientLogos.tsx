@@ -51,7 +51,7 @@ const ClientLogos: React.FC<ClientLogosProps> = ({
                 {isEn ? client.industryEn : client.industry}
               </span>
             </div>
-            <ShieldCheck size={16} className="client-logos__verified" title="Onaylı Referans" />
+            <span title="Onaylı Referans"><ShieldCheck size={16} className="client-logos__verified" /></span>
           </div>
         ))}
       </div>

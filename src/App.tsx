@@ -13,6 +13,7 @@ import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 import References from './pages/References';
+import Legal from './pages/Legal';
 import NotFound from './pages/NotFound';
 
 // Scroll to top on route change
@@ -41,6 +42,10 @@ const App: React.FC = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/iletisim" element={<Contact />} />
+          <Route path="/gizlilik" element={<Legal defaultTab="privacy" />} />
+          <Route path="/kosullar" element={<Legal defaultTab="terms" />} />
+          <Route path="/kvkk" element={<Legal defaultTab="kvkk" />} />
+          <Route path="/cerez-politikasi" element={<Legal defaultTab="cookies" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

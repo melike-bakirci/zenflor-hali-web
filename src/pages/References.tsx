@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-import {
-  Building2,
-  Award,
-  Layers,
-  PhoneCall,
-  CheckCircle,
-  ArrowRight,
-} from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ReferenceCard from '../components/ui/ReferenceCard';
 import ReferenceModal from '../components/ui/ReferenceModal';
@@ -20,7 +11,7 @@ import usePageMeta from '../utils/usePageMeta';
 import './References.css';
 
 const References: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const isEn = i18n.language === 'en';
 
   const [selectedProject, setSelectedProject] = useState<ReferenceProject | null>(null);
