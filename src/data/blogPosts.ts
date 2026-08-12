@@ -60,8 +60,8 @@ Light colors make the space look larger while dark tones increase comfort. Choos
 
 The underlayment to be applied under the carpet tile is of critical importance in terms of acoustic and thermal comfort.
     `,
-    author: 'Karo Halı Editörü',
-    date: '2024-03-15',
+    author: 'ZenFlor',
+    date: '2026-03-15',
     category: 'Karo Halı',
     categoryEn: 'Carpet Tiles',
     image: '/images/blog-1.png',
@@ -131,8 +131,8 @@ Clean snow accumulation with a plastic shovel; metal shovels can damage fibers. 
 - Benefit from professional maintenance service once a year
 - Don't extinguish cigarettes directly on the grass
     `,
-    author: 'Karo Halı Editörü',
-    date: '2024-04-22',
+    author: 'ZenFlor',
+    date: '2026-04-22',
     category: 'Çim Halı',
     categoryEn: 'Artificial Grass',
     image: '/images/blog-2.png',
@@ -194,8 +194,8 @@ Sound management in open plan offices has become a critical design input. High-w
 
 The replaceability of carpet tiles provides a great advantage in hybrid working models where office arrangements need to be updated frequently.
     `,
-    author: 'Karo Halı Editörü',
-    date: '2024-05-10',
+    author: 'ZenFlor',
+    date: '2026-05-10',
     category: 'Karo Halı',
     categoryEn: 'Carpet Tiles',
     image: '/images/blog-3.png',
