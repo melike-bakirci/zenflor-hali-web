@@ -67,7 +67,18 @@
     "backToList": "Listeye Dön",
     "otherProducts": "Diğer Ürünler",
     "category": "Kategori",
-    "infoRequest": "İletişim"
+    "infoRequest": "İletişim",
+    "searchPlaceholder": "Ürün adı veya kod yazın...",
+    "searchButton": "Ara",
+    "clearSearch": "Temizle",
+    "sortBy": "Sırala",
+    "sortDefault": "Varsayılan Sıralama",
+    "sortNameAsc": "A'dan Z'ye (İsim)",
+    "sortNameDesc": "Z'den A'ya (İsim)",
+    "sortPriceAsc": "Fiyat Artan",
+    "sortPriceDesc": "Fiyat Azalan",
+    "noProductsFound": "Aramanıza uygun ürün bulunamadı.",
+    "showingProducts": "{{count}} ürün gösteriliyor"
   },
   "blog": {
     "title": "Blog",

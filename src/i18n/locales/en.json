@@ -67,7 +67,18 @@
     "backToList": "Back to List",
     "otherProducts": "Other Products",
     "category": "Category",
-    "infoRequest": "Contact"
+    "infoRequest": "Contact",
+    "searchPlaceholder": "Search product name or code...",
+    "searchButton": "Search",
+    "clearSearch": "Clear",
+    "sortBy": "Sort By",
+    "sortDefault": "Default Order",
+    "sortNameAsc": "A to Z (Name)",
+    "sortNameDesc": "Z to A (Name)",
+    "sortPriceAsc": "Price: Low to High",
+    "sortPriceDesc": "Price: High to Low",
+    "noProductsFound": "No products match your search query.",
+    "showingProducts": "Showing {{count}} products"
   },
   "blog": {
     "title": "Blog",

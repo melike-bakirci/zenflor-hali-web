@@ -26,6 +26,22 @@
   margin: 0;
 }
 
+.no-products-found {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px dashed #d1d5db;
+  margin: 2rem 0;
+}
+
+.no-products-found p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 1.25rem;
+}
+
 @media (max-width: 768px) {
   .product-list__info-inner {
     flex-direction: column;
