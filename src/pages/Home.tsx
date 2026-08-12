@@ -104,31 +104,53 @@ const Home: React.FC = () => {
             center
           />
           <div className="home__cat-grid">
-            <Link to="/karo-hali" className="home__cat-card home__cat-card--karo" id="cat-karo-hali">
-              <div className="home__cat-card-bg" aria-hidden="true" />
-              <div className="home__cat-pattern" aria-hidden="true" />
-              <div className="home__cat-content">
-                <span className="home__cat-icon">▦</span>
-                <h2 className="home__cat-title">{t('home.karoHaliCat')}</h2>
-                <p className="home__cat-desc">{t('home.karoHaliDesc')}</p>
-                <span className="btn btn-outline">
-                  {t('home.exploreBtn')} <ArrowRight size={16} />
-                </span>
+            {/* Karo Halı */}
+            <div className="home__cat-card">
+              <div className="home__cat-img-wrapper">
+                <img src="/images/hero-karo-hali.jpeg" alt={t('home.karoHaliCat')} className="home__cat-img" />
               </div>
-            </Link>
+              <div className="home__cat-content">
+                <h3 className="home__cat-title">{t('home.karoHaliCat')}</h3>
+                <div className="home__cat-desc">
+                  <p>
+                    Geniş renk ve desen seçenekleri ile öne çıkan <strong>karo halı çeşitleri</strong>, konforlu bir yürüme alanı sunarken yüksek ses yutma özelliği ile zeminde akustik sağlar. Özellikle ticari mekan zemin kaplama çözümü olarak <strong>karo halı uygulaması</strong>; kalite, renk ve desen çeşitliliği açısından günümüzde en çok tercih edilen malzemedir.
+                  </p>
+                  <p>
+                    İhtiyacınıza uygun <strong>ofis halısı</strong> ya da <strong>büro halısı</strong> modellerinde; <span className="home__highlight">en ucuz karo halı</span> ve <span className="home__highlight">ucuz karo halı</span> seçeneklerinden premium serilere kadar geniş bir ürün yelpazesi sunuyoruz. Her bütçeye hitap eden <span className="home__highlight">karo halı fiyatları</span> ve <span className="home__highlight">en uygun karo halı</span> alternatiflerimizi incelemek, projelerinize özel avantajlardan yararlanmak için hemen iletişime geçin!
+                  </p>
+                  <p className="home__cat-phone">
+                    <a href="tel:+905302708487">+90 530 270 84 87</a>
+                  </p>
+                </div>
+                <Link to="/karo-hali" className="home__cat-link">
+                  DEVAMI <ChevronRight size={16} />
+                </Link>
+              </div>
+            </div>
 
-            <Link to="/cim-hali" className="home__cat-card home__cat-card--cim" id="cat-cim-hali">
-              <div className="home__cat-card-bg" aria-hidden="true" />
-              <div className="home__cat-pattern home__cat-pattern--cim" aria-hidden="true" />
-              <div className="home__cat-content">
-                <span className="home__cat-icon">🌿</span>
-                <h2 className="home__cat-title">{t('home.cimHaliCat')}</h2>
-                <p className="home__cat-desc">{t('home.cimHaliDesc')}</p>
-                <span className="btn btn-outline">
-                  {t('home.exploreBtn')} <ArrowRight size={16} />
-                </span>
+            {/* Çim Halı */}
+            <div className="home__cat-card">
+              <div className="home__cat-img-wrapper">
+                <img src="/images/hero-cim-hali.jpeg" alt={t('home.cimHaliCat')} className="home__cat-img" />
               </div>
-            </Link>
+              <div className="home__cat-content">
+                <h3 className="home__cat-title">{t('home.cimHaliCat')}</h3>
+                <div className="home__cat-desc">
+                  <p>
+                    Doğal görünüm, farklı hav boyları ve sık iplik dokusuyla öne çıkan <strong>çim halı çeşitleri</strong>, konforlu bir kullanım alanı sunarken dört mevsim canlı ve bakımlı bir zemin oluşturur. Özellikle bahçe, balkon, teras, peyzaj ve spor alanlarında <strong>çim halı uygulaması</strong>; dayanıklılık, estetik ve kullanım kolaylığı açısından günümüzde en çok tercih edilen zemin kaplama çözümüdür.
+                  </p>
+                  <p>
+                    İhtiyacınıza uygun peyzaj ya da <strong>dekoratif çim halı</strong> modellerinde; <span className="home__highlight">en ucuz çim halı</span> ve ekonomik seçeneklerden premium serilere kadar geniş bir ürün yelpazesi sunuyoruz. Her bütçeye hitap eden <span className="home__highlight">çim halı fiyatları</span> ve en uygun alternatiflerimizi incelemek, projelerinize özel avantajlardan yararlanmak için hemen iletişime geçin!
+                  </p>
+                  <p className="home__cat-phone">
+                    <a href="tel:+905302708487">+90 530 270 84 87</a>
+                  </p>
+                </div>
+                <Link to="/cim-hali" className="home__cat-link">
+                  DEVAMI <ChevronRight size={16} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -138,7 +160,7 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              title={t('home.featuredTitle')}
+              title={isEn ? 'Carpet Tile Collection' : 'Karo Halı Koleksiyonu'}
               subtitle={t('home.featuredSubtitle')}
             />
             <Link to="/karo-hali" className="btn btn-outline home__view-all">
