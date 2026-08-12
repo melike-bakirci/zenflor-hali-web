@@ -38,7 +38,7 @@ const BlogDetail: React.FC = () => {
       <div className="container blog-detail__container">
         <Breadcrumb
           items={[
-            { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+            { label: isEn ? 'Home' : 'Ana Sayfa', url: '/' },
             { label: t('nav.blog'), url: '/blog' },
             { label: title },
           ]}
@@ -53,7 +53,7 @@ const BlogDetail: React.FC = () => {
           <header className="blog-detail__header">
             <span className="badge badge-primary blog-detail__category">{category}</span>
             <h1 className="blog-detail__title font-display">{title}</h1>
-            
+
             <div className="blog-detail__meta">
               <span className="blog-detail__meta-item">
                 <User size={14} /> {post.author}
@@ -79,9 +79,9 @@ const BlogDetail: React.FC = () => {
           </div>
 
           <div className="blog-detail__content">
-             <ReactMarkdown>{content}</ReactMarkdown>
+            <ReactMarkdown>{content}</ReactMarkdown>
           </div>
-          
+
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
             <div className="blog-detail__tags">

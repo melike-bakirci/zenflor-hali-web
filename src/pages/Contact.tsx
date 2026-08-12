@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+            { label: isEn ? 'Home' : 'Ana Sayfa', url: '/' },
             { label: t('nav.contact') },
           ]}
         />
@@ -154,55 +154,55 @@ const Contact: React.FC = () => {
               <>
                 <h2 className="contact__form-title font-display">{isEn ? 'Send us a Message' : 'Bize Mesaj Gönderin'}</h2>
                 <form className="contact__form" onSubmit={handleSubmit}>
-                <div className="contact__form-row">
+                  <div className="contact__form-row">
+                    <div className="contact__form-group">
+                      <label htmlFor="name" className="contact__label">{t('contact.nameLabel')} *</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        className="contact__input"
+                        placeholder={t('contact.namePlaceholder')}
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div className="contact__form-group">
+                      <label htmlFor="phone" className="contact__label">{t('contact.phoneLabel')} *</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        className="contact__input"
+                        placeholder={t('contact.phonePlaceholder')}
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+
                   <div className="contact__form-group">
-                    <label htmlFor="name" className="contact__label">{t('contact.nameLabel')} *</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="contact__input"
-                      placeholder={t('contact.namePlaceholder')}
-                      value={formData.name}
+                    <label htmlFor="message" className="contact__label">{t('contact.messageLabel')} *</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      className="contact__input contact__textarea"
+                      placeholder={t('contact.messagePlaceholder')}
+                      rows={5}
+                      value={formData.message}
                       onChange={handleChange}
                       required
-                    />
+                    ></textarea>
                   </div>
-                  <div className="contact__form-group">
-                    <label htmlFor="phone" className="contact__label">{t('contact.phoneLabel')} *</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      className="contact__input"
-                      placeholder={t('contact.phonePlaceholder')}
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
 
-                <div className="contact__form-group">
-                  <label htmlFor="message" className="contact__label">{t('contact.messageLabel')} *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    className="contact__input contact__textarea"
-                    placeholder={t('contact.messagePlaceholder')}
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                  ></textarea>
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-lg contact__submit" disabled={isSubmitting}>
-                  {isSubmitting ? t('common.loading') : (
-                    <>{t('contact.sendBtn')} <Send size={18} /></>
-                  )}
-                </button>
-              </form>
+                  <button type="submit" className="btn btn-primary btn-lg contact__submit" disabled={isSubmitting}>
+                    {isSubmitting ? t('common.loading') : (
+                      <>{t('contact.sendBtn')} <Send size={18} /></>
+                    )}
+                  </button>
+                </form>
               </>
             )}
           </div>

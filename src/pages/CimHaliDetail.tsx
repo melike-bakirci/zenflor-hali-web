@@ -42,7 +42,7 @@ const CimHaliDetail: React.FC = () => {
         {/* Breadcrumb */}
         <Breadcrumb
           items={[
-            { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+            { label: isEn ? 'Home' : 'Ana Sayfa', url: '/' },
             { label: t('products.cimHali'), url: '/cim-hali' },
             { label: name },
           ]}

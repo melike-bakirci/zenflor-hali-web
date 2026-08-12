@@ -91,6 +91,7 @@ const Footer: React.FC = () => {
               <Link to="/hakkimizda" className="footer__nav-link">{t('nav.about')}</Link>
               <Link to="/karo-hali" className="footer__nav-link">{t('nav.karoHali')}</Link>
               <Link to="/cim-hali" className="footer__nav-link">{t('nav.cimHali')}</Link>
+              <Link to="/referanslar" className="footer__nav-link">{t('nav.references')}</Link>
               <Link to="/blog" className="footer__nav-link">{t('nav.blog')}</Link>
               <Link to="/iletisim" className="footer__nav-link">{t('nav.contact')}</Link>
             </nav>

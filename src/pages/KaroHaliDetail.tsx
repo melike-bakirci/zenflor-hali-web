@@ -42,7 +42,7 @@ const KaroHaliDetail: React.FC = () => {
         {/* Breadcrumb */}
         <Breadcrumb
           items={[
-            { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+            { label: isEn ? 'Home' : 'Ana Sayfa', url: '/' },
             { label: t('products.karoHali'), url: '/karo-hali' },
             { label: name },
           ]}

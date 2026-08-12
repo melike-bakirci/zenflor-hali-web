@@ -88,7 +88,7 @@ const CimHali: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? 'Home' : 'Anasayfa', url: '/' },
+            { label: isEn ? 'Home' : 'Ana Sayfa', url: '/' },
             { label: t('products.cimHali') },
           ]}
         />
@@ -98,7 +98,7 @@ const CimHali: React.FC = () => {
       <section className="section">
         <div className="container">
           <SectionTitle
-            title={isEn ? 'All Artificial Grass Products' : 'Tüm Çim Halı Ürünleri'}
+            title={isEn ? 'All Artificial Grass Products' : 'Tüm Çim Halı Ürünlerimiz'}
             subtitle={isEn ? `${cimHaliProducts.length} different products` : `${cimHaliProducts.length} farklı ürün`}
           />
 

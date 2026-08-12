@@ -5,9 +5,13 @@ import { ArrowRight, ChevronLeft, ChevronRight, Phone } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ProductCard from '../components/ui/ProductCard';
 import BlogCard from '../components/ui/BlogCard';
+import ClientLogos from '../components/ui/ClientLogos';
+import ReferenceCard from '../components/ui/ReferenceCard';
+import ReferenceModal from '../components/ui/ReferenceModal';
 import { karoHaliProducts } from '../data/karoHaliProducts';
 import { cimHaliProducts } from '../data/cimHaliProducts';
 import { blogPosts } from '../data/blogPosts';
+import { referenceProjects, type ReferenceProject } from '../data/referencesData';
 import usePageMeta from '../utils/usePageMeta';
 import './Home.css';
 
@@ -49,6 +53,7 @@ const Home: React.FC = () => {
   }, []);
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedRefProject, setSelectedRefProject] = useState<ReferenceProject | null>(null);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
@@ -60,6 +65,7 @@ const Home: React.FC = () => {
 
   const featuredKaro = karoHaliProducts.filter((p) => p.featured).slice(0, 4);
   const featuredCim = cimHaliProducts.filter((p) => p.featured).slice(0, 4);
+  const featuredReferences = referenceProjects.filter((r) => r.featured).slice(0, 4);
   const latestPosts = blogPosts.slice(0, 3);
 
   return (
@@ -224,6 +230,42 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* ===== REFERANSLARIMIZ SECTION ===== */}
+      <section className="section home__references" id="home-references">
+        <div className="container">
+          <div className="home__featured-header">
+            <SectionTitle
+              title={isEn ? 'Corporate References & Gallery' : 'Referanslarımız'}
+              subtitle={
+                isEn
+                  ? 'Finished flooring application projects for offices, hotels, and architectural spaces'
+                  : 'Ofis, otel, plaza ve mimarlık projelerinde tamamlanan bitmiş zemin kaplama uygulamalarımız'
+              }
+            />
+            <Link to="/referanslar" className="btn btn-outline home__view-all">
+              {isEn ? 'View All References' : 'Tüm Referansları Gör'} <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          {/* Client Logos Carousel/Grid */}
+          <div className="home__client-logos-wrapper">
+            <ClientLogos limit={4} isEn={isEn} />
+          </div>
+
+          {/* Finished Application Projects Cards */}
+          <div className="grid-4 home__ref-grid">
+            {featuredReferences.map((project) => (
+              <ReferenceCard
+                key={project.id}
+                project={project}
+                onSelect={setSelectedRefProject}
+                isEn={isEn}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== BLOG ===== */}
       <section className="section home__blog" id="home-blog">
         <div className="container">
@@ -260,6 +302,13 @@ const Home: React.FC = () => {
           </Link>
         </div>
       </section>
+
+      {/* Modal */}
+      <ReferenceModal
+        project={selectedRefProject}
+        onClose={() => setSelectedRefProject(null)}
+        isEn={isEn}
+      />
     </div>
   );
 };

@@ -12,6 +12,7 @@ import CimHaliDetail from './pages/CimHaliDetail';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
+import References from './pages/References';
 import NotFound from './pages/NotFound';
 
 // Scroll to top on route change
@@ -35,6 +36,8 @@ const App: React.FC = () => {
           <Route path="/karo-hali/:slug" element={<KaroHaliDetail />} />
           <Route path="/cim-hali" element={<CimHali />} />
           <Route path="/cim-hali/:slug" element={<CimHaliDetail />} />
+          <Route path="/referanslar" element={<References />} />
+          <Route path="/referanslarimiz" element={<References />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/iletisim" element={<Contact />} />

@@ -1,0 +1,151 @@
+.ref-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(10, 15, 30, 0.92);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.ref-modal__container--pure-image {
+  position: relative;
+  background: transparent;
+  width: 100%;
+  max-width: 1100px;
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  animation: modalSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.ref-modal__close-btn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .ref-modal__close-btn {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.ref-modal__close-btn:hover {
+  background: var(--color-primary, #66101f);
+  color: #ffffff;
+  transform: rotate(90deg) scale(1.05);
+}
+
+.ref-modal__image-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ref-modal__pure-img {
+  max-width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.ref-modal__nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+.ref-modal__nav-btn:hover {
+  background: #ffffff;
+  color: var(--color-primary, #66101f);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.ref-modal__nav-btn--prev {
+  left: 16px;
+}
+
+.ref-modal__nav-btn--next {
+  right: 16px;
+}
+
+.ref-modal__dots {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.ref-modal__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.ref-modal__dot.active {
+  width: 28px;
+  border-radius: 9999px;
+  background: #ffffff;
+}

@@ -412,6 +412,21 @@
   background: #855A5C;
 }
 
+/* ===== REFERENCES SECTION ===== */
+.home__references {
+  background-color: #ffffff;
+  padding: 4rem 0;
+  border-top: 1px solid rgba(211, 211, 211, 0.4);
+}
+
+.home__client-logos-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.home__ref-grid {
+  gap: 1.5rem;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero-slider {
