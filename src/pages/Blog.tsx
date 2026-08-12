@@ -4,11 +4,19 @@ import SectionTitle from '../components/ui/SectionTitle';
 import BlogCard from '../components/ui/BlogCard';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import { blogPosts } from '../data/blogPosts';
+import usePageMeta from '../utils/usePageMeta';
 import './Blog.css';
 
 const Blog: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
+
+  usePageMeta({
+    title: isEn ? 'Blog & News' : 'Blog & İçerikler',
+    description: isEn
+      ? 'Read news, guides, and practical tips about carpet tiles, artificial grass, and interior floor design.'
+      : 'Karo halı, çim halı, zemin kaplama uygulamaları ve dekorasyon dünyasından güncel haberler ve rehberler.',
+  });
 
   return (
     <div className="blog page-enter">

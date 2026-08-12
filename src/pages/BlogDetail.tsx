@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import { blogPosts } from '../data/blogPosts';
 import ReactMarkdown from 'react-markdown';
+import usePageMeta from '../utils/usePageMeta';
 import './BlogDetail.css';
 
 const BlogDetail: React.FC = () => {
@@ -13,9 +14,16 @@ const BlogDetail: React.FC = () => {
   const isEn = i18n.language === 'en';
 
   const post = blogPosts.find((p) => p.slug === slug);
+  const title = post ? (isEn ? post.titleEn : post.title) : '';
+  const excerpt = post ? (isEn ? post.excerptEn || post.excerpt : post.excerpt) : '';
+
+  usePageMeta({
+    title: post ? `${title} | Blog` : 'Blog',
+    description: excerpt,
+  });
+
   if (!post) return <Navigate to="/blog" replace />;
 
-  const title = isEn ? post.titleEn : post.title;
   const content = isEn ? post.contentEn : post.content;
   const category = isEn ? post.categoryEn : post.category;
 

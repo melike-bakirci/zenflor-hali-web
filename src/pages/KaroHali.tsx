@@ -8,6 +8,7 @@ import ProductFilterBar from '../components/ui/ProductFilterBar';
 import ProductSidebarFilter from '../components/ui/ProductSidebarFilter';
 import { karoHaliProducts } from '../data/karoHaliProducts';
 import { filterAndSortProducts, type FilterState, type SortOption } from '../utils/productUtils';
+import usePageMeta from '../utils/usePageMeta';
 import './ProductList.css';
 
 const ITEMS_PER_PAGE = 12;
@@ -15,6 +16,14 @@ const ITEMS_PER_PAGE = 12;
 const KaroHali: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
+
+  usePageMeta({
+    title: isEn ? 'Carpet Tile Models & Prices' : 'Karo Halı Modelleri ve Fiyatları',
+    description: isEn
+      ? 'Explore high quality carpet tile collections for offices, hotels, and corporate buildings at the best prices.'
+      : 'Ofis, otel ve kurumsal mekanlar için en uygun fiyatlı, yüksek ses akustikli karo halı çeşitlerimizi keşfedin.',
+  });
+
   const [currentPage, setCurrentPage] = useState(1);
 
   const [filters, setFilters] = useState<FilterState>({

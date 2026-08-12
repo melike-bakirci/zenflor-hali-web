@@ -8,6 +8,7 @@ import ProductFilterBar from '../components/ui/ProductFilterBar';
 import ProductSidebarFilter from '../components/ui/ProductSidebarFilter';
 import { cimHaliProducts } from '../data/cimHaliProducts';
 import { filterAndSortProducts, type FilterState, type SortOption } from '../utils/productUtils';
+import usePageMeta from '../utils/usePageMeta';
 import './ProductList.css';
 
 const ITEMS_PER_PAGE = 12;
@@ -15,6 +16,14 @@ const ITEMS_PER_PAGE = 12;
 const CimHali: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
+
+  usePageMeta({
+    title: isEn ? 'Artificial Grass Models & Prices' : 'Çim Halı Modelleri ve Fiyatları',
+    description: isEn
+      ? 'Discover premium artificial synthetic grass products for gardens, balconies, terraces, and landscaping at optimal prices.'
+      : 'Bahçe, balkon, teras ve peyzaj alanları için doğal görünümlü, dayanıklı sentetik çim halı modellerimizi inceleyin.',
+  });
+
   const [currentPage, setCurrentPage] = useState(1);
 
   const [filters, setFilters] = useState<FilterState>({

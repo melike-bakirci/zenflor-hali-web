@@ -8,6 +8,7 @@ import BlogCard from '../components/ui/BlogCard';
 import { karoHaliProducts } from '../data/karoHaliProducts';
 import { cimHaliProducts } from '../data/cimHaliProducts';
 import { blogPosts } from '../data/blogPosts';
+import usePageMeta from '../utils/usePageMeta';
 import './Home.css';
 
 const HERO_SLIDES = [
@@ -27,6 +28,13 @@ const Home: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
   const heroRef = useRef<HTMLDivElement>(null);
+
+  usePageMeta({
+    title: isEn ? 'Carpet Tiles & Artificial Grass Solutions' : 'Karo Halı ve Çim Halı Çözümleri',
+    description: isEn
+      ? 'Zenflor - Premium carpet tile and artificial grass flooring solutions for corporate, office, and garden spaces.'
+      : 'Zenflor - Kaliteli karo halı ve çim halı modelleri. Ofis, kurumsal ve bahçe alanları için zemin kaplama çözümleri.',
+  });
 
   // Parallax on scroll
   useEffect(() => {

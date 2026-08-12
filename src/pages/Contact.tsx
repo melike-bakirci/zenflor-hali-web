@@ -3,11 +3,19 @@ import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import Breadcrumb from '../components/ui/Breadcrumb';
+import usePageMeta from '../utils/usePageMeta';
 import './Contact.css';
 
 const Contact: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
+
+  usePageMeta({
+    title: isEn ? 'Contact Us' : 'İletişim & Adres Bilgileri',
+    description: isEn
+      ? 'Get in touch with Zenflor for carpet tile and artificial grass quotes, project consultations, and address details.'
+      : 'Zenflor ile iletişime geçin. Karo halı ve çim halı numune talepleri, telefon, adres ve teklif bilgileri.',
+  });
 
   const [formData, setFormData] = useState({
     name: '',

@@ -9,6 +9,7 @@ import './ProductDetail.css';
 
 import ProductImageZoom from '../components/ui/ProductImageZoom';
 import AreaCalculator from '../components/ui/AreaCalculator';
+import usePageMeta from '../utils/usePageMeta';
 
 const CimHaliDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -18,13 +19,20 @@ const CimHaliDetail: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'description' | 'features'>('description');
 
   const product = cimHaliProducts.find((p) => p.slug === slug);
+
+  const name = product ? (isEn ? product.nameEn : product.name) : '';
+  const description = product ? (isEn ? product.descriptionEn : product.description) : '';
+  const shortDesc = product ? (isEn ? product.shortDescEn : product.shortDesc) : '';
+  const features = product ? (isEn ? product.featuresEn : product.features) : [];
+
+  usePageMeta({
+    title: product ? `${name} Çim Halı` : 'Çim Halı',
+    description: shortDesc || description,
+  });
+
   if (!product) return <Navigate to="/cim-hali" replace />;
 
-  const name = isEn ? product.nameEn : product.name;
-  const description = isEn ? product.descriptionEn : product.description;
-  const features = isEn ? product.featuresEn : product.features;
   const priceFeature = features.find((f) => f.label === 'Fiyat' || f.label === 'Price');
-
   const others = cimHaliProducts.filter((p) => p.slug !== slug).slice(0, 4);
 
   return (
