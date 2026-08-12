@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
@@ -7,9 +7,36 @@ import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
 import usePageMeta from '../utils/usePageMeta';
 import './Contact.css';
 
+const checkWorkingHours = () => {
+  const now = new Date();
+  const day = now.getDay(); // 0 = Sunday, 1-6 = Mon-Sat
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const currentMinutes = hours * 60 + minutes;
+
+  const openMinutes = 9 * 60; // 09:00
+  const closeMinutes = 19 * 60; // 19:00
+
+  if (day === 0) {
+    return false;
+  }
+
+  return currentMinutes >= openMinutes && currentMinutes < closeMinutes;
+};
+
 const Contact: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
+
+  const [isOpen, setIsOpen] = useState(checkWorkingHours);
+
+  useEffect(() => {
+    const updateStatus = () => {
+      setIsOpen(checkWorkingHours());
+    };
+    const timer = setInterval(updateStatus, 30000);
+    return () => clearInterval(timer);
+  }, []);
 
   usePageMeta({
     title: isEn ? 'Contact Us' : 'İletişim & Adres Bilgileri',
@@ -129,13 +156,20 @@ const Contact: React.FC = () => {
                 </div>
               </a>
 
-              <div className="contact__info-item card">
+              <div className="contact__info-item contact__info-item--hours card">
                 <div className="contact__info-icon">
                   <Clock size={24} />
                 </div>
-                <div>
-                  <h3 className="contact__info-title">{t('contact.hours')}</h3>
+                <div className="contact__info-body">
+                  <div className="contact__info-header">
+                    <h3 className="contact__info-title">{t('contact.hours')}</h3>
+                    <span className={`contact__status-badge ${isOpen ? 'contact__status-badge--open' : 'contact__status-badge--closed'}`}>
+                      <span className="contact__status-dot" />
+                      {isOpen ? t('contact.openNow') : t('contact.closedNow')}
+                    </span>
+                  </div>
                   <p className="contact__info-desc">{t('contact.hoursValue')}</p>
+                  <p className="contact__info-desc">{t('contact.sundayHours')}</p>
                 </div>
               </div>
             </div>

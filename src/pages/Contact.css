@@ -65,6 +65,83 @@ a.contact__info-item:hover .contact__info-desc {
   color: #66101F;
 }
 
+/* Hours & Live Status */
+.contact__info-item--hours {
+  cursor: default;
+}
+
+.contact__info-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__info-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.contact__info-header .contact__info-title {
+  margin-bottom: 0;
+}
+
+.contact__status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.contact__status-badge--open {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.contact__status-badge--closed {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.contact__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.contact__status-badge--open .contact__status-dot {
+  background-color: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseDotGreen 2s infinite;
+}
+
+.contact__status-badge--closed .contact__status-dot {
+  background-color: #ef4444;
+}
+
+@keyframes pulseDotGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
 /* Form */
 .contact__form-wrapper {
   padding: 2.5rem;
