@@ -63,10 +63,10 @@ const Navbar: React.FC = () => {
       <div className="navbar__main">
         <div className="navbar__brand-wrapper">
           <Link to="/" className="navbar__logo" aria-label="Karo Halı Ana Sayfa">
-            <span className="navbar__logo-icon">K</span>
+            <img src="/images/logo.png" alt="Karo Halı" className="navbar__logo-img" />
             <div className="navbar__logo-text">
-              <span className="navbar__logo-name">KARO HALI</span>
-              <span className="navbar__logo-tagline">Premium Zemin Çözümleri</span>
+              <span className="navbar__logo-name">ZenFlor</span>
+              <span className="navbar__logo-tagline">Karo & Çim Halı Çözümleri</span>
             </div>
           </Link>
         </div>
