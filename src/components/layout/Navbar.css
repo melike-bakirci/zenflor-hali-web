@@ -32,8 +32,6 @@
   align-items: center;
   gap: 1.5rem;
   width: 100%;
-  max-width: 100%;
-  padding: 0 1.5rem;
 }
 
 .navbar__topbar-left {
@@ -63,12 +61,18 @@
 
 /* Main nav */
 .navbar__main {
-  display: flex;
-  align-items: center;
   height: 76px;
   background: #ffffff;
   border-bottom: 1px solid #f3f4f6;
-  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__main-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
   gap: 2rem;
 }
 
