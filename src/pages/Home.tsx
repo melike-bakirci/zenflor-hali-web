@@ -55,13 +55,30 @@ const Home: React.FC = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedRefProject, setSelectedRefProject] = useState<ReferenceProject | null>(null);
+  const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const resetAutoPlay = () => {
+    if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+    autoPlayRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
+    }, 15000);
+  };
+
+  useEffect(() => {
+    resetAutoPlay();
+    return () => {
+      if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+    };
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
+    resetAutoPlay();
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
+    resetAutoPlay();
   };
 
   const featuredKaro = karoHaliProducts.filter((p) => p.featured).slice(0, 4);
@@ -112,7 +129,7 @@ const Home: React.FC = () => {
             <button
               key={index}
               className={`hero-slider__dot ${index === currentSlide ? 'active' : ''}`}
-              onClick={() => setCurrentSlide(index)}
+              onClick={() => { setCurrentSlide(index); resetAutoPlay(); }}
               aria-label={`Slayt ${index + 1}`}
             />
           ))}

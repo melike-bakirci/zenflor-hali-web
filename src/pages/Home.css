@@ -30,12 +30,16 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transform: scale(1.05);
-  transition: transform 6s linear;
+  transform: scale(1.08);
 }
 
 .hero-slide.active .hero-slide__bg {
-  transform: scale(1);
+  animation: heroZoom 15s linear forwards;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1); }
 }
 
 .hero-slide__overlay {
@@ -208,13 +212,32 @@
   background: rgba(255, 255, 255, 0.4);
   border: none;
   cursor: pointer;
-  transition: all var(--transition-base, 250ms ease);
+  transition: width 250ms ease, background 250ms ease;
   padding: 0;
+  overflow: hidden;
+  position: relative;
 }
 
 .hero-slider__dot.active {
+  width: 64px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hero-slider__dot.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
   background: var(--color-primary, #66101F);
-  width: 40px;
+  border-radius: 9999px;
+  animation: dotProgress 15s linear forwards;
+}
+
+@keyframes dotProgress {
+  from { width: 0%; }
+  to   { width: 100%; }
 }
 
 /* ===== CATEGORIES SECTION ===== */
