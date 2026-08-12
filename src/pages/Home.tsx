@@ -13,12 +13,12 @@ import './Home.css';
 const HERO_SLIDES = [
   {
     title: 'Ofis ve Mekanlarınıza Değer Katan Karo Halı Modellerimiz',
-    subtitle: 'KARO HALI',
+    subtitle: '20 Yıllık Güven ile Kusursuz Zeminler',
     image: '/images/hero-karo-hali.jpeg',
   },
   {
     title: 'Bahçe ve Dış Mekanlarınıza Değer Katan Çim Halı Modellerimiz',
-    subtitle: 'ÇİM HALI',
+    subtitle: 'Mekanlarınıza Canlılık Katın',
     image: '/images/hero-cim-hali.jpeg',
   },
 ];
