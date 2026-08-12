@@ -136,6 +136,45 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* ===== BİZ KİMİZ ===== */}
+      <section className="section home__about" id="biz-kimiz">
+        <div className="container">
+          <div className="home__about-inner">
+            <div className="home__about-text">
+              <span className="home__about-badge">Biz Kimiz</span>
+              <h2 className="home__about-heading">
+                20 Yıllık Deneyimle Zemin Kaplama Çözümleri
+              </h2>
+              <p className="home__about-desc">
+                ZenFlor olarak 2006'dan bu yana ofis, otel, plaza ve peyzaj projelerinde <strong>karo halı</strong> ve <strong>çim halı</strong> çözümleri sunuyoruz.
+                Yüzlerce kurumsal referans ve binlerce başarılı uygulama ile sektörde güvenilir bir isim olmaya devam ediyoruz.
+              </p>
+              <Link to="/hakkimizda" className="btn btn-primary home__about-cta">
+                Hakkımızda Daha Fazla <ArrowRight size={16} />
+              </Link>
+            </div>
+            <div className="home__about-stats">
+              <div className="home__about-stat">
+                <span className="home__about-stat-number">20</span>
+                <span className="home__about-stat-label">Yıllık Deneyim</span>
+              </div>
+              <div className="home__about-stat">
+                <span className="home__about-stat-number">10.000+</span>
+                <span className="home__about-stat-label">Tamamlanan Proje</span>
+              </div>
+              <div className="home__about-stat">
+                <span className="home__about-stat-number">300+</span>
+                <span className="home__about-stat-label">Ürün Çeşidi</span>
+              </div>
+              <div className="home__about-stat">
+                <span className="home__about-stat-number">50+</span>
+                <span className="home__about-stat-label">Kurumsal Referans</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== CATEGORIES ===== */}
       <section className="section home__categories" id="categories">
         <div className="container">

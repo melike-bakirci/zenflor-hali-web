@@ -36,7 +36,7 @@ const References: React.FC = () => {
             <p className="page-hero__subtitle">
               {isEn
                 ? 'Corporate flooring solution references and finished application visuals'
-                : 'Ofis, otel, plaza vb. projelerinde tamamlanan zemin kaplama uygulamalarımız ve kurumsal referanslarımız'}
+                : 'Ofis, otel vb. projelerde tamamlanan zemin kaplama uygulamalarımız ve referanslarımız'}
             </p>
           </div>
         </div>

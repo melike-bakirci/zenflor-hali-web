@@ -68,7 +68,7 @@ const About: React.FC = () => {
                 <span className="about__story-stat-label">{t('home.statsProjects')}</span>
               </div>
               <div className="about__story-stat">
-                <span className="about__story-stat-value">500+</span>
+                <span className="about__story-stat-value">300+</span>
                 <span className="about__story-stat-label">{t('home.statsProducts')}</span>
               </div>
             </div>
