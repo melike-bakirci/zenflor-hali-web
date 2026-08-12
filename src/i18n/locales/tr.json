@@ -81,7 +81,7 @@
     "showingProducts": "{{count}} ürün gösteriliyor"
   },
   "blog": {
-    "title": "Blog",
+    "title": "Blog Yazılarımız",
     "subtitle": "Zemin kaplama dünyasından haberler ve ipuçları",
     "readMore": "Devamını Oku",
     "author": "Yazar",
@@ -130,7 +130,7 @@
   "floatingContact": {
     "whatsapp": "WhatsApp ile Yazın",
     "whatsappShort": "WhatsApp",
-    "call": "Hemen Arayın",
+    "call": "Bizi Arayın",
     "callShort": "Hemen Ara",
     "defaultMessage": "Merhaba, ürünleriniz ve hizmetleriniz hakkında bilgi almak istiyorum."
   }

@@ -160,7 +160,7 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              title={isEn ? 'Carpet Tile Collection' : 'Karo Halı Koleksiyonu'}
+              title={isEn ? 'Carpet Tile Collection' : 'Karo Halı Koleksiyonumuz'}
               subtitle={t('home.featuredSubtitle')}
             />
             <Link to="/karo-hali" className="btn btn-outline home__view-all">
@@ -180,7 +180,7 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              title={isEn ? 'Artificial Grass Collection' : 'Çim Halı Koleksiyonu'}
+              title={isEn ? 'Artificial Grass Collection' : 'Çim Halı Koleksiyonumuz'}
               subtitle={isEn ? 'Premium synthetic grass solutions' : 'Premium sentetik çim çözümleri'}
             />
             <Link to="/cim-hali" className="btn btn-outline home__view-all">
@@ -219,7 +219,7 @@ const Home: React.FC = () => {
       <section className="home__cta" id="home-cta">
         <div className="container home__cta-inner">
           <h2 className="home__cta-title font-display">
-            {isEn ? 'Get a Quote for Your Project' : 'Projeniz için Teklif Alın'}
+            {isEn ? 'Get a Quote for Your Project' : 'Projeniz için Teklif Alın!'}
           </h2>
           <p className="home__cta-subtitle">
             {isEn
