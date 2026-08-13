@@ -279,7 +279,7 @@ const Contact: React.FC = () => {
               </div>
             ) : (
               <>
-                <SectionTitle title={isEn ? 'Send us a Message' : 'Bize Mesaj Gönderin'} />
+                <SectionTitle title={isEn ? 'Send us a Message' : 'Bize Ulaşın'} />
                 <form className="contact__form" onSubmit={handleSubmit}>
                   <div className="contact__form-row">
                     <div className="contact__form-group">

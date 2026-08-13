@@ -30,20 +30,20 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transform: scale(1.08);
+  transform: scale(1);
 }
 
 .hero-slide.active .hero-slide__bg {
-  animation: heroZoom 15s linear forwards;
+  animation: heroZoom 7s linear forwards;
 }
 
 @keyframes heroZoom {
   from {
-    transform: scale(1.08);
+    transform: scale(1);
   }
 
   to {
-    transform: scale(1);
+    transform: scale(1.15);
   }
 }
 

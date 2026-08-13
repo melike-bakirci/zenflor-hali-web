@@ -61,7 +61,7 @@ const Home: React.FC = () => {
     if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     autoPlayRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
-    }, 15000);
+    }, 7000);
   };
 
   useEffect(() => {
