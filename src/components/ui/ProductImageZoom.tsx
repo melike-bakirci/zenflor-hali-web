@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Search, X, ZoomIn, ZoomOut } from 'lucide-react';
+import { Search, X, ZoomIn, ZoomOut, Download } from 'lucide-react';
 import './ProductImageZoom.css';
 
 interface ProductImageZoomProps {
@@ -70,6 +70,41 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
     setZoomLevel((prev) => (prev > 1.8 ? 1.5 : 2.5));
   };
 
+  const handleDownload = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    try {
+      const response = await fetch(src);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+
+      const fileExtMatch = src.match(/\.([a-zA-Z0-9]+)(?:[\?#]|$)/);
+      const ext = fileExtMatch ? fileExtMatch[1] : 'jpg';
+      const cleanAlt = alt
+        ? alt
+            .toLowerCase()
+            .replace(/[^a-z0-9çğıöşü]/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '')
+        : 'urun-gorseli';
+
+      link.download = `${cleanAlt}.${ext}`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      const link = document.createElement('a');
+      link.href = src;
+      link.download = `${alt || 'urun-gorseli'}.jpg`;
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
   return (
     <>
       {/* Main Image Container on Product Page */}
@@ -82,19 +117,30 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
         />
         {badge && <span className="pd-badge badge-dark">{badge}</span>}
 
-        {/* Minimalist Magnifier Button Overlay */}
-        <button
-          type="button"
-          className="pd-magnifier-btn"
-          aria-label="Görseli büyüt"
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsModalOpen(true);
-          }}
-          title="Büyütmek için tıklayın"
-        >
-          <Search size={16} />
-        </button>
+        {/* Overlay Action Buttons (Magnifier & Download) */}
+        <div className="pd-image-actions">
+          <button
+            type="button"
+            className="pd-action-btn pd-magnifier-btn"
+            aria-label="Görseli büyüt"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsModalOpen(true);
+            }}
+            title="Büyütmek için tıklayın"
+          >
+            <Search size={16} />
+          </button>
+          <button
+            type="button"
+            className="pd-action-btn pd-download-btn"
+            aria-label="Görseli indir"
+            onClick={handleDownload}
+            title="Görseli indir"
+          >
+            <Download size={16} />
+          </button>
+        </div>
       </div>
 
       {/* Minimalist Fullscreen Zoom Lightbox Modal */}
@@ -104,6 +150,14 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
           <div className="pd-minimal-topbar" onClick={(e) => e.stopPropagation()}>
             <span className="pd-minimal-title">{alt}</span>
             <div className="pd-minimal-actions">
+              <button
+                type="button"
+                className="pd-minimal-btn"
+                onClick={handleDownload}
+                title="Görseli İndir"
+              >
+                <Download size={18} />
+              </button>
               <button
                 type="button"
                 className="pd-minimal-btn"
