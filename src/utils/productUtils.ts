@@ -12,6 +12,16 @@ export interface FilterState {
   priceRange: [number, number]; // [min, max]
 }
 
+/**
+ * Fiyatı 5'in katlarına yukarı yuvarlar.
+ * Fiyat zaten 5'in katıysa aynen kalır, değilse bir üst 5 katına yuvarlanır.
+ * (Örn: 576 -> 580, 597.85 -> 600, 443 -> 445)
+ */
+export const roundUpTo5 = (price: number): number => {
+  if (price <= 0 || isNaN(price)) return 0;
+  return Math.ceil(price / 5) * 5;
+};
+
 export const formatPriceString = (priceStr?: string): string => {
   if (!priceStr) return '';
 
@@ -31,7 +41,9 @@ export const formatPriceString = (priceStr?: string): string => {
   const num = parseFloat(normalized);
   if (isNaN(num)) return priceStr;
 
-  const formattedNum = num.toLocaleString('tr-TR', {
+  const roundedNum = roundUpTo5(num);
+
+  const formattedNum = roundedNum.toLocaleString('tr-TR', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
@@ -59,7 +71,7 @@ export const getProductPrice = (product: Product): number => {
   }
 
   const num = parseFloat(normalized);
-  return isNaN(num) ? 0 : num;
+  return isNaN(num) ? 0 : roundUpTo5(num);
 };
 
 export const getProductDimension = (product: Product): string => {

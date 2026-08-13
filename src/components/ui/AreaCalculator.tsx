@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Calculator } from 'lucide-react';
+import { roundUpTo5 } from '../../utils/productUtils';
 import './AreaCalculator.css';
 
 const WhatsAppIcon = () => (
@@ -33,7 +34,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({ unitPriceText, p
     }
 
     const parsed = parseFloat(normalized);
-    return isNaN(parsed) ? 0 : parsed;
+    return isNaN(parsed) ? 0 : roundUpTo5(parsed);
   };
 
   const unitPrice = extractPrice(unitPriceText);
