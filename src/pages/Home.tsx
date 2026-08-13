@@ -159,15 +159,15 @@ const Home: React.FC = () => {
                 <span className="home__about-stat-label">Yıllık Deneyim</span>
               </div>
               <div className="home__about-stat">
-                <span className="home__about-stat-number">10.000+</span>
+                <span className="home__about-stat-number">20.000+</span>
                 <span className="home__about-stat-label">Tamamlanan Proje</span>
               </div>
               <div className="home__about-stat">
-                <span className="home__about-stat-number">300+</span>
+                <span className="home__about-stat-number">500+</span>
                 <span className="home__about-stat-label">Ürün Çeşidi</span>
               </div>
               <div className="home__about-stat">
-                <span className="home__about-stat-number">50+</span>
+                <span className="home__about-stat-number">1000+</span>
                 <span className="home__about-stat-label">Kurumsal Referans</span>
               </div>
             </div>

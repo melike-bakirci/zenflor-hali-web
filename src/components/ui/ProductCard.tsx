@@ -65,7 +65,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
             <span className="product-card__price">{formatPriceString(priceFeature.value)}</span>
           ) : null}
           <span className="product-card__link">
-            {t('products.viewDetails')} <ArrowRight size={14} />
+            {t('products.viewDetails')}<ArrowRight size={14} />
           </span>
         </div>
       </div>
