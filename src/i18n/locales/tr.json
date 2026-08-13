@@ -71,7 +71,7 @@
     "otherProducts": "Diğer Ürünler",
     "category": "Kategori",
     "infoRequest": "İletişim",
-    "searchPlaceholder": "Ürün adı veya kod yazın...",
+    "searchPlaceholder": "Ürün adı, kod veya özellik yazın... (örn: PP, PA, 50cm)",
     "searchButton": "Ara",
     "clearSearch": "Temizle",
     "sortBy": "Sırala",

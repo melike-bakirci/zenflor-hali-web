@@ -144,6 +144,125 @@ export const normalizeSearchText = (text: string = ''): string => {
     .toLowerCase();
 };
 
+/**
+ * Sayı ve birimler arasındaki boşlukları kaldırarak (örn: "50 cm" -> "50cm", "50 x 50" -> "50x50")
+ * boyut ve birim aramalarının hassas eşleşmesini sağlar.
+ */
+export const normalizeCompactUnits = (text: string = ''): string => {
+  if (!text) return '';
+  const norm = normalizeSearchText(text);
+  return norm
+    .replace(/(\d+)\s*(cm|mm|m²|m2|m|g\/m²|g\/m2|g|kg|pcs|adet)\b/gi, '$1$2')
+    .replace(/(\d+)\s*x\s*(\d+)/gi, '$1x$2');
+};
+
+/**
+ * Ürün arama sorguları için zenginleştirilmiş metin havuzu oluşturur.
+ * Ürün adı, kodu, özellikleri (TR & EN), iplik cinsleri (PP, PA, Poliamid, Polipropilen),
+ * ebat varyasyonları (50cm, 50x50, 25x100, 7mm vb.) ve etiketleri içerir.
+ */
+export const getProductSearchableText = (p: Product): { fullText: string; compactText: string; tokens: Set<string> } => {
+  const parts: string[] = [];
+  const tokens = new Set<string>();
+
+  // ID ve Slug
+  if (p.id) parts.push(p.id);
+  if (p.slug) {
+    parts.push(p.slug);
+    parts.push(p.slug.replace(/-/g, ' '));
+  }
+
+  // İsimler
+  if (p.name) parts.push(p.name);
+  if (p.nameEn) parts.push(p.nameEn);
+
+  // Açıklamalar
+  if (p.shortDesc) parts.push(p.shortDesc);
+  if (p.shortDescEn) parts.push(p.shortDescEn);
+  if (p.description) parts.push(p.description);
+  if (p.descriptionEn) parts.push(p.descriptionEn);
+
+  // Etiketler
+  if (p.tags) parts.push(...p.tags);
+  if (p.tagsEn) parts.push(...p.tagsEn);
+
+  // Özellikler (TR + EN hepsini dahil et)
+  const allFeatures = [...(p.features || []), ...(p.featuresEn || [])];
+  for (const f of allFeatures) {
+    parts.push(`${f.label} ${f.value}`);
+
+    const valLower = normalizeSearchText(f.value);
+
+    // İplik cinsi eşleşmeleri (PP, PA, Poliamid, Polyamide, Polipropilen)
+    if (valLower.includes('polipropilen') || valLower.includes('polypropylene') || valLower.includes('pp')) {
+      tokens.add('pp');
+      tokens.add('polipropilen');
+      tokens.add('polypropylene');
+    }
+    if (
+      valLower.includes('polyamide') ||
+      valLower.includes('poliamid') ||
+      valLower.includes('naylon') ||
+      valLower.includes('nylon') ||
+      valLower.includes('pa')
+    ) {
+      tokens.add('pa');
+      tokens.add('poliamid');
+      tokens.add('polyamide');
+      tokens.add('naylon');
+      tokens.add('nylon');
+    }
+
+    // Taban cinsi (Bitüm, Keçe vb.)
+    if (valLower.includes('bitüm') || valLower.includes('bitumen')) {
+      tokens.add('bitum');
+      tokens.add('bitumen');
+    }
+
+    // Ebat eşleşmeleri (50cm, 50x50, 25x100, 7mm vb.)
+    if (valLower.includes('50 cm') || valLower.includes('50cm')) {
+      tokens.add('50cm');
+      tokens.add('50x50');
+      tokens.add('50x50cm');
+    }
+    if (valLower.includes('25 cm') || valLower.includes('25cm') || valLower.includes('100 cm')) {
+      tokens.add('25cm');
+      tokens.add('100cm');
+      tokens.add('25x100');
+      tokens.add('25x100cm');
+    }
+    if (valLower.includes('7 mm') || valLower.includes('7mm')) {
+      tokens.add('7mm');
+    }
+    if (valLower.includes('20 mm') || valLower.includes('20mm')) {
+      tokens.add('20mm');
+    }
+    if (valLower.includes('30 mm') || valLower.includes('30mm')) {
+      tokens.add('30mm');
+    }
+    if (valLower.includes('40 mm') || valLower.includes('40mm')) {
+      tokens.add('40mm');
+    }
+    if (valLower.includes('50 mm') || valLower.includes('50mm')) {
+      tokens.add('50mm');
+    }
+  }
+
+  const rawJoined = parts.join(' ');
+  const fullText = normalizeSearchText(rawJoined);
+  const compactText = normalizeCompactUnits(rawJoined);
+
+  // Individual word tokens
+  fullText.split(/\s+/).forEach((t) => {
+    if (t.length > 0) tokens.add(t);
+  });
+  compactText.split(/\s+/).forEach((t) => {
+    if (t.length > 0) tokens.add(t);
+  });
+
+  return { fullText, compactText, tokens };
+};
+
 export const filterAndSortProducts = (
   products: Product[],
   filters: FilterState,
@@ -153,25 +272,32 @@ export const filterAndSortProducts = (
 
   // 1. Search Query
   if (filters.searchQuery.trim()) {
-    const q = normalizeSearchText(filters.searchQuery.trim());
-    result = result.filter((p) => {
-      const name = normalizeSearchText(isEn ? p.nameEn || p.name : p.name);
-      const desc = normalizeSearchText(isEn ? p.descriptionEn || p.description : p.description);
-      const shortDesc = normalizeSearchText(isEn ? p.shortDescEn || p.shortDesc : p.shortDesc);
-      const tags = normalizeSearchText((isEn ? p.tagsEn || p.tags : p.tags).join(' '));
-      const features = normalizeSearchText(
-        (isEn ? p.featuresEn || p.features : p.features)
-          ?.map((f) => `${f.label} ${f.value}`)
-          .join(' ') || ''
-      );
+    const rawQuery = filters.searchQuery.trim();
+    const normQuery = normalizeSearchText(rawQuery);
+    const compactQuery = normalizeCompactUnits(rawQuery);
 
-      return (
-        name.includes(q) ||
-        desc.includes(q) ||
-        shortDesc.includes(q) ||
-        tags.includes(q) ||
-        features.includes(q)
-      );
+    const terms = normQuery.split(/\s+/).filter(Boolean);
+
+    result = result.filter((p) => {
+      const { fullText, compactText, tokens } = getProductSearchableText(p);
+
+      return terms.every((term) => {
+        const compactTerm = normalizeCompactUnits(term);
+
+        // 1. Direct token set match (exact word / alias match like "pp", "pa", "50cm", "50x50", "7mm")
+        if (tokens.has(term) || tokens.has(compactTerm)) {
+          return true;
+        }
+
+        // 2. Short terms (<= 2 chars like "pa" or "pp"): require word boundary match or token match to avoid false positives
+        if (term.length <= 2) {
+          const regex = new RegExp(`\\b${term}\\b`, 'i');
+          return regex.test(fullText) || regex.test(compactText);
+        }
+
+        // 3. Normal substring match on fullText or compactText
+        return fullText.includes(term) || compactText.includes(term) || compactText.includes(compactTerm);
+      });
     });
   }
 

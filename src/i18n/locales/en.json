@@ -71,7 +71,7 @@
     "otherProducts": "Other Products",
     "category": "Category",
     "infoRequest": "Contact",
-    "searchPlaceholder": "Search product name or code...",
+    "searchPlaceholder": "Search product name, code or feature... (e.g. PP, PA, 50cm)",
     "searchButton": "Search",
     "clearSearch": "Clear",
     "sortBy": "Sort By",
