@@ -11,7 +11,7 @@ import ProductImageZoom from '../components/ui/ProductImageZoom';
 import AreaCalculator from '../components/ui/AreaCalculator';
 import ShareButtons from '../components/ui/ShareButtons';
 import usePageMeta from '../utils/usePageMeta';
-import { formatPriceString } from '../utils/productUtils';
+import { formatPriceString, getProductDiscountInfo } from '../utils/productUtils';
 
 const KaroHaliDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -36,6 +36,7 @@ const KaroHaliDetail: React.FC = () => {
 
   const priceFeature = features.find((f) => f.label === 'Fiyat' || f.label === 'Price');
   const others = karoHaliProducts.filter((p) => p.slug !== slug).slice(0, 4);
+  const discountInfo = getProductDiscountInfo(product);
 
   return (
     <div className="product-detail page-enter">
@@ -61,7 +62,11 @@ const KaroHaliDetail: React.FC = () => {
             <ProductImageZoom
               src={product.image}
               alt={name}
-              badge={product.featured ? (isEn ? 'Featured' : 'Öne Çıkan') : undefined}
+              badge={
+                discountInfo.hasDiscount
+                  ? (isEn ? '25 ₺ Discount' : '25 ₺ İndirim')
+                  : (product.featured ? (isEn ? 'Featured' : 'Öne Çıkan') : undefined)
+              }
             />
 
             {/* Tabbed Section: Açıklama & Özellikler */}
@@ -116,9 +121,18 @@ const KaroHaliDetail: React.FC = () => {
             {priceFeature && (
               <div className="pd-price-box">
                 <span className="pd-price-label">{isEn ? 'Unit Price:' : 'Birim Fiyatı:'}</span>
-                <span className="pd-price-value">{formatPriceString(priceFeature.value)}</span>
+                {discountInfo.hasDiscount ? (
+                  <div className="pd-price-discount-wrap">
+                    <span className="pd-price-old">{discountInfo.formattedOriginalPrice}</span>
+                    <span className="pd-price-value pd-price-value--discounted">{discountInfo.formattedSellingPrice}</span>
+                    <span className="pd-discount-badge">{isEn ? '25 ₺ Discount' : '25 ₺ İndirim'}</span>
+                  </div>
+                ) : (
+                  <span className="pd-price-value">{formatPriceString(priceFeature.value)}</span>
+                )}
               </div>
             )}
+
 
             {/* Metrekare & Fiyat Hesaplayıcı */}
             <AreaCalculator unitPriceText={priceFeature?.value} productName={name} />

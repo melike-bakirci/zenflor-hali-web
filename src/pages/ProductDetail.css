@@ -99,6 +99,36 @@
   letter-spacing: -0.02em;
 }
 
+.pd-price-discount-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.pd-price-old {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.pd-price-value--discounted {
+  color: #dc2626;
+}
+
+.pd-discount-badge {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  color: #ffffff;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-badge, 9999px);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+  letter-spacing: 0.02em;
+}
+
+
 /* Tabs Section */
 .pd-tabs-container {
   margin: 1.5rem 0 2rem;

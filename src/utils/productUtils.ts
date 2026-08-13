@@ -1,4 +1,6 @@
 import type { Product } from '../types/product';
+import { karoHaliProducts } from '../data/karoHaliProducts';
+import { cimHaliProducts } from '../data/cimHaliProducts';
 
 export type SortOption = 'price-asc' | 'price-desc' | 'name-asc' | 'name-desc';
 
@@ -73,6 +75,61 @@ export const getProductPrice = (product: Product): number => {
   const num = parseFloat(normalized);
   return isNaN(num) ? 0 : roundUpTo5(num);
 };
+
+export const getMaxPriceForCategory = (category: 'karo-hali' | 'cim-hali'): number => {
+  const products = category === 'karo-hali' ? karoHaliProducts : cimHaliProducts;
+  let max = 0;
+  for (const p of products) {
+    const price = getProductPrice(p);
+    if (price > max) {
+      max = price;
+    }
+  }
+  return max;
+};
+
+export interface ProductDiscountInfo {
+  hasDiscount: boolean;
+  sellingPrice: number;
+  originalPrice: number;
+  formattedSellingPrice: string;
+  formattedOriginalPrice: string;
+  discountAmount: number;
+}
+
+export const getProductDiscountInfo = (product: Product): ProductDiscountInfo => {
+  const sellingPrice = getProductPrice(product);
+  const maxCategoryPrice = getMaxPriceForCategory(product.category);
+
+  const hasDiscount = sellingPrice > 0 && maxCategoryPrice > 0 && sellingPrice === maxCategoryPrice;
+  const discountAmount = 25;
+  const originalPrice = hasDiscount ? sellingPrice + discountAmount : sellingPrice;
+
+  const features = product.features || [];
+  const priceFeature = features.find(
+    (f) => f.label.toLowerCase().includes('fiyat') || f.label.toLowerCase().includes('price')
+  );
+  const priceValueStr = priceFeature?.value || '';
+  const hasPerM2 = priceValueStr.toLowerCase().includes('/ m²') || priceValueStr.toLowerCase().includes('/m²');
+
+  const formattedOriginalNum = originalPrice.toLocaleString('tr-TR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  const formattedOriginalPrice = `${formattedOriginalNum} ₺${hasPerM2 ? ' / m²' : ''}`;
+  const formattedSellingPrice = formatPriceString(priceValueStr);
+
+  return {
+    hasDiscount,
+    sellingPrice,
+    originalPrice,
+    formattedSellingPrice,
+    formattedOriginalPrice,
+    discountAmount,
+  };
+};
+
 
 export const getProductDimension = (product: Product): string => {
   const dimFeature = product.features?.find(
@@ -274,9 +331,9 @@ export const filterAndSortProducts = (
   if (filters.searchQuery.trim()) {
     const rawQuery = filters.searchQuery.trim();
     const normQuery = normalizeSearchText(rawQuery);
-    const compactQuery = normalizeCompactUnits(rawQuery);
 
     const terms = normQuery.split(/\s+/).filter(Boolean);
+
 
     result = result.filter((p) => {
       const { fullText, compactText, tokens } = getProductSearchableText(p);
