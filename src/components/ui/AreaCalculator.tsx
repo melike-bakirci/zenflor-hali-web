@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Calculator } from 'lucide-react';
+import { Calculator, AlertTriangle, Info } from 'lucide-react';
 import { roundUpTo5 } from '../../utils/productUtils';
 import './AreaCalculator.css';
 
@@ -16,9 +16,9 @@ interface AreaCalculatorProps {
 }
 
 export const AreaCalculator: React.FC<AreaCalculatorProps> = ({ unitPriceText, productName }) => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
-  const [area, setArea] = useState<string>('1');
+  const [area, setArea] = useState<string>('');
 
   // Extract numeric unit price from string (e.g., "550,00 ₺ / m²" -> 550)
   const extractPrice = (priceStr?: string): number => {
@@ -38,7 +38,12 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({ unitPriceText, p
   };
 
   const unitPrice = extractPrice(unitPriceText);
-  const numericArea = Math.max(0, parseFloat(area) || 0);
+  const hasInput = area.trim() !== '' && !isNaN(parseFloat(area));
+  const numericArea = hasInput ? parseFloat(area) : 0;
+
+  const isMinError = hasInput && numericArea > 0 && numericArea < 5;
+  const isStockWarning = hasInput && numericArea > 10000;
+
   const totalPrice = unitPrice * numericArea;
 
   const formattedTotalPrice = totalPrice.toLocaleString('tr-TR', {
@@ -48,9 +53,16 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({ unitPriceText, p
 
   // Construct WhatsApp text message
   const pName = productName || (isEn ? 'product' : 'ürününüz');
-  const waText = isEn
-    ? `Hello, I would like to get a quote for ${pName} (${numericArea} m²${unitPrice > 0 ? `, Estimated Total: ${formattedTotalPrice} ₺` : ''}).`
-    : `Merhaba, ${pName} ürününden ${numericArea} m²${unitPrice > 0 ? ` (Tahmini Tutar: ${formattedTotalPrice} ₺)` : ''} teklif almak istiyorum.`;
+  let waText = '';
+  if (isStockWarning) {
+    waText = isEn
+      ? `Hello, I would like to get stock availability and quote info for ${pName} (${numericArea} m²).`
+      : `Merhaba, ${pName} ürününden ${numericArea} m² yüksek metrajlı siparişim için stok durumu ve özel teklif almak istiyorum.`;
+  } else {
+    waText = isEn
+      ? `Hello, I would like to get a quote for ${pName} (${numericArea} m²${unitPrice > 0 ? `, Estimated Total: ${formattedTotalPrice} ₺` : ''}).`
+      : `Merhaba, ${pName} ürününden ${numericArea} m²${unitPrice > 0 ? ` (Tahmini Tutar: ${formattedTotalPrice} ₺)` : ''} teklif almak istiyorum.`;
+  }
 
   const whatsappUrl = `https://wa.me/905302708487?text=${encodeURIComponent(waText)}`;
 
@@ -59,46 +71,86 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({ unitPriceText, p
       <div className="ac-header">
         <Calculator size={18} className="ac-icon" />
         <span className="ac-title">
-          {isEn ? 'Area & Price Calculator' : 'Metrekare & Fiyat Hesaplama'}
+          {t('areaCalculator.title', isEn ? 'Area & Price Calculator' : 'Metrekare & Fiyat Hesaplama')}
         </span>
       </div>
 
       <div className="ac-body">
         <div className="ac-input-group">
           <label htmlFor="area-input" className="ac-label">
-            {isEn ? 'Required Area (m²):' : 'İhtiyacınız olan Metrekare (m²):'}
+            {t('areaCalculator.label', isEn ? 'Required Area (m²):' : 'İhtiyacınız olan Metrekare (m²):')}
           </label>
-          <div className="ac-input-wrapper">
-            <input
-              id="area-input"
-              type="number"
-              min="0"
-              step="any"
-              value={area}
-              onChange={(e) => setArea(e.target.value)}
-              placeholder="1"
-              className="ac-input"
-            />
-            <span className="ac-unit">m²</span>
+          <div className="ac-input-container">
+            <div className="ac-input-wrapper">
+              <input
+                id="area-input"
+                type="number"
+                min="5"
+                max="10000"
+                step="any"
+                value={area}
+                onChange={(e) => setArea(e.target.value)}
+                placeholder="5"
+                className={`ac-input ${isStockWarning ? 'ac-input--warning' : ''} ${isMinError ? 'ac-input--error' : ''}`}
+              />
+              <span className="ac-unit">m²</span>
+            </div>
+            <span className="ac-range-info">
+              {t('areaCalculator.minMaxHint', isEn ? 'Min: 5 m² — Max: 10,000 m²' : 'Min: 5 m² — Max: 10.000 m²')}
+            </span>
           </div>
         </div>
 
-        {unitPrice > 0 && (
+        {/* Minimalist Stock Warning (when > 10,000 m²) */}
+        {isStockWarning && (
+          <div className="ac-notice ac-notice--stock" role="alert">
+            <AlertTriangle size={16} className="ac-notice-icon" />
+            <span>
+              {t(
+                'areaCalculator.stockWarning',
+                isEn
+                  ? 'For orders of 10,000 m² or more, please contact us for custom stock availability and delivery schedule.'
+                  : '10.000 m² ve üzeri siparişleriniz için lütfen özel stok ve teslimat süresi bilgisi alınız.'
+              )}
+            </span>
+          </div>
+        )}
+
+        {/* Minimalist Min Quantity Warning (when < 5 m²) */}
+        {isMinError && (
+          <div className="ac-notice ac-notice--min" role="alert">
+            <Info size={16} className="ac-notice-icon" />
+            <span>
+              {t(
+                'areaCalculator.minWarning',
+                isEn ? 'Minimum order quantity is 5 m².' : 'Minimum sipariş miktarı 5 m²\'dir.'
+              )}
+            </span>
+          </div>
+        )}
+
+        {unitPrice > 0 && hasInput && numericArea >= 5 && numericArea <= 10000 && (
           <div className="ac-result">
-            <span className="ac-result-label">{isEn ? 'Estimated Total:' : 'Tahmini Toplam Fiyat:'}</span>
+            <span className="ac-result-label">
+              {t('areaCalculator.estimatedTotal', isEn ? 'Estimated Total Price:' : 'Tahmini Toplam Fiyat:')}
+            </span>
             <span className="ac-result-value">{formattedTotalPrice} ₺</span>
           </div>
         )}
 
-        {numericArea > 0 && (
+        {hasInput && numericArea > 0 && (
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="ac-wa-btn"
+            className={`ac-wa-btn ${isStockWarning ? 'ac-wa-btn--stock' : ''}`}
           >
             <WhatsAppIcon />
-            <span>{isEn ? 'Get Quote via WhatsApp' : 'WhatsApp ile Teklif Al'}</span>
+            <span>
+              {isStockWarning
+                ? t('areaCalculator.getStockQuoteWa', isEn ? 'Get Stock & Quote via WhatsApp' : 'WhatsApp ile Stok & Fiyat Bilgisi Al')
+                : t('areaCalculator.getQuoteWa', isEn ? 'Get Quote via WhatsApp' : 'WhatsApp ile Teklif Al')}
+            </span>
           </a>
         )}
       </div>
@@ -107,4 +159,5 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({ unitPriceText, p
 };
 
 export default AreaCalculator;
+
 

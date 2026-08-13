@@ -145,5 +145,15 @@
     "call": "Bizi",
     "callShort": "Hemen Ara",
     "defaultMessage": "Merhaba, ürünleriniz ve hizmetleriniz hakkında bilgi almak istiyorum."
+  },
+  "areaCalculator": {
+    "title": "Metrekare & Fiyat Hesaplama",
+    "label": "İhtiyacınız olan Metrekare (m²):",
+    "minMaxHint": "Min: 5 m² — Max: 10.000 m²",
+    "minWarning": "Minimum sipariş miktarı 5 m²'dir.",
+    "stockWarning": "10.000 m² ve üzeri siparişleriniz için lütfen özel stok ve teslimat süresi bilgisi alınız.",
+    "estimatedTotal": "Tahmini Toplam Fiyat:",
+    "getQuoteWa": "WhatsApp ile Teklif Al",
+    "getStockQuoteWa": "WhatsApp ile Stok & Fiyat Bilgisi Al"
   }
 }

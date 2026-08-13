@@ -145,5 +145,15 @@
     "call": "Call Us Now",
     "callShort": "Call Now",
     "defaultMessage": "Hello, I would like to get information about your products and services."
+  },
+  "areaCalculator": {
+    "title": "Area & Price Calculator",
+    "label": "Required Area (m²):",
+    "minMaxHint": "Min: 5 m² — Max: 10,000 m²",
+    "minWarning": "Minimum order quantity is 5 m².",
+    "stockWarning": "For orders of 10,000 m² or more, please contact us for custom stock availability and delivery schedule.",
+    "estimatedTotal": "Estimated Total Price:",
+    "getQuoteWa": "Get Quote via WhatsApp",
+    "getStockQuoteWa": "Get Stock & Quote via WhatsApp"
   }
 }

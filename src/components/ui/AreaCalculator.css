@@ -41,6 +41,19 @@
   white-space: nowrap;
 }
 
+.ac-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.ac-range-info {
+  font-size: 0.725rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
 .ac-input-wrapper {
   position: relative;
   display: flex;
@@ -65,6 +78,16 @@
   box-shadow: 0 0 0 3px rgba(102, 16, 31, 0.12);
 }
 
+.ac-input--warning {
+  border-color: #cbd5e1 !important;
+  box-shadow: none !important;
+}
+
+.ac-input--error {
+  border-color: #cbd5e1 !important;
+  box-shadow: none !important;
+}
+
 .ac-unit {
   position: absolute;
   right: 0.75rem;
@@ -72,6 +95,47 @@
   font-weight: 600;
   color: #64748b;
   pointer-events: none;
+}
+
+/* Minimalist Notices */
+.ac-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  padding: 0.625rem 0.875rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #334155;
+  line-height: 1.45;
+  margin-top: 0.125rem;
+  animation: acFadeIn 0.25s ease-out;
+}
+
+.ac-notice-icon {
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.ac-notice--stock .ac-notice-icon {
+  color: #d97706;
+}
+
+.ac-notice--min .ac-notice-icon {
+  color: #64748b;
+}
+
+@keyframes acFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .ac-result {
@@ -135,6 +199,11 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+
+  .ac-input-container {
+    width: 100%;
+    align-items: flex-start;
   }
 
   .ac-input {
