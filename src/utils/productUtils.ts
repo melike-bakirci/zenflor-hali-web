@@ -88,6 +88,18 @@ export const getMaxPriceForCategory = (category: 'karo-hali' | 'cim-hali'): numb
   return max;
 };
 
+export const getMinPriceForCategory = (category: 'karo-hali' | 'cim-hali'): number => {
+  const products = category === 'karo-hali' ? karoHaliProducts : cimHaliProducts;
+  let min = Infinity;
+  for (const p of products) {
+    const price = getProductPrice(p);
+    if (price > 0 && price < min) {
+      min = price;
+    }
+  }
+  return min === Infinity ? 0 : min;
+};
+
 export interface ProductDiscountInfo {
   hasDiscount: boolean;
   sellingPrice: number;
@@ -100,9 +112,21 @@ export interface ProductDiscountInfo {
 export const getProductDiscountInfo = (product: Product): ProductDiscountInfo => {
   const sellingPrice = getProductPrice(product);
   const maxCategoryPrice = getMaxPriceForCategory(product.category);
+  const minCategoryPrice = getMinPriceForCategory(product.category);
 
-  const hasDiscount = sellingPrice > 0 && maxCategoryPrice > 0 && sellingPrice === maxCategoryPrice;
-  const discountAmount = 25;
+  let hasDiscount = false;
+  let discountAmount = 0;
+
+  if (sellingPrice > 0) {
+    if (maxCategoryPrice > 0 && sellingPrice === maxCategoryPrice) {
+      hasDiscount = true;
+      discountAmount = 25;
+    } else if (minCategoryPrice > 0 && sellingPrice === minCategoryPrice) {
+      hasDiscount = true;
+      discountAmount = 15;
+    }
+  }
+
   const originalPrice = hasDiscount ? sellingPrice + discountAmount : sellingPrice;
 
   const features = product.features || [];

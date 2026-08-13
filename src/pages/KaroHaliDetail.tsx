@@ -64,7 +64,7 @@ const KaroHaliDetail: React.FC = () => {
               alt={name}
               badge={
                 discountInfo.hasDiscount
-                  ? (isEn ? '25 ₺ Discount' : '25 ₺ İndirim')
+                  ? (isEn ? `${discountInfo.discountAmount} ₺ Discount` : `${discountInfo.discountAmount} ₺ İndirim`)
                   : (product.featured ? (isEn ? 'Featured' : 'Öne Çıkan') : undefined)
               }
             />
@@ -125,7 +125,7 @@ const KaroHaliDetail: React.FC = () => {
                   <div className="pd-price-discount-wrap">
                     <span className="pd-price-old">{discountInfo.formattedOriginalPrice}</span>
                     <span className="pd-price-value pd-price-value--discounted">{discountInfo.formattedSellingPrice}</span>
-                    <span className="pd-discount-badge">{isEn ? '25 ₺ Discount' : '25 ₺ İndirim'}</span>
+                    <span className="pd-discount-badge">{isEn ? `${discountInfo.discountAmount} ₺ Discount` : `${discountInfo.discountAmount} ₺ İndirim`}</span>
                   </div>
                 ) : (
                   <span className="pd-price-value">{formatPriceString(priceFeature.value)}</span>

@@ -39,7 +39,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
         {discountInfo.hasDiscount && (
           <div className="product-card__discount-badge">
             <Tag size={12} />
-            <span>{isEn ? '25 ₺ Discount' : '25 ₺ İndirim'}</span>
+            <span>{isEn ? `${discountInfo.discountAmount} ₺ Discount` : `${discountInfo.discountAmount} ₺ İndirim`}</span>
           </div>
         )}
         <div className="product-card__overlay">
