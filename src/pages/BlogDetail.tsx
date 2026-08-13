@@ -23,6 +23,7 @@ import {
 import Breadcrumb from '../components/ui/Breadcrumb';
 import { blogPosts } from '../data/blogPosts';
 import ReactMarkdown from 'react-markdown';
+import { normalizeSearchText } from '../utils/productUtils';
 import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
 import usePageMeta from '../utils/usePageMeta';
 import './BlogDetail.css';
@@ -197,12 +198,12 @@ const BlogDetail: React.FC = () => {
 
   const filteredSearch = searchQuery.trim().length > 1
     ? blogPosts.filter((p) => {
-        const q = searchQuery.toLowerCase();
+        const q = normalizeSearchText(searchQuery);
         return (
-          p.title.toLowerCase().includes(q) ||
-          p.titleEn.toLowerCase().includes(q) ||
-          p.excerpt.toLowerCase().includes(q) ||
-          (p.tags || []).some((tag) => tag.toLowerCase().includes(q))
+          normalizeSearchText(p.title).includes(q) ||
+          normalizeSearchText(p.titleEn).includes(q) ||
+          normalizeSearchText(p.excerpt).includes(q) ||
+          (p.tags || []).some((tag) => normalizeSearchText(tag).includes(q))
         );
       })
     : [];

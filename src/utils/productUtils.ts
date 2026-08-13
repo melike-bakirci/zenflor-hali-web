@@ -121,6 +121,29 @@ export const getProductColor = (product: Product): string => {
   return colorFeature ? colorFeature.value : '';
 };
 
+/**
+ * Arama metinlerini büyük/küçük harf ve Türkçe karakter hassasiyetinden arındırır.
+ * MAVİ, MAVI, mavi, maVi, mavı gibi tüm varyasyonları "mavi" haline getirir.
+ */
+export const normalizeSearchText = (text: string = ''): string => {
+  if (!text) return '';
+  return text
+    .replace(/İ/g, 'i')
+    .replace(/I/g, 'i')
+    .replace(/ı/g, 'i')
+    .replace(/Ç/g, 'c')
+    .replace(/ç/g, 'c')
+    .replace(/Ğ/g, 'g')
+    .replace(/ğ/g, 'g')
+    .replace(/Ö/g, 'o')
+    .replace(/ö/g, 'o')
+    .replace(/Ş/g, 's')
+    .replace(/ş/g, 's')
+    .replace(/Ü/g, 'u')
+    .replace(/ü/g, 'u')
+    .toLowerCase();
+};
+
 export const filterAndSortProducts = (
   products: Product[],
   filters: FilterState,
@@ -130,27 +153,40 @@ export const filterAndSortProducts = (
 
   // 1. Search Query
   if (filters.searchQuery.trim()) {
-    const q = filters.searchQuery.trim().toLowerCase();
+    const q = normalizeSearchText(filters.searchQuery.trim());
     result = result.filter((p) => {
-      const name = (isEn ? p.nameEn || p.name : p.name).toLowerCase();
-      const desc = (isEn ? p.descriptionEn || p.description : p.description).toLowerCase();
-      const tags = (isEn ? p.tagsEn || p.tags : p.tags).join(' ').toLowerCase();
-      return name.includes(q) || desc.includes(q) || tags.includes(q);
+      const name = normalizeSearchText(isEn ? p.nameEn || p.name : p.name);
+      const desc = normalizeSearchText(isEn ? p.descriptionEn || p.description : p.description);
+      const shortDesc = normalizeSearchText(isEn ? p.shortDescEn || p.shortDesc : p.shortDesc);
+      const tags = normalizeSearchText((isEn ? p.tagsEn || p.tags : p.tags).join(' '));
+      const features = normalizeSearchText(
+        (isEn ? p.featuresEn || p.features : p.features)
+          ?.map((f) => `${f.label} ${f.value}`)
+          .join(' ') || ''
+      );
+
+      return (
+        name.includes(q) ||
+        desc.includes(q) ||
+        shortDesc.includes(q) ||
+        tags.includes(q) ||
+        features.includes(q)
+      );
     });
   }
 
   // 2. Yarn Type Filter (İplik Cinsi - for Karo Halı)
   if (filters.selectedYarnTypes && filters.selectedYarnTypes.length > 0) {
     result = result.filter((p) => {
-      const yarnTr = getProductYarnType(p, false);
-      const yarnEn = getProductYarnType(p, true);
+      const yarnTr = normalizeSearchText(getProductYarnType(p, false));
+      const yarnEn = normalizeSearchText(getProductYarnType(p, true));
       return filters.selectedYarnTypes.some((selectedYarn) => {
-        const sLower = selectedYarn.toLowerCase();
+        const sNorm = normalizeSearchText(selectedYarn);
         return (
-          yarnTr.toLowerCase().includes(sLower) ||
-          yarnEn.toLowerCase().includes(sLower) ||
-          sLower.includes(yarnTr.toLowerCase()) ||
-          sLower.includes(yarnEn.toLowerCase())
+          yarnTr.includes(sNorm) ||
+          yarnEn.includes(sNorm) ||
+          sNorm.includes(yarnTr) ||
+          sNorm.includes(yarnEn)
         );
       });
     });
@@ -159,9 +195,9 @@ export const filterAndSortProducts = (
   // 3. Color Filter (Renk - for Çim Halı)
   if (filters.selectedColors && filters.selectedColors.length > 0) {
     result = result.filter((p) => {
-      const color = getProductColor(p);
-      return filters.selectedColors.some(
-        (selectedColor) => color.toLowerCase().includes(selectedColor.toLowerCase())
+      const color = normalizeSearchText(getProductColor(p));
+      return filters.selectedColors.some((selectedColor) =>
+        color.includes(normalizeSearchText(selectedColor))
       );
     });
   }
@@ -169,9 +205,9 @@ export const filterAndSortProducts = (
   // 4. Dimensions / Size Filter
   if (filters.selectedDimensions && filters.selectedDimensions.length > 0) {
     result = result.filter((p) => {
-      const dim = getProductDimension(p);
-      return filters.selectedDimensions.some(
-        (selectedDim) => dim.toLowerCase().includes(selectedDim.toLowerCase())
+      const dim = normalizeSearchText(getProductDimension(p));
+      return filters.selectedDimensions.some((selectedDim) =>
+        dim.includes(normalizeSearchText(selectedDim))
       );
     });
   }
@@ -179,9 +215,9 @@ export const filterAndSortProducts = (
   // 5. Backing / Feature Filter (if relevant)
   if (filters.selectedBacking && filters.selectedBacking.length > 0) {
     result = result.filter((p) => {
-      const backing = getProductBacking(p);
-      return filters.selectedBacking.some(
-        (selectedBacking) => backing.toLowerCase().includes(selectedBacking.toLowerCase())
+      const backing = normalizeSearchText(getProductBacking(p));
+      return filters.selectedBacking.some((selectedBacking) =>
+        backing.includes(normalizeSearchText(selectedBacking))
       );
     });
   }
