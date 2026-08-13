@@ -32,7 +32,7 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
     new Set(products.map((p) => getProductYarnType(p, isEn)))
   ).filter(Boolean);
   const availableColors = Array.from(new Set(products.map(getProductColor))).filter(Boolean);
-  
+
   const availableDimensions = Array.from(
     new Set(products.map(getProductDimension).filter(Boolean))
   );
@@ -246,7 +246,6 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
           <h4 className="filter-group__title">{isEn ? 'Price Range (₺ / m²)' : 'Fiyat Aralığı (₺ / m²)'}</h4>
           <div className="price-inputs">
             <div className="price-input-field">
-              <span>₺</span>
               <input
                 type="number"
                 min={minAvailablePrice}
@@ -255,10 +254,10 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
                 onChange={(e) => setTempPriceMin(Number(e.target.value))}
                 placeholder="Min"
               />
+              <span>₺</span>
             </div>
             <span className="price-dash">-</span>
             <div className="price-input-field">
-              <span>₺</span>
               <input
                 type="number"
                 min={tempPriceMin}
@@ -267,6 +266,7 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
                 onChange={(e) => setTempPriceMax(Number(e.target.value))}
                 placeholder="Max"
               />
+              <span>₺</span>
             </div>
           </div>
           <button

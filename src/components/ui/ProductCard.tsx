@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 import type { Product } from '../../types/product';
+import { formatPriceString } from '../../utils/productUtils';
 import './ProductCard.css';
 
 interface ProductCardProps {
@@ -49,7 +50,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
         {shortDesc && <p className="product-card__desc">{shortDesc}</p>}
         <div className="product-card__footer">
           {priceFeature && (
-            <span className="product-card__price">{priceFeature.value}</span>
+            <span className="product-card__price">{formatPriceString(priceFeature.value)}</span>
           )}
           <span className="product-card__link">
             {t('products.viewDetails')} <ArrowRight size={14} />

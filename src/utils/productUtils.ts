@@ -12,6 +12,33 @@ export interface FilterState {
   priceRange: [number, number]; // [min, max]
 }
 
+export const formatPriceString = (priceStr?: string): string => {
+  if (!priceStr) return '';
+
+  const hasPerM2 = priceStr.toLowerCase().includes('/ m²') || priceStr.toLowerCase().includes('/m²');
+
+  // Extract numeric part
+  const cleanVal = priceStr.replace(/[^0-9.,]/g, '').trim();
+  if (!cleanVal) return priceStr;
+
+  let normalized = cleanVal;
+  if (normalized.includes('.') && normalized.includes(',')) {
+    normalized = normalized.replace(/\./g, '').replace(',', '.');
+  } else if (normalized.includes(',')) {
+    normalized = normalized.replace(',', '.');
+  }
+
+  const num = parseFloat(normalized);
+  if (isNaN(num)) return priceStr;
+
+  const formattedNum = num.toLocaleString('tr-TR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  return `${formattedNum} ₺${hasPerM2 ? ' / m²' : ''}`;
+};
+
 export const getProductPrice = (product: Product): number => {
   const priceFeature = product.features?.find(
     (f) => f.label.toLowerCase().includes('fiyat') || f.label.toLowerCase().includes('price')

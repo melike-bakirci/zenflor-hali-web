@@ -11,6 +11,7 @@ import ProductImageZoom from '../components/ui/ProductImageZoom';
 import AreaCalculator from '../components/ui/AreaCalculator';
 import ShareButtons from '../components/ui/ShareButtons';
 import usePageMeta from '../utils/usePageMeta';
+import { formatPriceString } from '../utils/productUtils';
 
 const KaroHaliDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -115,7 +116,7 @@ const KaroHaliDetail: React.FC = () => {
             {priceFeature && (
               <div className="pd-price-box">
                 <span className="pd-price-label">{isEn ? 'Unit Price:' : 'Birim Fiyatı:'}</span>
-                <span className="pd-price-value">{priceFeature.value}</span>
+                <span className="pd-price-value">{formatPriceString(priceFeature.value)}</span>
               </div>
             )}
 
