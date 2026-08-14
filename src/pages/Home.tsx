@@ -151,8 +151,16 @@ const Home: React.FC = () => {
       <section 
         className={`hero-slider ${isPaused ? 'is-paused' : ''}`} 
         aria-label="Hero slider"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
+        onMouseEnter={() => {
+          if (window.matchMedia('(hover: hover)').matches) {
+            setIsPaused(true);
+          }
+        }}
+        onMouseLeave={() => {
+          if (window.matchMedia('(hover: hover)').matches) {
+            setIsPaused(false);
+          }
+        }}
       >
         {HERO_SLIDES.map((slide, index) => (
           <div

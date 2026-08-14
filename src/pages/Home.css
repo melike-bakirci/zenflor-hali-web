@@ -546,7 +546,35 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero-slider {
-    height: 380px;
+    height: 480px;
+  }
+
+  .hero-slide__title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-slide__subtitle {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-slide__content {
+    padding: 0 2.5rem;
+  }
+
+  .hero-slider__nav {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero-slider__nav--prev {
+    left: 0.5rem;
+  }
+
+  .hero-slider__nav--next {
+    right: 0.5rem;
   }
 
   .home__featured-header {

@@ -265,6 +265,34 @@
   .navbar__main {
     height: 60px;
   }
+
+  .navbar__topbar-inner {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: space-between;
+    gap: 0.25rem;
+    padding: 0 0.5rem;
+  }
+
+  .navbar__topbar-left {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  /* Hide the WhatsApp link on mobile to save space (keep normal phone) */
+  .navbar__topbar-whatsapp {
+    display: none !important;
+  }
+
+  .navbar__topbar-item {
+    white-space: nowrap;
+    font-size: 0.65rem;
+  }
+  
+  .navbar__topbar-item svg {
+    width: 12px;
+    height: 12px;
+  }
 }
 
 @media (max-width: 480px) {
