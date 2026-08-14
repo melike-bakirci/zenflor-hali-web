@@ -9,16 +9,23 @@ export default {
       colors: {
         primary: {
           DEFAULT: '#66101F',
-          hover: '#855A5C',
+          hover: '#561621',
           light: '#855A5C',
-          dark: '#66101F',
+          dark: '#3A0912',
         },
-        secondary: '#D3D3D3',
-        accent: '#855A5C',
+        secondary: {
+          DEFAULT: '#D3D3D3',
+          light: '#F3F4F6',
+          dark: '#9CA3AF',
+        },
+        accent: {
+          DEFAULT: '#855A5C',
+          hover: '#9c6f71',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Outfit', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         container: '1280px',

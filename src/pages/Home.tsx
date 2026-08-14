@@ -48,13 +48,16 @@ const Home: React.FC = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedRefProject, setSelectedRefProject] = useState<ReferenceProject | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const resetAutoPlay = () => {
     if (autoPlayRef.current) clearInterval(autoPlayRef.current);
-    autoPlayRef.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
-    }, 7000);
+    if (!isPaused) {
+      autoPlayRef.current = setInterval(() => {
+        setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
+      }, 7000);
+    }
   };
 
   useEffect(() => {
@@ -62,7 +65,7 @@ const Home: React.FC = () => {
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     };
-  }, []);
+  }, [isPaused]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
@@ -145,7 +148,12 @@ const Home: React.FC = () => {
         ]}
       />
       {/* ===== HERO SLIDER ===== */}
-      <section className="hero-slider" aria-label="Hero slider">
+      <section 
+        className={`hero-slider ${isPaused ? 'is-paused' : ''}`} 
+        aria-label="Hero slider"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         {HERO_SLIDES.map((slide, index) => (
           <div
             key={index}
@@ -166,7 +174,8 @@ const Home: React.FC = () => {
                   <span>{t('home.heroCtaContact', 'İletişim')}</span>
                 </Link>
                 <a href="tel:+905302708487" className="hero-btn hero-btn--outline">
-                  <span>{t('home.heroCtaQuote', 'Teklif Al')}</span>
+                  <Phone size={18} />
+                  <span>{t('home.heroCtaQuote', 'Bizi Arayın')}</span>
                 </a>
               </div>
             </div>
