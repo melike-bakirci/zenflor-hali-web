@@ -88,7 +88,7 @@
   font-size: clamp(2.25rem, 5.5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.15;
-  font-family: var(--font-display, 'Inter', system-ui, sans-serif);
+  font-family: var(--font-display, 'Playfair Display', serif);
   letter-spacing: -0.025em;
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
   color: #ffffff;
@@ -217,7 +217,7 @@
   background: rgba(255, 255, 255, 0.4);
   border: none;
   cursor: pointer;
-  transition: width 250ms ease, background 250ms ease;
+  transition: background 250ms ease;
   padding: 0;
   overflow: hidden;
   position: relative;
@@ -237,16 +237,17 @@
   width: 100%;
   background: var(--color-primary, #66101F);
   border-radius: 9999px;
+  transform-origin: left;
   animation: dotProgress 15s linear forwards;
 }
 
 @keyframes dotProgress {
   from {
-    width: 0%;
+    transform: scaleX(0);
   }
 
   to {
-    width: 100%;
+    transform: scaleX(1);
   }
 }
 
@@ -424,7 +425,7 @@
 }
 
 .home__cat-title {
-  font-family: var(--font-display, 'Inter', system-ui, sans-serif);
+  font-family: var(--font-display, 'Playfair Display', serif);
   font-size: 1.35rem;
   font-weight: 800;
   color: var(--color-text-primary, #0f172a);

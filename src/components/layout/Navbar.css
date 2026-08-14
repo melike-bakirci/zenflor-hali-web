@@ -100,7 +100,7 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-btn, 8px);
-  font-family: var(--font-display, 'Inter', sans-serif);
+  font-family: var(--font-body, 'Outfit', sans-serif);
   font-size: 0.95rem;
   font-weight: 800;
   flex-shrink: 0;

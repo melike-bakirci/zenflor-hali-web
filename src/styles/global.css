@@ -141,7 +141,7 @@
   transition: all var(--transition-base, 250ms ease);
   cursor: pointer;
   border: none;
-  font-family: var(--font-body, 'Inter', system-ui, sans-serif);
+  font-family: var(--font-body, 'Outfit', system-ui, sans-serif);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -181,6 +181,6 @@
 
 /* === FONT UTILITY === */
 .font-display {
-  font-family: var(--font-display, 'Inter', system-ui, sans-serif);
+  font-family: var(--font-display, 'Playfair Display', serif);
 }
 

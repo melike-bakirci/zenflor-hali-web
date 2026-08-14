@@ -23,8 +23,8 @@
   --color-border-hover: rgba(102, 16, 31, 0.35);
 
   /* === TYPOGRAPHY === */
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-display: 'Inter', system-ui, sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-display: 'Playfair Display', serif;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;

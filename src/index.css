@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -21,7 +21,7 @@
   }
 
   body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-body, 'Outfit', system-ui, -apple-system, sans-serif);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -89,12 +89,6 @@
 }
 
 @layer utilities {
-  .text-gradient {
-    background: linear-gradient(135deg, #855A5C, #66101F);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
 
   .animate-fadeInUp {
     animation: fadeInUp 0.6s ease forwards;
