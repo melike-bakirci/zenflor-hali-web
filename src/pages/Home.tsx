@@ -13,7 +13,7 @@ import { cimHaliProducts } from '../data/cimHaliProducts';
 import { blogPosts } from '../data/blogPosts';
 import { referenceProjects, type ReferenceProject } from '../data/referencesData';
 import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
-import usePageMeta from '../utils/usePageMeta';
+import SEO from '../components/seo/SEO';
 import './Home.css';
 
 const HERO_SLIDES = [
@@ -34,13 +34,6 @@ const Home: React.FC = () => {
   const isEn = i18n.language === 'en';
   const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
-
-  usePageMeta({
-    title: isEn ? 'Carpet Tiles & Artificial Grass Solutions' : 'Karo Halı ve Çim Halı Çözümleri',
-    description: isEn
-      ? 'Zenflor - Premium carpet tile and artificial grass flooring solutions for corporate, office, and garden spaces.'
-      : 'Zenflor - Kaliteli karo halı ve çim halı modelleri. Ofis, kurumsal ve bahçe alanları için zemin kaplama çözümleri.',
-  });
 
   // Parallax on scroll
   useEffect(() => {
@@ -88,6 +81,69 @@ const Home: React.FC = () => {
 
   return (
     <div className="home page-enter">
+      <SEO 
+        title={isEn ? 'Carpet Tiles & Artificial Grass Solutions | Zenflor' : 'Karo Halı ve Çim Halı Zemin Kaplama Çözümleri | Zenflor'}
+        description={isEn
+          ? 'Zenflor - Premium carpet tile and artificial grass flooring solutions for corporate, office, and garden spaces.'
+          : 'Zenflor; ofis, otel ve ticari alanlar için yüksek performanslı akustik karo halı ve uzun ömürlü peyzaj çim halı modelleri sunar. Merkezimiz Sancaktepe Sarıgazi\'de olup tüm Türkiye\'ye uygun fiyatlı toptan ve perakende satışımız mevcuttur.'}
+        keywords="karo halı, çim halı, karo halı fiyatları, ofis halısı, istanbul karo halı firmaları, sarıgazi karo halı, sancaktepe çim halı, ucuz çim halı, akustik zemin kaplama"
+        canonicalUrl="/"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Zenflor",
+            "url": "https://zenflor.com",
+            "logo": "https://zenflor.com/logo-nobg.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+90-530-270-84-87",
+              "contactType": "customer service"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Zenflor",
+            "url": "https://zenflor.com",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://zenflor.com/arama?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "SiteNavigationElement",
+                "position": 1,
+                "name": "Karo Halı",
+                "url": "https://zenflor.com/karo-hali"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 2,
+                "name": "Çim Halı",
+                "url": "https://zenflor.com/cim-hali"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 3,
+                "name": "Referanslarımız",
+                "url": "https://zenflor.com/referanslar"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 4,
+                "name": "İletişim",
+                "url": "https://zenflor.com/iletisim"
+              }
+            ]
+          }
+        ]}
+      />
       {/* ===== HERO SLIDER ===== */}
       <section className="hero-slider" aria-label="Hero slider">
         {HERO_SLIDES.map((slide, index) => (
@@ -193,7 +249,7 @@ const Home: React.FC = () => {
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') navigate('/karo-hali'); }}
             >
               <div className="home__cat-img-wrapper">
-                <img src="/images/cat-karo-office.png" alt={t('home.karoHaliCat')} className="home__cat-img" />
+                <img src="/images/cat-karo-office.png" alt="Ofis ve Ticari Akustik Karo Halı Modelleri ve Uygulamaları" className="home__cat-img" />
               </div>
               <div className="home__cat-content">
                 <h3 className="home__cat-title">{t('home.karoHaliCat')}</h3>
@@ -223,7 +279,7 @@ const Home: React.FC = () => {
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') navigate('/cim-hali'); }}
             >
               <div className="home__cat-img-wrapper">
-                <img src="/images/cat-cim-landscape.png" alt={t('home.cimHaliCat')} className="home__cat-img" />
+                <img src="/images/cat-cim-landscape.png" alt="Bahçe ve Balkon İçin Dekoratif Suni Çim Halı Modelleri" className="home__cat-img" />
               </div>
               <div className="home__cat-content">
                 <h3 className="home__cat-title">{t('home.cimHaliCat')}</h3>

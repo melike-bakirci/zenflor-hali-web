@@ -10,7 +10,7 @@ import './ProductDetail.css';
 import ProductImageZoom from '../components/ui/ProductImageZoom';
 import AreaCalculator from '../components/ui/AreaCalculator';
 import ShareButtons from '../components/ui/ShareButtons';
-import usePageMeta from '../utils/usePageMeta';
+import SEO from '../components/seo/SEO';
 import { formatPriceString, getProductDiscountInfo } from '../utils/productUtils';
 
 const KaroHaliDetail: React.FC = () => {
@@ -27,11 +27,6 @@ const KaroHaliDetail: React.FC = () => {
   const shortDesc = product ? (isEn ? product.shortDescEn : product.shortDesc) : '';
   const features = product ? (isEn ? product.featuresEn : product.features) : [];
 
-  usePageMeta({
-    title: product ? `${name} Karo Halı` : 'Karo Halı',
-    description: shortDesc || description,
-  });
-
   if (!product) return <Navigate to="/karo-hali" replace />;
 
   const priceFeature = features.find((f) => f.label === 'Fiyat' || f.label === 'Price');
@@ -40,6 +35,25 @@ const KaroHaliDetail: React.FC = () => {
 
   return (
     <div className="product-detail page-enter">
+      <SEO 
+        title={product ? `${name} Karo Halı` : 'Karo Halı'}
+        description={shortDesc || description}
+        canonicalUrl={`/karo-hali/${slug}`}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": name,
+          "image": product?.image ? `https://zenflor.com${product.image}` : "https://zenflor.com/logo-nobg.png",
+          "description": description,
+          "offers": {
+            "@type": "Offer",
+            "url": `https://zenflor.com/karo-hali/${slug}`,
+            "priceCurrency": "TRY",
+            "price": discountInfo.hasDiscount ? discountInfo.sellingPrice : (priceFeature ? priceFeature.value : "0"),
+            "availability": "https://schema.org/InStock"
+          }
+        }}
+      />
       <div className="container">
         {/* Breadcrumb */}
         <Breadcrumb

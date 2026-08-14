@@ -9,7 +9,7 @@ import ProductSidebarFilter from '../components/ui/ProductSidebarFilter';
 import { karoHaliProducts } from '../data/karoHaliProducts';
 import { filterAndSortProducts, type FilterState, type SortOption } from '../utils/productUtils';
 import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
-import usePageMeta from '../utils/usePageMeta';
+import SEO from '../components/seo/SEO';
 import './ProductList.css';
 
 const ITEMS_PER_PAGE = 12;
@@ -17,13 +17,6 @@ const ITEMS_PER_PAGE = 12;
 const KaroHali: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
-
-  usePageMeta({
-    title: isEn ? 'Carpet Tile Models & Prices' : 'Karo Halı Modelleri ve Fiyatları',
-    description: isEn
-      ? 'Explore high quality carpet tile collections for offices, hotels, and corporate buildings at the best prices.'
-      : 'Ofis, otel ve kurumsal mekanlar için en uygun fiyatlı, yüksek ses akustikli karo halı çeşitlerimizi keşfedin.',
-  });
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -75,6 +68,14 @@ const KaroHali: React.FC = () => {
 
   return (
     <div className="product-list page-enter">
+      <SEO 
+        title={isEn ? 'Carpet Tile Models & Prices | Zenflor' : 'Ticari ve Ofis Karo Halı Modelleri & Fiyatları | Zenflor'}
+        description={isEn
+          ? 'Explore high quality carpet tile collections for offices, hotels, and corporate buildings at the best prices.'
+          : 'Yüksek yaya trafiğine dayanıklı ofis karo halı modelleri. İstanbul Sancaktepe ve Sarıgazi dahil tüm Türkiye\'ye en uygun karo halı m² fiyatları ve zemin kaplama çözümleri.'}
+        canonicalUrl="/karo-hali"
+        keywords="ticari karo halı, ofis karo halı fiyatları, istanbul karo halı, sancaktepe ofis halısı, sarıgazi zemin kaplama, yanmaz karo halı, antistatik halı, karo halı m2 fiyatı"
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />

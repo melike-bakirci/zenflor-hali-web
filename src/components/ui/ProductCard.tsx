@@ -29,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
       <div className="product-card__image-wrap">
         <img
           src={product.image}
-          alt={name}
+          alt={isEn ? name : `Uygun fiyatlı ve ucuz ${name} modelleri`}
           className="product-card__image"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = 'none';

@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
               aria-label="Karo Halı Ana Sayfa"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <img src="/images/logo-nobg.png" alt="Karo Halı" className="navbar__logo-img" />
+              <img src="/images/logo-nobg.png" alt="ZenFlor Karo Halı ve Çim Halı Firması Logosu" className="navbar__logo-img" />
               <div className="navbar__logo-text">
                 <span className="navbar__logo-name">ZenFlor</span>
                 <span className="navbar__logo-tagline">Karo & Çim Halı Çözümleri</span>

@@ -68,7 +68,7 @@ const ReferenceModal: React.FC<ReferenceModalProps> = ({ project, onClose, isEn 
         <div className="ref-modal__image-wrapper">
           <img
             src={images[currentImgIndex]}
-            alt="Uygulama Görseli"
+            alt={isEn ? (project.titleEn || 'Project Image') : `Kurumsal Zemin Kaplama Uygulama Referans Görseli: ${project.title}`}
             className="ref-modal__pure-img"
           />
 

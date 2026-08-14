@@ -1,5 +1,6 @@
 import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/layout/Layout';
 import PageLoader from './components/ui/PageLoader';
 
@@ -28,31 +29,33 @@ const ScrollToTop = () => {
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Layout>
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/hakkimizda" element={<About />} />
-            <Route path="/karo-hali" element={<KaroHali />} />
-            <Route path="/karo-hali/:slug" element={<KaroHaliDetail />} />
-            <Route path="/cim-hali" element={<CimHali />} />
-            <Route path="/cim-hali/:slug" element={<CimHaliDetail />} />
-            <Route path="/referanslar" element={<References />} />
-            <Route path="/referanslarimiz" element={<References />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogDetail />} />
-            <Route path="/iletisim" element={<Contact />} />
-            <Route path="/gizlilik" element={<Legal defaultTab="privacy" />} />
-            <Route path="/kosullar" element={<Legal defaultTab="terms" />} />
-            <Route path="/kvkk" element={<Legal defaultTab="kvkk" />} />
-            <Route path="/cerez-politikasi" element={<Legal defaultTab="cookies" />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </Layout>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Layout>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/hakkimizda" element={<About />} />
+              <Route path="/karo-hali" element={<KaroHali />} />
+              <Route path="/karo-hali/:slug" element={<KaroHaliDetail />} />
+              <Route path="/cim-hali" element={<CimHali />} />
+              <Route path="/cim-hali/:slug" element={<CimHaliDetail />} />
+              <Route path="/referanslar" element={<References />} />
+              <Route path="/referanslarimiz" element={<References />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogDetail />} />
+              <Route path="/iletisim" element={<Contact />} />
+              <Route path="/gizlilik" element={<Legal defaultTab="privacy" />} />
+              <Route path="/kosullar" element={<Legal defaultTab="terms" />} />
+              <Route path="/kvkk" element={<Legal defaultTab="kvkk" />} />
+              <Route path="/cerez-politikasi" element={<Legal defaultTab="cookies" />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </Layout>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 };
 

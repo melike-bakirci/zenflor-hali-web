@@ -27,7 +27,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
       <div className="blog-card__image-wrap">
         <img
           src={post.image}
-          alt={title}
+          alt={isEn ? title : `Zemin Kaplama Blog ve Dekorasyon: ${title}`}
           className="blog-card__image"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = 'none';

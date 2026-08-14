@@ -4,21 +4,14 @@ import SectionTitle from '../components/ui/SectionTitle';
 import BlogCard from '../components/ui/BlogCard';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
+import SEO from '../components/seo/SEO';
 import { blogPosts } from '../data/blogPosts';
-import usePageMeta from '../utils/usePageMeta';
 import './Blog.css';
 
 const Blog: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
   const [selectedCategory, setSelectedCategory] = React.useState<string>('all');
-
-  usePageMeta({
-    title: isEn ? 'Blog & News' : 'Blog & İçerikler',
-    description: isEn
-      ? 'Read news, guides, and practical tips about carpet tiles, artificial grass, and interior floor design.'
-      : 'Karo halı, çim halı, zemin kaplama uygulamaları ve dekorasyon dünyasından güncel haberler ve rehberler.',
-  });
 
   const filteredPosts = blogPosts.filter((post) => {
     if (selectedCategory === 'karo-hali') {
@@ -32,6 +25,14 @@ const Blog: React.FC = () => {
 
   return (
     <div className="blog page-enter">
+      <SEO 
+        title={isEn ? 'Blog & News' : 'Zemin Kaplama Blog & Dekorasyon Fikirleri | Zenflor'}
+        description={isEn
+          ? 'Read news, guides, and practical tips about carpet tiles, artificial grass, and interior floor design.'
+          : 'Karo halı fiyatları, çim halı modelleri, zemin kaplama uygulamaları ve dekorasyon dünyasından güncel haberler, rehberler ve montaj ipuçları.'}
+        canonicalUrl="/blog"
+        keywords="zemin kaplama blog, karo halı rehberi, çim halı nasıl serilir, ofis dekorasyon fikirleri, zemin kaplama trendleri"
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />

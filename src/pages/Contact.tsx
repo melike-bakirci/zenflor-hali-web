@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
-import usePageMeta from '../utils/usePageMeta';
+import SEO from '../components/seo/SEO';
 import './Contact.css';
 
 const InstagramIcon = () => (
@@ -73,13 +73,6 @@ const Contact: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  usePageMeta({
-    title: isEn ? 'Contact Us' : 'İletişim & Adres Bilgileri',
-    description: isEn
-      ? 'Get in touch with Zenflor for carpet tile and artificial grass quotes, project consultations, and address details.'
-      : 'Zenflor ile iletişime geçin. Karo halı ve çim halı numune talepleri, telefon, adres ve teklif bilgileri.',
-  });
-
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -127,6 +120,30 @@ const Contact: React.FC = () => {
 
   return (
     <div className="contact page-enter">
+      <SEO 
+        title={isEn ? 'Contact Us' : 'İletişim & Adres Bilgileri | Zenflor'}
+        description={isEn
+          ? 'Get in touch with Zenflor for carpet tile and artificial grass quotes, project consultations, and address details.'
+          : 'Zenflor İstanbul Sancaktepe Sarıgazi merkez ofisi ile iletişime geçin. Karo halı ve çim halı numune talepleri, adres ve Türkiye geneli projelerinize özel fiyat teklifleri.'}
+        canonicalUrl="/iletisim"
+        keywords="zenflor iletişim, karo halı telefon, çim halı iletişim, zemin kaplama iletişim, sancaktepe karo halı, sarıgazi halı firmaları, istanbul zemin kaplama"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Zenflor",
+          "image": "https://zenflor.com/logo-nobg.png",
+          "telephone": "+905302708487",
+          "email": "zenflormarket@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Leman Sk. No:4",
+            "addressLocality": "Sancaktepe",
+            "addressRegion": "İstanbul",
+            "addressCountry": "TR"
+          },
+          "url": "https://zenflor.com"
+        }}
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />

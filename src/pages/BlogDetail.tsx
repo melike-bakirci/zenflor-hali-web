@@ -25,7 +25,7 @@ import { blogPosts } from '../data/blogPosts';
 import ReactMarkdown from 'react-markdown';
 import { normalizeSearchText } from '../utils/productUtils';
 import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
-import usePageMeta from '../utils/usePageMeta';
+import SEO from '../components/seo/SEO';
 import './BlogDetail.css';
 
 type FontSize = 'sm' | 'md' | 'lg';
@@ -59,11 +59,6 @@ const BlogDetail: React.FC = () => {
   const post = blogPosts.find((p) => p.slug === slug);
   const title = post ? (isEn ? post.titleEn : post.title) : '';
   const excerpt = post ? (isEn ? post.excerptEn || post.excerpt : post.excerpt) : '';
-
-  usePageMeta({
-    title: post ? `${title} | Blog` : 'Blog',
-    description: excerpt,
-  });
 
   // Font size
   const [fontSize, setFontSize] = useState<FontSize>(() => {
@@ -215,6 +210,31 @@ const BlogDetail: React.FC = () => {
 
   return (
     <div className="blog-detail page-enter">
+      <SEO 
+        title={post ? `${title} | Blog` : 'Blog'}
+        description={excerpt}
+        canonicalUrl={`/blog/${slug}`}
+        type="article"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": title,
+          "image": post?.image ? `https://zenflor.com${post.image}` : "https://zenflor.com/logo-nobg.png",
+          "author": {
+            "@type": "Person",
+            "name": post?.author || "Zenflor"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Zenflor",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://zenflor.com/logo-nobg.png"
+            }
+          },
+          "datePublished": post?.date
+        }}
+      />
       <div className="blog-detail__wrapper container">
         {/* Breadcrumb */}
         <Breadcrumb
@@ -346,7 +366,7 @@ const BlogDetail: React.FC = () => {
               <div className="blog-detail__image-wrap">
                 <img
                   src={post.image}
-                  alt={title}
+                  alt={isEn ? title : `Zemin Kaplama Blog Dekorasyon Görseli: ${title}`}
                   className="blog-detail__image"
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).style.display = 'none';
@@ -384,7 +404,7 @@ const BlogDetail: React.FC = () => {
                     pre: ({ children }) => <pre className="blog-pre">{children}</pre>,
                     img: ({ src, alt }) => (
                       <figure className="blog-figure">
-                        <img src={src} alt={alt} className="blog-figure__img" />
+                        <img src={src} alt={isEn ? alt : `Blog İçerik Görseli: ${alt || title}`} className="blog-figure__img" />
                         {alt && <figcaption className="blog-figure__caption">{alt}</figcaption>}
                       </figure>
                     ),

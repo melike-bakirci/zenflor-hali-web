@@ -9,7 +9,7 @@ import ProductSidebarFilter from '../components/ui/ProductSidebarFilter';
 import { cimHaliProducts } from '../data/cimHaliProducts';
 import { filterAndSortProducts, type FilterState, type SortOption } from '../utils/productUtils';
 import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
-import usePageMeta from '../utils/usePageMeta';
+import SEO from '../components/seo/SEO';
 import './ProductList.css';
 
 const ITEMS_PER_PAGE = 12;
@@ -17,13 +17,6 @@ const ITEMS_PER_PAGE = 12;
 const CimHali: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
-
-  usePageMeta({
-    title: isEn ? 'Artificial Grass Models & Prices' : 'Çim Halı Modelleri ve Fiyatları',
-    description: isEn
-      ? 'Discover premium artificial synthetic grass products for gardens, balconies, terraces, and landscaping at optimal prices.'
-      : 'Bahçe, balkon, teras ve peyzaj alanları için doğal görünümlü, dayanıklı sentetik çim halı modellerimizi inceleyin.',
-  });
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -75,6 +68,14 @@ const CimHali: React.FC = () => {
 
   return (
     <div className="product-list page-enter">
+      <SEO 
+        title={isEn ? 'Artificial Grass Models & Prices | Zenflor' : 'Dekoratif Çim Halı ve Suni Çim Modelleri | Zenflor'}
+        description={isEn
+          ? 'Discover premium artificial synthetic grass products for gardens, balconies, terraces, and landscaping at optimal prices.'
+          : 'Bahçe, balkon ve peyzaj alanları için dört mevsim yeşil kalan suni çim halı modelleri. Merkezimiz Sarıgazi Sancaktepe\'den tüm Türkiye\'ye toptan ve perakende çim halı satışı.'}
+        canonicalUrl="/cim-hali"
+        keywords="suni çim halı, dekoratif çim halı fiyatları, istanbul çim halı satan yerler, sancaktepe çim halı, sarıgazi suni çim, balkon çim halı, bahçe çim halısı"
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />

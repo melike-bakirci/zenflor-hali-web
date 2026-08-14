@@ -9,7 +9,9 @@ interface ReferenceCardProps {
   isEn?: boolean;
 }
 
-const ReferenceCard: React.FC<ReferenceCardProps> = ({ project, onSelect }) => {
+const ReferenceCard: React.FC<ReferenceCardProps> = ({ project, onSelect, isEn = false }) => {
+  const title = isEn ? (project.titleEn || project.title) : project.title;
+
   return (
     <article
       className="ref-card ref-card--pure-image"
@@ -26,7 +28,7 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ project, onSelect }) => {
       <div className="ref-card__img-wrapper">
         <img
           src={project.mainImage}
-          alt="Uygulama Görseli"
+          alt={isEn ? title : `Kurumsal Zemin Kaplama Referans Projesi: ${title}`}
           className="ref-card__img"
           loading="lazy"
         />

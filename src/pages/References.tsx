@@ -7,7 +7,7 @@ import ClientLogos from '../components/ui/ClientLogos';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
 import { referenceProjects, type ReferenceProject } from '../data/referencesData';
-import usePageMeta from '../utils/usePageMeta';
+import SEO from '../components/seo/SEO';
 import './References.css';
 
 const References: React.FC = () => {
@@ -16,15 +16,16 @@ const References: React.FC = () => {
 
   const [selectedProject, setSelectedProject] = useState<ReferenceProject | null>(null);
 
-  usePageMeta({
-    title: isEn ? 'Our References & Completed Projects' : 'Referanslarımız ve Bitmiş Uygulamalar',
-    description: isEn
-      ? 'Zenflor corporate flooring references: finished carpet tile and artificial grass projects for offices, hotels, and architects.'
-      : 'Zenflor kurumsal zemin kaplama referansları. Ofis, otel, mimar ve kurumsal projeler için bitmiş karo halı ve çim halı uygulamaları.',
-  });
-
   return (
     <div className="references-page page-enter">
+      <SEO 
+        title={isEn ? 'Our References & Completed Projects' : 'Kurumsal Zemin Kaplama Referanslarımız | Zenflor'}
+        description={isEn
+          ? 'Zenflor corporate flooring references: finished carpet tile and artificial grass projects for offices, hotels, and architects.'
+          : 'Zenflor kurumsal zemin kaplama referansları. Ofis, otel, hastane ve kurumsal projeler için ucuz, uygun ve profesyonel bitmiş akustik karo halı ve suni çim halı uygulamaları.'}
+        canonicalUrl="/referanslar"
+        keywords="zemin kaplama referansları, ucuz karo halı referansları, uygun ofis halısı, otel halısı uygulamaları, ticari zemin kaplama referanslar"
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />

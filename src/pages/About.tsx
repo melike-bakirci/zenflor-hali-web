@@ -4,7 +4,7 @@ import { Target, Eye, Leaf, Award, CheckCircle, Globe } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
-import usePageMeta from '../utils/usePageMeta';
+import SEO from '../components/seo/SEO';
 import './About.css';
 
 const VALUES = [
@@ -18,15 +18,16 @@ const About: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
 
-  usePageMeta({
-    title: isEn ? 'About Us' : 'Hakkımızda',
-    description: isEn
-      ? 'Learn more about Zenflor - 20+ years of experience in modular carpet tiles and artificial grass flooring solutions.'
-      : 'Zenflor hakkında bilgi edinin. 20 yılı aşkın tecrübe ile karo halı, çim halı ve kurumsal zemin çözümleri.',
-  });
-
   return (
     <div className="about page-enter">
+      <SEO
+        title={isEn ? 'About Us' : 'Hakkımızda | Zenflor'}
+        description={isEn
+          ? 'Learn more about Zenflor - 20+ years of experience in modular carpet tiles and artificial grass flooring solutions.'
+          : 'Zenflor zemin çözümleri hakkında bilgi edinin. 20 yılı aşkın tecrübe ile ticari ofis karo halı ve peyzaj çim halı toptan ve perakende satışı.'}
+        canonicalUrl="/hakkimizda"
+        keywords="zenflor hakkında, zemin kaplama firmaları, karo halı firması, çim halı satan yerler, istanbul halı firmaları"
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />

@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               aria-label="ZenFlor Ana Sayfa"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <img src="/images/logo-nobg.png" alt="ZenFlor Karo Halı" className="footer__logo-img" />
+              <img src="/images/logo-nobg.png" alt="ZenFlor Karo Halı ve Çim Halı Firması Logosu" className="footer__logo-img" />
               <div className="footer__logo-text">
                 <span className="footer__logo-name">ZenFlor</span>
                 <span className="footer__slogan">{t('footer.slogan')}</span>

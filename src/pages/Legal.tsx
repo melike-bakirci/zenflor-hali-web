@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ShieldCheck, FileText, Lock, Cookie, Calendar, Mail, Building } from 'lucide-react';
 import Breadcrumb from '../components/ui/Breadcrumb';
-import usePageMeta from '../utils/usePageMeta';
+import SEO from '../components/seo/SEO';
 import './Legal.css';
 
 export type LegalTabType = 'privacy' | 'terms' | 'kvkk' | 'cookies';
@@ -55,15 +55,15 @@ const Legal: React.FC<LegalProps> = ({ defaultTab = 'privacy' }) => {
     cookies: { tr: 'Çerez Politikası', en: 'Cookie Policy' },
   };
 
-  usePageMeta({
-    title: isEn ? metaTitles[activeTab].en : metaTitles[activeTab].tr,
-    description: isEn
-      ? 'Legal documents, privacy policy, KVKK terms, and cookie usage guidelines of ZenFlor.'
-      : 'ZenFlor yasal bilgilendirme, gizlilik politikası, KVKK aydınlatma metni, kullanım koşulları ve çerez politikası.',
-  });
-
   return (
     <div className="legal-page page-enter">
+      <SEO 
+        title={isEn ? metaTitles[activeTab].en : `${metaTitles[activeTab].tr} | Zenflor`}
+        description={isEn
+          ? 'Legal documents, privacy policy, KVKK terms, and cookie usage guidelines of ZenFlor.'
+          : 'ZenFlor yasal bilgilendirme, gizlilik politikası, KVKK aydınlatma metni, mesafeli satış sözleşmesi ve çerez politikası detayları.'}
+        canonicalUrl={TAB_ROUTES[activeTab]}
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />
