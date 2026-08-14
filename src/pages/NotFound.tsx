@@ -4,22 +4,22 @@ import { useTranslation } from 'react-i18next';
 import { Home as HomeIcon, Mail, ArrowRight, Grid, Trees, Compass } from 'lucide-react';
 import Breadcrumb from '../components/ui/Breadcrumb';
 import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
-import usePageMeta from '../utils/usePageMeta';
+import SEO from '../components/seo/SEO';
 import './NotFound.css';
 
 const NotFound: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
 
-  usePageMeta({
-    title: isEn ? '404 - Page Not Found' : '404 - Sayfa Bulunamadı',
-    description: isEn
-      ? 'The page you are looking for was not found on Zenflor.'
-      : 'Aradığınız sayfa Zenflor sitemizde bulunamadı.',
-  });
-
   return (
     <div className="not-found page-enter">
+      <SEO 
+        title={isEn ? '404 - Page Not Found' : '404 - Sayfa Bulunamadı'}
+        description={isEn
+          ? 'The page you are looking for was not found on Zenflor.'
+          : 'Aradığınız sayfa Zenflor sitemizde bulunamadı.'}
+        noindex={true}
+      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />

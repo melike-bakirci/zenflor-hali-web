@@ -8,6 +8,7 @@ interface SEOProps {
   canonicalUrl?: string;
   type?: string;
   schema?: Record<string, any> | any[] | string;
+  noindex?: boolean;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -17,6 +18,7 @@ const SEO: React.FC<SEOProps> = ({
   canonicalUrl,
   type = 'website',
   schema,
+  noindex = false,
 }) => {
   const siteUrl = 'https://zenflor.com'; // TODO: Update with your actual domain
 
@@ -30,6 +32,7 @@ const SEO: React.FC<SEOProps> = ({
       <title>{formattedTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={url} />
 
       {/* Open Graph / Facebook */}

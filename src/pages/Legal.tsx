@@ -63,6 +63,7 @@ const Legal: React.FC<LegalProps> = ({ defaultTab = 'privacy' }) => {
           ? 'Legal documents, privacy policy, KVKK terms, and cookie usage guidelines of ZenFlor.'
           : 'ZenFlor yasal bilgilendirme, gizlilik politikası, KVKK aydınlatma metni, mesafeli satış sözleşmesi ve çerez politikası detayları.'}
         canonicalUrl={TAB_ROUTES[activeTab]}
+        noindex={true}
       />
       {/* Page Hero */}
       <div className="page-hero">
