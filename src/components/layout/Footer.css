@@ -198,13 +198,48 @@
 }
 
 @media (max-width: 640px) {
+  .footer__top {
+    padding: 2.5rem 0 2rem;
+  }
   .footer__grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+  .footer__brand {
+    text-align: center;
+  }
+  .footer__logo {
+    justify-content: center;
+  }
+  .footer__about {
+    text-align: center;
+  }
+  .footer__socials {
+    justify-content: center;
+  }
+  .footer__col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer__contact-item {
+    align-items: center;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
   .footer__bottom-inner {
     flex-direction: column;
     text-align: center;
+    gap: 1.5rem;
+  }
+  .footer__legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .footer__legal-sep {
+    display: none;
   }
 }
 
