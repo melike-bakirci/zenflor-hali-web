@@ -197,7 +197,7 @@
 /* Mobile toggle */
 .navbar__mobile-toggle {
   display: none;
-  color: var(--color-text-primary, #0f172a);
+  color: var(--color-primary, #66101F);
   padding: 0.5rem;
   border-radius: var(--radius-btn, 8px);
   transition: background 150ms ease;
@@ -209,8 +209,8 @@
 
 /* Mobile menu */
 .navbar__mobile {
-  position: fixed;
-  top: 102px;
+  position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
   background: #ffffff;
@@ -250,6 +250,25 @@
   padding: 0.75rem 1.75rem 0;
   border-top: 1px solid var(--color-border, #e2e8f0);
   margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar__mobile-bottom .lang-switcher__btn {
+  color: var(--color-text-secondary, #475569);
+  font-size: 0.85rem;
+}
+
+.navbar__mobile-bottom .lang-switcher__btn:hover {
+  color: var(--color-primary, #66101F);
+}
+
+.navbar__mobile-bottom .lang-switcher__btn--active {
+  color: var(--color-primary, #66101F);
+}
+
+.navbar__mobile-bottom .lang-switcher__sep {
+  color: var(--color-text-muted, #64748b);
 }
 
 /* Responsive */
@@ -269,14 +288,16 @@
   .navbar__topbar-inner {
     flex-wrap: nowrap;
     overflow: hidden;
-    justify-content: space-between;
+    justify-content: center;
     gap: 0.25rem;
     padding: 0 0.5rem;
   }
 
   .navbar__topbar-left {
     flex-wrap: nowrap;
-    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
   }
 
   /* Hide the WhatsApp link on mobile to save space (keep normal phone) */
@@ -292,6 +313,10 @@
   .navbar__topbar-item svg {
     width: 12px;
     height: 12px;
+  }
+
+  .navbar__topbar .lang-switcher {
+    display: none;
   }
 }
 

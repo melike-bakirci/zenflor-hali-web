@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
               aria-label="Menüyü aç/kapat"
               id="mobile-menu-toggle"
             >
-              {mobileOpen ? <X size={22} color="#fff" /> : <Menu size={22} color="#fff" />}
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
