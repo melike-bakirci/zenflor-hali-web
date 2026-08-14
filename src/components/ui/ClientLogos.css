@@ -16,25 +16,31 @@
 
 @media (max-width: 580px) {
   .client-logos__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .client-logos__card {
+    padding: 0.75rem 0.5rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .client-logos__name {
+    font-size: 0.8rem;
+    white-space: normal;
   }
 }
 
 .client-logos__card {
-  background: var(--color-bg-card, #ffffff);
-  border: 1px solid var(--color-border-card, rgba(226, 232, 240, 0.9));
-  border-radius: var(--radius-card, 12px);
+  background: transparent;
   padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
   gap: 0.875rem;
   transition: all var(--transition-base, 250ms cubic-bezier(0.16, 1, 0.3, 1));
-  box-shadow: var(--shadow-card, 0 4px 14px rgba(15, 23, 42, 0.04));
 }
 
 .client-logos__card:hover {
-  border-color: var(--color-border-hover, rgba(102, 16, 31, 0.35));
-  box-shadow: var(--shadow-card-hover, 0 12px 28px rgba(102, 16, 31, 0.12));
   transform: translateY(-3px);
 }
 

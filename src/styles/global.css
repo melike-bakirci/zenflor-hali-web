@@ -84,7 +84,8 @@
 }
 
 @media (max-width: 640px) {
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-2, .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
 }
 
 .card {
