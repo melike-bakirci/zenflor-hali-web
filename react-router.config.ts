@@ -1,7 +1,7 @@
 import type { Config } from "@react-router/dev/config";
-import { blogPosts } from "./src/data/blogPosts";
-import { cimHaliProducts } from "./src/data/cimHaliProducts";
-import { karoHaliProducts } from "./src/data/karoHaliProducts";
+import { blogPosts } from "./app/data/blogPosts";
+import { cimHaliProducts } from "./app/data/cimHaliProducts";
+import { karoHaliProducts } from "./app/data/karoHaliProducts";
 
 const staticRoutes = [
   "/",

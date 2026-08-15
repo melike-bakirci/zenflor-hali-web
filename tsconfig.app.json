@@ -11,6 +11,9 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "rootDirs": [".", "./.react-router/types"],
+    "paths": {
+      "~/*": ["./app/*"]
+    },
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
@@ -23,5 +26,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "app", ".react-router/types/**/*"]
+  "include": ["app", ".react-router/types/**/*"]
 }

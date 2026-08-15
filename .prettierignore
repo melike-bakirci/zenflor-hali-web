@@ -1,0 +1,5 @@
+node_modules
+build
+.react-router
+public/sitemap.xml
+package-lock.json

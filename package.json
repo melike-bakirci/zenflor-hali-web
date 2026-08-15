@@ -9,7 +9,8 @@
     "prebuild": "node scripts/generate-sitemap.ts",
     "typecheck": "tsc -b",
     "lint": "oxlint",
-    "preview": "react-router build && vite preview --outDir build/client"
+    "format": "prettier --write .",
+    "preview": "vite preview --outDir build/client"
   },
   "dependencies": {
     "@react-router/node": "^8.3.0",
@@ -29,6 +30,7 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "oxlint": "^1.78.0",
+    "prettier": "^3.9.6",
     "tailwindcss": "^4.3.3",
     "typescript": "~7.0.2",
     "vite": "^8.2.1"

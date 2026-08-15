@@ -9,6 +9,9 @@
     /* Bundler mode */
     "module": "esnext",
     "moduleResolution": "bundler",
+    "paths": {
+      "~/*": ["./app/*"]
+    },
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",

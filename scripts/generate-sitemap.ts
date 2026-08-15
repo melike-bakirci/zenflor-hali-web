@@ -1,10 +1,10 @@
 import { writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { blogPosts } from "../src/data/blogPosts.ts";
-import { cimHaliProducts } from "../src/data/cimHaliProducts.ts";
-import { karoHaliProducts } from "../src/data/karoHaliProducts.ts";
-import { SITE_URL } from "../src/constants.ts";
+import { blogPosts } from "../app/data/blogPosts.ts";
+import { cimHaliProducts } from "../app/data/cimHaliProducts.ts";
+import { karoHaliProducts } from "../app/data/karoHaliProducts.ts";
+import { SITE_URL } from "../app/lib/constants.ts";
 
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 

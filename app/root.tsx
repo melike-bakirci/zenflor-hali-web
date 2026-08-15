@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
-import SiteLayout from "../src/components/layout/Layout";
+import SiteLayout from "~/components/layout/Layout";
 
-import "../src/index.css";
-import "../src/styles/variables.css";
-import "../src/styles/global.css";
-import "../src/i18n";
+import "~/index.css";
+import "~/styles/variables.css";
+import "~/styles/global.css";
+import "~/i18n";
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
