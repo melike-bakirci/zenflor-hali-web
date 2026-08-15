@@ -1,28 +1,44 @@
-import React, { useState, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import SectionTitle from '../components/ui/SectionTitle';
-import ProductCard from '../components/ui/ProductCard';
-import Breadcrumb from '../components/ui/Breadcrumb';
-import Pagination from '../components/ui/Pagination';
-import ProductFilterBar from '../components/ui/ProductFilterBar';
-import ProductSidebarFilter from '../components/ui/ProductSidebarFilter';
-import { cimHaliProducts } from '../data/cimHaliProducts';
-import { filterAndSortProducts, type FilterState, type SortOption } from '../utils/productUtils';
-import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
-import SEO from '../components/seo/SEO';
-import './ProductList.css';
+import React, { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import SectionTitle from "../components/ui/SectionTitle";
+import ProductCard from "../components/ui/ProductCard";
+import Breadcrumb from "../components/ui/Breadcrumb";
+import Pagination from "../components/ui/Pagination";
+import ProductFilterBar from "../components/ui/ProductFilterBar";
+import ProductSidebarFilter from "../components/ui/ProductSidebarFilter";
+import { cimHaliProducts } from "../data/cimHaliProducts";
+import {
+  filterAndSortProducts,
+  type FilterState,
+  type SortOption,
+} from "../utils/productUtils";
+import QuoteCtaBanner from "../components/ui/QuoteCtaBanner";
+import { seoMeta } from "../seo";
+import { SITE_NAME } from "../constants";
+import "./ProductList.css";
 
 const ITEMS_PER_PAGE = 12;
 
+export function meta() {
+  return seoMeta({
+    title: `Dekoratif Çim Halı ve Suni Çim Modelleri | ${SITE_NAME}`,
+    description:
+      "Bahçe, balkon ve peyzaj alanları için dört mevsim yeşil kalan suni çim halı modelleri. Merkezimiz Sarıgazi Sancaktepe'den tüm Türkiye'ye toptan ve perakende çim halı satışı.",
+    canonicalUrl: "/cim-hali",
+    keywords:
+      "suni çim halı, dekoratif çim halı fiyatları, istanbul çim halı satan yerler, sancaktepe çim halı, sarıgazi suni çim, balkon çim halı, bahçe çim halısı",
+  });
+}
+
 const CimHali: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const isEn = i18n.language === 'en';
+  const isEn = i18n.language === "en";
 
   const [currentPage, setCurrentPage] = useState(1);
 
   const [filters, setFilters] = useState<FilterState>({
-    searchQuery: '',
-    sortOption: 'price-asc',
+    searchQuery: "",
+    sortOption: "price-asc",
     selectedYarnTypes: [],
     selectedColors: [],
     selectedDimensions: [],
@@ -36,7 +52,10 @@ const CimHali: React.FC = () => {
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE) || 1;
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentProducts = filteredProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const currentProducts = filteredProducts.slice(
+    startIndex,
+    startIndex + ITEMS_PER_PAGE,
+  );
 
   const handleSearchChange = (query: string) => {
     setFilters((prev) => ({ ...prev, searchQuery: query }));
@@ -55,8 +74,8 @@ const CimHali: React.FC = () => {
 
   const handleResetFilters = () => {
     setFilters({
-      searchQuery: '',
-      sortOption: 'price-asc',
+      searchQuery: "",
+      sortOption: "price-asc",
       selectedYarnTypes: [],
       selectedColors: [],
       selectedDimensions: [],
@@ -68,21 +87,17 @@ const CimHali: React.FC = () => {
 
   return (
     <div className="product-list page-enter">
-      <SEO 
-        title={isEn ? 'Artificial Grass Models & Prices | Zenflor' : 'Dekoratif Çim Halı ve Suni Çim Modelleri | Zenflor'}
-        description={isEn
-          ? 'Discover premium artificial synthetic grass products for gardens, balconies, terraces, and landscaping at optimal prices.'
-          : 'Bahçe, balkon ve peyzaj alanları için dört mevsim yeşil kalan suni çim halı modelleri. Merkezimiz Sarıgazi Sancaktepe\'den tüm Türkiye\'ye toptan ve perakende çim halı satışı.'}
-        canonicalUrl="/cim-hali"
-        keywords="suni çim halı, dekoratif çim halı fiyatları, istanbul çim halı satan yerler, sancaktepe çim halı, sarıgazi suni çim, balkon çim halı, bahçe çim halısı"
-      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
-            <h1 className="page-hero__title font-display">{t('products.cimHali')}</h1>
-            <p className="page-hero__subtitle">{t('products.cimHaliSubtitle')}</p>
+            <h1 className="page-hero__title font-display">
+              {t("products.cimHali")}
+            </h1>
+            <p className="page-hero__subtitle">
+              {t("products.cimHaliSubtitle")}
+            </p>
           </div>
         </div>
       </div>
@@ -90,8 +105,8 @@ const CimHali: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? 'Home' : 'Ana Sayfa', url: '/' },
-            { label: t('products.cimHali') },
+            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: t("products.cimHali") },
           ]}
         />
       </div>
@@ -100,8 +115,16 @@ const CimHali: React.FC = () => {
       <section className="section">
         <div className="container">
           <SectionTitle
-            title={isEn ? 'All Artificial Grass Products' : 'Tüm Çim Halı Ürünlerimiz'}
-            subtitle={isEn ? `${cimHaliProducts.length} different products` : `${cimHaliProducts.length} farklı ürün`}
+            title={
+              isEn
+                ? "All Artificial Grass Products"
+                : "Tüm Çim Halı Ürünlerimiz"
+            }
+            subtitle={
+              isEn
+                ? `${cimHaliProducts.length} different products`
+                : `${cimHaliProducts.length} farklı ürün`
+            }
           />
 
           <div className="product-page-layout">
@@ -128,7 +151,11 @@ const CimHali: React.FC = () => {
                 <>
                   <div className="grid-4">
                     {currentProducts.map((product) => (
-                      <ProductCard key={product.id} product={product} basePath="/cim-hali" />
+                      <ProductCard
+                        key={product.id}
+                        product={product}
+                        basePath="/cim-hali"
+                      />
                     ))}
                   </div>
 
@@ -142,13 +169,13 @@ const CimHali: React.FC = () => {
                 </>
               ) : (
                 <div className="no-products-found">
-                  <p>{t('products.noProductsFound')}</p>
+                  <p>{t("products.noProductsFound")}</p>
                   <button
                     type="button"
                     className="btn btn-secondary"
                     onClick={handleResetFilters}
                   >
-                    {t('products.clearSearch')}
+                    {t("products.clearSearch")}
                   </button>
                 </div>
               )}
@@ -159,11 +186,15 @@ const CimHali: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={isEn ? 'Get a Quote for Your Artificial Grass Project!' : 'Çim Halı Projeniz İçin Teklif Alın!'}
+        title={
+          isEn
+            ? "Get a Quote for Your Artificial Grass Project!"
+            : "Çim Halı Projeniz İçin Teklif Alın!"
+        }
         subtitle={
           isEn
-            ? 'Get custom artificial grass price quotes suited to your garden, balcony, terrace, landscape, or sports field dimensions.'
-            : 'Bahçe, balkon, teras, peyzaj ve spor sahası alanlarınız için ölçülerinize özel sentetik çim halı fiyat teklifi alın.'
+            ? "Get custom artificial grass price quotes suited to your garden, balcony, terrace, landscape, or sports field dimensions."
+            : "Bahçe, balkon, teras, peyzaj ve spor sahası alanlarınız için ölçülerinize özel sentetik çim halı fiyat teklifi alın."
         }
       />
     </div>

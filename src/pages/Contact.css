@@ -38,11 +38,11 @@ a.contact__info-item:hover {
 }
 
 a.contact__info-item:hover .contact__info-desc {
-  color: var(--color-primary, #66101F);
+  color: var(--color-primary, #66101f);
 }
 
 .contact__info-icon {
-  color: var(--color-primary, #66101F);
+  color: var(--color-primary, #66101f);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -63,7 +63,7 @@ a.contact__info-item:hover .contact__info-desc {
 }
 
 .contact__info-desc a:hover {
-  color: var(--color-primary, #66101F);
+  color: var(--color-primary, #66101f);
 }
 
 /* Hours & Live Status */
@@ -178,7 +178,14 @@ a.contact__info-item:hover .contact__info-desc {
 }
 
 .contact__social-link--instagram:hover {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
   color: #ffffff;
   border-color: transparent;
 }
@@ -249,7 +256,7 @@ a.contact__info-item:hover .contact__info-desc {
   border: 1px solid var(--color-border, #e2e8f0);
   border-radius: var(--radius-btn, 8px);
   padding: 0.75rem 1rem;
-  font-family: var(--font-body, 'Outfit', system-ui, sans-serif);
+  font-family: var(--font-body, "Outfit", system-ui, sans-serif);
   font-size: 0.9rem;
   color: var(--color-text-primary, #0f172a);
   transition: all 150ms ease;
@@ -258,7 +265,7 @@ a.contact__info-item:hover .contact__info-desc {
 
 .contact__input:focus {
   outline: none;
-  border-color: var(--color-primary, #66101F);
+  border-color: var(--color-primary, #66101f);
   box-shadow: 0 0 0 3px rgba(102, 16, 31, 0.15);
   background: #ffffff;
 }
@@ -293,7 +300,7 @@ a.contact__info-item:hover .contact__info-desc {
   width: 64px;
   height: 64px;
   background: rgba(102, 16, 31, 0.1);
-  color: var(--color-primary, #66101F);
+  color: var(--color-primary, #66101f);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -335,4 +342,3 @@ a.contact__info-item:hover .contact__info-desc {
     padding: 1.5rem;
   }
 }
-

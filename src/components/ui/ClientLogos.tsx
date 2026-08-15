@@ -1,7 +1,7 @@
-import React from 'react';
-import SectionTitle from './SectionTitle';
-import { referenceClients } from '../../data/referencesData';
-import './ClientLogos.css';
+import React from "react";
+import SectionTitle from "./SectionTitle";
+import { referenceClients } from "../../data/referencesData";
+import "./ClientLogos.css";
 
 interface ClientLogosProps {
   title?: string;
@@ -15,24 +15,23 @@ const ClientLogos: React.FC<ClientLogosProps> = ({
   subtitle,
   limit,
 }) => {
-  const clientsToDisplay = limit ? referenceClients.slice(0, limit) : referenceClients;
+  const clientsToDisplay = limit
+    ? referenceClients.slice(0, limit)
+    : referenceClients;
 
   return (
     <div className="client-logos">
-      {title && (
-        <SectionTitle
-          title={title}
-          subtitle={subtitle}
-          center
-        />
-      )}
+      {title && <SectionTitle title={title} subtitle={subtitle} center />}
 
       <div className="client-logos__grid">
         {clientsToDisplay.map((client) => (
           <div key={client.id} className="client-logos__card">
             <div
               className="client-logos__badge"
-              style={{ backgroundColor: `${client.accentColor}12`, borderColor: `${client.accentColor}30` }}
+              style={{
+                backgroundColor: `${client.accentColor}12`,
+                borderColor: `${client.accentColor}30`,
+              }}
             >
               <span
                 className="client-logos__badge-text font-display"

@@ -9,12 +9,12 @@
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: #D3D3D3;
+  color: #d3d3d3;
   background: transparent;
   border: none;
   cursor: pointer;
   transition: color 150ms ease;
-  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-family: var(--font-body, "Outfit", sans-serif);
 }
 
 .lang-switcher__btn:hover {
@@ -26,6 +26,6 @@
 }
 
 .lang-switcher__sep {
-  color: #D3D3D3;
+  color: #d3d3d3;
   font-size: 0.7rem;
 }

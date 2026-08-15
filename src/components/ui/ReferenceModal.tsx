@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import type { ReferenceProject } from '../../data/referencesData';
-import './ReferenceModal.css';
+import React, { useEffect, useState } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import type { ReferenceProject } from "../../data/referencesData";
+import "./ReferenceModal.css";
 
 interface ReferenceModalProps {
   project: ReferenceProject | null;
@@ -9,7 +9,11 @@ interface ReferenceModalProps {
   isEn?: boolean;
 }
 
-const ReferenceModal: React.FC<ReferenceModalProps> = ({ project, onClose, isEn = false }) => {
+const ReferenceModal: React.FC<ReferenceModalProps> = ({
+  project,
+  onClose,
+  isEn = false,
+}) => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
   useEffect(() => {
@@ -18,23 +22,24 @@ const ReferenceModal: React.FC<ReferenceModalProps> = ({ project, onClose, isEn 
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
     };
     if (project) {
-      document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
     }
     return () => {
-      document.body.style.overflow = 'auto';
-      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = "auto";
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [project, onClose]);
 
   if (!project) return null;
 
-  const images = project.galleryImages && project.galleryImages.length > 0
-    ? project.galleryImages
-    : [project.mainImage];
+  const images =
+    project.galleryImages && project.galleryImages.length > 0
+      ? project.galleryImages
+      : [project.mainImage];
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -60,7 +65,7 @@ const ReferenceModal: React.FC<ReferenceModalProps> = ({ project, onClose, isEn 
         <button
           className="ref-modal__close-btn"
           onClick={onClose}
-          aria-label={isEn ? 'Close' : 'Kapat'}
+          aria-label={isEn ? "Close" : "Kapat"}
         >
           <X size={24} />
         </button>
@@ -68,7 +73,11 @@ const ReferenceModal: React.FC<ReferenceModalProps> = ({ project, onClose, isEn 
         <div className="ref-modal__image-wrapper">
           <img
             src={images[currentImgIndex]}
-            alt={isEn ? (project.titleEn || 'Project Image') : `Kurumsal Zemin Kaplama Uygulama Referans Görseli: ${project.title}`}
+            alt={
+              isEn
+                ? project.titleEn || "Project Image"
+                : `Kurumsal Zemin Kaplama Uygulama Referans Görseli: ${project.title}`
+            }
             className="ref-modal__pure-img"
           />
 
@@ -92,7 +101,7 @@ const ReferenceModal: React.FC<ReferenceModalProps> = ({ project, onClose, isEn 
                 {images.map((_, index) => (
                   <button
                     key={index}
-                    className={`ref-modal__dot ${index === currentImgIndex ? 'active' : ''}`}
+                    className={`ref-modal__dot ${index === currentImgIndex ? "active" : ""}`}
                     onClick={() => setCurrentImgIndex(index)}
                   />
                 ))}

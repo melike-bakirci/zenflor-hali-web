@@ -1,40 +1,46 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { Target, Eye, Leaf, Award, CheckCircle, Globe } from 'lucide-react';
-import SectionTitle from '../components/ui/SectionTitle';
-import Breadcrumb from '../components/ui/Breadcrumb';
-import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
-import SEO from '../components/seo/SEO';
-import './About.css';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { Target, Eye, Leaf, Award, CheckCircle, Globe } from "lucide-react";
+import SectionTitle from "../components/ui/SectionTitle";
+import Breadcrumb from "../components/ui/Breadcrumb";
+import QuoteCtaBanner from "../components/ui/QuoteCtaBanner";
+import { seoMeta } from "../seo";
+import { SITE_NAME } from "../constants";
+import "./About.css";
 
 const VALUES = [
-  { icon: <Award size={22} />, key: 'about.value1' },
-  { icon: <CheckCircle size={22} />, key: 'about.value2' },
-  { icon: <Leaf size={22} />, key: 'about.value3' },
-  { icon: <Leaf size={22} />, key: 'about.value4' },
+  { icon: <Award size={22} />, key: "about.value1" },
+  { icon: <CheckCircle size={22} />, key: "about.value2" },
+  { icon: <Leaf size={22} />, key: "about.value3" },
+  { icon: <Leaf size={22} />, key: "about.value4" },
 ];
+
+export function meta() {
+  return seoMeta({
+    title: `Hakkımızda | ${SITE_NAME}`,
+    description:
+      `${SITE_NAME} zemin çözümleri hakkında bilgi edinin. 20 yılı aşkın tecrübe ile ticari ofis karo halı ve peyzaj çim halı toptan ve perakende satışı.`,
+    canonicalUrl: "/hakkimizda",
+    keywords:
+      "zenflor hakkında, zemin kaplama firmaları, karo halı firması, çim halı satan yerler, istanbul halı firmaları",
+  });
+}
 
 const About: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const isEn = i18n.language === 'en';
+  const isEn = i18n.language === "en";
 
   return (
     <div className="about page-enter">
-      <SEO
-        title={isEn ? 'About Us' : 'Hakkımızda | Zenflor'}
-        description={isEn
-          ? 'Learn more about Zenflor - 20+ years of experience in modular carpet tiles and artificial grass flooring solutions.'
-          : 'Zenflor zemin çözümleri hakkında bilgi edinin. 20 yılı aşkın tecrübe ile ticari ofis karo halı ve peyzaj çim halı toptan ve perakende satışı.'}
-        canonicalUrl="/hakkimizda"
-        keywords="zenflor hakkında, zemin kaplama firmaları, karo halı firması, çim halı satan yerler, istanbul halı firmaları"
-      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
-            <h1 className="page-hero__title font-display">{t('about.title')}</h1>
-            <p className="page-hero__subtitle">{t('about.subtitle')}</p>
+            <h1 className="page-hero__title font-display">
+              {t("about.title")}
+            </h1>
+            <p className="page-hero__subtitle">{t("about.subtitle")}</p>
           </div>
         </div>
       </div>
@@ -42,35 +48,38 @@ const About: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? 'Home' : 'Ana Sayfa', url: '/' },
-            { label: t('nav.about') },
+            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: t("nav.about") },
           ]}
         />
       </div>
-
 
       {/* Story */}
       <section className="section about__story">
         <div className="container about__story-grid">
           <div className="about__story-text">
-            <SectionTitle
-              title={t('about.story')}
-            />
-            <p className="about__para">{t('about.storyText1')}</p>
-            <p className="about__para">{t('about.storyText2')}</p>
+            <SectionTitle title={t("about.story")} />
+            <p className="about__para">{t("about.storyText1")}</p>
+            <p className="about__para">{t("about.storyText2")}</p>
 
             <div className="about__story-stats">
               <div className="about__story-stat">
                 <span className="about__story-stat-value">20</span>
-                <span className="about__story-stat-label">{t('home.statsYears')}</span>
+                <span className="about__story-stat-label">
+                  {t("home.statsYears")}
+                </span>
               </div>
               <div className="about__story-stat">
                 <span className="about__story-stat-value">20.000+</span>
-                <span className="about__story-stat-label">{t('home.statsProjects')}</span>
+                <span className="about__story-stat-label">
+                  {t("home.statsProjects")}
+                </span>
               </div>
               <div className="about__story-stat">
                 <span className="about__story-stat-value">500+</span>
-                <span className="about__story-stat-label">{t('home.statsProducts')}</span>
+                <span className="about__story-stat-label">
+                  {t("home.statsProducts")}
+                </span>
               </div>
             </div>
           </div>
@@ -79,8 +88,10 @@ const About: React.FC = () => {
             <div className="about__story-card about__story-card--main">
               <div className="about__story-card-pattern" aria-hidden="true" />
               <div className="about__story-card-content">
-                <span className="about__logo-big">ZenFlor</span>
-                <span className="about__brand-text">Karo & Çim Halı Çözümleri</span>
+                <span className="about__logo-big">{SITE_NAME}</span>
+                <span className="about__brand-text">
+                  Karo & Çim Halı Çözümleri
+                </span>
                 <span className="about__year-text">2005'ten beri...</span>
               </div>
             </div>
@@ -108,24 +119,25 @@ const About: React.FC = () => {
       {/* Mission & Vision */}
       <section className="section about__mission-section">
         <div className="container">
-          <SectionTitle
-            title={t('about.missionTitle')}
-            center
-          />
+          <SectionTitle title={t("about.missionTitle")} center />
           <div className="about__mv-grid">
             <div className="about__mv-card" id="mission-card">
               <div className="about__mv-icon">
                 <Target size={32} />
               </div>
-              <h2 className="about__mv-title">{isEn ? 'Mission' : 'Misyonumuz'}</h2>
-              <p className="about__mv-text">{t('about.missionText')}</p>
+              <h2 className="about__mv-title">
+                {isEn ? "Mission" : "Misyonumuz"}
+              </h2>
+              <p className="about__mv-text">{t("about.missionText")}</p>
             </div>
             <div className="about__mv-card" id="vision-card">
               <div className="about__mv-icon about__mv-icon--vision">
                 <Eye size={32} />
               </div>
-              <h2 className="about__mv-title">{isEn ? 'Vision' : 'Vizyonumuz'}</h2>
-              <p className="about__mv-text">{t('about.visionText')}</p>
+              <h2 className="about__mv-title">
+                {isEn ? "Vision" : "Vizyonumuz"}
+              </h2>
+              <p className="about__mv-text">{t("about.visionText")}</p>
             </div>
           </div>
         </div>
@@ -134,10 +146,7 @@ const About: React.FC = () => {
       {/* Values */}
       <section className="section about__values-section">
         <div className="container">
-          <SectionTitle
-            title={t('about.valuesTitle')}
-            center
-          />
+          <SectionTitle title={t("about.valuesTitle")} center />
           <div className="about__values-grid">
             {VALUES.map((v, i) => (
               <div key={i} className="about__value-item" id={`value-${i + 1}`}>
@@ -151,11 +160,15 @@ const About: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={isEn ? 'Get a Quote for Your Corporate Flooring Projects!' : 'Kurumsal Zemin Projeleriniz İçin Teklif Alın!'}
+        title={
+          isEn
+            ? "Get a Quote for Your Corporate Flooring Projects!"
+            : "Kurumsal Zemin Projeleriniz İçin Teklif Alın!"
+        }
         subtitle={
           isEn
-            ? 'We offer the ideal flooring solution and quote for your commercial spaces with over 20 years of experience and expert team.'
-            : '20 yılı aşkın tecrübemiz ve uzman ekibimizle ticari alanlarınız için en doğru zemin kaplama çözümünü ve teklifini sunuyoruz.'
+            ? "We offer the ideal flooring solution and quote for your commercial spaces with over 20 years of experience and expert team."
+            : "20 yılı aşkın tecrübemiz ve uzman ekibimizle ticari alanlarınız için en doğru zemin kaplama çözümünü ve teklifini sunuyoruz."
         }
       />
     </div>

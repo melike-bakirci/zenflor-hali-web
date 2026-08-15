@@ -17,7 +17,7 @@
 }
 
 .pd-breadcrumb__back:hover {
-  color: var(--color-primary, #66101F);
+  color: var(--color-primary, #66101f);
 }
 
 /* === MAIN === */
@@ -81,12 +81,12 @@
   padding: 0.625rem 0;
   margin-bottom: 2rem;
   width: fit-content;
-  border-bottom: 2px solid var(--color-primary, #66101F);
+  border-bottom: 2px solid var(--color-primary, #66101f);
 }
 
 .pd-price-label {
   font-size: 0.8125rem;
-  color: var(--color-primary-light, #855A5C);
+  color: var(--color-primary-light, #855a5c);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -128,7 +128,6 @@
   letter-spacing: 0.02em;
 }
 
-
 /* Tabs Section */
 .pd-tabs-container {
   margin: 1.5rem 0 2rem;
@@ -156,12 +155,12 @@
 }
 
 .pd-tab-btn:hover {
-  color: var(--color-primary, #66101F);
+  color: var(--color-primary, #66101f);
 }
 
 .pd-tab-btn.active {
-  color: var(--color-primary, #66101F);
-  border-bottom-color: var(--color-primary, #66101F);
+  color: var(--color-primary, #66101f);
+  border-bottom-color: var(--color-primary, #66101f);
 }
 
 .pd-tabs-content {
@@ -240,7 +239,7 @@
 }
 
 .pd-feature-value svg {
-  color: var(--color-primary-light, #855A5C);
+  color: var(--color-primary-light, #855a5c);
 }
 
 /* Actions */
@@ -285,4 +284,3 @@
     flex-direction: column;
   }
 }
-

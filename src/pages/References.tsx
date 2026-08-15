@@ -1,43 +1,50 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import SectionTitle from '../components/ui/SectionTitle';
-import ReferenceCard from '../components/ui/ReferenceCard';
-import ReferenceModal from '../components/ui/ReferenceModal';
-import ClientLogos from '../components/ui/ClientLogos';
-import Breadcrumb from '../components/ui/Breadcrumb';
-import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
-import { referenceProjects, type ReferenceProject } from '../data/referencesData';
-import SEO from '../components/seo/SEO';
-import './References.css';
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import SectionTitle from "../components/ui/SectionTitle";
+import ReferenceCard from "../components/ui/ReferenceCard";
+import ReferenceModal from "../components/ui/ReferenceModal";
+import ClientLogos from "../components/ui/ClientLogos";
+import Breadcrumb from "../components/ui/Breadcrumb";
+import QuoteCtaBanner from "../components/ui/QuoteCtaBanner";
+import {
+  referenceProjects,
+  type ReferenceProject,
+} from "../data/referencesData";
+import { seoMeta } from "../seo";
+import { SITE_NAME } from "../constants";
+import "./References.css";
+
+export function meta() {
+  return seoMeta({
+    title: `Kurumsal Zemin Kaplama Referanslarımız | ${SITE_NAME}`,
+    description: `${SITE_NAME} kurumsal zemin kaplama referansları. Ofis, otel, hastane ve kurumsal projeler için ucuz, uygun ve profesyonel bitmiş akustik karo halı ve suni çim halı uygulamaları.`,
+    canonicalUrl: "/referanslarimiz",
+    keywords:
+      "zemin kaplama referansları, ucuz karo halı referansları, uygun ofis halısı, otel halısı uygulamaları, ticari zemin kaplama referanslar",
+  });
+}
 
 const References: React.FC = () => {
   const { i18n } = useTranslation();
-  const isEn = i18n.language === 'en';
+  const isEn = i18n.language === "en";
 
-  const [selectedProject, setSelectedProject] = useState<ReferenceProject | null>(null);
+  const [selectedProject, setSelectedProject] =
+    useState<ReferenceProject | null>(null);
 
   return (
     <div className="references-page page-enter">
-      <SEO 
-        title={isEn ? 'Our References & Completed Projects' : 'Kurumsal Zemin Kaplama Referanslarımız | Zenflor'}
-        description={isEn
-          ? 'Zenflor corporate flooring references: finished carpet tile and artificial grass projects for offices, hotels, and architects.'
-          : 'Zenflor kurumsal zemin kaplama referansları. Ofis, otel, hastane ve kurumsal projeler için ucuz, uygun ve profesyonel bitmiş akustik karo halı ve suni çim halı uygulamaları.'}
-        canonicalUrl="/referanslar"
-        keywords="zemin kaplama referansları, ucuz karo halı referansları, uygun ofis halısı, otel halısı uygulamaları, ticari zemin kaplama referanslar"
-      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
             <h1 className="page-hero__title font-display">
-              {isEn ? 'Our References' : 'Referanslarımız'}
+              {isEn ? "Our References" : "Referanslarımız"}
             </h1>
             <p className="page-hero__subtitle">
               {isEn
-                ? 'Corporate flooring solution references and finished application visuals'
-                : 'Ofis, otel vb. projelerde tamamlanan zemin kaplama uygulamalarımız ve referanslarımız'}
+                ? "Corporate flooring solution references and finished application visuals"
+                : "Ofis, otel vb. projelerde tamamlanan zemin kaplama uygulamalarımız ve referanslarımız"}
             </p>
           </div>
         </div>
@@ -46,8 +53,8 @@ const References: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? 'Home' : 'Ana Sayfa', url: '/' },
-            { label: isEn ? 'References' : 'Referanslarımız' },
+            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: isEn ? "References" : "Referanslarımız" },
           ]}
         />
       </div>
@@ -57,11 +64,15 @@ const References: React.FC = () => {
         <div className="container">
           <ClientLogos
             limit={4}
-            title={isEn ? 'Our Corporate Partners & Clients' : 'Değerli Müşterilerimiz'}
+            title={
+              isEn
+                ? "Our Corporate Partners & Clients"
+                : "Değerli Müşterilerimiz"
+            }
             subtitle={
               isEn
-                ? 'Selected corporate clients who trust our carpet tile and flooring solutions'
-                : 'Zemin çözümlerimizde bizi tercih eden seçkin şirket, otel ve mimarlık kurumları'
+                ? "Selected corporate clients who trust our carpet tile and flooring solutions"
+                : "Zemin çözümlerimizde bizi tercih eden seçkin şirket, otel ve mimarlık kurumları"
             }
             isEn={isEn}
           />
@@ -72,11 +83,13 @@ const References: React.FC = () => {
       <section className="section references-gallery-sec" id="ref-gallery">
         <div className="container">
           <SectionTitle
-            title={isEn ? 'Finished Application Visual Gallery' : 'Uygulama Galerisi'}
+            title={
+              isEn ? "Finished Application Visual Gallery" : "Uygulama Galerisi"
+            }
             subtitle={
               isEn
-                ? 'Click on any image to view full resolution photo'
-                : 'Fotoğrafların üzerine tıklayarak yüksek çözünürlüklü olarak inceleyebilirsiniz'
+                ? "Click on any image to view full resolution photo"
+                : "Fotoğrafların üzerine tıklayarak yüksek çözünürlüklü olarak inceleyebilirsiniz"
             }
             center
           />
@@ -97,11 +110,15 @@ const References: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={isEn ? 'Let Us Prepare a Quote for Your Project Too!' : 'Sizin Projeniz İçin De Teklif Hazırlayalım!'}
+        title={
+          isEn
+            ? "Let Us Prepare a Quote for Your Project Too!"
+            : "Sizin Projeniz İçin De Teklif Hazırlayalım!"
+        }
         subtitle={
           isEn
-            ? 'Benefit from free on-site measurement, sample catalogs, and competitive quotes for your space, just like our hundreds of completed corporate projects.'
-            : 'Tamamladığımız yüzlerce kurumsal zemin projesi gibi, alanınıza özel ücretsiz yerinde keşif, numune kataloğu ve en uygun fiyat teklifi fırsatından yararlanın.'
+            ? "Benefit from free on-site measurement, sample catalogs, and competitive quotes for your space, just like our hundreds of completed corporate projects."
+            : "Tamamladığımız yüzlerce kurumsal zemin projesi gibi, alanınıza özel ücretsiz yerinde keşif, numune kataloğu ve en uygun fiyat teklifi fırsatından yararlanın."
         }
       />
 

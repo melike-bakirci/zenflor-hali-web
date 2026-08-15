@@ -41,8 +41,8 @@
 }
 
 .pd-action-btn:hover {
-  background: #66101F;
-  border-color: #855A5C;
+  background: #66101f;
+  border-color: #855a5c;
   color: #ffffff;
   transform: scale(1.1);
   box-shadow: 0 6px 16px rgba(102, 16, 31, 0.35);
@@ -123,8 +123,8 @@
 }
 
 .pd-minimal-close:hover {
-  background: #66101F;
-  border-color: #855A5C;
+  background: #66101f;
+  border-color: #855a5c;
 }
 
 /* Minimalist Viewport */

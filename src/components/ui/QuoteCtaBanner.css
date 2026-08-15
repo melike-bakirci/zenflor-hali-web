@@ -42,9 +42,9 @@
 }
 
 .quote-cta .btn-primary {
-  background-color: var(--color-primary, #66101F);
+  background-color: var(--color-primary, #66101f);
   color: #ffffff;
-  border: 1px solid var(--color-primary, #66101F);
+  border: 1px solid var(--color-primary, #66101f);
   box-shadow: var(--shadow-primary-sm, 0 4px 14px rgba(102, 16, 31, 0.2));
   transition: all var(--transition-base, 250ms cubic-bezier(0.16, 1, 0.3, 1));
   display: inline-flex;
@@ -63,8 +63,8 @@
 
 .quote-cta .btn-whatsapp {
   background-color: #ffffff;
-  color: #128C7E;
-  border: 1.5px solid #25D366;
+  color: #128c7e;
+  border: 1.5px solid #25d366;
   border-radius: var(--radius-btn, 8px);
   transition: all var(--transition-base, 250ms cubic-bezier(0.16, 1, 0.3, 1));
   display: inline-flex;
@@ -73,8 +73,8 @@
 }
 
 .quote-cta .btn-whatsapp:hover {
-  background-color: #25D366;
-  border-color: #25D366;
+  background-color: #25d366;
+  border-color: #25d366;
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
@@ -100,4 +100,3 @@
     justify-content: center;
   }
 }
-

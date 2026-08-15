@@ -1,7 +1,7 @@
-import React from 'react';
-import { Maximize2 } from 'lucide-react';
-import type { ReferenceProject } from '../../data/referencesData';
-import './ReferenceCard.css';
+import React from "react";
+import { Maximize2 } from "lucide-react";
+import type { ReferenceProject } from "../../data/referencesData";
+import "./ReferenceCard.css";
 
 interface ReferenceCardProps {
   project: ReferenceProject;
@@ -9,8 +9,12 @@ interface ReferenceCardProps {
   isEn?: boolean;
 }
 
-const ReferenceCard: React.FC<ReferenceCardProps> = ({ project, onSelect, isEn = false }) => {
-  const title = isEn ? (project.titleEn || project.title) : project.title;
+const ReferenceCard: React.FC<ReferenceCardProps> = ({
+  project,
+  onSelect,
+  isEn = false,
+}) => {
+  const title = isEn ? project.titleEn || project.title : project.title;
 
   return (
     <article
@@ -19,7 +23,7 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ project, onSelect, isEn =
       tabIndex={0}
       role="button"
       onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+        if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
           onSelect(project);
         }
@@ -28,7 +32,9 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ project, onSelect, isEn =
       <div className="ref-card__img-wrapper">
         <img
           src={project.mainImage}
-          alt={isEn ? title : `Kurumsal Zemin Kaplama Referans Projesi: ${title}`}
+          alt={
+            isEn ? title : `Kurumsal Zemin Kaplama Referans Projesi: ${title}`
+          }
           className="ref-card__img"
           loading="lazy"
         />

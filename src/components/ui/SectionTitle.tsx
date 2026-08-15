@@ -1,5 +1,5 @@
-import React from 'react';
-import './SectionTitle.css';
+import React from "react";
+import "./SectionTitle.css";
 
 interface SectionTitleProps {
   tag?: string;
@@ -14,7 +14,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   center = false,
 }) => {
   return (
-    <div className={`section-title ${center ? 'section-title--center' : ''}`}>
+    <div className={`section-title ${center ? "section-title--center" : ""}`}>
       <h2 className="section-title__heading">{title}</h2>
       {subtitle && <p className="section-title__subtitle">{subtitle}</p>}
     </div>

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import type { Product } from '../../types/product';
+import React, { useState, useEffect } from "react";
+import type { Product } from "../../types/product";
 import {
   type FilterState,
   getProductPrice,
@@ -7,8 +7,8 @@ import {
   getProductBacking,
   getProductYarnType,
   getProductColor,
-} from '../../utils/productUtils';
-import './ProductSidebarFilter.css';
+} from "../../utils/productUtils";
+import "./ProductSidebarFilter.css";
 
 interface ProductSidebarFilterProps {
   products: Product[];
@@ -29,33 +29,45 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
 
   // Extract available filter options dynamically from current category products
   const availableYarnTypes = Array.from(
-    new Set(products.map((p) => getProductYarnType(p, isEn)))
+    new Set(products.map((p) => getProductYarnType(p, isEn))),
   ).filter(Boolean);
-  const availableColors = Array.from(new Set(products.map(getProductColor))).filter(Boolean);
+  const availableColors = Array.from(
+    new Set(products.map(getProductColor)),
+  ).filter(Boolean);
 
   const availableDimensions = Array.from(
-    new Set(products.map(getProductDimension).filter(Boolean))
+    new Set(products.map(getProductDimension).filter(Boolean)),
   );
 
   const availableBackings = Array.from(
-    new Set(products.map(getProductBacking).filter(Boolean))
+    new Set(products.map(getProductBacking).filter(Boolean)),
   );
 
   // Calculate min and max price among products
   const prices = products.map(getProductPrice).filter((p) => p > 0);
   const minAvailablePrice = prices.length ? Math.floor(Math.min(...prices)) : 0;
-  const maxAvailablePrice = prices.length ? Math.ceil(Math.max(...prices)) : 2000;
+  const maxAvailablePrice = prices.length
+    ? Math.ceil(Math.max(...prices))
+    : 2000;
 
   const [tempPriceMin, setTempPriceMin] = useState<number>(
-    filters.priceRange[0] === 0 ? minAvailablePrice : filters.priceRange[0]
+    filters.priceRange[0] === 0 ? minAvailablePrice : filters.priceRange[0],
   );
   const [tempPriceMax, setTempPriceMax] = useState<number>(
-    filters.priceRange[1] === Infinity ? maxAvailablePrice : filters.priceRange[1]
+    filters.priceRange[1] === Infinity
+      ? maxAvailablePrice
+      : filters.priceRange[1],
   );
 
   useEffect(() => {
-    setTempPriceMin(filters.priceRange[0] === 0 ? minAvailablePrice : filters.priceRange[0]);
-    setTempPriceMax(filters.priceRange[1] === Infinity ? maxAvailablePrice : filters.priceRange[1]);
+    setTempPriceMin(
+      filters.priceRange[0] === 0 ? minAvailablePrice : filters.priceRange[0],
+    );
+    setTempPriceMax(
+      filters.priceRange[1] === Infinity
+        ? maxAvailablePrice
+        : filters.priceRange[1],
+    );
   }, [filters.priceRange, minAvailablePrice, maxAvailablePrice]);
 
   const handleYarnTypeToggle = (yarn: string) => {
@@ -104,7 +116,7 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
     (filters.selectedBacking && filters.selectedBacking.length > 0) ||
     filters.priceRange[0] > minAvailablePrice ||
     filters.priceRange[1] < maxAvailablePrice ||
-    filters.searchQuery !== '';
+    filters.searchQuery !== "";
 
   return (
     <>
@@ -114,10 +126,17 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
         className="sidebar-filter-mobile-toggle"
         onClick={() => setIsOpenMobile(!isOpenMobile)}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
         </svg>
-        <span>{isEn ? 'Filter Products' : 'Ürünleri Filtrele'}</span>
+        <span>{isEn ? "Filter Products" : "Ürünleri Filtrele"}</span>
         {hasActiveFilters && <span className="filter-active-dot" />}
       </button>
 
@@ -130,13 +149,24 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
         />
       )}
 
-      <aside className={`product-sidebar-filter ${isOpenMobile ? 'is-open' : ''}`}>
+      <aside
+        className={`product-sidebar-filter ${isOpenMobile ? "is-open" : ""}`}
+      >
         <div className="product-sidebar-filter__header">
           <div className="product-sidebar-filter__title-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+            >
               <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
             </svg>
-            <h3 className="product-sidebar-filter__title">{isEn ? 'Filters' : 'Filtreler'}</h3>
+            <h3 className="product-sidebar-filter__title">
+              {isEn ? "Filters" : "Filtreler"}
+            </h3>
           </div>
           {hasActiveFilters && (
             <button
@@ -144,7 +174,7 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
               className="product-sidebar-filter__clear-btn"
               onClick={onResetFilters}
             >
-              {isEn ? 'Clear All' : 'Tümünü Temizle'}
+              {isEn ? "Clear All" : "Tümünü Temizle"}
             </button>
           )}
           <button
@@ -160,10 +190,14 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
         {/* 1. Yarn Type Filter (İplik Cinsi - for Karo Halı) */}
         {availableYarnTypes.length > 0 && (
           <div className="filter-group">
-            <h4 className="filter-group__title">{isEn ? 'Yarn Type' : 'İplik Cinsi'}</h4>
+            <h4 className="filter-group__title">
+              {isEn ? "Yarn Type" : "İplik Cinsi"}
+            </h4>
             <div className="filter-group__options">
               {availableYarnTypes.map((yarn) => {
-                const count = products.filter((p) => getProductYarnType(p, isEn) === yarn).length;
+                const count = products.filter(
+                  (p) => getProductYarnType(p, isEn) === yarn,
+                ).length;
                 return (
                   <label key={yarn} className="filter-checkbox-label">
                     <input
@@ -184,7 +218,7 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
         {/* 2. Color Filter (Renk - for Çim Halı) */}
         {availableColors.length > 0 && (
           <div className="filter-group">
-            <h4 className="filter-group__title">{isEn ? 'Color' : 'Renk'}</h4>
+            <h4 className="filter-group__title">{isEn ? "Color" : "Renk"}</h4>
             <div className="filter-group__options">
               {availableColors.map((color) => (
                 <label key={color} className="filter-checkbox-label">
@@ -204,7 +238,9 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
         {/* 3. Dimensions / Size Filter */}
         {availableDimensions.length > 0 && (
           <div className="filter-group">
-            <h4 className="filter-group__title">{isEn ? 'Size / Dimension' : 'Boyut / Ebat'}</h4>
+            <h4 className="filter-group__title">
+              {isEn ? "Size / Dimension" : "Boyut / Ebat"}
+            </h4>
             <div className="filter-group__options">
               {availableDimensions.map((dim) => (
                 <label key={dim} className="filter-checkbox-label">
@@ -224,7 +260,9 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
         {/* 4. Backing / Technical Features Filter (If present) */}
         {availableBackings.length > 0 && (
           <div className="filter-group">
-            <h4 className="filter-group__title">{isEn ? 'Backing Type' : 'Taban / Özellik'}</h4>
+            <h4 className="filter-group__title">
+              {isEn ? "Backing Type" : "Taban / Özellik"}
+            </h4>
             <div className="filter-group__options">
               {availableBackings.map((backing) => (
                 <label key={backing} className="filter-checkbox-label">
@@ -243,7 +281,9 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
 
         {/* 5. Price Range Filter */}
         <div className="filter-group">
-          <h4 className="filter-group__title">{isEn ? 'Price Range (₺ / m²)' : 'Fiyat Aralığı (₺ / m²)'}</h4>
+          <h4 className="filter-group__title">
+            {isEn ? "Price Range (₺ / m²)" : "Fiyat Aralığı (₺ / m²)"}
+          </h4>
           <div className="price-inputs">
             <div className="price-input-field">
               <input
@@ -274,7 +314,7 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
             className="btn btn-secondary price-apply-btn"
             onClick={handlePriceApply}
           >
-            {isEn ? 'Apply Price' : 'Fiyatı Uygula'}
+            {isEn ? "Apply Price" : "Fiyatı Uygula"}
           </button>
         </div>
       </aside>

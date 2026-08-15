@@ -1,10 +1,10 @@
 :root {
   /* === BRAND COLORS === */
-  --color-primary: #66101F;
-  --color-primary-hover: #855A5C;
-  --color-primary-light: #855A5C;
-  --color-secondary: #E2E8F0;
-  --color-secondary-dark: #855A5C;
+  --color-primary: #66101f;
+  --color-primary-hover: #855a5c;
+  --color-primary-light: #855a5c;
+  --color-secondary: #e2e8f0;
+  --color-secondary-dark: #855a5c;
 
   /* === BACKGROUND === */
   --color-bg: #ffffff;
@@ -23,8 +23,8 @@
   --color-border-hover: rgba(102, 16, 31, 0.35);
 
   /* === TYPOGRAPHY === */
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-display: 'Inter', system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -83,4 +83,3 @@
   --container-max: 1240px;
   --navbar-height: 90px;
 }
-

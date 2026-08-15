@@ -11,14 +11,14 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #66101F;
+  color: #66101f;
   font-weight: 700;
   font-size: 0.95rem;
   margin-bottom: 1.25rem;
 }
 
 .ac-icon {
-  color: #66101F;
+  color: #66101f;
 }
 
 .ac-body {
@@ -70,11 +70,13 @@
   border: 1.5px solid #cbd5e1;
   border-radius: 6px;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .ac-input:focus {
-  border-color: #66101F;
+  border-color: #66101f;
   box-shadow: 0 0 0 3px rgba(102, 16, 31, 0.12);
 }
 
@@ -160,7 +162,7 @@
 .ac-result-value {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #66101F;
+  color: #66101f;
   letter-spacing: -0.01em;
   word-break: break-all;
 }
@@ -170,7 +172,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.625rem;
-  background-color: #25D366;
+  background-color: #25d366;
   color: #ffffff;
   font-weight: 700;
   font-size: 0.9375rem;
@@ -224,4 +226,3 @@
     width: 100%;
   }
 }
-

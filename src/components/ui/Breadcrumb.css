@@ -19,7 +19,7 @@
 }
 
 .breadcrumb__separator {
-  color: #D3D3D3;
+  color: #d3d3d3;
   flex-shrink: 0;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .breadcrumb__link:hover {
-  color: #66101F;
+  color: #66101f;
 }
 
 .breadcrumb__current {

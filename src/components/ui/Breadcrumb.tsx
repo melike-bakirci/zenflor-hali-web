@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Home, ChevronRight } from 'lucide-react';
-import './Breadcrumb.css';
+import React from "react";
+import { Link } from "react-router";
+import { Home, ChevronRight } from "lucide-react";
+import "./Breadcrumb.css";
 
 export interface BreadcrumbItem {
   label: string;
@@ -25,19 +25,27 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
           return (
             <li
               key={index}
-              className={`breadcrumb__item ${isLast ? 'breadcrumb__item--active' : ''}`}
+              className={`breadcrumb__item ${isLast ? "breadcrumb__item--active" : ""}`}
             >
               {index > 0 && (
-                <ChevronRight size={13} className="breadcrumb__separator" aria-hidden="true" />
+                <ChevronRight
+                  size={13}
+                  className="breadcrumb__separator"
+                  aria-hidden="true"
+                />
               )}
               {isLast || !item.url ? (
                 <span className="breadcrumb__current" aria-current="page">
-                  {isFirst && <Home size={13} className="breadcrumb__home-icon" />}
+                  {isFirst && (
+                    <Home size={13} className="breadcrumb__home-icon" />
+                  )}
                   {item.label}
                 </span>
               ) : (
                 <Link to={item.url} className="breadcrumb__link">
-                  {isFirst && <Home size={13} className="breadcrumb__home-icon" />}
+                  {isFirst && (
+                    <Home size={13} className="breadcrumb__home-icon" />
+                  )}
                   {item.label}
                 </Link>
               )}

@@ -1,9 +1,9 @@
-import React from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import BackToTop from '../ui/BackToTop';
-import FloatingContact from '../ui/FloatingContact';
-import './Layout.css';
+import React from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import BackToTop from "../ui/BackToTop";
+import FloatingContact from "../ui/FloatingContact";
+import "./Layout.css";
 
 interface LayoutProps {
   children: React.ReactNode;

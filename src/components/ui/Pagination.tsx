@@ -1,6 +1,6 @@
-import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import './Pagination.css';
+import React from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import "./Pagination.css";
 
 interface PaginationProps {
   currentPage: number;
@@ -22,7 +22,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
   const handlePageClick = (page: number) => {
     onPageChange(page);
-    window.scrollTo({ top: 300, behavior: 'smooth' });
+    window.scrollTo({ top: 300, behavior: "smooth" });
   };
 
   return (
@@ -39,7 +39,7 @@ const Pagination: React.FC<PaginationProps> = ({
       {pages.map((page) => (
         <button
           key={page}
-          className={`pagination__btn ${currentPage === page ? 'pagination__btn--active' : ''}`}
+          className={`pagination__btn ${currentPage === page ? "pagination__btn--active" : ""}`}
           onClick={() => handlePageClick(page)}
         >
           {page}

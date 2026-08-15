@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import type { SortOption } from '../../utils/productUtils';
-import './ProductFilterBar.css';
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import type { SortOption } from "../../utils/productUtils";
+import "./ProductFilterBar.css";
 
 interface ProductFilterBarProps {
   searchQuery: string;
@@ -31,13 +31,16 @@ const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
   };
 
   const handleClear = () => {
-    setInputValue('');
-    onSearchChange('');
+    setInputValue("");
+    onSearchChange("");
   };
 
   return (
     <div className="product-filter-bar">
-      <form className="product-filter-bar__search-form" onSubmit={handleSearchSubmit}>
+      <form
+        className="product-filter-bar__search-form"
+        onSubmit={handleSearchSubmit}
+      >
         <div className="product-filter-bar__input-wrapper">
           <svg
             className="product-filter-bar__search-icon"
@@ -56,7 +59,7 @@ const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
           <input
             type="text"
             className="product-filter-bar__input"
-            placeholder={t('products.searchPlaceholder')}
+            placeholder={t("products.searchPlaceholder")}
             value={inputValue}
             onChange={(e) => {
               setInputValue(e.target.value);
@@ -69,14 +72,17 @@ const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
               type="button"
               className="product-filter-bar__clear-btn"
               onClick={handleClear}
-              title={t('products.clearSearch')}
-              aria-label={t('products.clearSearch')}
+              title={t("products.clearSearch")}
+              aria-label={t("products.clearSearch")}
             >
               ✕
             </button>
           )}
         </div>
-        <button type="submit" className="product-filter-bar__search-btn btn btn-primary">
+        <button
+          type="submit"
+          className="product-filter-bar__search-btn btn btn-primary"
+        >
           <svg
             width="16"
             height="16"
@@ -90,14 +96,17 @@ const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
             <circle cx="11" cy="11" r="8" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
           </svg>
-          <span>{t('products.searchButton')}</span>
+          <span>{t("products.searchButton")}</span>
         </button>
       </form>
 
       <div className="product-filter-bar__right">
         <div className="product-filter-bar__sort-wrapper">
-          <label htmlFor="product-sort-select" className="product-filter-bar__sort-label">
-            {t('products.sortBy')}:
+          <label
+            htmlFor="product-sort-select"
+            className="product-filter-bar__sort-label"
+          >
+            {t("products.sortBy")}:
           </label>
           <div className="product-filter-bar__select-custom">
             <select
@@ -106,8 +115,8 @@ const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
               value={sortOption}
               onChange={(e) => onSortChange(e.target.value as SortOption)}
             >
-              <option value="price-asc">{t('products.sortPriceAsc')}</option>
-              <option value="price-desc">{t('products.sortPriceDesc')}</option>
+              <option value="price-asc">{t("products.sortPriceAsc")}</option>
+              <option value="price-desc">{t("products.sortPriceDesc")}</option>
               <option value="name-asc">A'dan Z'ye</option>
               <option value="name-desc">Z'den A'ya</option>
             </select>
@@ -126,7 +135,7 @@ const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
         </div>
 
         <div className="product-filter-bar__count">
-          {t('products.showingProducts', { count: totalCount })}
+          {t("products.showingProducts", { count: totalCount })}
         </div>
       </div>
     </div>

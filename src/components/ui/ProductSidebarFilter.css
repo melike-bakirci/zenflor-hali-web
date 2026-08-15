@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #66101F;
+  color: #66101f;
 }
 
 .product-sidebar-filter__title {
@@ -36,7 +36,7 @@
 .product-sidebar-filter__clear-btn {
   background: transparent;
   border: none;
-  color: #855A5C;
+  color: #855a5c;
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
@@ -46,7 +46,7 @@
 }
 
 .product-sidebar-filter__clear-btn:hover {
-  color: #66101F;
+  color: #66101f;
   background: #f9fafb;
   text-decoration: underline;
 }
@@ -104,7 +104,7 @@
 }
 
 .filter-checkbox-label:hover {
-  color: #66101F;
+  color: #66101f;
 }
 
 .filter-checkbox-label input[type="checkbox"] {
@@ -129,8 +129,8 @@
 }
 
 .filter-checkbox-label input[type="checkbox"]:checked ~ .checkbox-custom {
-  background-color: #66101F;
-  border-color: #66101F;
+  background-color: #66101f;
+  border-color: #66101f;
 }
 
 .checkbox-custom::after {
@@ -144,7 +144,9 @@
   margin-top: -1px;
 }
 
-.filter-checkbox-label input[type="checkbox"]:checked ~ .checkbox-custom::after {
+.filter-checkbox-label
+  input[type="checkbox"]:checked
+  ~ .checkbox-custom::after {
   display: block;
 }
 
@@ -214,7 +216,7 @@
   gap: 0.5rem;
   width: 100%;
   padding: 0.75rem 1rem;
-  background: #66101F;
+  background: #66101f;
   color: #ffffff;
   border: none;
   border-radius: 8px;

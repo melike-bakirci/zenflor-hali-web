@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Search, X, ZoomIn, ZoomOut, Download } from 'lucide-react';
-import './ProductImageZoom.css';
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import { Search, X, ZoomIn, ZoomOut, Download } from "lucide-react";
+import "./ProductImageZoom.css";
 
 interface ProductImageZoomProps {
   src: string;
@@ -23,22 +23,22 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
 
   // Close modal on ESC key press
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       setIsModalOpen(false);
     }
   }, []);
 
   useEffect(() => {
     if (isModalOpen) {
-      document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = '';
-      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isModalOpen, handleKeyDown]);
 
@@ -76,18 +76,18 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
       const response = await fetch(src);
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = url;
 
       const fileExtMatch = src.match(/\.([a-zA-Z0-9]+)(?:[\?#]|$)/);
-      const ext = fileExtMatch ? fileExtMatch[1] : 'jpg';
+      const ext = fileExtMatch ? fileExtMatch[1] : "jpg";
       const cleanAlt = alt
         ? alt
             .toLowerCase()
-            .replace(/[^a-z0-9çğıöşü]/g, '-')
-            .replace(/-+/g, '-')
-            .replace(/^-|-$/g, '')
-        : 'urun-gorseli';
+            .replace(/[^a-z0-9çğıöşü]/g, "-")
+            .replace(/-+/g, "-")
+            .replace(/^-|-$/g, "")
+        : "urun-gorseli";
 
       link.download = `${cleanAlt}.${ext}`;
       document.body.appendChild(link);
@@ -95,10 +95,10 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
     } catch (err) {
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = src;
-      link.download = `${alt || 'urun-gorseli'}.jpg`;
-      link.target = '_blank';
+      link.download = `${alt || "urun-gorseli"}.jpg`;
+      link.target = "_blank";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -108,13 +108,11 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
   return (
     <>
       {/* Main Image Container on Product Page */}
-      <div className="pd-image-wrap pd-zoom-trigger" onClick={() => setIsModalOpen(true)}>
-        <img
-          src={src}
-          alt={alt}
-          className="pd-image"
-          onError={onError}
-        />
+      <div
+        className="pd-image-wrap pd-zoom-trigger"
+        onClick={() => setIsModalOpen(true)}
+      >
+        <img src={src} alt={alt} className="pd-image" onError={onError} />
         {badge && <span className="pd-badge badge-dark">{badge}</span>}
 
         {/* Overlay Action Buttons (Magnifier & Download) */}
@@ -145,9 +143,15 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
 
       {/* Minimalist Fullscreen Zoom Lightbox Modal */}
       {isModalOpen && (
-        <div className="pd-modal-backdrop" onClick={() => setIsModalOpen(false)}>
+        <div
+          className="pd-modal-backdrop"
+          onClick={() => setIsModalOpen(false)}
+        >
           {/* Top Bar Floating Controls */}
-          <div className="pd-minimal-topbar" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="pd-minimal-topbar"
+            onClick={(e) => e.stopPropagation()}
+          >
             <span className="pd-minimal-title">{alt}</span>
             <div className="pd-minimal-actions">
               <button
@@ -162,7 +166,11 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
                 type="button"
                 className="pd-minimal-btn"
                 onClick={toggleZoomLevel}
-                title={zoomLevel > 1.8 ? 'Yakınlaştırmayı Azalt' : 'Yakınlaştırmayı Artır'}
+                title={
+                  zoomLevel > 1.8
+                    ? "Yakınlaştırmayı Azalt"
+                    : "Yakınlaştırmayı Artır"
+                }
               >
                 {zoomLevel > 1.8 ? <ZoomOut size={18} /> : <ZoomIn size={18} />}
               </button>
@@ -196,14 +204,16 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
               className="pd-minimal-image"
               style={{
                 transformOrigin: `${mousePos.x}% ${mousePos.y}%`,
-                transform: isHovering ? `scale(${zoomLevel})` : 'scale(1)',
+                transform: isHovering ? `scale(${zoomLevel})` : "scale(1)",
               }}
             />
           </div>
 
           {/* Minimalist Bottom Hint */}
           <div className="pd-minimal-bottom-hint">
-            <span>İmleci görsel üzerinde gezdirerek detayları inceleyebilirsiniz</span>
+            <span>
+              İmleci görsel üzerinde gezdirerek detayları inceleyebilirsiniz
+            </span>
           </div>
         </div>
       )}

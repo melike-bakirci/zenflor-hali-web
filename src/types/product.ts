@@ -8,7 +8,7 @@ export interface Product {
   slug: string;
   name: string;
   nameEn: string;
-  category: 'karo-hali' | 'cim-hali';
+  category: "karo-hali" | "cim-hali";
   shortDesc: string;
   shortDescEn: string;
   description: string;

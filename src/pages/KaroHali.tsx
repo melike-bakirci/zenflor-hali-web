@@ -1,28 +1,44 @@
-import React, { useState, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import SectionTitle from '../components/ui/SectionTitle';
-import ProductCard from '../components/ui/ProductCard';
-import Breadcrumb from '../components/ui/Breadcrumb';
-import Pagination from '../components/ui/Pagination';
-import ProductFilterBar from '../components/ui/ProductFilterBar';
-import ProductSidebarFilter from '../components/ui/ProductSidebarFilter';
-import { karoHaliProducts } from '../data/karoHaliProducts';
-import { filterAndSortProducts, type FilterState, type SortOption } from '../utils/productUtils';
-import QuoteCtaBanner from '../components/ui/QuoteCtaBanner';
-import SEO from '../components/seo/SEO';
-import './ProductList.css';
+import React, { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import SectionTitle from "../components/ui/SectionTitle";
+import ProductCard from "../components/ui/ProductCard";
+import Breadcrumb from "../components/ui/Breadcrumb";
+import Pagination from "../components/ui/Pagination";
+import ProductFilterBar from "../components/ui/ProductFilterBar";
+import ProductSidebarFilter from "../components/ui/ProductSidebarFilter";
+import { karoHaliProducts } from "../data/karoHaliProducts";
+import {
+  filterAndSortProducts,
+  type FilterState,
+  type SortOption,
+} from "../utils/productUtils";
+import QuoteCtaBanner from "../components/ui/QuoteCtaBanner";
+import { seoMeta } from "../seo";
+import { SITE_NAME } from "../constants";
+import "./ProductList.css";
 
 const ITEMS_PER_PAGE = 12;
 
+export function meta() {
+  return seoMeta({
+    title: `Ticari ve Ofis Karo Halı Modelleri & Fiyatları | ${SITE_NAME}`,
+    description:
+      "Yüksek yaya trafiğine dayanıklı ofis karo halı modelleri. İstanbul Sancaktepe ve Sarıgazi dahil tüm Türkiye'ye en uygun karo halı m² fiyatları ve zemin kaplama çözümleri.",
+    canonicalUrl: "/karo-hali",
+    keywords:
+      "ticari karo halı, ofis karo halı fiyatları, istanbul karo halı, sancaktepe ofis halısı, sarıgazi zemin kaplama, yanmaz karo halı, antistatik halı, karo halı m2 fiyatı",
+  });
+}
+
 const KaroHali: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const isEn = i18n.language === 'en';
+  const isEn = i18n.language === "en";
 
   const [currentPage, setCurrentPage] = useState(1);
 
   const [filters, setFilters] = useState<FilterState>({
-    searchQuery: '',
-    sortOption: 'price-asc',
+    searchQuery: "",
+    sortOption: "price-asc",
     selectedYarnTypes: [],
     selectedColors: [],
     selectedDimensions: [],
@@ -36,7 +52,10 @@ const KaroHali: React.FC = () => {
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE) || 1;
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentProducts = filteredProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const currentProducts = filteredProducts.slice(
+    startIndex,
+    startIndex + ITEMS_PER_PAGE,
+  );
 
   const handleSearchChange = (query: string) => {
     setFilters((prev) => ({ ...prev, searchQuery: query }));
@@ -55,8 +74,8 @@ const KaroHali: React.FC = () => {
 
   const handleResetFilters = () => {
     setFilters({
-      searchQuery: '',
-      sortOption: 'price-asc',
+      searchQuery: "",
+      sortOption: "price-asc",
       selectedYarnTypes: [],
       selectedColors: [],
       selectedDimensions: [],
@@ -68,21 +87,17 @@ const KaroHali: React.FC = () => {
 
   return (
     <div className="product-list page-enter">
-      <SEO 
-        title={isEn ? 'Carpet Tile Models & Prices | Zenflor' : 'Ticari ve Ofis Karo Halı Modelleri & Fiyatları | Zenflor'}
-        description={isEn
-          ? 'Explore high quality carpet tile collections for offices, hotels, and corporate buildings at the best prices.'
-          : 'Yüksek yaya trafiğine dayanıklı ofis karo halı modelleri. İstanbul Sancaktepe ve Sarıgazi dahil tüm Türkiye\'ye en uygun karo halı m² fiyatları ve zemin kaplama çözümleri.'}
-        canonicalUrl="/karo-hali"
-        keywords="ticari karo halı, ofis karo halı fiyatları, istanbul karo halı, sancaktepe ofis halısı, sarıgazi zemin kaplama, yanmaz karo halı, antistatik halı, karo halı m2 fiyatı"
-      />
       {/* Page Hero */}
       <div className="page-hero">
         <div className="page-hero__bg" aria-hidden="true" />
         <div className="container">
           <div className="page-hero__content">
-            <h1 className="page-hero__title font-display">{t('products.karoHali')}</h1>
-            <p className="page-hero__subtitle">{t('products.karoHaliSubtitle')}</p>
+            <h1 className="page-hero__title font-display">
+              {t("products.karoHali")}
+            </h1>
+            <p className="page-hero__subtitle">
+              {t("products.karoHaliSubtitle")}
+            </p>
           </div>
         </div>
       </div>
@@ -90,8 +105,8 @@ const KaroHali: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? 'Home' : 'Ana Sayfa', url: '/' },
-            { label: t('products.karoHali') },
+            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: t("products.karoHali") },
           ]}
         />
       </div>
@@ -100,8 +115,12 @@ const KaroHali: React.FC = () => {
       <section className="section">
         <div className="container">
           <SectionTitle
-            title={t('products.allProducts')}
-            subtitle={isEn ? `${karoHaliProducts.length} different products` : `${karoHaliProducts.length} farklı ürün`}
+            title={t("products.allProducts")}
+            subtitle={
+              isEn
+                ? `${karoHaliProducts.length} different products`
+                : `${karoHaliProducts.length} farklı ürün`
+            }
           />
 
           <div className="product-page-layout">
@@ -128,7 +147,11 @@ const KaroHali: React.FC = () => {
                 <>
                   <div className="grid-4">
                     {currentProducts.map((product) => (
-                      <ProductCard key={product.id} product={product} basePath="/karo-hali" />
+                      <ProductCard
+                        key={product.id}
+                        product={product}
+                        basePath="/karo-hali"
+                      />
                     ))}
                   </div>
 
@@ -142,13 +165,13 @@ const KaroHali: React.FC = () => {
                 </>
               ) : (
                 <div className="no-products-found">
-                  <p>{t('products.noProductsFound')}</p>
+                  <p>{t("products.noProductsFound")}</p>
                   <button
                     type="button"
                     className="btn btn-secondary"
                     onClick={handleResetFilters}
                   >
-                    {t('products.clearSearch')}
+                    {t("products.clearSearch")}
                   </button>
                 </div>
               )}
@@ -159,11 +182,15 @@ const KaroHali: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={isEn ? 'Get a Quote for Your Carpet Tile Project!' : 'Karo Halı Projeniz İçin Teklif Alın!'}
+        title={
+          isEn
+            ? "Get a Quote for Your Carpet Tile Project!"
+            : "Karo Halı Projeniz İçin Teklif Alın!"
+        }
         subtitle={
           isEn
-            ? 'Request custom carpet tile quotes and free physical samples tailored to your office, hotel, or commercial space.'
-            : 'Ofis, otel ve ticari alanlarınız için zemin ölçülerinize uygun özel karo halı fiyat teklifi ve ücretsiz numune isteyin.'
+            ? "Request custom carpet tile quotes and free physical samples tailored to your office, hotel, or commercial space."
+            : "Ofis, otel ve ticari alanlarınız için zemin ölçülerinize uygun özel karo halı fiyat teklifi ve ücretsiz numune isteyin."
         }
       />
     </div>

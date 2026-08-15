@@ -1,15 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme inline {
+  --color-primary: #66101f;
+  --color-primary-hover: #561621;
+  --color-primary-light: #855a5c;
+  --color-primary-dark: #3a0912;
+  --color-secondary: #d3d3d3;
+  --color-secondary-light: #f3f4f6;
+  --color-secondary-dark: #9ca3af;
+  --color-accent: #855a5c;
+  --color-accent-hover: #9c6f71;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+}
 
 @layer base {
   :root {
-    --color-primary: #66101F;
-    --color-primary-hover: #855A5C;
-    --color-primary-light: #855A5C;
-    --color-secondary: #D3D3D3;
+    --color-primary: #66101f;
+    --color-primary-hover: #855a5c;
+    --color-primary-light: #855a5c;
+    --color-secondary: #d3d3d3;
     --navbar-height: 90px;
     --container-max: 1240px;
   }
@@ -21,7 +31,11 @@
   }
 
   body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -29,7 +43,12 @@
     background-color: var(--color-bg-surface, #f8fafc);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     line-height: 1.25;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -53,7 +72,8 @@
     font-family: inherit;
   }
 
-  ul, ol {
+  ul,
+  ol {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -83,13 +103,12 @@
     background: #f5f5f5;
   }
   ::-webkit-scrollbar-thumb {
-    background: #66101F;
+    background: #66101f;
     border-radius: 9999px;
   }
 }
 
 @layer utilities {
-
   .animate-fadeInUp {
     animation: fadeInUp 0.6s ease forwards;
   }

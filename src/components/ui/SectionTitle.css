@@ -7,11 +7,11 @@
 }
 
 .section-title::before {
-  content: '';
+  content: "";
   display: block;
   width: 40px;
   height: 3px;
-  background: var(--color-primary, #66101F);
+  background: var(--color-primary, #66101f);
   margin-bottom: 0.875rem;
   border-radius: 9999px;
 }
@@ -42,4 +42,3 @@
   margin-left: auto;
   margin-right: auto;
 }
-

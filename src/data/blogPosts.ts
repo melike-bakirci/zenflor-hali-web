@@ -1,15 +1,16 @@
-import type { BlogPost } from '../types/blog';
+import type { BlogPost } from "../types/blog";
+import { SITE_NAME } from "../constants.ts";
 
 export const blogPosts: BlogPost[] = [
   {
-    id: 'bp-001',
-    slug: 'karo-hali-secimi-rehberi',
-    title: 'Ofisiniz için Doğru Karo Halı Nasıl Seçilir?',
-    titleEn: 'How to Choose the Right Carpet Tile for Your Office?',
+    id: "bp-001",
+    slug: "karo-hali-secimi-rehberi",
+    title: "Ofisiniz için Doğru Karo Halı Nasıl Seçilir?",
+    titleEn: "How to Choose the Right Carpet Tile for Your Office?",
     excerpt:
-      'Karo halı seçerken dikkat edilmesi gereken teknik ve estetik faktörler hakkında kapsamlı bir rehber.',
+      "Karo halı seçerken dikkat edilmesi gereken teknik ve estetik faktörler hakkında kapsamlı bir rehber.",
     excerptEn:
-      'A comprehensive guide on the technical and aesthetic factors to consider when choosing carpet tiles.',
+      "A comprehensive guide on the technical and aesthetic factors to consider when choosing carpet tiles.",
     content: `
 Karo halı, ofis zemin kaplaması söz konusu olduğunda en esnek ve pratik çözümlerden biridir. Ancak doğru ürünü seçmek için birkaç temel faktörü göz önünde bulundurmak gerekir.
 
@@ -60,23 +61,24 @@ Light colors make the space look larger while dark tones increase comfort. Choos
 
 The underlayment to be applied under the carpet tile is of critical importance in terms of acoustic and thermal comfort.
     `,
-    author: 'ZenFlor',
-    date: '2026-03-15',
-    category: 'Karo Halı',
-    categoryEn: 'Carpet Tiles',
-    image: '/images/blog-1.png',
+    author: SITE_NAME,
+    date: "2026-03-15",
+    category: "Karo Halı",
+    categoryEn: "Carpet Tiles",
+    image: "/images/blog-1.png",
     readTime: 5,
-    tags: ['Karo Halı', 'Ofis', 'Seçim Rehberi'],
+    tags: ["Karo Halı", "Ofis", "Seçim Rehberi"],
   },
   {
-    id: 'bp-002',
-    slug: 'sentetik-cim-bakim-rehberi',
-    title: 'Sentetik Çim Bakımı: Mevsimden Mevsime Yapmanız Gerekenler',
-    titleEn: 'Synthetic Grass Maintenance: What You Need to Do Season by Season',
+    id: "bp-002",
+    slug: "sentetik-cim-bakim-rehberi",
+    title: "Sentetik Çim Bakımı: Mevsimden Mevsime Yapmanız Gerekenler",
+    titleEn:
+      "Synthetic Grass Maintenance: What You Need to Do Season by Season",
     excerpt:
-      'Sentetik çim halınızı yıllarca ilk günkü görünümünde tutmak için mevsimsel bakım önerileri.',
+      "Sentetik çim halınızı yıllarca ilk günkü görünümünde tutmak için mevsimsel bakım önerileri.",
     excerptEn:
-      'Seasonal maintenance tips to keep your synthetic grass looking like new for years.',
+      "Seasonal maintenance tips to keep your synthetic grass looking like new for years.",
     content: `
 Sentetik çim, gerçek çime göre çok daha az bakım gerektirir. Ancak uzun ömürlü ve estetik görünümünü korumak için bazı rutin işlemler şarttır.
 
@@ -131,23 +133,23 @@ Clean snow accumulation with a plastic shovel; metal shovels can damage fibers. 
 - Benefit from professional maintenance service once a year
 - Don't extinguish cigarettes directly on the grass
     `,
-    author: 'ZenFlor',
-    date: '2026-04-22',
-    category: 'Çim Halı',
-    categoryEn: 'Artificial Grass',
-    image: '/images/blog-2.png',
+    author: SITE_NAME,
+    date: "2026-04-22",
+    category: "Çim Halı",
+    categoryEn: "Artificial Grass",
+    image: "/images/blog-2.png",
     readTime: 6,
-    tags: ['Çim Halı', 'Bakım', 'Mevsimsel'],
+    tags: ["Çim Halı", "Bakım", "Mevsimsel"],
   },
   {
-    id: 'bp-003',
-    slug: 'zemin-kaplama-trendleri-2024',
-    title: '2026 Zemin Kaplama Trendleri: Kurumsal Mekanlarda Yeni Dalga',
-    titleEn: '2026 Flooring Trends: New Wave in Corporate Spaces',
+    id: "bp-003",
+    slug: "zemin-kaplama-trendleri-2024",
+    title: "2026 Zemin Kaplama Trendleri: Kurumsal Mekanlarda Yeni Dalga",
+    titleEn: "2026 Flooring Trends: New Wave in Corporate Spaces",
     excerpt:
-      'Bu yıl kurumsal mekanlarda öne çıkan zemin kaplama trendlerini ve renk paletlerini inceliyoruz.',
+      "Bu yıl kurumsal mekanlarda öne çıkan zemin kaplama trendlerini ve renk paletlerini inceliyoruz.",
     excerptEn:
-      'We examine the flooring trends and color palettes that stand out in corporate spaces this year.',
+      "We examine the flooring trends and color palettes that stand out in corporate spaces this year.",
     content: `
 Zemin kaplama sektörü 2024 yılında sürdürülebilirlik, biyofilik tasarım ve hibrit çalışma ortamlarına uyum temaları etrafında şekillenmektedir.
 
@@ -194,12 +196,12 @@ Sound management in open plan offices has become a critical design input. High-w
 
 The replaceability of carpet tiles provides a great advantage in hybrid working models where office arrangements need to be updated frequently.
     `,
-    author: 'ZenFlor',
-    date: '2026-05-10',
-    category: 'Karo Halı',
-    categoryEn: 'Carpet Tiles',
-    image: '/images/blog-3.png',
+    author: SITE_NAME,
+    date: "2026-05-10",
+    category: "Karo Halı",
+    categoryEn: "Carpet Tiles",
+    image: "/images/blog-3.png",
     readTime: 7,
-    tags: ['Trend', '2024', 'Kurumsal', 'Tasarım'],
+    tags: ["Trend", "2024", "Kurumsal", "Tasarım"],
   },
 ];
