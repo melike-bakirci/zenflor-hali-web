@@ -1,4 +1,5 @@
 import React from "react";
+import { useSearchParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import SectionTitle from "~/components/ui/SectionTitle";
 import BlogCard from "~/components/ui/BlogCard";
@@ -22,7 +23,25 @@ export function meta() {
 
 const Blog: React.FC = () => {
   const { t } = useTranslation();
-  const [selectedCategory, setSelectedCategory] = React.useState<string>("all");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const categoryParam =
+    searchParams.get("kategori") || searchParams.get("category") || "all";
+  const selectedCategory =
+    categoryParam === "karo-hali" || categoryParam === "cim-hali"
+      ? categoryParam
+      : "all";
+
+  const handleCategoryChange = (cat: string) => {
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete("category");
+    if (cat === "all") {
+      nextParams.delete("kategori");
+    } else {
+      nextParams.set("kategori", cat);
+    }
+    setSearchParams(nextParams, { replace: true });
+  };
 
   const filteredPosts = blogPosts.filter((post) => {
     if (selectedCategory === "karo-hali") {
@@ -64,21 +83,21 @@ const Blog: React.FC = () => {
             <button
               type="button"
               className={`blog-category-tab ${selectedCategory === "all" ? "active" : ""}`}
-              onClick={() => setSelectedCategory("all")}
+              onClick={() => handleCategoryChange("all")}
             >
               {t("blog.allCategories")}
             </button>
             <button
               type="button"
               className={`blog-category-tab ${selectedCategory === "karo-hali" ? "active" : ""}`}
-              onClick={() => setSelectedCategory("karo-hali")}
+              onClick={() => handleCategoryChange("karo-hali")}
             >
               {t("nav.karoHali")}
             </button>
             <button
               type="button"
               className={`blog-category-tab ${selectedCategory === "cim-hali" ? "active" : ""}`}
-              onClick={() => setSelectedCategory("cim-hali")}
+              onClick={() => handleCategoryChange("cim-hali")}
             >
               {t("nav.cimHali")}
             </button>

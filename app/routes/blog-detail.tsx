@@ -401,9 +401,12 @@ const BlogDetail: React.FC = () => {
           <main className="blog-detail__main">
             <article className="blog-detail__article">
               <header className="blog-detail__header">
-                <span className="badge badge-primary blog-detail__category">
+                <Link
+                  to={`/blog?kategori=${category === "Çim Halı" ? "cim-hali" : "karo-hali"}`}
+                  className="badge badge-primary blog-detail__category"
+                >
                   {category}
-                </span>
+                </Link>
                 <h1 className="blog-detail__title font-display">{title}</h1>
 
                 <div className="blog-detail__meta">

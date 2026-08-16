@@ -98,9 +98,7 @@ const CimHaliDetail: React.FC = () => {
               badge={
                 discountInfo.hasDiscount
                   ? t("products.discountBadge", { amount: discountInfo.discountAmount })
-                  : product.featured
-                    ? t("products.featuredBadge")
-                    : undefined
+                  : undefined
               }
             />
 
