@@ -369,10 +369,8 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              title={
-                "Karo Halı Koleksiyonumuz"
-              }
-              subtitle={t("home.featuredSubtitle")}
+              title="Karo Halı Koleksiyonumuz"
+              subtitle="En çok tercih edilen karo halı modellerimiz"
             />
             <Link to="/karo-hali" className="btn btn-outline home__view-all">
               {t("common.viewAll")} <ArrowRight size={16} />

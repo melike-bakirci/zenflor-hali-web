@@ -17,28 +17,13 @@
     "heroCtaContact": "Bize Ulaşın",
     "heroCtaQuote": "Hemen Teklif Alın",
     "featuredTitle": "En Çok Sevilenler",
-    "featuredSubtitle": "Müşterilerimizin en çok tercih ettiği ürünlerimize yakından bakın.",
     "categoriesTitle": "Neler Sunuyoruz?",
     "categoriesSubtitle": "İhtiyacınıza en uygun çözümü bulmak için kategorilerimizi inceleyin.",
     "karoHaliCat": "Karo Halı",
-    "karoHaliDesc": "Çalışma alanlarınıza şıklık ve konfor katan, kullanımı pratik modüler halılar.",
     "cimHaliCat": "Çim Halı",
-    "cimHaliDesc": "Dört mevsim yeşilin keyfini çıkarabileceğiniz, doğal görünümlü çim çözümleri.",
-    "exploreBtn": "Tüm Koleksiyonu İncele",
     "statsYears": "Yıllık Deneyim",
     "statsProjects": "Mutlu Tamamlanan Proje",
-    "statsProducts": "Farklı Ürün Çeşidi",
-    "statsClients": "Gülümseyen Müşteri",
-    "whyUsTitle": "Neden Bizimle Çalışmalısınız?",
-    "whyUsSubtitle": "Çünkü işimizi çok seviyor, mekanlarınıza kendi evimiz gibi değer veriyoruz.",
-    "feature1Title": "Birinci Sınıf Kalite",
-    "feature1Desc": "Yıllarca ilk günkü gibi kullanabileceğiniz, dayanıklı ve estetik ürünler seçiyoruz.",
-    "feature2Title": "Her Adımda Yanınızdayız",
-    "feature2Desc": "Fikir aşamasından uygulamaya kadar aklınıza takılan her soruda buradayız.",
-    "feature3Title": "Bol Seçenek",
-    "feature3Desc": "Zevkinize ve bütçenize tam uyacak onlarca renk ve desen alternatifi sunuyoruz.",
-    "feature4Title": "Güvencemiz Altında",
-    "feature4Desc": "Tüm ürünlerimizde içinizin tamamen rahat etmesi için garanti veriyoruz."
+    "statsProducts": "Farklı Ürün Çeşidi"
   },
   "about": {
     "title": "Biz Kimiz?",
@@ -53,13 +38,9 @@
     "value1": "Kaliteden Ödün Vermemeye",
     "value2": "Sonsuz Güvene",
     "value3": "Sürekli Gelişime",
-    "value4": "Doğayı Korumaya",
-    "teamTitle": "Harika Ekibimiz",
-    "certTitle": "Sertifikalarımız"
+    "value4": "Doğayı Korumaya"
   },
   "products": {
-    "title": "Ürünlerimiz",
-    "subtitle": "Mekanınıza en çok yakışacak ürünleri keşfedin.",
     "karoHali": "Karo Halı",
     "karoHaliSubtitle": "Şıklığı ve pratikliği bir araya getiren karo halılarımız.",
     "cimHali": "Çim Halı",
@@ -70,12 +51,10 @@
     "backToList": "Listeye Dön",
     "otherProducts": "Diğer Ürünlere Göz Atın",
     "category": "Kategori",
-    "infoRequest": "Bilgi Alın",
     "searchPlaceholder": "Ne aramıştınız?...",
     "searchButton": "Ara",
     "clearSearch": "Temizle",
     "sortBy": "Sıralama Seçeneği",
-    "sortDefault": "Önerilen Sıralama",
     "sortNameAsc": "A'dan Z'ye",
     "sortNameDesc": "Z'den A'ya",
     "sortPriceAsc": "Fiyata Göre Artan",
@@ -91,16 +70,13 @@
     "date": "Tarih",
     "category": "Kategori",
     "readTime": "dk okuma süresi",
-    "backToBlog": "Bloga Dön",
-    "relatedPosts": "Bunlar da İlginizi Çekebilir"
+    "backToBlog": "Bloga Dön"
   },
   "contact": {
     "title": "Bize Ulaşın",
     "subtitle": "Aklınızdaki projeyi konuşmak için sabırsızlanıyoruz! Bir mesaj atmaya ne dersiniz?",
     "nameLabel": "Adınız",
-    "emailLabel": "E-posta Adresiniz",
     "phoneLabel": "Telefon Numaranız",
-    "subjectLabel": "Hangi konuda yazıyorsunuz?",
     "messageLabel": "Mesajınız",
     "sendBtn": "Mesajı Gönder",
     "address": "Adresimiz",
@@ -112,14 +88,9 @@
     "followUs": "Bizi Takip Edin",
     "openNow": "Şu An Açığız!",
     "closedNow": "Şu An Kapalıyız",
-    "openNotice": "Harika, şu an mesai saatleri içerisindeyiz. Bize hemen ulaşabilirsiniz.",
-    "closedNoticeSunday": "Bugün pazar, biraz dinleniyoruz. Pazartesi sabahı 09:00'da enerjik bir şekilde buradayız!",
-    "closedNoticeTime": "Şu an mesai saatleri dışındayız ama mesajınızı bırakırsanız sabah ilk iş size dönüş yaparız.",
     "successMsg": "Harika! Mesajınız bize ulaştı. En kısa sürede sizinle iletişime geçeceğiz.",
     "namePlaceholder": "Size nasıl hitap edelim?",
-    "emailPlaceholder": "Sizi haberdar edebileceğimiz e-posta",
     "phonePlaceholder": "Size ulaşabileceğimiz telefon",
-    "subjectPlaceholder": "Konu nedir?",
     "messagePlaceholder": "Aklınızdan geçenleri bizimle paylaşın..."
   },
   "footer": {
@@ -153,7 +124,6 @@
     "minWarning": "Siparişlerimizi en az 5 m² üzerinden hazırlayabiliyoruz.",
     "stockWarning": "10.000 m² ve üzeri dev projeleriniz için bize ulaşırsanız, size özel üretim ve teslimat planı yapabiliriz.",
     "estimatedTotal": "Tahmini Sipariş Tutarınız:",
-    "getQuoteWa": "WhatsApp Üzerinden Hızlı Teklif Al",
-    "getStockQuoteWa": "Stok ve Fiyat İçin WhatsApp'tan Yaz"
+    "getQuoteWa": "WhatsApp Üzerinden Hızlı Teklif Al"
   }
 }

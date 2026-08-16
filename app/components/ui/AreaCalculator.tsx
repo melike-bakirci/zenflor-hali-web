@@ -165,10 +165,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
             <WhatsAppIcon />
             <span>
               {isStockWarning
-                ? t(
-                    "areaCalculator.getStockQuoteWa",
-                    "WhatsApp ile Stok & Fiyat Bilgisi Al",
-                  )
+                ? "WhatsApp ile Stok & Fiyat Bilgisi Al"
                 : t(
                     "areaCalculator.getQuoteWa",
                     "WhatsApp ile Teklif Al",
