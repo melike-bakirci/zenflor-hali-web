@@ -118,35 +118,23 @@ const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedRefProject, setSelectedRefProject] =
     useState<ReferenceProject | null>(null);
-  const [isPaused, setIsPaused] = useState(false);
-  const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const resetAutoPlay = () => {
-    if (autoPlayRef.current) clearInterval(autoPlayRef.current);
-    if (!isPaused) {
-      autoPlayRef.current = setInterval(() => {
-        setCurrentSlide((prev) =>
-          prev === HERO_SLIDES.length - 1 ? 0 : prev + 1,
-        );
-      }, 7000);
-    }
-  };
 
   useEffect(() => {
-    resetAutoPlay();
-    return () => {
-      if (autoPlayRef.current) clearInterval(autoPlayRef.current);
-    };
-  }, [isPaused]);
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) =>
+        prev === HERO_SLIDES.length - 1 ? 0 : prev + 1,
+      );
+    }, 7000);
+
+    return () => clearInterval(timer);
+  }, [currentSlide]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
-    resetAutoPlay();
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
-    resetAutoPlay();
   };
 
   const featuredKaro = karoHaliProducts.filter((p) => p.featured).slice(0, 4);
@@ -160,18 +148,8 @@ const Home: React.FC = () => {
     <div className="home page-enter">
       {/* ===== HERO SLIDER ===== */}
       <section
-        className={`hero-slider ${isPaused ? "is-paused" : ""}`}
+        className="hero-slider"
         aria-label="Hero slider"
-        onMouseEnter={() => {
-          if (window.matchMedia("(hover: hover)").matches) {
-            setIsPaused(true);
-          }
-        }}
-        onMouseLeave={() => {
-          if (window.matchMedia("(hover: hover)").matches) {
-            setIsPaused(false);
-          }
-        }}
       >
         {HERO_SLIDES.map((slide, index) => (
           <div
@@ -179,6 +157,7 @@ const Home: React.FC = () => {
             className={`hero-slide ${index === currentSlide ? "active" : ""}`}
           >
             <div
+              key={`bg-${index}-${index === currentSlide ? "active" : "idle"}`}
               className="hero-slide__bg"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
@@ -222,12 +201,9 @@ const Home: React.FC = () => {
         <div className="hero-slider__dots">
           {HERO_SLIDES.map((_, index) => (
             <button
-              key={index}
+              key={`dot-${index}-${index === currentSlide ? "active" : "idle"}`}
               className={`hero-slider__dot ${index === currentSlide ? "active" : ""}`}
-              onClick={() => {
-                setCurrentSlide(index);
-                resetAutoPlay();
-              }}
+              onClick={() => setCurrentSlide(index)}
               aria-label={`Slayt ${index + 1}`}
             />
           ))}

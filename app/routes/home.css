@@ -38,14 +38,11 @@
   background-position: center;
   background-repeat: no-repeat;
   transform: scale(1);
+  will-change: transform;
 }
 
 .hero-slide.active .hero-slide__bg {
   animation: heroZoom 7s linear forwards;
-}
-
-.hero-slider.is-paused .hero-slide.active .hero-slide__bg {
-  animation-play-state: paused;
 }
 
 @keyframes heroZoom {
@@ -245,10 +242,6 @@
   border-radius: 9999px;
   transform-origin: left;
   animation: dotProgress 7s linear forwards;
-}
-
-.hero-slider.is-paused .hero-slider__dot.active::after {
-  animation-play-state: paused;
 }
 
 @keyframes dotProgress {
