@@ -25,8 +25,7 @@ export function meta() {
 }
 
 const References: React.FC = () => {
-  const { i18n } = useTranslation();
-  const isEn = i18n.language === "en";
+  const { t } = useTranslation();
 
   const [selectedProject, setSelectedProject] =
     useState<ReferenceProject | null>(null);
@@ -39,12 +38,10 @@ const References: React.FC = () => {
         <div className="container">
           <div className="page-hero__content">
             <h1 className="page-hero__title font-display">
-              {isEn ? "Our References" : "Referanslarımız"}
+              {"Referanslarımız"}
             </h1>
             <p className="page-hero__subtitle">
-              {isEn
-                ? "Corporate flooring solution references and finished application visuals"
-                : "Ofis, otel vb. projelerde tamamlanan zemin kaplama uygulamalarımız ve referanslarımız"}
+              {"Ofis, otel vb. projelerde tamamlanan zemin kaplama uygulamalarımız ve referanslarımız"}
             </p>
           </div>
         </div>
@@ -53,8 +50,8 @@ const References: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
-            { label: isEn ? "References" : "Referanslarımız" },
+            { label: "Ana Sayfa", url: "/" },
+            { label: "Referanslarımız" },
           ]}
         />
       </div>
@@ -65,16 +62,11 @@ const References: React.FC = () => {
           <ClientLogos
             limit={4}
             title={
-              isEn
-                ? "Our Corporate Partners & Clients"
-                : "Değerli Müşterilerimiz"
+              "Değerli Müşterilerimiz"
             }
             subtitle={
-              isEn
-                ? "Selected corporate clients who trust our carpet tile and flooring solutions"
-                : "Zemin çözümlerimizde bizi tercih eden seçkin şirket, otel ve mimarlık kurumları"
+              "Zemin çözümlerimizde bizi tercih eden seçkin şirket, otel ve mimarlık kurumları"
             }
-            isEn={isEn}
           />
         </div>
       </section>
@@ -84,12 +76,10 @@ const References: React.FC = () => {
         <div className="container">
           <SectionTitle
             title={
-              isEn ? "Finished Application Visual Gallery" : "Uygulama Galerisi"
+              "Uygulama Galerisi"
             }
             subtitle={
-              isEn
-                ? "Click on any image to view full resolution photo"
-                : "Fotoğrafların üzerine tıklayarak yüksek çözünürlüklü olarak inceleyebilirsiniz"
+              "Fotoğrafların üzerine tıklayarak yüksek çözünürlüklü olarak inceleyebilirsiniz"
             }
             center
           />
@@ -101,7 +91,6 @@ const References: React.FC = () => {
                 key={project.id}
                 project={project}
                 onSelect={setSelectedProject}
-                isEn={isEn}
               />
             ))}
           </div>
@@ -111,14 +100,10 @@ const References: React.FC = () => {
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
         title={
-          isEn
-            ? "Let Us Prepare a Quote for Your Project Too!"
-            : "Sizin Projeniz İçin De Teklif Hazırlayalım!"
+          "Sizin Projeniz İçin De Teklif Hazırlayalım!"
         }
         subtitle={
-          isEn
-            ? "Benefit from free on-site measurement, sample catalogs, and competitive quotes for your space, just like our hundreds of completed corporate projects."
-            : "Tamamladığımız yüzlerce kurumsal zemin projesi gibi, alanınıza özel ücretsiz yerinde keşif, numune kataloğu ve en uygun fiyat teklifi fırsatından yararlanın."
+          "Tamamladığımız yüzlerce kurumsal zemin projesi gibi, alanınıza özel ücretsiz yerinde keşif, numune kataloğu ve en uygun fiyat teklifi fırsatından yararlanın."
         }
       />
 
@@ -126,7 +111,6 @@ const References: React.FC = () => {
       <ReferenceModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
-        isEn={isEn}
       />
     </div>
   );

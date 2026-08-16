@@ -51,8 +51,7 @@ export function meta({ params }: MetaArgs) {
 
 const KaroHaliDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { t, i18n } = useTranslation();
-  const isEn = i18n.language === "en";
+  const { t } = useTranslation();
 
   const [activeTab, setActiveTab] = useState<"description" | "features">(
     "description",
@@ -60,17 +59,9 @@ const KaroHaliDetail: React.FC = () => {
 
   const product = karoHaliProducts.find((p) => p.slug === slug);
 
-  const name = product ? (isEn ? product.nameEn : product.name) : "";
-  const description = product
-    ? isEn
-      ? product.descriptionEn
-      : product.description
-    : "";
-  const features = product
-    ? isEn
-      ? product.featuresEn
-      : product.features
-    : [];
+  const name = product ? product.name : "";
+  const description = product ? product.description : "";
+  const features = product ? product.features : [];
 
   if (!product) return <Navigate to="/karo-hali" replace />;
 
@@ -86,7 +77,7 @@ const KaroHaliDetail: React.FC = () => {
         {/* Breadcrumb */}
         <Breadcrumb
           items={[
-            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: "Ana Sayfa", url: "/" },
             { label: t("products.karoHali"), url: "/karo-hali" },
             { label: name },
           ]}
@@ -106,13 +97,9 @@ const KaroHaliDetail: React.FC = () => {
               alt={name}
               badge={
                 discountInfo.hasDiscount
-                  ? isEn
-                    ? `${discountInfo.discountAmount} ₺ Discount`
-                    : `${discountInfo.discountAmount} ₺ İndirim`
+                  ? `${discountInfo.discountAmount} ₺ İndirim`
                   : product.featured
-                    ? isEn
-                      ? "Featured"
-                      : "Öne Çıkan"
+                    ? "Öne Çıkan"
                     : undefined
               }
             />
@@ -125,7 +112,7 @@ const KaroHaliDetail: React.FC = () => {
                   className={`pd-tab-btn ${activeTab === "description" ? "active" : ""}`}
                   onClick={() => setActiveTab("description")}
                 >
-                  {isEn ? "Description" : "Açıklama"}
+                  {"Açıklama"}
                 </button>
                 <button
                   type="button"
@@ -167,7 +154,7 @@ const KaroHaliDetail: React.FC = () => {
             {priceFeature && (
               <div className="pd-price-box">
                 <span className="pd-price-label">
-                  {isEn ? "Unit Price:" : "Birim Fiyatı:"}
+                  {"Birim Fiyatı:"}
                 </span>
                 {discountInfo.hasDiscount ? (
                   <div className="pd-price-discount-wrap">
@@ -178,9 +165,7 @@ const KaroHaliDetail: React.FC = () => {
                       {discountInfo.formattedSellingPrice}
                     </span>
                     <span className="pd-discount-badge">
-                      {isEn
-                        ? `${discountInfo.discountAmount} ₺ Discount`
-                        : `${discountInfo.discountAmount} ₺ İndirim`}
+                      {`${discountInfo.discountAmount} ₺ İndirim`}
                     </span>
                   </div>
                 ) : (
@@ -204,7 +189,7 @@ const KaroHaliDetail: React.FC = () => {
                 className="btn btn-primary btn-lg"
                 id="product-info-request"
               >
-                <Mail size={18} /> {isEn ? "Sample Request" : "Numune Talebi"}
+                <Mail size={18} /> {"Numune Talebi"}
               </Link>
               <Link to="/karo-hali" className="btn btn-outline btn-lg">
                 {t("products.allProducts")}

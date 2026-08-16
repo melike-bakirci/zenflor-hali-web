@@ -47,8 +47,8 @@ const CimHali: React.FC = () => {
   });
 
   const filteredProducts = useMemo(() => {
-    return filterAndSortProducts(cimHaliProducts, filters, isEn);
-  }, [filters, isEn]);
+    return filterAndSortProducts(cimHaliProducts, filters);
+  }, [filters]);
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE) || 1;
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;

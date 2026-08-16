@@ -18,11 +18,9 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
   const { i18n, t } = useTranslation();
-  const isEn = i18n.language === "en";
-
-  const name = isEn ? product.nameEn : product.name;
-  const shortDesc = isEn ? product.shortDescEn : product.shortDesc;
-  const features = isEn ? product.featuresEn : product.features;
+  const name = product.name;
+  const shortDesc = product.shortDesc;
+  const features = product.features;
   const priceFeature = features?.find(
     (f) => f.label === "Fiyat" || f.label === "Price",
   );
@@ -38,7 +36,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
       <div className="product-card__image-wrap">
         <img
           src={product.image}
-          alt={isEn ? name : `Uygun fiyatlı ve ucuz ${name} modelleri`}
+          alt={`Uygun fiyatlı ve ucuz ${name} modelleri`}
           className="product-card__image"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = "none";
@@ -51,9 +49,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
           <div className="product-card__discount-badge">
             <Tag size={12} />
             <span>
-              {isEn
-                ? `${discountInfo.discountAmount} ₺ Discount`
-                : `${discountInfo.discountAmount} ₺ İndirim`}
+              {`${discountInfo.discountAmount} ₺ İndirim`}
             </span>
           </div>
         )}

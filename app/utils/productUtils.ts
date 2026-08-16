@@ -191,25 +191,16 @@ export const getProductBacking = (product: Product): string => {
 };
 
 export const getProductYarnType = (
-  product: Product,
-  isEn: boolean = false,
+  product: Product
 ): string => {
-  const featuresList =
-    isEn && product.featuresEn ? product.featuresEn : product.features;
+  const featuresList = product.features;
   const yarnFeature = featuresList?.find(
     (f) =>
       f.label.toLowerCase().includes("iplik cinsi") ||
       f.label.toLowerCase().includes("yarn type"),
   );
   if (yarnFeature) return yarnFeature.value;
-
-  const fallbackList = isEn ? product.features : product.featuresEn;
-  const fallbackFeature = fallbackList?.find(
-    (f) =>
-      f.label.toLowerCase().includes("iplik cinsi") ||
-      f.label.toLowerCase().includes("yarn type"),
-  );
-  return fallbackFeature ? fallbackFeature.value : "";
+  return "";
 };
 
 export const getProductColor = (product: Product): string => {
@@ -276,20 +267,16 @@ export const getProductSearchableText = (
 
   // İsimler
   if (p.name) parts.push(p.name);
-  if (p.nameEn) parts.push(p.nameEn);
 
   // Açıklamalar
   if (p.shortDesc) parts.push(p.shortDesc);
-  if (p.shortDescEn) parts.push(p.shortDescEn);
   if (p.description) parts.push(p.description);
-  if (p.descriptionEn) parts.push(p.descriptionEn);
 
   // Etiketler
   if (p.tags) parts.push(...p.tags);
-  if (p.tagsEn) parts.push(...p.tagsEn);
 
-  // Özellikler (TR + EN hepsini dahil et)
-  const allFeatures = [...(p.features || []), ...(p.featuresEn || [])];
+  // Özellikler
+  const allFeatures = [...(p.features || [])];
   for (const f of allFeatures) {
     parts.push(`${f.label} ${f.value}`);
 
@@ -375,8 +362,7 @@ export const getProductSearchableText = (
 
 export const filterAndSortProducts = (
   products: Product[],
-  filters: FilterState,
-  isEn: boolean = false,
+  filters: FilterState
 ): Product[] => {
   let result = [...products];
 
@@ -417,15 +403,12 @@ export const filterAndSortProducts = (
   // 2. Yarn Type Filter (İplik Cinsi - for Karo Halı)
   if (filters.selectedYarnTypes && filters.selectedYarnTypes.length > 0) {
     result = result.filter((p) => {
-      const yarnTr = normalizeSearchText(getProductYarnType(p, false));
-      const yarnEn = normalizeSearchText(getProductYarnType(p, true));
+      const yarnTr = normalizeSearchText(getProductYarnType(p));
       return filters.selectedYarnTypes.some((selectedYarn) => {
         const sNorm = normalizeSearchText(selectedYarn);
         return (
           yarnTr.includes(sNorm) ||
-          yarnEn.includes(sNorm) ||
-          sNorm.includes(yarnTr) ||
-          sNorm.includes(yarnEn)
+          sNorm.includes(yarnTr)
         );
       });
     });
@@ -474,9 +457,9 @@ export const filterAndSortProducts = (
   switch (filters.sortOption) {
     case "name-asc":
       result.sort((a, b) => {
-        const nameA = isEn ? a.nameEn || a.name : a.name;
-        const nameB = isEn ? b.nameEn || b.name : b.name;
-        return nameA.localeCompare(nameB, isEn ? "en" : "tr", {
+        const nameA = a.name;
+        const nameB = b.name;
+        return nameA.localeCompare(nameB, "tr", {
           sensitivity: "base",
           numeric: true,
         });
@@ -484,9 +467,9 @@ export const filterAndSortProducts = (
       break;
     case "name-desc":
       result.sort((a, b) => {
-        const nameA = isEn ? a.nameEn || a.name : a.name;
-        const nameB = isEn ? b.nameEn || b.name : b.name;
-        return nameB.localeCompare(nameA, isEn ? "en" : "tr", {
+        const nameA = a.name;
+        const nameB = b.name;
+        return nameB.localeCompare(nameA, "tr", {
           sensitivity: "base",
           numeric: true,
         });
