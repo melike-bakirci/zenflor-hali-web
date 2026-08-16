@@ -18,6 +18,7 @@ const InstagramIcon = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    aria-hidden="true"
   >
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -35,6 +36,7 @@ const LinkedinIcon = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    aria-hidden="true"
   >
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
     <rect x="2" y="9" width="4" height="12"></rect>
@@ -52,6 +54,7 @@ const FacebookIcon = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    aria-hidden="true"
   >
     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
   </svg>
@@ -67,6 +70,7 @@ const YoutubeIcon = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    aria-hidden="true"
   >
     <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
     <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
@@ -83,6 +87,7 @@ const TiktokIcon = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    aria-hidden="true"
   >
     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
   </svg>
@@ -230,11 +235,12 @@ const Contact: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact__info-item card"
+                aria-label="Google Haritalar'da Adresimizi Açın"
               >
                 <div className="contact__info-icon">
-                  <MapPin size={24} />
+                  <MapPin size={22} />
                 </div>
-                <div>
+                <div className="contact__info-content">
                   <h3 className="contact__info-title">
                     {t("contact.address")}
                   </h3>
@@ -244,11 +250,15 @@ const Contact: React.FC = () => {
                 </div>
               </a>
 
-              <a href="tel:+905302708487" className="contact__info-item card">
+              <a
+                href="tel:+905302708487"
+                className="contact__info-item card"
+                aria-label="Telefon ile Bizi Arayın: +90 530 270 84 87"
+              >
                 <div className="contact__info-icon">
-                  <Phone size={24} />
+                  <Phone size={22} />
                 </div>
-                <div>
+                <div className="contact__info-content">
                   <h3 className="contact__info-title">{t("contact.phone")}</h3>
                   <p className="contact__info-desc">+90 (530) 270 84 87</p>
                 </div>
@@ -257,11 +267,12 @@ const Contact: React.FC = () => {
               <a
                 href="mailto:zenflormarket@gmail.com"
                 className="contact__info-item card"
+                aria-label="E-posta Gönderin: zenflormarket@gmail.com"
               >
                 <div className="contact__info-icon">
-                  <Mail size={24} />
+                  <Mail size={22} />
                 </div>
-                <div>
+                <div className="contact__info-content">
                   <h3 className="contact__info-title">{t("contact.email")}</h3>
                   <p className="contact__info-desc">zenflormarket@gmail.com</p>
                 </div>
@@ -269,7 +280,7 @@ const Contact: React.FC = () => {
 
               <div className="contact__info-item contact__info-item--hours card">
                 <div className="contact__info-icon">
-                  <Clock size={24} />
+                  <Clock size={22} />
                 </div>
                 <div className="contact__info-body">
                   <div className="contact__info-header">
@@ -286,7 +297,7 @@ const Contact: React.FC = () => {
                   <p className="contact__info-desc">
                     {t("contact.hoursValue")}
                   </p>
-                  <p className="contact__info-desc">
+                  <p className="contact__info-desc contact__info-desc--muted">
                     {t("contact.sundayHours")}
                   </p>
                 </div>
@@ -294,10 +305,7 @@ const Contact: React.FC = () => {
 
               {/* Social Media */}
               <div className="contact__socials-card card">
-                <h3
-                  className="contact__info-title"
-                  style={{ marginBottom: "0.75rem" }}
-                >
+                <h3 className="contact__info-title contact__socials-title">
                   {t("contact.followUs")}
                 </h3>
                 <div className="contact__socials-grid">
@@ -306,7 +314,7 @@ const Contact: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact__social-link contact__social-link--instagram"
-                    aria-label="Instagram"
+                    aria-label="Instagram sayfamızı ziyaret edin"
                     title="Instagram"
                   >
                     <InstagramIcon />
@@ -316,7 +324,7 @@ const Contact: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact__social-link contact__social-link--linkedin"
-                    aria-label="LinkedIn"
+                    aria-label="LinkedIn sayfamızı ziyaret edin"
                     title="LinkedIn"
                   >
                     <LinkedinIcon />
@@ -326,7 +334,7 @@ const Contact: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact__social-link contact__social-link--facebook"
-                    aria-label="Facebook"
+                    aria-label="Facebook sayfamızı ziyaret edin"
                     title="Facebook"
                   >
                     <FacebookIcon />
@@ -336,7 +344,7 @@ const Contact: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact__social-link contact__social-link--youtube"
-                    aria-label="YouTube"
+                    aria-label="YouTube kanalımızı ziyaret edin"
                     title="YouTube"
                   >
                     <YoutubeIcon />
@@ -346,7 +354,7 @@ const Contact: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact__social-link contact__social-link--tiktok"
-                    aria-label="TikTok"
+                    aria-label="TikTok sayfamızı ziyaret edin"
                     title="TikTok"
                   >
                     <TiktokIcon />
@@ -385,6 +393,7 @@ const Contact: React.FC = () => {
                         name="name"
                         className="contact__input"
                         placeholder={t("contact.namePlaceholder")}
+                        autoComplete="name"
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -398,6 +407,8 @@ const Contact: React.FC = () => {
                         type="tel"
                         id="phone"
                         name="phone"
+                        inputMode="tel"
+                        autoComplete="tel"
                         className="contact__input"
                         placeholder={t("contact.phonePlaceholder")}
                         value={formData.phone}
@@ -432,7 +443,8 @@ const Contact: React.FC = () => {
                       t("common.loading")
                     ) : (
                       <>
-                        {t("contact.sendBtn")} <Send size={18} />
+                        <span>{t("contact.sendBtn")}</span>
+                        <Send size={18} />
                       </>
                     )}
                   </button>
@@ -444,7 +456,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Map */}
-      <section className="contact__map">
+      <section className="contact__map" aria-label="Harita Konumu">
         <iframe
           title={`${SITE_NAME} Google Maps Konumu`}
           src="https://maps.google.com/maps?q=Leman+Sk.+No:4,+Sancaktepe/İstanbul&t=&z=18&ie=UTF8&iwloc=&output=embed"
