@@ -6,7 +6,6 @@ import "./ClientLogos.css";
 interface ClientLogosProps {
   title?: string;
   subtitle?: string;
-  isEn?: boolean;
   limit?: number;
 }
 

@@ -132,8 +132,7 @@ export function meta() {
 }
 
 const Contact: React.FC = () => {
-  const { t, i18n } = useTranslation();
-  const isEn = i18n.language === "en";
+  const { t } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(checkWorkingHours);
 
@@ -211,7 +210,7 @@ const Contact: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: "Ana Sayfa", url: "/" },
             { label: t("nav.contact") },
           ]}
         />
@@ -222,7 +221,7 @@ const Contact: React.FC = () => {
           {/* Info */}
           <div className="contact__info">
             <SectionTitle
-              title={isEn ? "Contact Information" : "İletişim Bilgilerimiz"}
+              title={"İletişim Bilgilerimiz"}
             />
 
             <div className="contact__info-list">
@@ -363,7 +362,7 @@ const Contact: React.FC = () => {
               <div className="contact__success">
                 <div className="contact__success-icon">✓</div>
                 <SectionTitle
-                  title={isEn ? "Message Sent!" : "Mesajınız Alındı!"}
+                  title={"Mesajınız Alındı!"}
                 />
                 <p className="contact__success-text">
                   {t("contact.successMsg")}
@@ -372,7 +371,7 @@ const Contact: React.FC = () => {
             ) : (
               <>
                 <SectionTitle
-                  title={isEn ? "Send us a Message" : "Bize Ulaşın"}
+                  title={"Bize Ulaşın"}
                 />
                 <form className="contact__form" onSubmit={handleSubmit}>
                   <div className="contact__form-row">
@@ -461,14 +460,10 @@ const Contact: React.FC = () => {
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
         title={
-          isEn
-            ? "Get a Direct Quote for Your Project!"
-            : "Projeniz İçin Doğrudan Teklif Alın!"
+          "Projeniz İçin Doğrudan Teklif Alın!"
         }
         subtitle={
-          isEn
-            ? "Reach out via our phone line or WhatsApp to speak directly with our team and receive an immediate quote."
-            : "Müşteri temsilcimizle görüşmek ve anında teklif almak için telefon hattımızdan veya WhatsApp üzerinden bize ulaşın."
+          "Müşteri temsilcimizle görüşmek ve anında teklif almak için telefon hattımızdan veya WhatsApp üzerinden bize ulaşın."
         }
       />
     </div>

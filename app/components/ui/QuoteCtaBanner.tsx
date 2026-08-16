@@ -36,30 +36,21 @@ const QuoteCtaBanner: React.FC<QuoteCtaBannerProps> = ({
   className = "",
   id = "page-quote-cta",
 }) => {
-  const { i18n } = useTranslation();
-  const isEn = i18n.language === "en";
+  const { t } = useTranslation();
 
-  const defaultTitle = isEn
-    ? "Get a Quote for Your Project!"
-    : "Projeniz için Teklif Alın!";
-  const defaultSubtitle = isEn
-    ? "Contact us with your project details and get expert consultation and immediate quote."
-    : "Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın.";
+  const defaultTitle = "Projeniz için Teklif Alın!";
+  const defaultSubtitle = "Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın.";
 
   const displayTitle = title || defaultTitle;
   const displaySubtitle = subtitle || defaultSubtitle;
 
   const displayPhoneText =
-    phoneText ||
-    (isEn ? "Call Now: +90 530 270 84 87" : "Hemen Arayın: +90 530 270 84 87");
+    phoneText || "Hemen Arayın: +90 530 270 84 87";
   const displayWhatsappText =
-    whatsappText ||
-    (isEn ? "Get Quote via WhatsApp" : "WhatsApp ile Teklif Alın");
+    whatsappText || "WhatsApp ile Teklif Alın";
 
   const defaultMsg = encodeURIComponent(
-    isEn
-      ? "Hello, I would like to get a quote for my project."
-      : "Merhaba, projem için fiyat teklifi ve detaylı bilgi almak istiyorum.",
+    "Merhaba, projem için fiyat teklifi ve detaylı bilgi almak istiyorum.",
   );
 
   const cleanWhatsappNumber = whatsappNumber.replace("+", "");

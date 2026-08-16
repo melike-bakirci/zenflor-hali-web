@@ -107,10 +107,10 @@ const BlogDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-  const isEn = i18n.language === "en";
+  
 
   const post = blogPosts.find((p) => p.slug === slug);
-  const title = post ? (isEn ? post.titleEn : post.title) : "";
+  const title = post ? (post.title) : "";
 
   // Font size
   const [fontSize, setFontSize] = useState<FontSize>(() => {
@@ -182,7 +182,7 @@ const BlogDetail: React.FC = () => {
 
   const getPlainText = useCallback(() => {
     if (!post) return "";
-    const raw = isEn ? post.contentEn : post.content;
+    const raw = post.content;
     // Strip markdown
     return raw
       .replace(/!\[.*?\]\(.*?\)/g, "")
@@ -191,7 +191,7 @@ const BlogDetail: React.FC = () => {
       .replace(/[*_`~]/g, "")
       .replace(/\n{2,}/g, " ")
       .trim();
-  }, [post, isEn]);
+  }, [post, false]);
 
   const startTTS = useCallback(() => {
     if (!ttsSupported) return;
@@ -199,13 +199,13 @@ const BlogDetail: React.FC = () => {
 
     const text = getPlainText();
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = isEn ? "en-GB" : "tr-TR";
+    utterance.lang = "tr-TR";
     utterance.rate = 0.95;
     utterance.pitch = 1;
 
     // Try to pick a matching voice
     const voices = window.speechSynthesis.getVoices();
-    const preferred = voices.find((v) => v.lang.startsWith(isEn ? "en" : "tr"));
+    const preferred = voices.find((v) => v.lang.startsWith("tr"));
     if (preferred) utterance.voice = preferred;
 
     utterance.onstart = () => {
@@ -225,7 +225,7 @@ const BlogDetail: React.FC = () => {
 
     utteranceRef.current = utterance;
     window.speechSynthesis.speak(utterance);
-  }, [ttsSupported, getPlainText, isEn]);
+  }, [ttsSupported, getPlainText, false]);
 
   const pauseTTS = () => {
     if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
@@ -249,11 +249,11 @@ const BlogDetail: React.FC = () => {
 
   if (!post) return <Navigate to="/blog" replace />;
 
-  const content = isEn ? post.contentEn : post.content;
-  const category = isEn ? post.categoryEn : post.category;
+  const content = post.content;
+  const category = post.category;
 
   const formattedDate = new Date(post.date).toLocaleDateString(
-    isEn ? "en-GB" : "tr-TR",
+    "tr-TR",
     { year: "numeric", month: "long", day: "numeric" },
   );
 
@@ -266,7 +266,7 @@ const BlogDetail: React.FC = () => {
           const q = normalizeSearchText(searchQuery);
           return (
             normalizeSearchText(p.title).includes(q) ||
-            normalizeSearchText(p.titleEn).includes(q) ||
+            
             normalizeSearchText(p.excerpt).includes(q) ||
             (p.tags || []).some((tag) => normalizeSearchText(tag).includes(q))
           );
@@ -276,12 +276,12 @@ const BlogDetail: React.FC = () => {
   const categories = [
     {
       key: "karo-hali",
-      label: isEn ? "Carpet Tiles" : "Karo Halı",
+      label: "Karo Halı",
       color: "#66101F",
     },
     {
       key: "cim-hali",
-      label: isEn ? "Artificial Grass" : "Çim Halı",
+      label: "Çim Halı",
       color: "#2d6a4f",
     },
   ];
@@ -292,7 +292,7 @@ const BlogDetail: React.FC = () => {
         {/* Breadcrumb */}
         <Breadcrumb
           items={[
-            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: "Ana Sayfa", url: "/" },
             { label: t("nav.blog"), url: "/blog" },
             { label: title },
           ]}
@@ -309,7 +309,7 @@ const BlogDetail: React.FC = () => {
           <div
             className="blog-reading-bar"
             role="toolbar"
-            aria-label={isEn ? "Reading options" : "Okuma araçları"}
+            aria-label={"Okuma araçları"}
           >
             <span className="blog-reading-bar__label">Aa</span>
 
@@ -318,8 +318,8 @@ const BlogDetail: React.FC = () => {
               className={`blog-reading-bar__btn ${fontSize === "sm" ? "active" : ""}`}
               onClick={decreaseFontSize}
               disabled={fontSize === "sm"}
-              title={isEn ? "Smaller text" : "Yazıyı Küçült"}
-              aria-label={isEn ? "Decrease font size" : "Yazı boyutunu küçült"}
+              title={"Yazıyı Küçült"}
+              aria-label={"Yazı boyutunu küçült"}
             >
               <ZoomOut size={17} />
             </button>
@@ -329,8 +329,8 @@ const BlogDetail: React.FC = () => {
               className={`blog-reading-bar__btn ${fontSize === "lg" ? "active" : ""}`}
               onClick={increaseFontSize}
               disabled={fontSize === "lg"}
-              title={isEn ? "Larger text" : "Yazıyı Büyüt"}
-              aria-label={isEn ? "Increase font size" : "Yazı boyutunu büyüt"}
+              title={"Yazıyı Büyüt"}
+              aria-label={"Yazı boyutunu büyüt"}
             >
               <ZoomIn size={17} />
             </button>
@@ -344,9 +344,9 @@ const BlogDetail: React.FC = () => {
                     type="button"
                     className="blog-reading-bar__btn blog-reading-bar__btn--tts"
                     onClick={startTTS}
-                    title={isEn ? "Listen to article" : "Sesli Dinle"}
+                    title={"Sesli Dinle"}
                     aria-label={
-                      isEn ? "Start reading aloud" : "Sesli okumayı başlat"
+                      "Sesli okumayı başlat"
                     }
                   >
                     <Volume2 size={17} />
@@ -357,8 +357,8 @@ const BlogDetail: React.FC = () => {
                     type="button"
                     className="blog-reading-bar__btn blog-reading-bar__btn--tts speaking"
                     onClick={pauseTTS}
-                    title={isEn ? "Pause" : "Duraklat"}
-                    aria-label={isEn ? "Pause reading" : "Okumayı duraklat"}
+                    title={"Duraklat"}
+                    aria-label={"Okumayı duraklat"}
                   >
                     <Pause size={17} />
                   </button>
@@ -368,8 +368,8 @@ const BlogDetail: React.FC = () => {
                     type="button"
                     className="blog-reading-bar__btn blog-reading-bar__btn--tts paused"
                     onClick={resumeTTS}
-                    title={isEn ? "Resume" : "Devam Et"}
-                    aria-label={isEn ? "Resume reading" : "Okumaya devam et"}
+                    title={"Devam Et"}
+                    aria-label={"Okumaya devam et"}
                   >
                     <Play size={17} />
                   </button>
@@ -379,8 +379,8 @@ const BlogDetail: React.FC = () => {
                     type="button"
                     className="blog-reading-bar__btn blog-reading-bar__btn--stop"
                     onClick={stopTTS}
-                    title={isEn ? "Stop" : "Durdur"}
-                    aria-label={isEn ? "Stop reading" : "Okumayı durdur"}
+                    title={"Durdur"}
+                    aria-label={"Okumayı durdur"}
                   >
                     <Square size={15} />
                   </button>
@@ -394,8 +394,8 @@ const BlogDetail: React.FC = () => {
               type="button"
               className="blog-reading-bar__btn"
               onClick={handlePrint}
-              title={isEn ? "Print article" : "Yazdır"}
-              aria-label={isEn ? "Print article" : "Makaleyi yazdır"}
+              title={"Yazdır"}
+              aria-label={"Makaleyi yazdır"}
             >
               <Printer size={17} />
             </button>
@@ -428,7 +428,7 @@ const BlogDetail: React.FC = () => {
                 <img
                   src={post.image}
                   alt={
-                    isEn
+                    false
                       ? title
                       : `Zemin Kaplama Blog Dekorasyon Görseli: ${title}`
                   }
@@ -489,7 +489,7 @@ const BlogDetail: React.FC = () => {
                         <img
                           src={src}
                           alt={
-                            isEn ? alt : `Blog İçerik Görseli: ${alt || title}`
+                            false ? alt : `Blog İçerik Görseli: ${alt || title}`
                           }
                           className="blog-figure__img"
                         />
@@ -511,7 +511,7 @@ const BlogDetail: React.FC = () => {
                 <div className="blog-detail__tags">
                   <span className="blog-detail__tags-label">
                     <Tag size={14} />
-                    {isEn ? "Tags:" : "Etiketler:"}
+                    {"Etiketler:"}
                   </span>
                   <div className="blog-detail__tags-list">
                     {post.tags.map((tag) => (
@@ -527,18 +527,18 @@ const BlogDetail: React.FC = () => {
               <div className="blog-detail__share-strip">
                 <span className="blog-detail__share-label">
                   <Share2 size={15} />
-                  {isEn ? "Share this article" : "Bu yazıyı paylaş"}
+                  {"Bu yazıyı paylaş"}
                 </span>
                 <div className="blog-detail__share-btns">
                   {/* WhatsApp */}
                   <a
-                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent((isEn ? `Read: ${title}` : `Oku: ${title}`) + " " + (typeof window !== "undefined" ? window.location.href : ""))}`}
+                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent((`Oku: ${title}`) + " " + (typeof window !== "undefined" ? window.location.href : ""))}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="sb-icon-btn"
-                    title={isEn ? "Share on WhatsApp" : "WhatsApp'ta Paylaş"}
+                    title={"WhatsApp'ta Paylaş"}
                     aria-label={
-                      isEn ? "Share on WhatsApp" : "WhatsApp'ta Paylaş"
+                      "WhatsApp'ta Paylaş"
                     }
                   >
                     <WhatsAppIcon />
@@ -549,9 +549,9 @@ const BlogDetail: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="sb-icon-btn"
-                    title={isEn ? "Share on LinkedIn" : "LinkedIn'de Paylaş"}
+                    title={"LinkedIn'de Paylaş"}
                     aria-label={
-                      isEn ? "Share on LinkedIn" : "LinkedIn'de Paylaş"
+                      "LinkedIn'de Paylaş"
                     }
                   >
                     <LinkedInIcon />
@@ -563,20 +563,20 @@ const BlogDetail: React.FC = () => {
                     className={`sb-icon-btn ${copied ? "copied" : ""}`}
                     title={
                       copied
-                        ? isEn
+                        ? false
                           ? "Copied!"
                           : "Kopyalandı!"
-                        : isEn
+                        : false
                           ? "Copy Link"
                           : "Bağlantıyı Kopyala"
                     }
-                    aria-label={isEn ? "Copy Link" : "Bağlantıyı Kopyala"}
+                    aria-label={"Bağlantıyı Kopyala"}
                   >
                     {copied ? <Check size={16} /> : <Copy size={16} />}
                   </button>
                   {copied && (
                     <span className="sb-copied-toast">
-                      {isEn ? "Link Copied!" : "Kopyalandı!"}
+                      {"Kopyalandı!"}
                     </span>
                   )}
                 </div>
@@ -599,18 +599,18 @@ const BlogDetail: React.FC = () => {
                   <Search size={15} />
                 </span>
                 <h3 className="blog-sidebar__title">
-                  {isEn ? "Search Articles" : "Yazılarda Ara"}
+                  {"Yazılarda Ara"}
                 </h3>
               </div>
               <div className="blog-sidebar__search-wrap">
                 <input
                   type="search"
                   className="blog-sidebar__search-input"
-                  placeholder={isEn ? "Search…" : "Ara…"}
+                  placeholder={"Ara…"}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   aria-label={
-                    isEn ? "Search blog posts" : "Blog yazılarında ara"
+                    "Blog yazılarında ara"
                   }
                 />
                 <Search size={16} className="blog-sidebar__search-icon" />
@@ -620,7 +620,7 @@ const BlogDetail: React.FC = () => {
                 <div className="blog-sidebar__search-results">
                   {filteredSearch.length === 0 ? (
                     <p className="blog-sidebar__no-results">
-                      {isEn ? "No results found." : "Sonuç bulunamadı."}
+                      {"Sonuç bulunamadı."}
                     </p>
                   ) : (
                     filteredSearch.map((p) => (
@@ -634,7 +634,7 @@ const BlogDetail: React.FC = () => {
                         }}
                       >
                         <span className="blog-sidebar__search-item-title">
-                          {isEn ? p.titleEn : p.title}
+                          {p.title}
                         </span>
                         <ChevronRight size={13} />
                       </button>
@@ -651,7 +651,7 @@ const BlogDetail: React.FC = () => {
                   <Tag size={15} />
                 </span>
                 <h3 className="blog-sidebar__title">
-                  {isEn ? "Categories" : "Kategoriler"}
+                  {"Kategoriler"}
                 </h3>
               </div>
               <div className="blog-sidebar__categories">
@@ -688,15 +688,15 @@ const BlogDetail: React.FC = () => {
                   <ChevronRight size={15} />
                 </span>
                 <h3 className="blog-sidebar__title">
-                  {isEn ? "Other Articles" : "Diğer Yazılarımız"}
+                  {"Diğer Yazılarımız"}
                 </h3>
               </div>
               <div className="blog-sidebar__posts">
                 {otherPosts.map((p) => {
-                  const pTitle = isEn ? p.titleEn : p.title;
-                  const pCat = isEn ? p.categoryEn : p.category;
+                  const pTitle = p.title;
+                  const pCat = p.category;
                   const pDate = new Date(p.date).toLocaleDateString(
-                    isEn ? "en-GB" : "tr-TR",
+                    "tr-TR",
                     {
                       year: "numeric",
                       month: "short",
@@ -740,12 +740,12 @@ const BlogDetail: React.FC = () => {
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
         title={
-          isEn
+          false
             ? "Get a Quote for Your Project Related to This Topic!"
             : "Okuduğunuz Konuyla İlgili Projeniz İçin Teklif Alın!"
         }
         subtitle={
-          isEn
+          false
             ? "Request project-specific discounted price quotes for carpet tiles, acoustic flooring, and artificial grass models mentioned in our guide."
             : "Rehberimizde incelediğiniz ürünler, akustik karo halılar ve çim halı modelleri için projenize özel indirimli fiyat teklifi isteyin."
         }

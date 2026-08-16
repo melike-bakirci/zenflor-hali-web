@@ -32,7 +32,7 @@ export function meta() {
 
 const CimHali: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const isEn = i18n.language === "en";
+  
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -105,7 +105,7 @@ const CimHali: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: "Ana Sayfa", url: "/" },
             { label: t("products.cimHali") },
           ]}
         />
@@ -115,16 +115,8 @@ const CimHali: React.FC = () => {
       <section className="section">
         <div className="container">
           <SectionTitle
-            title={
-              isEn
-                ? "All Artificial Grass Products"
-                : "Tüm Çim Halı Ürünlerimiz"
-            }
-            subtitle={
-              isEn
-                ? `${cimHaliProducts.length} different products`
-                : `${cimHaliProducts.length} farklı ürün`
-            }
+            title={"Tüm Çim Halı Ürünlerimiz"}
+            subtitle={`${cimHaliProducts.length} farklı ürün`}
           />
 
           <div className="product-page-layout">
@@ -134,7 +126,7 @@ const CimHali: React.FC = () => {
               filters={filters}
               onFilterChange={handleFilterChange}
               onResetFilters={handleResetFilters}
-              isEn={isEn}
+              
             />
 
             {/* Main Product Content Area */}
@@ -186,16 +178,8 @@ const CimHali: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={
-          isEn
-            ? "Get a Quote for Your Artificial Grass Project!"
-            : "Çim Halı Projeniz İçin Teklif Alın!"
-        }
-        subtitle={
-          isEn
-            ? "Get custom artificial grass price quotes suited to your garden, balcony, terrace, landscape, or sports field dimensions."
-            : "Bahçe, balkon, teras, peyzaj ve spor sahası alanlarınız için ölçülerinize özel sentetik çim halı fiyat teklifi alın."
-        }
+        title={"Çim Halı Projeniz İçin Teklif Alın!"}
+        subtitle={"Bahçe, balkon, teras, peyzaj ve spor sahası alanlarınız için ölçülerinize özel sentetik çim halı fiyat teklifi alın."}
       />
     </div>
   );

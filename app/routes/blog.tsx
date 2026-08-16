@@ -21,8 +21,7 @@ export function meta() {
 }
 
 const Blog: React.FC = () => {
-  const { t, i18n } = useTranslation();
-  const isEn = i18n.language === "en";
+  const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = React.useState<string>("all");
 
   const filteredPosts = blogPosts.filter((post) => {
@@ -51,7 +50,7 @@ const Blog: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: "Ana Sayfa", url: "/" },
             { label: t("nav.blog") },
           ]}
         />
@@ -59,7 +58,7 @@ const Blog: React.FC = () => {
 
       <section className="section">
         <div className="container">
-          <SectionTitle title={isEn ? "Latest Posts" : "Son Yazılar"} />
+          <SectionTitle title={"Son Yazılar"} />
 
           <div className="blog-category-tabs">
             <button
@@ -67,21 +66,21 @@ const Blog: React.FC = () => {
               className={`blog-category-tab ${selectedCategory === "all" ? "active" : ""}`}
               onClick={() => setSelectedCategory("all")}
             >
-              {isEn ? "All" : "Tümü"}
+              {"Tümü"}
             </button>
             <button
               type="button"
               className={`blog-category-tab ${selectedCategory === "karo-hali" ? "active" : ""}`}
               onClick={() => setSelectedCategory("karo-hali")}
             >
-              {isEn ? "Carpet Tiles" : "Karo Halı"}
+              {"Karo Halı"}
             </button>
             <button
               type="button"
               className={`blog-category-tab ${selectedCategory === "cim-hali" ? "active" : ""}`}
               onClick={() => setSelectedCategory("cim-hali")}
             >
-              {isEn ? "Artificial Grass" : "Çim Halı"}
+              {"Çim Halı"}
             </button>
           </div>
 
@@ -96,14 +95,10 @@ const Blog: React.FC = () => {
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
         title={
-          isEn
-            ? "Get a Free Quote for Your Flooring Project!"
-            : "Zemin Projeniz İçin Teklif Alın!"
+          "Zemin Projeniz İçin Teklif Alın!"
         }
         subtitle={
-          isEn
-            ? "Get detailed information and quick price quotes for your carpet tile and artificial grass project application processes."
-            : "Karo halı ve çim halı seçimleriniz ile proje uygulama süreçleri hakkında detaylı bilgi ve hızlı fiyat teklifi alın."
+          "Karo halı ve çim halı seçimleriniz ile proje uygulama süreçleri hakkında detaylı bilgi ve hızlı fiyat teklifi alın."
         }
       />
     </div>

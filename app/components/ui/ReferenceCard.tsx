@@ -6,15 +6,13 @@ import "./ReferenceCard.css";
 interface ReferenceCardProps {
   project: ReferenceProject;
   onSelect: (project: ReferenceProject) => void;
-  isEn?: boolean;
 }
 
 const ReferenceCard: React.FC<ReferenceCardProps> = ({
   project,
   onSelect,
-  isEn = false,
 }) => {
-  const title = isEn ? project.titleEn || project.title : project.title;
+  const title = project.title;
 
   return (
     <article
@@ -33,7 +31,7 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({
         <img
           src={project.mainImage}
           alt={
-            isEn ? title : `Kurumsal Zemin Kaplama Referans Projesi: ${title}`
+            `Kurumsal Zemin Kaplama Referans Projesi: ${title}`
           }
           className="ref-card__img"
           loading="lazy"

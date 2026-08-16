@@ -32,7 +32,7 @@ export function meta() {
 
 const KaroHali: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const isEn = i18n.language === "en";
+  
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -105,7 +105,7 @@ const KaroHali: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: "Ana Sayfa", url: "/" },
             { label: t("products.karoHali") },
           ]}
         />
@@ -116,11 +116,7 @@ const KaroHali: React.FC = () => {
         <div className="container">
           <SectionTitle
             title={t("products.allProducts")}
-            subtitle={
-              isEn
-                ? `${karoHaliProducts.length} different products`
-                : `${karoHaliProducts.length} farklı ürün`
-            }
+            subtitle={`${karoHaliProducts.length} farklı ürün`}
           />
 
           <div className="product-page-layout">
@@ -130,7 +126,7 @@ const KaroHali: React.FC = () => {
               filters={filters}
               onFilterChange={handleFilterChange}
               onResetFilters={handleResetFilters}
-              isEn={isEn}
+              
             />
 
             {/* Main Product Content Area */}
@@ -182,16 +178,8 @@ const KaroHali: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={
-          isEn
-            ? "Get a Quote for Your Carpet Tile Project!"
-            : "Karo Halı Projeniz İçin Teklif Alın!"
-        }
-        subtitle={
-          isEn
-            ? "Request custom carpet tile quotes and free physical samples tailored to your office, hotel, or commercial space."
-            : "Ofis, otel ve ticari alanlarınız için zemin ölçülerinize uygun özel karo halı fiyat teklifi ve ücretsiz numune isteyin."
-        }
+        title={"Karo Halı Projeniz İçin Teklif Alın!"}
+        subtitle={"Ofis, otel ve ticari alanlarınız için zemin ölçülerinize uygun özel karo halı fiyat teklifi ve ücretsiz numune isteyin."}
       />
     </div>
   );

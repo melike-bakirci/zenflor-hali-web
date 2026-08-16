@@ -24,8 +24,7 @@ export function meta() {
 }
 
 const NotFound: React.FC = () => {
-  const { t, i18n } = useTranslation();
-  const isEn = i18n.language === "en";
+  const { t } = useTranslation();
 
   return (
     <div className="not-found page-enter">
@@ -35,12 +34,10 @@ const NotFound: React.FC = () => {
         <div className="container">
           <div className="page-hero__content">
             <h1 className="page-hero__title font-display">
-              {isEn ? "404 - Page Not Found" : "404 - Sayfa Bulunamadı"}
+              {"404 - Sayfa Bulunamadı"}
             </h1>
             <p className="page-hero__subtitle">
-              {isEn
-                ? "The page you are looking for does not exist or has been moved."
-                : "Aradığınız sayfa silinmiş, değiştirilmiş veya adresi yanlış girilmiş olabilir."}
+              {"Aradığınız sayfa silinmiş, değiştirilmiş veya adresi yanlış girilmiş olabilir."}
             </p>
           </div>
         </div>
@@ -49,7 +46,7 @@ const NotFound: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: "Ana Sayfa", url: "/" },
             { label: "404" },
           ]}
         />
@@ -64,13 +61,11 @@ const NotFound: React.FC = () => {
             </div>
 
             <h2 className="not-found__heading font-display">
-              {isEn ? "Lost your way?" : "Aradığınız Sayfayı Bulamadık"}
+              {"Aradığınız Sayfayı Bulamadık"}
             </h2>
 
             <p className="not-found__desc">
-              {isEn
-                ? "Sorry, the page you are trying to access does not exist on our site. You can return to our home page or explore our collections below."
-                : "Üzgünüz, ulaşmaya çalıştığınız sayfa sitemizde yer almıyor. Ana sayfaya dönebilir veya koleksiyonlarımıza göz atabilirsiniz."}
+              {"Üzgünüz, ulaşmaya çalıştığınız sayfa sitemizde yer almıyor. Ana sayfaya dönebilir veya koleksiyonlarımıza göz atabilirsiniz."}
             </p>
 
             <div className="not-found__actions">
@@ -87,7 +82,7 @@ const NotFound: React.FC = () => {
             {/* Quick Navigation Cards */}
             <div className="not-found__quick-links">
               <h3 className="not-found__quick-title">
-                {isEn ? "Popular Destinations" : "Popüler Sayfalarımız"}
+                {"Popüler Sayfalarımız"}
               </h3>
               <div className="not-found__grid">
                 <Link to="/karo-hali" className="not-found__quick-card">
@@ -97,9 +92,7 @@ const NotFound: React.FC = () => {
                       {t("nav.karoHali", "Karo Halı")}
                     </span>
                     <span className="not-found__qc-desc">
-                      {isEn
-                        ? "Modular office flooring"
-                        : "Ofis ve ticari zemin çözümleri"}
+                      {"Ofis ve ticari zemin çözümleri"}
                     </span>
                   </div>
                   <ArrowRight size={16} className="not-found__qc-arrow" />
@@ -112,9 +105,7 @@ const NotFound: React.FC = () => {
                       {t("nav.cimHali", "Çim Halı")}
                     </span>
                     <span className="not-found__qc-desc">
-                      {isEn
-                        ? "Synthetic grass solutions"
-                        : "Peyzaj ve dış mekan çözümleri"}
+                      {"Peyzaj ve dış mekan çözümleri"}
                     </span>
                   </div>
                   <ArrowRight size={16} className="not-found__qc-arrow" />
@@ -128,14 +119,10 @@ const NotFound: React.FC = () => {
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
         title={
-          isEn
-            ? "Would You Like to Get a Quote for Your Project?"
-            : "Projeniz İçin Teklif Almak İster misiniz?"
+          "Projeniz İçin Teklif Almak İster misiniz?"
         }
         subtitle={
-          isEn
-            ? "You may not have found the exact page, but you can contact us immediately to get the best carpet tile and artificial grass price quote for your project."
-            : "Aradığınız sayfayı bulamamış olabilirsiniz ama projeniz için en uygun karo halı ve çim halı fiyat teklifini anında almak için bize ulaşabilirsiniz."
+          "Aradığınız sayfayı bulamamış olabilirsiniz ama projeniz için en uygun karo halı ve çim halı fiyat teklifini anında almak için bize ulaşabilirsiniz."
         }
       />
     </div>

@@ -100,7 +100,7 @@ export function meta() {
 
 const Home: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const isEn = i18n.language === "en";
+  
   const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -324,7 +324,7 @@ const Home: React.FC = () => {
                 </div>
                 <div className="home__cat-footer">
                   <span className="btn btn-primary home__cat-btn">
-                    {isEn ? "Explore Products" : "Ürünleri İncele"}{" "}
+                    {"Ürünleri İncele"}{" "}
                     <ChevronRight size={16} />
                   </span>
                   <a
@@ -371,7 +371,7 @@ const Home: React.FC = () => {
                 </div>
                 <div className="home__cat-footer">
                   <span className="btn btn-primary home__cat-btn">
-                    {isEn ? "Explore Products" : "Ürünleri İncele"}{" "}
+                    {"Ürünleri İncele"}{" "}
                     <ChevronRight size={16} />
                   </span>
                   <a
@@ -394,7 +394,7 @@ const Home: React.FC = () => {
           <div className="home__featured-header">
             <SectionTitle
               title={
-                isEn ? "Carpet Tile Collection" : "Karo Halı Koleksiyonumuz"
+                "Karo Halı Koleksiyonumuz"
               }
               subtitle={t("home.featuredSubtitle")}
             />
@@ -415,14 +415,8 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              title={
-                isEn ? "Artificial Grass Collection" : "Çim Halı Koleksiyonumuz"
-              }
-              subtitle={
-                isEn
-                  ? "Premium synthetic grass solutions"
-                  : "Premium sentetik çim çözümleri"
-              }
+              title={"Çim Halı Koleksiyonumuz"}
+              subtitle={"Premium sentetik çim çözümleri"}
             />
             <Link to="/cim-hali" className="btn btn-outline home__view-all">
               {t("common.viewAll")} <ArrowRight size={16} />
@@ -441,27 +435,21 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              title={
-                isEn ? "Corporate References & Gallery" : "Referanslarımız"
-              }
-              subtitle={
-                isEn
-                  ? "Finished flooring application projects for offices, hotels, and architectural spaces"
-                  : "Ofis, otel, plaza ve mimarlık projelerinde tamamlanan bitmiş zemin kaplama uygulamalarımız"
-              }
+              title={"Referanslarımız"}
+              subtitle={"Ofis, otel, plaza ve mimarlık projelerinde tamamlanan bitmiş zemin kaplama uygulamalarımız"}
             />
             <Link
               to="/referanslarimiz"
               className="btn btn-outline home__view-all"
             >
-              {isEn ? "View All References" : "Tüm Referansları Gör"}{" "}
+              {"Tüm Referansları Gör"}{" "}
               <ArrowRight size={16} />
             </Link>
           </div>
 
           {/* Client Logos Carousel/Grid */}
           <div className="home__client-logos-wrapper">
-            <ClientLogos limit={4} isEn={isEn} />
+            <ClientLogos limit={4}  />
           </div>
 
           {/* Finished Application Projects Cards */}
@@ -471,7 +459,7 @@ const Home: React.FC = () => {
                 key={project.id}
                 project={project}
                 onSelect={setSelectedRefProject}
-                isEn={isEn}
+                
               />
             ))}
           </div>
@@ -500,21 +488,15 @@ const Home: React.FC = () => {
 
       {/* ===== CTA BOTTOM ===== */}
       <QuoteCtaBanner
-        title={
-          isEn ? "Get a Quote for Your Project!" : "Projeniz için Teklif Alın!"
-        }
-        subtitle={
-          isEn
-            ? "Contact us with your project details and get expert consultation and immediate quote."
-            : "Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın."
-        }
+        title={"Projeniz için Teklif Alın!"}
+        subtitle={"Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın."}
       />
 
       {/* Modal */}
       <ReferenceModal
         project={selectedRefProject}
         onClose={() => setSelectedRefProject(null)}
-        isEn={isEn}
+        
       />
     </div>
   );

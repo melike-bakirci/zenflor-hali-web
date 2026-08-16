@@ -10,15 +10,14 @@ interface BlogCardProps {
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
-  const { i18n, t } = useTranslation();
-  const isEn = i18n.language === "en";
+  const { t } = useTranslation();
 
-  const title = isEn ? post.titleEn : post.title;
-  const excerpt = isEn ? post.excerptEn : post.excerpt;
-  const category = isEn ? post.categoryEn : post.category;
+  const title = post.title;
+  const excerpt = post.excerpt;
+  const category = post.category;
 
   const formattedDate = new Date(post.date).toLocaleDateString(
-    isEn ? "en-GB" : "tr-TR",
+    "tr-TR",
     { year: "numeric", month: "long", day: "numeric" },
   );
 
@@ -31,7 +30,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
       <div className="blog-card__image-wrap">
         <img
           src={post.image}
-          alt={isEn ? title : `Zemin Kaplama Blog ve Dekorasyon: ${title}`}
+          alt={`Zemin Kaplama Blog ve Dekorasyon: ${title}`}
           className="blog-card__image"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = "none";

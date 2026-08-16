@@ -6,13 +6,11 @@ import "./ReferenceModal.css";
 interface ReferenceModalProps {
   project: ReferenceProject | null;
   onClose: () => void;
-  isEn?: boolean;
 }
 
 const ReferenceModal: React.FC<ReferenceModalProps> = ({
   project,
   onClose,
-  isEn = false,
 }) => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
@@ -65,7 +63,7 @@ const ReferenceModal: React.FC<ReferenceModalProps> = ({
         <button
           className="ref-modal__close-btn"
           onClick={onClose}
-          aria-label={isEn ? "Close" : "Kapat"}
+          aria-label={"Kapat"}
         >
           <X size={24} />
         </button>
@@ -74,9 +72,7 @@ const ReferenceModal: React.FC<ReferenceModalProps> = ({
           <img
             src={images[currentImgIndex]}
             alt={
-              isEn
-                ? project.titleEn || "Project Image"
-                : `Kurumsal Zemin Kaplama Uygulama Referans Görseli: ${project.title}`
+              `Kurumsal Zemin Kaplama Uygulama Referans Görseli: ${project.title}`
             }
             className="ref-modal__pure-img"
           />

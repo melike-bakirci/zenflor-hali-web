@@ -25,8 +25,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
   unitPriceText,
   productName,
 }) => {
-  const { t, i18n } = useTranslation();
-  const isEn = i18n.language === "en";
+  const { t } = useTranslation();
   const [area, setArea] = useState<string>("");
 
   // Extract numeric unit price from string (e.g., "550,00 ₺ / m²" -> 550)
@@ -61,16 +60,12 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
   });
 
   // Construct WhatsApp text message
-  const pName = productName || (isEn ? "product" : "ürününüz");
+  const pName = productName || "ürününüz";
   let waText = "";
   if (isStockWarning) {
-    waText = isEn
-      ? `Hello, I would like to get stock availability and quote info for ${pName} (${numericArea} m²).`
-      : `Merhaba, ${pName} ürününden ${numericArea} m² yüksek metrajlı siparişim için stok durumu ve özel teklif almak istiyorum.`;
+    waText = `Merhaba, ${pName} ürününden ${numericArea} m² yüksek metrajlı siparişim için stok durumu ve özel teklif almak istiyorum.`;
   } else {
-    waText = isEn
-      ? `Hello, I would like to get a quote for ${pName} (${numericArea} m²${unitPrice > 0 ? `, Estimated Total: ${formattedTotalPrice} ₺` : ""}).`
-      : `Merhaba, ${pName} ürününden ${numericArea} m²${unitPrice > 0 ? ` (Tahmini Tutar: ${formattedTotalPrice} ₺)` : ""} teklif almak istiyorum.`;
+    waText = `Merhaba, ${pName} ürününden ${numericArea} m²${unitPrice > 0 ? ` (Tahmini Tutar: ${formattedTotalPrice} ₺)` : ""} teklif almak istiyorum.`;
   }
 
   const whatsappUrl = `https://wa.me/905302708487?text=${encodeURIComponent(waText)}`;
@@ -82,7 +77,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
         <span className="ac-title">
           {t(
             "areaCalculator.title",
-            isEn ? "Area & Price Calculator" : "Metrekare & Fiyat Hesaplama",
+            "Metrekare & Fiyat Hesaplama",
           )}
         </span>
       </div>
@@ -92,7 +87,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
           <label htmlFor="area-input" className="ac-label">
             {t(
               "areaCalculator.label",
-              isEn ? "Required Area (m²):" : "İhtiyacınız olan Metrekare (m²):",
+              "İhtiyacınız olan Metrekare (m²):",
             )}
           </label>
           <div className="ac-input-container">
@@ -113,9 +108,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
             <span className="ac-range-info">
               {t(
                 "areaCalculator.minMaxHint",
-                isEn
-                  ? "Min: 5 m² — Max: 10,000 m²"
-                  : "Min: 5 m² — Max: 10.000 m²",
+                "Min: 5 m² — Max: 10.000 m²",
               )}
             </span>
           </div>
@@ -128,9 +121,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
             <span>
               {t(
                 "areaCalculator.stockWarning",
-                isEn
-                  ? "For orders of 10,000 m² or more, please contact us for custom stock availability and delivery schedule."
-                  : "10.000 m² ve üzeri siparişleriniz için lütfen özel stok ve teslimat süresi bilgisi alınız.",
+                "10.000 m² ve üzeri siparişleriniz için lütfen özel stok ve teslimat süresi bilgisi alınız.",
               )}
             </span>
           </div>
@@ -143,9 +134,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
             <span>
               {t(
                 "areaCalculator.minWarning",
-                isEn
-                  ? "Minimum order quantity is 5 m²."
-                  : "Minimum sipariş miktarı 5 m²'dir.",
+                "Minimum sipariş miktarı 5 m²'dir.",
               )}
             </span>
           </div>
@@ -159,7 +148,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
               <span className="ac-result-label">
                 {t(
                   "areaCalculator.estimatedTotal",
-                  isEn ? "Estimated Total Price:" : "Tahmini Toplam Fiyat:",
+                  "Tahmini Toplam Fiyat:",
                 )}
               </span>
               <span className="ac-result-value">{formattedTotalPrice} ₺</span>
@@ -178,13 +167,11 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
               {isStockWarning
                 ? t(
                     "areaCalculator.getStockQuoteWa",
-                    isEn
-                      ? "Get Stock & Quote via WhatsApp"
-                      : "WhatsApp ile Stok & Fiyat Bilgisi Al",
+                    "WhatsApp ile Stok & Fiyat Bilgisi Al",
                   )
                 : t(
                     "areaCalculator.getQuoteWa",
-                    isEn ? "Get Quote via WhatsApp" : "WhatsApp ile Teklif Al",
+                    "WhatsApp ile Teklif Al",
                   )}
             </span>
           </a>

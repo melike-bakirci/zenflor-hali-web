@@ -26,8 +26,7 @@ export function meta() {
 }
 
 const About: React.FC = () => {
-  const { t, i18n } = useTranslation();
-  const isEn = i18n.language === "en";
+  const { t } = useTranslation();
 
   return (
     <div className="about page-enter">
@@ -47,7 +46,7 @@ const About: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: isEn ? "Home" : "Ana Sayfa", url: "/" },
+            { label: "Ana Sayfa", url: "/" },
             { label: t("nav.about") },
           ]}
         />
@@ -125,7 +124,7 @@ const About: React.FC = () => {
                 <Target size={32} />
               </div>
               <h2 className="about__mv-title">
-                {isEn ? "Mission" : "Misyonumuz"}
+                {"Misyonumuz"}
               </h2>
               <p className="about__mv-text">{t("about.missionText")}</p>
             </div>
@@ -134,7 +133,7 @@ const About: React.FC = () => {
                 <Eye size={32} />
               </div>
               <h2 className="about__mv-title">
-                {isEn ? "Vision" : "Vizyonumuz"}
+                {"Vizyonumuz"}
               </h2>
               <p className="about__mv-text">{t("about.visionText")}</p>
             </div>
@@ -160,14 +159,10 @@ const About: React.FC = () => {
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
         title={
-          isEn
-            ? "Get a Quote for Your Corporate Flooring Projects!"
-            : "Kurumsal Zemin Projeleriniz İçin Teklif Alın!"
+          "Kurumsal Zemin Projeleriniz İçin Teklif Alın!"
         }
         subtitle={
-          isEn
-            ? "We offer the ideal flooring solution and quote for your commercial spaces with over 20 years of experience and expert team."
-            : "20 yılı aşkın tecrübemiz ve uzman ekibimizle ticari alanlarınız için en doğru zemin kaplama çözümünü ve teklifini sunuyoruz."
+          "20 yılı aşkın tecrübemiz ve uzman ekibimizle ticari alanlarınız için en doğru zemin kaplama çözümünü ve teklifini sunuyoruz."
         }
       />
     </div>
