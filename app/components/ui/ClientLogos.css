@@ -20,7 +20,7 @@
     gap: 0.75rem;
   }
   .client-logos__card {
-    padding: 0.75rem 0.5rem;
+    padding: 1rem 0.5rem;
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
@@ -37,26 +37,32 @@
   display: flex;
   align-items: center;
   gap: 0.875rem;
-  transition: all var(--transition-base, 250ms cubic-bezier(0.16, 1, 0.3, 1));
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: all 0.2s ease;
 }
 
 .client-logos__card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.06);
 }
 
 .client-logos__badge {
   width: 54px;
   height: 40px;
-  border-radius: var(--radius-btn, 8px);
-  border: 1px solid;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #f9fafb;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  color: #111827;
 }
 
 .client-logos__badge-text {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 0.725rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -74,8 +80,8 @@
 
 .client-logos__name {
   font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--color-text-primary, #0f172a);
+  font-weight: 600;
+  color: #111827;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

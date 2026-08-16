@@ -1,17 +1,17 @@
 /* === AREA CALCULATOR COMPONENT === */
 .area-calculator {
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-  border: 1px solid var(--color-border-card, #e2e8f0);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-card, 12px);
   padding: 1.25rem;
   margin: 1.5rem 0;
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+  box-shadow: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .area-calculator:hover {
-  border-color: rgba(102, 16, 31, 0.25);
-  box-shadow: 0 4px 16px rgba(102, 16, 31, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: none;
 }
 
 /* Header */
@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  color: var(--color-primary, #66101f);
+  color: #111827;
   font-weight: 700;
   font-size: 0.95rem;
   padding-bottom: 0.875rem;
@@ -28,7 +28,7 @@
 }
 
 .ac-icon {
-  color: var(--color-primary, #66101f);
+  color: #111827;
   flex-shrink: 0;
 }
 
@@ -95,8 +95,8 @@
 }
 
 .ac-input:focus {
-  border-color: var(--color-primary, #66101f);
-  box-shadow: 0 0 0 4px rgba(102, 16, 31, 0.1), inset 0 2px 4px rgba(15, 23, 42, 0.01);
+  border-color: #111827;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03);
   background-color: #ffffff;
   transform: translateY(-1px);
 }
@@ -197,7 +197,7 @@
 .ac-result-value {
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--color-primary, #66101f);
+  color: #111827;
   letter-spacing: -0.02em;
   white-space: nowrap;
 }
@@ -209,7 +209,7 @@
   justify-content: center;
   gap: 0.625rem;
   background: #ffffff;
-  color: var(--color-primary, #66101f) !important;
+  color: #111827 !important;
   font-weight: 700;
   font-size: 0.9375rem;
   padding: 0.875rem 1.25rem;
@@ -217,18 +217,18 @@
   border: 1.5px solid var(--color-border, #cbd5e1);
   text-decoration: none;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  box-shadow: none;
   cursor: pointer;
   width: 100%;
   text-align: center;
 }
 
 .ac-wa-btn:hover {
-  background: rgba(102, 16, 31, 0.05);
-  border-color: var(--color-primary, #66101f);
-  color: var(--color-primary, #66101f) !important;
+  background: #f3f4f6;
+  border-color: #111827;
+  color: #111827 !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 16, 31, 0.1);
+  box-shadow: none;
 }
 
 .ac-wa-btn:active {

@@ -29,23 +29,24 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  background: rgba(17, 24, 39, 0.65);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #111827;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
   transition: all 200ms ease;
   cursor: pointer;
 }
 
 .pd-action-btn:hover {
-  background: #66101f;
-  border-color: #855a5c;
-  color: #ffffff;
+  background: #f3f4f6;
+  color: #111827;
+  border-color: #d1d5db;
+  color: #111827;
   transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(102, 16, 31, 0.35);
+  box-shadow: none;
 }
 
 /* === MINIMALIST FULLSCREEN BACKDROP === */
@@ -109,9 +110,9 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #111827;
   cursor: pointer;
   transition: all 150ms ease;
 }
@@ -123,8 +124,9 @@
 }
 
 .pd-minimal-close:hover {
-  background: #66101f;
-  border-color: #855a5c;
+  background: #f3f4f6;
+  color: #111827;
+  border-color: #d1d5db;
 }
 
 /* Minimalist Viewport */

@@ -18,7 +18,7 @@
 }
 
 .pd-breadcrumb__back:hover {
-  color: var(--color-primary, #66101f);
+  color: #111827;
 }
 
 /* === MAIN LAYOUT === */
@@ -42,8 +42,8 @@
   aspect-ratio: 16 / 11;
   border-radius: var(--radius-card, 12px);
   overflow: hidden;
-  border: 1px solid var(--color-border-card, rgba(226, 232, 240, 0.9));
-  box-shadow: var(--shadow-card, 0 4px 14px rgba(15, 23, 42, 0.04));
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: none;
   background: #f1f5f9;
   width: 100%;
 }
@@ -94,13 +94,13 @@
   margin-bottom: 1.75rem;
   width: fit-content;
   max-width: 100%;
-  border-bottom: 2px solid var(--color-primary, #66101f);
+  border-bottom: 2px solid #111827;
   flex-wrap: wrap;
 }
 
 .pd-price-label {
   font-size: 0.8125rem;
-  color: var(--color-primary-light, #855a5c);
+  color: #4b5563;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -132,13 +132,13 @@
 }
 
 .pd-discount-badge {
-  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  background: #111827;
   color: #ffffff;
   padding: 0.25rem 0.65rem;
   font-size: 0.75rem;
   font-weight: 700;
   border-radius: var(--radius-badge, 9999px);
-  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+  box-shadow: none;
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
@@ -174,12 +174,12 @@
 }
 
 .pd-tab-btn:hover {
-  color: var(--color-primary, #66101f);
+  color: #111827;
 }
 
 .pd-tab-btn.active {
-  color: var(--color-primary, #66101f);
-  border-bottom-color: var(--color-primary, #66101f);
+  color: #111827;
+  border-bottom-color: #111827;
 }
 
 .pd-tabs-content {
@@ -262,7 +262,7 @@
 }
 
 .pd-feature-value svg {
-  color: var(--color-primary-light, #855a5c);
+  color: #4b5563;
   flex-shrink: 0;
 }
 

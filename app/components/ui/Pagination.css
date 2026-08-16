@@ -25,20 +25,20 @@
 }
 
 .pagination__btn:hover:not(:disabled) {
-  border-color: #66101f;
-  color: #66101f;
-  background: rgba(102, 16, 31, 0.06);
+  border-color: #d1d5db;
+  color: #111827;
+  background: #f3f4f6;
 }
 
 .pagination__btn--active {
-  background: #66101f;
+  background: #111827;
   color: #ffffff;
-  border-color: #66101f;
+  border-color: #111827;
 }
 
 .pagination__btn--active:hover {
-  background: #855a5c;
-  border-color: #855a5c;
+  background: #374151;
+  border-color: #374151;
   color: #fff;
 }
 

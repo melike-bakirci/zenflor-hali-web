@@ -6,8 +6,8 @@
   background: #ffffff;
   padding: 1rem 1.25rem;
   border-radius: var(--radius-card, 12px);
-  border: 1px solid var(--color-border-card, rgba(226, 232, 240, 0.9));
-  box-shadow: var(--shadow-card, 0 4px 14px rgba(15, 23, 42, 0.04));
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: none;
   margin-bottom: 1.75rem;
   flex-wrap: wrap;
 }
@@ -50,14 +50,14 @@
 
 .product-filter-bar__input:focus {
   background: #ffffff;
-  border-color: var(--color-primary, #66101f);
-  box-shadow: 0 0 0 4px rgba(102, 16, 31, 0.1), inset 0 2px 4px rgba(15, 23, 42, 0.01);
+  border-color: #111827;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03);
   transform: translateY(-1px);
 }
 
 .product-filter-bar__input-wrapper:focus-within
   .product-filter-bar__search-icon {
-  color: #66101f;
+  color: #111827;
 }
 
 .product-filter-bar__clear-btn {
@@ -92,18 +92,19 @@
   font-weight: 600;
   border-radius: 8px;
   white-space: nowrap;
-  background-color: #66101f;
+  background-color: #111827;
   color: #ffffff;
-  border: 1px solid #66101f;
+  border: 1px solid #111827;
   cursor: pointer;
   transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
 .product-filter-bar__search-btn:hover {
-  background-color: #500c18;
-  border-color: #500c18;
-  box-shadow: 0 4px 12px rgba(102, 16, 31, 0.25);
+  background-color: #f3f4f6;
+  color: #111827;
+  border-color: #d1d5db;
+  box-shadow: none;
 }
 
 .product-filter-bar__right {
@@ -149,8 +150,8 @@
 
 .product-filter-bar__select:focus {
   background-color: #ffffff;
-  border-color: #66101f;
-  box-shadow: 0 0 0 3px rgba(102, 16, 31, 0.12);
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.03);
 }
 
 .product-filter-bar__select-arrow {
@@ -164,7 +165,7 @@
 .product-filter-bar__select-custom:focus-within
   .product-filter-bar__select-arrow {
   transform: rotate(180deg);
-  color: #66101f;
+  color: #111827;
 }
 
 .product-filter-bar__count {
