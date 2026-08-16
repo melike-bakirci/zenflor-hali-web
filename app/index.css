@@ -22,6 +22,24 @@
     --color-secondary: #d3d3d3;
     --navbar-height: 90px;
     --container-max: 1240px;
+    
+    /* Impeccable Design Tokens */
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.02);
+    --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03);
+    --shadow-xl: 0 24px 48px rgba(15, 23, 42, 0.1), 0 8px 16px rgba(15, 23, 42, 0.04);
+    --shadow-card: var(--shadow-md);
+    --shadow-card-hover: var(--shadow-xl);
+    
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
+    --radius-card: var(--radius-xl);
+    
+    --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-base: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-slow: 500ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   html {

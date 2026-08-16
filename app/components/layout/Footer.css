@@ -3,8 +3,7 @@
    ========================================================================== */
 
 .footer {
-  background: linear-gradient(180deg, #0f172a 0%, #080d1a 100%);
-  border-top: 3px solid var(--color-primary, #66101f);
+  background: linear-gradient(180deg, #0f172a 0%, #050810 100%);
   margin-top: auto;
   color: #cbd5e1;
   font-family: var(--font-body, "Inter", system-ui, sans-serif);
@@ -18,14 +17,15 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.15) 50%,
-    transparent 100%
+    rgba(102, 16, 31, 0) 0%,
+    rgba(102, 16, 31, 0.8) 50%,
+    rgba(102, 16, 31, 0) 100%
   );
   pointer-events: none;
+  box-shadow: 0 1px 12px rgba(102, 16, 31, 0.4);
 }
 
 /* ── Top Section & Grid ── */
@@ -111,19 +111,19 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-btn, 8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
   color: #94a3b8;
-  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all var(--transition-base, 300ms cubic-bezier(0.16, 1, 0.3, 1));
   text-decoration: none;
 }
 
 .footer__social-link:hover {
-  border-color: var(--color-primary, #66101f);
+  border-color: rgba(102, 16, 31, 0.5);
   color: #ffffff;
-  background: var(--color-primary, #66101f);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(102, 16, 31, 0.45);
+  background: linear-gradient(135deg, rgba(102, 16, 31, 0.8), rgba(102, 16, 31, 0.95));
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(102, 16, 31, 0.3);
 }
 
 .footer__social-link:active {
