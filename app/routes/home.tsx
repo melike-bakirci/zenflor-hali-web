@@ -478,7 +478,7 @@ const Home: React.FC = () => {
               {t("common.viewAll")} <ArrowRight size={16} />
             </Link>
           </div>
-          <div className="grid-3">
+          <div className="grid-3 home__blog-grid">
             {latestPosts.map((post) => (
               <BlogCard key={post.id} post={post} />
             ))}
