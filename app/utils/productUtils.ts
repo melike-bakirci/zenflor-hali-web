@@ -57,9 +57,7 @@ export const formatPriceString = (priceStr?: string): string => {
 
 export const getProductPrice = (product: Product): number => {
   const priceFeature = product.features?.find(
-    (f) =>
-      f.label.toLowerCase().includes("fiyat") ||
-      f.label.toLowerCase().includes("price"),
+    (f) => normalizeSearchText(f.label).includes("fiyat"),
   );
   if (!priceFeature) return 0;
 
@@ -143,9 +141,7 @@ export const getProductDiscountInfo = (
 
   const features = product.features || [];
   const priceFeature = features.find(
-    (f) =>
-      f.label.toLowerCase().includes("fiyat") ||
-      f.label.toLowerCase().includes("price"),
+    (f) => normalizeSearchText(f.label).includes("fiyat"),
   );
   const priceValueStr = priceFeature?.value || "";
   const hasPerM2 =
@@ -173,19 +169,15 @@ export const getProductDiscountInfo = (
 export const getProductDimension = (product: Product): string => {
   const dimFeature = product.features?.find(
     (f) =>
-      f.label.toLowerCase().includes("ebat") ||
-      f.label.toLowerCase().includes("dimensions") ||
-      f.label.toLowerCase().includes("hav boyutu") ||
-      f.label.toLowerCase().includes("pile height"),
+      normalizeSearchText(f.label).includes("ebat") ||
+      normalizeSearchText(f.label).includes("hav boyutu"),
   );
   return dimFeature ? dimFeature.value : "";
 };
 
 export const getProductBacking = (product: Product): string => {
   const backingFeature = product.features?.find(
-    (f) =>
-      f.label.toLowerCase().includes("ikincil taban") ||
-      f.label.toLowerCase().includes("secondary backing"),
+    (f) => normalizeSearchText(f.label).includes("ikincil taban"),
   );
   return backingFeature ? backingFeature.value : "";
 };
@@ -195,9 +187,7 @@ export const getProductYarnType = (
 ): string => {
   const featuresList = product.features;
   const yarnFeature = featuresList?.find(
-    (f) =>
-      f.label.toLowerCase().includes("iplik cinsi") ||
-      f.label.toLowerCase().includes("yarn type"),
+    (f) => normalizeSearchText(f.label).includes("iplik cinsi"),
   );
   if (yarnFeature) return yarnFeature.value;
   return "";
@@ -205,9 +195,7 @@ export const getProductYarnType = (
 
 export const getProductColor = (product: Product): string => {
   const colorFeature = product.features?.find(
-    (f) =>
-      f.label.toLowerCase().includes("renk") ||
-      f.label.toLowerCase().includes("color"),
+    (f) => normalizeSearchText(f.label).includes("renk"),
   );
   return colorFeature ? colorFeature.value : "";
 };
