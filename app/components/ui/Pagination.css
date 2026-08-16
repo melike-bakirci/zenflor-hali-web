@@ -46,3 +46,18 @@
   opacity: 0.3;
   cursor: not-allowed;
 }
+
+@media (max-width: 640px) {
+  .pagination {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    gap: 0.25rem;
+  }
+
+  .pagination__btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.775rem;
+    border-radius: 6px;
+  }
+}

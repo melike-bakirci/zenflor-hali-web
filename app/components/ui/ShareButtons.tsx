@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { Copy, Check, Share2 } from "lucide-react";
 import { SITE_NAME } from "~/lib/constants";
 import "./ShareButtons.css";
@@ -43,7 +42,6 @@ export const ShareButtons: React.FC<ShareButtonsProps> = ({
   title,
   type = "product",
 }) => {
-  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
 
   const currentUrl = typeof window !== "undefined" ? window.location.href : "";

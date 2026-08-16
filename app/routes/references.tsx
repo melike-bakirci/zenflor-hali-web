@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 import SectionTitle from "~/components/ui/SectionTitle";
 import ReferenceCard from "~/components/ui/ReferenceCard";
 import ReferenceModal from "~/components/ui/ReferenceModal";
@@ -25,8 +24,6 @@ export function meta() {
 }
 
 const References: React.FC = () => {
-  const { t } = useTranslation();
-
   const [selectedProject, setSelectedProject] =
     useState<ReferenceProject | null>(null);
 

@@ -99,7 +99,7 @@ export function meta() {
 }
 
 const Home: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   
   const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);

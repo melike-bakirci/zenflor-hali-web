@@ -1078,12 +1078,6 @@ export const karoHaliProducts: Product[] = [
       { label: "Fiyat", value: "638,00 ₺ / m²" },
     ],
     tags: ["GİZ", "MULTI STRIPE", "Çok Renkli Çizgi", "Hafif Ticari 22"],
-    tagsEn: [
-      "GIZ",
-      "MULTI STRIPE",
-      "Multi-Color Stripe",
-      "Light Commercial 22",
-    ],
     featured: false,
   },
 
@@ -1119,14 +1113,6 @@ export const karoHaliProducts: Product[] = [
       "Naylon",
       "SDN",
       "Yoğun Ticari 33",
-      "Premium",
-    ],
-    tagsEn: [
-      "ALAZ",
-      "MADRID LINES",
-      "Nylon",
-      "SDN",
-      "Heavy Commercial 33",
       "Premium",
     ],
     featured: true,
@@ -1241,14 +1227,6 @@ export const karoHaliProducts: Product[] = [
       { label: "Fiyat", value: "1.255,65 ₺ / m²" },
     ],
     tags: ["TAN", "SKYPER", "Naylon PA-6", "Bükümlü Bukle", "Sınıf 33", "Lüks"],
-    tagsEn: [
-      "TAN",
-      "SKYPER",
-      "Nylon PA-6",
-      "Twisted Loop",
-      "Class 33",
-      "Luxury",
-    ],
     featured: true,
   },
   {

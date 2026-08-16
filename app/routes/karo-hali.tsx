@@ -31,7 +31,7 @@ export function meta() {
 }
 
 const KaroHali: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   
 
   const [currentPage, setCurrentPage] = useState(1);

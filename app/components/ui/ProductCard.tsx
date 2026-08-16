@@ -17,7 +17,7 @@ interface ProductCardProps {
 // Removed explicit SVG placeholder since images will fill the area cleanly with background colors.
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const name = product.name;
   const shortDesc = product.shortDesc;
   const features = product.features;

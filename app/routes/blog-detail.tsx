@@ -105,7 +105,7 @@ const LinkedInIcon = () => (
 
 const BlogDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   
 

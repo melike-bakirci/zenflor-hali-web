@@ -81,7 +81,7 @@
     "sortPriceAsc": "Fiyat Artan",
     "sortPriceDesc": "Fiyat Azalan",
     "noProductsFound": "Aramanıza uygun ürün bulunamadı.",
-    "showingProducts": "{{count}} ürün gösteriliyor"
+    "showingProducts": "{{count}} ürün"
   },
   "blog": {
     "title": "Blog",

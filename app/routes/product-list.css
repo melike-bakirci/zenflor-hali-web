@@ -10,18 +10,27 @@
 .product-page-main {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.5rem;
+  min-width: 0; /* Prevent grid overflow */
 }
 
 /* Adjust product grid inside main layout */
 .product-page-main .grid-4 {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
+  width: 100%;
 }
 
 @media (max-width: 1200px) {
+  .product-page-layout {
+    grid-template-columns: 260px 1fr;
+    gap: 1.5rem;
+  }
+  
   .product-page-main .grid-4 {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 }
 
@@ -29,17 +38,38 @@
   .product-page-layout {
     grid-template-columns: 1fr;
     gap: 0;
+    margin-top: 1rem;
+  }
+
+  .product-page-main {
+    gap: 1.25rem;
   }
 
   .product-page-main .grid-4 {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 }
 
+/* Strict 2-column layout on mobile devices */
 @media (max-width: 640px) {
+  .product-page-layout {
+    margin-top: 0.75rem;
+  }
+
+  .product-page-main {
+    gap: 1rem;
+  }
+
   .product-page-main .grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.625rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .product-page-main .grid-4 {
+    gap: 0.5rem !important;
   }
 }
 
@@ -73,23 +103,41 @@
 
 .no-products-found {
   text-align: center;
-  padding: 4rem 1.5rem;
+  padding: 3.5rem 1.5rem;
   background: var(--color-bg-card, #ffffff);
   border-radius: var(--radius-card, 12px);
   border: 1px dashed var(--color-border, #e2e8f0);
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
 .no-products-found p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--color-text-secondary, #475569);
   margin-bottom: 1.25rem;
 }
 
 @media (max-width: 768px) {
+  .product-list__info {
+    padding: 3rem 0;
+  }
+
   .product-list__info-inner {
     flex-direction: column;
     text-align: center;
+    gap: 1.25rem;
+  }
+
+  .product-list__info-text h2 {
+    font-size: 1.25rem;
+  }
+
+  .product-list__info-text p {
+    font-size: 0.875rem;
+  }
+
+  .no-products-found {
+    padding: 2.5rem 1rem;
+    margin: 1rem 0;
   }
 }

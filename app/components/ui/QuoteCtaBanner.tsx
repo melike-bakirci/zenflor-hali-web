@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { Phone } from "lucide-react";
 import "./QuoteCtaBanner.css";
 
@@ -36,8 +35,6 @@ const QuoteCtaBanner: React.FC<QuoteCtaBannerProps> = ({
   className = "",
   id = "page-quote-cta",
 }) => {
-  const { t } = useTranslation();
-
   const defaultTitle = "Projeniz için Teklif Alın!";
   const defaultSubtitle = "Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın.";
 

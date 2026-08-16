@@ -315,6 +315,17 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
             {"Fiyatı Uygula"}
           </button>
         </div>
+
+        {/* Mobile Drawer Bottom Action */}
+        <div className="product-sidebar-filter__mobile-footer">
+          <button
+            type="button"
+            className="btn btn-primary product-sidebar-filter__apply-btn"
+            onClick={() => setIsOpenMobile(false)}
+          >
+            {"Filtreleri Göster"}
+          </button>
+        </div>
       </aside>
     </>
   );

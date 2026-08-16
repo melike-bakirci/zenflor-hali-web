@@ -7,7 +7,28 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  height: fit-content;
+  position: sticky;
+  top: 90px;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+}
+
+/* Custom scrollbar for filter sidebar */
+.product-sidebar-filter::-webkit-scrollbar {
+  width: 5px;
+}
+
+.product-sidebar-filter::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.product-sidebar-filter::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.product-sidebar-filter::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 .product-sidebar-filter__header {
@@ -53,11 +74,22 @@
 
 .product-sidebar-filter__close-mobile {
   display: none;
-  background: transparent;
+  background: #f1f5f9;
   border: none;
-  font-size: 1.25rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
   cursor: pointer;
-  color: #6b7280;
+  color: #475569;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.product-sidebar-filter__close-mobile:hover {
+  background: #e2e8f0;
+  color: #0f172a;
 }
 
 .filter-group {
@@ -208,6 +240,10 @@
   border-radius: 6px;
 }
 
+.product-sidebar-filter__mobile-footer {
+  display: none;
+}
+
 /* Mobile Responsive Filter Bar */
 .sidebar-filter-mobile-toggle {
   display: none;
@@ -221,10 +257,16 @@
   border: none;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9375rem;
   cursor: pointer;
-  margin-bottom: 1rem;
+  margin-bottom: 0.875rem;
   position: relative;
+  box-shadow: 0 4px 12px rgba(102, 16, 31, 0.18);
+  transition: all 0.2s ease;
+}
+
+.sidebar-filter-mobile-toggle:hover {
+  background: #500c18;
 }
 
 .filter-active-dot {
@@ -252,21 +294,23 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(2px);
     z-index: 999;
   }
 
   .product-sidebar-filter {
     position: fixed;
     top: 0;
-    left: -320px;
-    width: 300px;
-    height: 100vh;
+    left: -340px;
+    width: min(320px, 85vw);
+    height: 100dvh;
     border-radius: 0;
     z-index: 1000;
     overflow-y: auto;
-    transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.2);
+    padding: 1.25rem 1.25rem 2rem;
   }
 
   .product-sidebar-filter.is-open {
@@ -274,6 +318,24 @@
   }
 
   .product-sidebar-filter__close-mobile {
+    display: flex;
+  }
+
+  .product-sidebar-filter__mobile-footer {
     display: block;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+    position: sticky;
+    bottom: -2rem;
+    background: #ffffff;
+    padding-bottom: 1rem;
+  }
+
+  .product-sidebar-filter__apply-btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 700;
   }
 }
