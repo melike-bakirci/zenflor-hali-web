@@ -1,2 +1,2 @@
 export const SITE_URL = "https://zenflor.com";
-export const SITE_NAME = "Zenflor";
+export const SITE_NAME = "ZenFlor";

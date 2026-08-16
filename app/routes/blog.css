@@ -31,3 +31,26 @@
   color: #ffffff;
   box-shadow: 0 2px 8px rgba(102, 16, 31, 0.25);
 }
+
+/* Responsive Styles for Blog Categories */
+@media (max-width: 768px) {
+  .blog-category-tabs {
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: center;
+  }
+
+  .blog-category-tab {
+    padding: 6px 16px;
+    font-size: 0.875rem;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-category-tab {
+    width: 100%;
+    flex: none;
+  }
+}
