@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Menu, X, Home, Phone } from "lucide-react";
-import LanguageSwitcher from "~/components/ui/LanguageSwitcher";
 import { SITE_NAME } from "~/lib/constants";
 import "./Navbar.css";
 
@@ -77,7 +76,6 @@ const Navbar: React.FC = () => {
               <span>+90 (530) 270 84 87</span>
             </a>
           </div>
-          <LanguageSwitcher />
         </div>
       </div>
 
@@ -154,9 +152,6 @@ const Navbar: React.FC = () => {
               </NavLink>
             ))}
           </nav>
-          <div className="navbar__mobile-bottom">
-            <LanguageSwitcher />
-          </div>
         </div>
       )}
     </header>
