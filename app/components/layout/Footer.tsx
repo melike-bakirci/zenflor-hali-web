@@ -172,7 +172,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="footer__col">
+          <div className="footer__col footer__col--links">
             <h3 className="footer__col-title">{t("footer.quickLinks")}</h3>
             <nav className="footer__nav" aria-label="Footer navigasyon">
               <Link to="/" className="footer__nav-link">
@@ -200,7 +200,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact */}
-          <div className="footer__col">
+          <div className="footer__col footer__col--contact">
             <h3 className="footer__col-title">{t("contact.title")}</h3>
             <address className="footer__contact-list">
               <div className="footer__contact-item">
