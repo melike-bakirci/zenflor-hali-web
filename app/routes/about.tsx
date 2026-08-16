@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Target, Eye, Leaf, Award, CheckCircle, Globe } from "lucide-react";
+import { Target, Eye, Leaf, Award, ShieldCheck, Sparkles, Globe } from "lucide-react";
 import SectionTitle from "~/components/ui/SectionTitle";
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import QuoteCtaBanner from "~/components/ui/QuoteCtaBanner";
@@ -10,8 +10,8 @@ import "./about.css";
 
 const VALUES = [
   { icon: <Award size={22} />, key: "about.value1" },
-  { icon: <CheckCircle size={22} />, key: "about.value2" },
-  { icon: <Leaf size={22} />, key: "about.value3" },
+  { icon: <ShieldCheck size={22} />, key: "about.value2" },
+  { icon: <Sparkles size={22} />, key: "about.value3" },
   { icon: <Leaf size={22} />, key: "about.value4" },
 ];
 
@@ -90,7 +90,7 @@ const About: React.FC = () => {
                 <span className="about__brand-text">
                   Karo & Çim Halı Çözümleri
                 </span>
-                <span className="about__year-text">2005'ten beri...</span>
+                <span className="about__year-text">2006'dan beri...</span>
               </div>
             </div>
             <div className="about__story-card about__story-card--accent">
