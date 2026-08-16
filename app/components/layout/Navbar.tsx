@@ -52,28 +52,28 @@ const Navbar: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="navbar__topbar-item"
-              title="Adres"
+              title={t("contact.address")}
             >
               <Home size={14} />
-              <span>Leman Sk. No:4, Sancaktepe</span>
+              <span>{t("nav.address")}</span>
             </a>
             <a
               href="tel:+905302708487"
               className="navbar__topbar-item"
-              title="Bizi Arayın"
+              title={t("nav.callUs")}
             >
               <Phone size={14} />
-              <span>+90 (530) 270 84 87</span>
+              <span>{t("contact.phoneValue")}</span>
             </a>
             <a
               href="https://wa.me/905302708487"
               target="_blank"
               rel="noopener noreferrer"
               className="navbar__topbar-item navbar__topbar-whatsapp"
-              title="WhatsApp İletişim"
+              title={t("nav.whatsappContact")}
             >
               <WhatsAppIcon size={14} />
-              <span>+90 (530) 270 84 87</span>
+              <span>{t("contact.phoneValue")}</span>
             </a>
           </div>
         </div>
@@ -85,18 +85,18 @@ const Navbar: React.FC = () => {
             <Link
               to="/"
               className="navbar__logo"
-              aria-label="Karo Halı Ana Sayfa"
+              aria-label={`${SITE_NAME} ${t("nav.home")}`}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <img
                 src="/logo-nobg.png"
-                alt={`${SITE_NAME} Karo Halı ve Çim Halı Firması Logosu`}
+                alt={`${SITE_NAME} Logo`}
                 className="navbar__logo-img"
               />
               <div className="navbar__logo-text">
                 <span className="navbar__logo-name">{SITE_NAME}</span>
                 <span className="navbar__logo-tagline">
-                  Karo & Çim Halı Çözümleri
+                  {t("nav.tagline")}
                 </span>
               </div>
             </Link>
@@ -125,7 +125,7 @@ const Navbar: React.FC = () => {
             <button
               className="navbar__mobile-toggle"
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Menüyü aç/kapat"
+              aria-label={t("nav.openCloseMenu")}
               id="mobile-menu-toggle"
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import type { ReferenceProject } from "~/data/referencesData";
 import "./ReferenceModal.css";
@@ -12,6 +13,7 @@ const ReferenceModal: React.FC<ReferenceModalProps> = ({
   project,
   onClose,
 }) => {
+  const { t } = useTranslation();
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
   useEffect(() => {
@@ -63,7 +65,7 @@ const ReferenceModal: React.FC<ReferenceModalProps> = ({
         <button
           className="ref-modal__close-btn"
           onClick={onClose}
-          aria-label={"Kapat"}
+          aria-label={t("references.close")}
         >
           <X size={24} />
         </button>
@@ -82,14 +84,14 @@ const ReferenceModal: React.FC<ReferenceModalProps> = ({
               <button
                 className="ref-modal__nav-btn ref-modal__nav-btn--prev"
                 onClick={handlePrev}
-                aria-label="Önceki Görsel"
+                aria-label={t("references.prevImage")}
               >
                 <ChevronLeft size={28} />
               </button>
               <button
                 className="ref-modal__nav-btn ref-modal__nav-btn--next"
                 onClick={handleNext}
-                aria-label="Sonraki Görsel"
+                aria-label={t("references.nextImage")}
               >
                 <ChevronRight size={28} />
               </button>

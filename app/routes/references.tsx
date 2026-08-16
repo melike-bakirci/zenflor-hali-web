@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import SectionTitle from "~/components/ui/SectionTitle";
 import ReferenceCard from "~/components/ui/ReferenceCard";
 import ReferenceModal from "~/components/ui/ReferenceModal";
@@ -24,6 +25,7 @@ export function meta() {
 }
 
 const References: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedProject, setSelectedProject] =
     useState<ReferenceProject | null>(null);
 
@@ -35,10 +37,10 @@ const References: React.FC = () => {
         <div className="container">
           <div className="page-hero__content">
             <h1 className="page-hero__title font-display">
-              {"Referanslarımız"}
+              {t("references.title")}
             </h1>
             <p className="page-hero__subtitle">
-              {"Ofis, otel vb. projelerde tamamlanan zemin kaplama uygulamalarımız ve referanslarımız"}
+              {t("references.subtitle")}
             </p>
           </div>
         </div>
@@ -47,8 +49,8 @@ const References: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: "Ana Sayfa", url: "/" },
-            { label: "Referanslarımız" },
+            { label: t("nav.home"), url: "/" },
+            { label: t("references.title") },
           ]}
         />
       </div>
@@ -58,12 +60,8 @@ const References: React.FC = () => {
         <div className="container">
           <ClientLogos
             limit={4}
-            title={
-              "Değerli Müşterilerimiz"
-            }
-            subtitle={
-              "Zemin çözümlerimizde bizi tercih eden seçkin şirket, otel ve mimarlık kurumları"
-            }
+            title={t("references.clientsTitle")}
+            subtitle={t("references.clientsSubtitle")}
           />
         </div>
       </section>
@@ -72,12 +70,8 @@ const References: React.FC = () => {
       <section className="section references-gallery-sec" id="ref-gallery">
         <div className="container">
           <SectionTitle
-            title={
-              "Uygulama Galerisi"
-            }
-            subtitle={
-              "Fotoğrafların üzerine tıklayarak yüksek çözünürlüklü olarak inceleyebilirsiniz"
-            }
+            title={t("references.galleryTitle")}
+            subtitle={t("references.gallerySubtitle")}
             center
           />
 
@@ -96,12 +90,8 @@ const References: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={
-          "Sizin Projeniz İçin De Teklif Hazırlayalım!"
-        }
-        subtitle={
-          "Tamamladığımız yüzlerce kurumsal zemin projesi gibi, alanınıza özel ücretsiz yerinde keşif, numune kataloğu ve en uygun fiyat teklifi fırsatından yararlanın."
-        }
+        title={t("references.quoteBannerTitle")}
+        subtitle={t("references.quoteBannerSubtitle")}
       />
 
       {/* Lightbox / Modal */}

@@ -98,12 +98,12 @@ const Footer: React.FC = () => {
             <Link
               to="/"
               className="footer__logo"
-              aria-label={`${SITE_NAME} Ana Sayfa`}
+              aria-label={`${SITE_NAME} ${t("nav.home")}`}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <img
                 src="/logo-nobg.png"
-                alt={`${SITE_NAME} Karo Halı ve Çim Halı Firması Logosu`}
+                alt={`${SITE_NAME} Logo`}
                 className="footer__logo-img"
               />
               <div className="footer__logo-text">
@@ -112,10 +112,7 @@ const Footer: React.FC = () => {
               </div>
             </Link>
             <p className="footer__about">
-              Karo halı ve çim halının yanı sıra mineflo, PVC zemin kaplama,
-              laminant parke ve epoksi zemin kaplama alanlarında 20 yılı aşkın
-              deneyimimizle kurumsal ve bireysel projelere en kaliteli zemin
-              çözümlerini sunuyoruz.
+              {t("footer.aboutText")}
             </p>
             <div className="footer__socials">
               <a
@@ -210,17 +207,17 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Leman Sk. No:4, Sancaktepe/İstanbul
+                  {t("contact.addressValue")}
                 </a>
               </div>
               <div className="footer__contact-item">
                 <Phone size={16} className="footer__contact-icon" />
-                <a href="tel:+905302708487">+90 (530) 270 84 87</a>
+                <a href="tel:+905302708487">{t("contact.phoneValue")}</a>
               </div>
               <div className="footer__contact-item">
                 <Mail size={16} className="footer__contact-icon" />
                 <a href="mailto:zenflormarket@gmail.com">
-                  zenflormarket@gmail.com
+                  {t("contact.emailValue")}
                 </a>
               </div>
               <div className="footer__contact-item">

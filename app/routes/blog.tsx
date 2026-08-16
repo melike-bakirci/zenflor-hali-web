@@ -50,7 +50,7 @@ const Blog: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: "Ana Sayfa", url: "/" },
+            { label: t("nav.home"), url: "/" },
             { label: t("nav.blog") },
           ]}
         />
@@ -58,7 +58,7 @@ const Blog: React.FC = () => {
 
       <section className="section">
         <div className="container">
-          <SectionTitle title={"Son Yazılar"} />
+          <SectionTitle title={t("blog.recentPosts")} />
 
           <div className="blog-category-tabs">
             <button
@@ -66,21 +66,21 @@ const Blog: React.FC = () => {
               className={`blog-category-tab ${selectedCategory === "all" ? "active" : ""}`}
               onClick={() => setSelectedCategory("all")}
             >
-              {"Tümü"}
+              {t("blog.allCategories")}
             </button>
             <button
               type="button"
               className={`blog-category-tab ${selectedCategory === "karo-hali" ? "active" : ""}`}
               onClick={() => setSelectedCategory("karo-hali")}
             >
-              {"Karo Halı"}
+              {t("nav.karoHali")}
             </button>
             <button
               type="button"
               className={`blog-category-tab ${selectedCategory === "cim-hali" ? "active" : ""}`}
               onClick={() => setSelectedCategory("cim-hali")}
             >
-              {"Çim Halı"}
+              {t("nav.cimHali")}
             </button>
           </div>
 
@@ -94,12 +94,8 @@ const Blog: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={
-          "Zemin Projeniz İçin Teklif Alın!"
-        }
-        subtitle={
-          "Karo halı ve çim halı seçimleriniz ile proje uygulama süreçleri hakkında detaylı bilgi ve hızlı fiyat teklifi alın."
-        }
+        title={t("blog.quoteBannerTitle")}
+        subtitle={t("blog.quoteBannerSubtitle")}
       />
     </div>
   );

@@ -77,7 +77,7 @@ const CimHaliDetail: React.FC = () => {
         {/* Breadcrumb */}
         <Breadcrumb
           items={[
-            { label: "Ana Sayfa", url: "/" },
+            { label: t("nav.home"), url: "/" },
             { label: t("products.cimHali"), url: "/cim-hali" },
             { label: name },
           ]}
@@ -97,9 +97,9 @@ const CimHaliDetail: React.FC = () => {
               alt={name}
               badge={
                 discountInfo.hasDiscount
-                  ? `${discountInfo.discountAmount} ₺ İndirim`
+                  ? t("products.discountBadge", { amount: discountInfo.discountAmount })
                   : product.featured
-                    ? "Öne Çıkan"
+                    ? t("products.featuredBadge")
                     : undefined
               }
             />
@@ -112,7 +112,7 @@ const CimHaliDetail: React.FC = () => {
                   className={`pd-tab-btn ${activeTab === "description" ? "active" : ""}`}
                   onClick={() => setActiveTab("description")}
                 >
-                  {"Açıklama"}
+                  {t("products.description")}
                 </button>
                 <button
                   type="button"
@@ -154,7 +154,7 @@ const CimHaliDetail: React.FC = () => {
             {priceFeature && (
               <div className="pd-price-box">
                 <span className="pd-price-label">
-                  {"Birim Fiyatı:"}
+                  {t("products.unitPrice")}
                 </span>
                 {discountInfo.hasDiscount ? (
                   <div className="pd-price-discount-wrap">
@@ -165,7 +165,7 @@ const CimHaliDetail: React.FC = () => {
                       {discountInfo.formattedSellingPrice}
                     </span>
                     <span className="pd-discount-badge">
-                      {`${discountInfo.discountAmount} ₺ İndirim`}
+                      {t("products.discountBadge", { amount: discountInfo.discountAmount })}
                     </span>
                   </div>
                 ) : (
@@ -189,7 +189,7 @@ const CimHaliDetail: React.FC = () => {
                 className="btn btn-primary btn-lg"
                 id="product-info-request"
               >
-                <Mail size={18} /> {"Numune Talebi"}
+                <Mail size={18} /> {t("products.sampleRequest")}
               </Link>
               <Link to="/cim-hali" className="btn btn-outline btn-lg">
                 {t("products.allProducts")}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Phone } from "lucide-react";
 import "./QuoteCtaBanner.css";
 
@@ -35,19 +36,18 @@ const QuoteCtaBanner: React.FC<QuoteCtaBannerProps> = ({
   className = "",
   id = "page-quote-cta",
 }) => {
-  const defaultTitle = "Projeniz için Teklif Alın!";
-  const defaultSubtitle = "Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın.";
+  const { t } = useTranslation();
 
-  const displayTitle = title || defaultTitle;
-  const displaySubtitle = subtitle || defaultSubtitle;
+  const displayTitle = title || t("banner.defaultTitle");
+  const displaySubtitle = subtitle || t("banner.defaultSubtitle");
 
   const displayPhoneText =
-    phoneText || "Hemen Arayın: +90 530 270 84 87";
+    phoneText || t("banner.defaultPhoneText");
   const displayWhatsappText =
-    whatsappText || "WhatsApp ile Teklif Alın";
+    whatsappText || t("banner.defaultWhatsappText");
 
   const defaultMsg = encodeURIComponent(
-    "Merhaba, projem için fiyat teklifi ve detaylı bilgi almak istiyorum.",
+    t("banner.defaultWhatsappMessage"),
   );
 
   const cleanWhatsappNumber = whatsappNumber.replace("+", "");

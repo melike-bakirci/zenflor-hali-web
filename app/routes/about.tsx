@@ -46,7 +46,7 @@ const About: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: "Ana Sayfa", url: "/" },
+            { label: t("nav.home"), url: "/" },
             { label: t("nav.about") },
           ]}
         />
@@ -88,9 +88,9 @@ const About: React.FC = () => {
               <div className="about__story-card-content">
                 <span className="about__logo-big">{SITE_NAME}</span>
                 <span className="about__brand-text">
-                  Karo & Çim Halı Çözümleri
+                  {t("about.brandSubtitle")}
                 </span>
-                <span className="about__year-text">2006'dan beri...</span>
+                <span className="about__year-text">{t("about.since2006")}</span>
               </div>
             </div>
             <div className="about__story-card about__story-card--accent">
@@ -102,8 +102,8 @@ const About: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="about__web-icon-link"
-                    title="Mineflo & PVC Sitemiz"
-                    aria-label="Mineflo & PVC Sitemiz"
+                    title={t("about.minefloLinkTitle")}
+                    aria-label={t("about.minefloLinkTitle")}
                   >
                     <Globe size={26} />
                   </a>
@@ -124,7 +124,7 @@ const About: React.FC = () => {
                 <Target size={32} />
               </div>
               <h2 className="about__mv-title">
-                {"Misyonumuz"}
+                {t("about.missionTitle")}
               </h2>
               <p className="about__mv-text">{t("about.missionText")}</p>
             </div>
@@ -133,7 +133,7 @@ const About: React.FC = () => {
                 <Eye size={32} />
               </div>
               <h2 className="about__mv-title">
-                {"Vizyonumuz"}
+                {t("about.visionTitle")}
               </h2>
               <p className="about__mv-text">{t("about.visionText")}</p>
             </div>
@@ -158,12 +158,8 @@ const About: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={
-          "Kurumsal Zemin Projeleriniz İçin Teklif Alın!"
-        }
-        subtitle={
-          "20 yılı aşkın tecrübemiz ve uzman ekibimizle ticari alanlarınız için en doğru zemin kaplama çözümünü ve teklifini sunuyoruz."
-        }
+        title={t("about.quoteBannerTitle")}
+        subtitle={t("about.quoteBannerSubtitle")}
       />
     </div>
   );

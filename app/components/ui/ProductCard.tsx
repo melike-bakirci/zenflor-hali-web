@@ -14,8 +14,6 @@ interface ProductCardProps {
   basePath: string;
 }
 
-// Removed explicit SVG placeholder since images will fill the area cleanly with background colors.
-
 const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
   const { t } = useTranslation();
   const name = product.name;
@@ -49,7 +47,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
           <div className="product-card__discount-badge">
             <Tag size={12} />
             <span>
-              {`${discountInfo.discountAmount} ₺ İndirim`}
+              {t("products.discountBadge", { amount: discountInfo.discountAmount })}
             </span>
           </div>
         )}
@@ -63,7 +61,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
       <div className="product-card__body">
         <div className="product-card__meta">
           <span className="product-card__category">
-            {product.category === "karo-hali" ? "Karo Halı" : "Çim Halı"}
+            {product.category === "karo-hali" ? t("nav.karoHali") : t("nav.cimHali")}
           </span>
         </div>
         <h3 className="product-card__name">{name}</h3>

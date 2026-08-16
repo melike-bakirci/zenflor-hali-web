@@ -117,8 +117,8 @@ const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
             >
               <option value="price-asc">{t("products.sortPriceAsc")}</option>
               <option value="price-desc">{t("products.sortPriceDesc")}</option>
-              <option value="name-asc">A'dan Z'ye</option>
-              <option value="name-desc">Z'den A'ya</option>
+              <option value="name-asc">{t("products.sortNameAsc")}</option>
+              <option value="name-desc">{t("products.sortNameDesc")}</option>
             </select>
             <svg
               className="product-filter-bar__select-arrow"

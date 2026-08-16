@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { Search, X, ZoomIn, ZoomOut, Download } from "lucide-react";
 import "./ProductImageZoom.css";
 
@@ -15,6 +16,7 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
   badge,
   onError,
 }) => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(2.2);
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
@@ -120,21 +122,21 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
           <button
             type="button"
             className="pd-action-btn pd-magnifier-btn"
-            aria-label="Görseli büyüt"
+            aria-label={t("zoom.magnify")}
             onClick={(e) => {
               e.stopPropagation();
               setIsModalOpen(true);
             }}
-            title="Büyütmek için tıklayın"
+            title={t("zoom.magnifyHint")}
           >
             <Search size={16} />
           </button>
           <button
             type="button"
             className="pd-action-btn pd-download-btn"
-            aria-label="Görseli indir"
+            aria-label={t("zoom.download")}
             onClick={handleDownload}
-            title="Görseli indir"
+            title={t("zoom.download")}
           >
             <Download size={16} />
           </button>
@@ -158,7 +160,7 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
                 type="button"
                 className="pd-minimal-btn"
                 onClick={handleDownload}
-                title="Görseli İndir"
+                title={t("zoom.download")}
               >
                 <Download size={18} />
               </button>
@@ -168,8 +170,8 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
                 onClick={toggleZoomLevel}
                 title={
                   zoomLevel > 1.8
-                    ? "Yakınlaştırmayı Azalt"
-                    : "Yakınlaştırmayı Artır"
+                    ? t("zoom.zoomOut")
+                    : t("zoom.zoomIn")
                 }
               >
                 {zoomLevel > 1.8 ? <ZoomOut size={18} /> : <ZoomIn size={18} />}
@@ -178,7 +180,7 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
                 type="button"
                 className="pd-minimal-close"
                 onClick={() => setIsModalOpen(false)}
-                title="Kapat (ESC)"
+                title={t("zoom.closeEsc")}
               >
                 <X size={20} />
               </button>
@@ -212,7 +214,7 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
           {/* Minimalist Bottom Hint */}
           <div className="pd-minimal-bottom-hint">
             <span>
-              İmleci görsel üzerinde gezdirerek detayları inceleyebilirsiniz
+              {t("zoom.panHint")}
             </span>
           </div>
         </div>

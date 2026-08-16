@@ -215,7 +215,7 @@ const Contact: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: "Ana Sayfa", url: "/" },
+            { label: t("nav.home"), url: "/" },
             { label: t("nav.contact") },
           ]}
         />
@@ -226,7 +226,7 @@ const Contact: React.FC = () => {
           {/* Info */}
           <div className="contact__info">
             <SectionTitle
-              title={"İletişim Bilgilerimiz"}
+              title={t("contact.infoTitle")}
             />
 
             <div className="contact__info-list">
@@ -245,7 +245,7 @@ const Contact: React.FC = () => {
                     {t("contact.address")}
                   </h3>
                   <p className="contact__info-desc">
-                    Leman Sk. No:4, Sancaktepe/İstanbul
+                    {t("contact.addressValue")}
                   </p>
                 </div>
               </a>
@@ -253,28 +253,28 @@ const Contact: React.FC = () => {
               <a
                 href="tel:+905302708487"
                 className="contact__info-item card"
-                aria-label="Telefon ile Bizi Arayın: +90 530 270 84 87"
+                aria-label={`Telefon ile Bizi Arayın: ${t("contact.phoneValue")}`}
               >
                 <div className="contact__info-icon">
                   <Phone size={22} />
                 </div>
                 <div className="contact__info-content">
                   <h3 className="contact__info-title">{t("contact.phone")}</h3>
-                  <p className="contact__info-desc">+90 (530) 270 84 87</p>
+                  <p className="contact__info-desc">{t("contact.phoneValue")}</p>
                 </div>
               </a>
 
               <a
                 href="mailto:zenflormarket@gmail.com"
                 className="contact__info-item card"
-                aria-label="E-posta Gönderin: zenflormarket@gmail.com"
+                aria-label={`E-posta Gönderin: ${t("contact.emailValue")}`}
               >
                 <div className="contact__info-icon">
                   <Mail size={22} />
                 </div>
                 <div className="contact__info-content">
                   <h3 className="contact__info-title">{t("contact.email")}</h3>
-                  <p className="contact__info-desc">zenflormarket@gmail.com</p>
+                  <p className="contact__info-desc">{t("contact.emailValue")}</p>
                 </div>
               </a>
 
@@ -370,7 +370,7 @@ const Contact: React.FC = () => {
               <div className="contact__success">
                 <div className="contact__success-icon">✓</div>
                 <SectionTitle
-                  title={"Mesajınız Alındı!"}
+                  title={t("contact.messageReceived")}
                 />
                 <p className="contact__success-text">
                   {t("contact.successMsg")}
@@ -379,7 +379,7 @@ const Contact: React.FC = () => {
             ) : (
               <>
                 <SectionTitle
-                  title={"Bize Ulaşın"}
+                  title={t("contact.formTitle")}
                 />
                 <form className="contact__form" onSubmit={handleSubmit}>
                   <div className="contact__form-row">
@@ -456,7 +456,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Map */}
-      <section className="contact__map" aria-label="Harita Konumu">
+      <section className="contact__map" aria-label={t("contact.mapAria")}>
         <iframe
           title={`${SITE_NAME} Google Maps Konumu`}
           src="https://maps.google.com/maps?q=Leman+Sk.+No:4,+Sancaktepe/İstanbul&t=&z=18&ie=UTF8&iwloc=&output=embed"
@@ -471,12 +471,8 @@ const Contact: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={
-          "Projeniz İçin Doğrudan Teklif Alın!"
-        }
-        subtitle={
-          "Müşteri temsilcimizle görüşmek ve anında teklif almak için telefon hattımızdan veya WhatsApp üzerinden bize ulaşın."
-        }
+        title={t("contact.quoteBannerTitle")}
+        subtitle={t("contact.quoteBannerSubtitle")}
       />
     </div>
   );

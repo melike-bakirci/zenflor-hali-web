@@ -32,7 +32,6 @@ export function meta() {
 
 const CimHali: React.FC = () => {
   const { t } = useTranslation();
-  
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -105,7 +104,7 @@ const CimHali: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: "Ana Sayfa", url: "/" },
+            { label: t("nav.home"), url: "/" },
             { label: t("products.cimHali") },
           ]}
         />
@@ -115,8 +114,8 @@ const CimHali: React.FC = () => {
       <section className="section">
         <div className="container">
           <SectionTitle
-            title={"Tüm Çim Halı Ürünlerimiz"}
-            subtitle={`${cimHaliProducts.length} farklı ürün`}
+            title={t("products.allCimProducts")}
+            subtitle={t("products.productCount", { count: cimHaliProducts.length })}
           />
 
           <div className="product-page-layout">
@@ -126,7 +125,6 @@ const CimHali: React.FC = () => {
               filters={filters}
               onFilterChange={handleFilterChange}
               onResetFilters={handleResetFilters}
-              
             />
 
             {/* Main Product Content Area */}
@@ -178,8 +176,8 @@ const CimHali: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={"Çim Halı Projeniz İçin Teklif Alın!"}
-        subtitle={"Bahçe, balkon, teras, peyzaj ve spor sahası alanlarınız için ölçülerinize özel sentetik çim halı fiyat teklifi alın."}
+        title={t("products.cimQuoteBannerTitle")}
+        subtitle={t("products.cimQuoteBannerSubtitle")}
       />
     </div>
   );

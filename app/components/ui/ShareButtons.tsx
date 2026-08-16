@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Copy, Check, Share2 } from "lucide-react";
 import { SITE_NAME } from "~/lib/constants";
 import "./ShareButtons.css";
@@ -42,13 +43,15 @@ export const ShareButtons: React.FC<ShareButtonsProps> = ({
   title,
   type = "product",
 }) => {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
 
   const currentUrl = typeof window !== "undefined" ? window.location.href : "";
 
-  const shareText = type === "product"
-      ? `${SITE_NAME}'daki ${title} ürününü inceleyin:`
-      : `${SITE_NAME} Blog'daki bu yazıyı inceleyin - ${title}:`;
+  const shareText =
+    type === "product"
+      ? t("share.productShareText", { siteName: SITE_NAME, title })
+      : t("share.blogShareText", { siteName: SITE_NAME, title });
 
   const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + " " + currentUrl)}`;
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
@@ -83,7 +86,7 @@ export const ShareButtons: React.FC<ShareButtonsProps> = ({
     <div className="share-buttons-container">
       <span className="sb-label">
         <Share2 size={15} />
-        {"Paylaş:"}
+        {t("share.shareLabel")}
       </span>
 
       <div className="sb-actions">
@@ -93,8 +96,8 @@ export const ShareButtons: React.FC<ShareButtonsProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           className="sb-icon-btn"
-          title={"WhatsApp'ta Paylaş"}
-          aria-label={"WhatsApp'ta Paylaş"}
+          title={t("share.whatsappShare")}
+          aria-label={t("share.whatsappShare")}
         >
           <WhatsAppIcon />
         </a>
@@ -106,12 +109,12 @@ export const ShareButtons: React.FC<ShareButtonsProps> = ({
           className={`sb-icon-btn ${copied ? "copied" : ""}`}
           title={
             copied
-              ? "Kopyalandı!"
+              ? t("share.copied")
               : type === "product"
-                ? "Teklif Bağlantısını Kopyala"
-                : "Bağlantıyı Kopyala"
+                ? t("share.copyProductLink")
+                : t("share.copyLink")
           }
-          aria-label={"Bağlantıyı Kopyala"}
+          aria-label={t("share.copyLink")}
         >
           {copied ? (
             <Check size={18} className="sb-check-active" />
@@ -126,8 +129,8 @@ export const ShareButtons: React.FC<ShareButtonsProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           className="sb-icon-btn"
-          title={"LinkedIn'de Paylaş"}
-          aria-label={"LinkedIn'de Paylaş"}
+          title={t("share.linkedinShare")}
+          aria-label={t("share.linkedinShare")}
         >
           <LinkedinIcon />
         </a>
@@ -138,8 +141,8 @@ export const ShareButtons: React.FC<ShareButtonsProps> = ({
             type="button"
             onClick={handleNativeShare}
             className="sb-icon-btn"
-            title={"Paylaş"}
-            aria-label={"Paylaş"}
+            title={t("share.shareGeneric")}
+            aria-label={t("share.shareGeneric")}
           >
             <Share2 size={17} />
           </button>
@@ -147,7 +150,7 @@ export const ShareButtons: React.FC<ShareButtonsProps> = ({
 
         {copied && (
           <span className="sb-copied-toast">
-            {"Bağlantı Kopyalandı!"}
+            {t("share.linkCopiedToast")}
           </span>
         )}
       </div>

@@ -20,17 +20,9 @@ import { seoMeta } from "~/lib/seo";
 import { SITE_NAME, SITE_URL } from "~/lib/constants";
 import "./home.css";
 
-const HERO_SLIDES = [
-  {
-    title: "Ofis ve Mekanlarınıza Değer Katan Karo Halı Modellerimiz",
-    subtitle: "20 Yıllık Güven ile Kusursuz Zeminler",
-    image: "/images/hero-karo-hali.jpeg",
-  },
-  {
-    title: "Bahçe ve Dış Mekanlarınıza Değer Katan Çim Halı Modellerimiz",
-    subtitle: "Mekanlarınıza Canlılık Katın",
-    image: "/images/hero-cim-hali.jpeg",
-  },
+const SLIDE_IMAGES = [
+  "/images/hero-karo-hali.jpeg",
+  "/images/hero-cim-hali.jpeg",
 ];
 
 export function meta() {
@@ -119,22 +111,35 @@ const Home: React.FC = () => {
   const [selectedRefProject, setSelectedRefProject] =
     useState<ReferenceProject | null>(null);
 
+  const heroSlides = [
+    {
+      title: t("home.heroSlides.0.title"),
+      subtitle: t("home.heroSlides.0.subtitle"),
+      image: SLIDE_IMAGES[0],
+    },
+    {
+      title: t("home.heroSlides.1.title"),
+      subtitle: t("home.heroSlides.1.subtitle"),
+      image: SLIDE_IMAGES[1],
+    },
+  ];
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) =>
-        prev === HERO_SLIDES.length - 1 ? 0 : prev + 1,
+        prev === heroSlides.length - 1 ? 0 : prev + 1,
       );
     }, 7000);
 
     return () => clearInterval(timer);
-  }, [currentSlide]);
+  }, [currentSlide, heroSlides.length]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
+    setCurrentSlide((prev) => (prev === heroSlides.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
+    setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
   };
 
   const featuredKaro = karoHaliProducts.filter((p) => p.featured).slice(0, 4);
@@ -151,7 +156,7 @@ const Home: React.FC = () => {
         className="hero-slider"
         aria-label="Hero slider"
       >
-        {HERO_SLIDES.map((slide, index) => (
+        {heroSlides.map((slide, index) => (
           <div
             key={index}
             className={`hero-slide ${index === currentSlide ? "active" : ""}`}
@@ -169,14 +174,14 @@ const Home: React.FC = () => {
               <h1 className="hero-slide__title">{slide.title}</h1>
               <div className="hero-slide__actions">
                 <Link to="/iletisim" className="hero-btn hero-btn--primary">
-                  <span>{t("home.heroCtaContact", "İletişim")}</span>
+                  <span>{t("home.heroCtaContact")}</span>
                 </Link>
                 <a
                   href="tel:+905302708487"
                   className="hero-btn hero-btn--outline"
                 >
                   <Phone size={18} />
-                  <span>{t("home.heroCtaQuote", "Bizi Arayın")}</span>
+                  <span>{t("home.heroCtaQuote")}</span>
                 </a>
               </div>
             </div>
@@ -186,25 +191,25 @@ const Home: React.FC = () => {
         <button
           className="hero-slider__nav hero-slider__nav--prev"
           onClick={prevSlide}
-          aria-label="Önceki Slayt"
+          aria-label={t("home.prevSlide")}
         >
           <ChevronLeft size={32} />
         </button>
         <button
           className="hero-slider__nav hero-slider__nav--next"
           onClick={nextSlide}
-          aria-label="Sonraki Slayt"
+          aria-label={t("home.nextSlide")}
         >
           <ChevronRight size={32} />
         </button>
 
         <div className="hero-slider__dots">
-          {HERO_SLIDES.map((_, index) => (
+          {heroSlides.map((_, index) => (
             <button
               key={`dot-${index}-${index === currentSlide ? "active" : "idle"}`}
               className={`hero-slider__dot ${index === currentSlide ? "active" : ""}`}
               onClick={() => setCurrentSlide(index)}
-              aria-label={`Slayt ${index + 1}`}
+              aria-label={t("home.slideDot", { index: index + 1 })}
             />
           ))}
         </div>
@@ -215,41 +220,37 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="home__about-inner">
             <div className="home__about-text">
-              <span className="home__about-badge">Biz Kimiz</span>
+              <span className="home__about-badge">{t("home.aboutBadge")}</span>
               <h2 className="home__about-heading">
-                20 Yıllık Deneyimle Zemin Kaplama Çözümleri
+                {t("home.aboutHeading")}
               </h2>
               <p className="home__about-desc">
-                {SITE_NAME} olarak 2006'dan bu yana ofis, otel, plaza ve peyzaj
-                projelerinde <strong>karo halı</strong> ve{" "}
-                <strong>çim halı</strong> çözümleri sunuyoruz. Yüzlerce kurumsal
-                referans ve binlerce başarılı uygulama ile sektörde güvenilir
-                bir isim olmaya devam ediyoruz.
+                {t("home.aboutDesc", { siteName: SITE_NAME })}
               </p>
               <Link
                 to="/hakkimizda"
                 className="btn btn-primary home__about-cta"
               >
-                Hakkımızda Daha Fazla <ArrowRight size={16} />
+                {t("home.aboutCta")} <ArrowRight size={16} />
               </Link>
             </div>
             <div className="home__about-stats">
               <div className="home__about-stat">
                 <span className="home__about-stat-number">20</span>
-                <span className="home__about-stat-label">Yıllık Deneyim</span>
+                <span className="home__about-stat-label">{t("home.statsYears")}</span>
               </div>
               <div className="home__about-stat">
                 <span className="home__about-stat-number">20.000+</span>
-                <span className="home__about-stat-label">Tamamlanan Proje</span>
+                <span className="home__about-stat-label">{t("home.statsProjects")}</span>
               </div>
               <div className="home__about-stat">
                 <span className="home__about-stat-number">500+</span>
-                <span className="home__about-stat-label">Ürün Çeşidi</span>
+                <span className="home__about-stat-label">{t("home.statsProducts")}</span>
               </div>
               <div className="home__about-stat">
                 <span className="home__about-stat-number">1000+</span>
                 <span className="home__about-stat-label">
-                  Kurumsal Referans
+                  {t("home.statsReferences")}
                 </span>
               </div>
             </div>
@@ -286,21 +287,14 @@ const Home: React.FC = () => {
               <div className="home__cat-content">
                 <h3 className="home__cat-title">{t("home.karoHaliCat")}</h3>
                 <p className="home__cat-subtitle">
-                  Ofis, Ticari & Akustik Zemin Çözümleri
+                  {t("home.karoHaliCatSubtitle")}
                 </p>
                 <div className="home__cat-desc">
-                  <p>
-                    Geniş renk ve desen seçenekleri ile öne çıkan{" "}
-                    <strong>karo halı çeşitleri</strong>, yüksek ses yutma
-                    özelliği ile mekanlarda akustik konfor sağlar. Ofis ve büro
-                    projeleriniz için bütçenize en uygun{" "}
-                    <strong>karo halı fiyatları</strong> ve premium modüler
-                    koleksiyonlarımızı keşfedin.
-                  </p>
+                  <p>{t("home.karoHaliCatDesc")}</p>
                 </div>
                 <div className="home__cat-footer">
                   <span className="btn btn-primary home__cat-btn">
-                    {"Ürünleri İncele"}{" "}
+                    {t("home.viewProducts")}{" "}
                     <ChevronRight size={16} />
                   </span>
                   <a
@@ -334,20 +328,14 @@ const Home: React.FC = () => {
               <div className="home__cat-content">
                 <h3 className="home__cat-title">{t("home.cimHaliCat")}</h3>
                 <p className="home__cat-subtitle">
-                  Bahçe, Balkon, Teras & Peyzaj Çözümleri
+                  {t("home.cimHaliCatSubtitle")}
                 </p>
                 <div className="home__cat-desc">
-                  <p>
-                    Doğal görünümü, sık iplik dokusu ve farklı hav boylarıyla
-                    öne çıkan <strong>çim halı çeşitleri</strong>, dört mevsim
-                    canlı ve bakımlı bir zemin sunar. Bahçe, balkon, teras ve
-                    peyzaj alanlarınıza özel <strong>dekoratif çim halı</strong>{" "}
-                    seçeneklerimiz için hemen bilgi alın.
-                  </p>
+                  <p>{t("home.cimHaliCatDesc")}</p>
                 </div>
                 <div className="home__cat-footer">
                   <span className="btn btn-primary home__cat-btn">
-                    {"Ürünleri İncele"}{" "}
+                    {t("home.viewProducts")}{" "}
                     <ChevronRight size={16} />
                   </span>
                   <a
@@ -369,8 +357,8 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              title="Karo Halı Koleksiyonumuz"
-              subtitle="En çok tercih edilen karo halı modellerimiz"
+              title={t("home.karoSectionTitle")}
+              subtitle={t("home.karoSectionSubtitle")}
             />
             <Link to="/karo-hali" className="btn btn-outline home__view-all">
               {t("common.viewAll")} <ArrowRight size={16} />
@@ -389,8 +377,8 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              title={"Çim Halı Koleksiyonumuz"}
-              subtitle={"Premium sentetik çim çözümleri"}
+              title={t("home.cimSectionTitle")}
+              subtitle={t("home.cimSectionSubtitle")}
             />
             <Link to="/cim-hali" className="btn btn-outline home__view-all">
               {t("common.viewAll")} <ArrowRight size={16} />
@@ -409,21 +397,21 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="home__featured-header">
             <SectionTitle
-              title={"Referanslarımız"}
-              subtitle={"Ofis, otel, plaza ve mimarlık projelerinde tamamlanan bitmiş zemin kaplama uygulamalarımız"}
+              title={t("home.referencesSectionTitle")}
+              subtitle={t("home.referencesSectionSubtitle")}
             />
             <Link
               to="/referanslarimiz"
               className="btn btn-outline home__view-all"
             >
-              {"Tüm Referansları Gör"}{" "}
+              {t("home.viewAllReferences")}{" "}
               <ArrowRight size={16} />
             </Link>
           </div>
 
           {/* Client Logos Carousel/Grid */}
           <div className="home__client-logos-wrapper">
-            <ClientLogos limit={4}  />
+            <ClientLogos limit={4} />
           </div>
 
           {/* Finished Application Projects Cards */}
@@ -433,7 +421,6 @@ const Home: React.FC = () => {
                 key={project.id}
                 project={project}
                 onSelect={setSelectedRefProject}
-                
               />
             ))}
           </div>
@@ -462,15 +449,14 @@ const Home: React.FC = () => {
 
       {/* ===== CTA BOTTOM ===== */}
       <QuoteCtaBanner
-        title={"Projeniz için Teklif Alın!"}
-        subtitle={"Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın."}
+        title={t("home.quoteBannerTitle")}
+        subtitle={t("home.quoteBannerSubtitle")}
       />
 
       {/* Modal */}
       <ReferenceModal
         project={selectedRefProject}
         onClose={() => setSelectedRefProject(null)}
-        
       />
     </div>
   );

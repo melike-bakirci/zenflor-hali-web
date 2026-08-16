@@ -34,10 +34,10 @@ const NotFound: React.FC = () => {
         <div className="container">
           <div className="page-hero__content">
             <h1 className="page-hero__title font-display">
-              {"404 - Sayfa Bulunamadı"}
+              {t("notFound.heroTitle")}
             </h1>
             <p className="page-hero__subtitle">
-              {"Aradığınız sayfa silinmiş, değiştirilmiş veya adresi yanlış girilmiş olabilir."}
+              {t("notFound.heroSubtitle")}
             </p>
           </div>
         </div>
@@ -46,7 +46,7 @@ const NotFound: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: "Ana Sayfa", url: "/" },
+            { label: t("nav.home"), url: "/" },
             { label: "404" },
           ]}
         />
@@ -61,38 +61,38 @@ const NotFound: React.FC = () => {
             </div>
 
             <h2 className="not-found__heading font-display">
-              {"Aradığınız Sayfayı Bulamadık"}
+              {t("notFound.heading")}
             </h2>
 
             <p className="not-found__desc">
-              {"Üzgünüz, ulaşmaya çalıştığınız sayfa sitemizde yer almıyor. Ana sayfaya dönebilir veya koleksiyonlarımıza göz atabilirsiniz."}
+              {t("notFound.desc")}
             </p>
 
             <div className="not-found__actions">
               <Link to="/" className="btn btn-primary btn-lg">
                 <HomeIcon size={18} />
-                <span>{t("common.backHome", "Ana Sayfaya Dön")}</span>
+                <span>{t("common.backHome")}</span>
               </Link>
               <Link to="/iletisim" className="btn btn-outline btn-lg">
                 <Mail size={18} />
-                <span>{t("nav.contact", "İletişim")}</span>
+                <span>{t("nav.contact")}</span>
               </Link>
             </div>
 
             {/* Quick Navigation Cards */}
             <div className="not-found__quick-links">
               <h3 className="not-found__quick-title">
-                {"Popüler Sayfalarımız"}
+                {t("notFound.quickTitle")}
               </h3>
               <div className="not-found__grid">
                 <Link to="/karo-hali" className="not-found__quick-card">
                   <Grid size={22} className="not-found__qc-icon" />
                   <div>
                     <span className="not-found__qc-title">
-                      {t("nav.karoHali", "Karo Halı")}
+                      {t("nav.karoHali")}
                     </span>
                     <span className="not-found__qc-desc">
-                      {"Ofis ve ticari zemin çözümleri"}
+                      {t("notFound.karoDesc")}
                     </span>
                   </div>
                   <ArrowRight size={16} className="not-found__qc-arrow" />
@@ -102,10 +102,10 @@ const NotFound: React.FC = () => {
                   <Trees size={22} className="not-found__qc-icon" />
                   <div>
                     <span className="not-found__qc-title">
-                      {t("nav.cimHali", "Çim Halı")}
+                      {t("nav.cimHali")}
                     </span>
                     <span className="not-found__qc-desc">
-                      {"Peyzaj ve dış mekan çözümleri"}
+                      {t("notFound.cimDesc")}
                     </span>
                   </div>
                   <ArrowRight size={16} className="not-found__qc-arrow" />
@@ -118,12 +118,8 @@ const NotFound: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={
-          "Projeniz İçin Teklif Almak İster misiniz?"
-        }
-        subtitle={
-          "Aradığınız sayfayı bulamamış olabilirsiniz ama projeniz için en uygun karo halı ve çim halı fiyat teklifini anında almak için bize ulaşabilirsiniz."
-        }
+        title={t("notFound.quoteBannerTitle")}
+        subtitle={t("notFound.quoteBannerSubtitle")}
       />
     </div>
   );

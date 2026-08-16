@@ -17,8 +17,8 @@ const WhatsAppIcon = () => (
 );
 
 interface AreaCalculatorProps {
-  unitPriceText?: string; // e.g. "₺ 550 / m²" or "550"
-  productName?: string; // e.g. "ILICA 22"
+  unitPriceText?: string;
+  productName?: string;
 }
 
 export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
@@ -75,20 +75,14 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
       <div className="ac-header">
         <Calculator size={18} className="ac-icon" />
         <span className="ac-title">
-          {t(
-            "areaCalculator.title",
-            "Metrekare & Fiyat Hesaplama",
-          )}
+          {t("areaCalculator.title")}
         </span>
       </div>
 
       <div className="ac-body">
         <div className="ac-input-group">
           <label htmlFor="area-input" className="ac-label">
-            {t(
-              "areaCalculator.label",
-              "İhtiyacınız olan Metrekare (m²):",
-            )}
+            {t("areaCalculator.label")}
           </label>
           <div className="ac-input-container">
             <div className="ac-input-wrapper">
@@ -106,10 +100,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
               <span className="ac-unit">m²</span>
             </div>
             <span className="ac-range-info">
-              {t(
-                "areaCalculator.minMaxHint",
-                "Min: 5 m² — Max: 10.000 m²",
-              )}
+              {t("areaCalculator.minMaxHint")}
             </span>
           </div>
         </div>
@@ -119,10 +110,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
           <div className="ac-notice ac-notice--stock" role="alert">
             <AlertTriangle size={16} className="ac-notice-icon" />
             <span>
-              {t(
-                "areaCalculator.stockWarning",
-                "10.000 m² ve üzeri siparişleriniz için lütfen özel stok ve teslimat süresi bilgisi alınız.",
-              )}
+              {t("areaCalculator.stockWarning")}
             </span>
           </div>
         )}
@@ -132,10 +120,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
           <div className="ac-notice ac-notice--min" role="alert">
             <Info size={16} className="ac-notice-icon" />
             <span>
-              {t(
-                "areaCalculator.minWarning",
-                "Minimum sipariş miktarı 5 m²'dir.",
-              )}
+              {t("areaCalculator.minWarning")}
             </span>
           </div>
         )}
@@ -146,10 +131,7 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
           numericArea <= 10000 && (
             <div className="ac-result">
               <span className="ac-result-label">
-                {t(
-                  "areaCalculator.estimatedTotal",
-                  "Tahmini Toplam Fiyat:",
-                )}
+                {t("areaCalculator.estimatedTotal")}
               </span>
               <span className="ac-result-value">{formattedTotalPrice} ₺</span>
             </div>
@@ -165,11 +147,8 @@ export const AreaCalculator: React.FC<AreaCalculatorProps> = ({
             <WhatsAppIcon />
             <span>
               {isStockWarning
-                ? "WhatsApp ile Stok & Fiyat Bilgisi Al"
-                : t(
-                    "areaCalculator.getQuoteWa",
-                    "WhatsApp ile Teklif Al",
-                  )}
+                ? t("areaCalculator.getQuoteWaStock")
+                : t("areaCalculator.getQuoteWa")}
             </span>
           </a>
         )}

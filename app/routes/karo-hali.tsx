@@ -32,7 +32,6 @@ export function meta() {
 
 const KaroHali: React.FC = () => {
   const { t } = useTranslation();
-  
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -105,7 +104,7 @@ const KaroHali: React.FC = () => {
       <div className="container page-breadcrumb-container">
         <Breadcrumb
           items={[
-            { label: "Ana Sayfa", url: "/" },
+            { label: t("nav.home"), url: "/" },
             { label: t("products.karoHali") },
           ]}
         />
@@ -116,7 +115,7 @@ const KaroHali: React.FC = () => {
         <div className="container">
           <SectionTitle
             title={t("products.allProducts")}
-            subtitle={`${karoHaliProducts.length} farklı ürün`}
+            subtitle={t("products.productCount", { count: karoHaliProducts.length })}
           />
 
           <div className="product-page-layout">
@@ -126,7 +125,6 @@ const KaroHali: React.FC = () => {
               filters={filters}
               onFilterChange={handleFilterChange}
               onResetFilters={handleResetFilters}
-              
             />
 
             {/* Main Product Content Area */}
@@ -178,8 +176,8 @@ const KaroHali: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={"Karo Halı Projeniz İçin Teklif Alın!"}
-        subtitle={"Ofis, otel ve ticari alanlarınız için zemin ölçülerinize uygun özel karo halı fiyat teklifi ve ücretsiz numune isteyin."}
+        title={t("products.karoQuoteBannerTitle")}
+        subtitle={t("products.karoQuoteBannerSubtitle")}
       />
     </div>
   );

@@ -107,10 +107,9 @@ const BlogDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t } = useTranslation();
   const navigate = useNavigate();
-  
 
   const post = blogPosts.find((p) => p.slug === slug);
-  const title = post ? (post.title) : "";
+  const title = post ? post.title : "";
 
   // Font size
   const [fontSize, setFontSize] = useState<FontSize>(() => {
@@ -191,7 +190,7 @@ const BlogDetail: React.FC = () => {
       .replace(/[*_`~]/g, "")
       .replace(/\n{2,}/g, " ")
       .trim();
-  }, [post, false]);
+  }, [post]);
 
   const startTTS = useCallback(() => {
     if (!ttsSupported) return;
@@ -225,7 +224,7 @@ const BlogDetail: React.FC = () => {
 
     utteranceRef.current = utterance;
     window.speechSynthesis.speak(utterance);
-  }, [ttsSupported, getPlainText, false]);
+  }, [ttsSupported, getPlainText]);
 
   const pauseTTS = () => {
     if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
@@ -266,7 +265,6 @@ const BlogDetail: React.FC = () => {
           const q = normalizeSearchText(searchQuery);
           return (
             normalizeSearchText(p.title).includes(q) ||
-            
             normalizeSearchText(p.excerpt).includes(q) ||
             (p.tags || []).some((tag) => normalizeSearchText(tag).includes(q))
           );
@@ -276,12 +274,12 @@ const BlogDetail: React.FC = () => {
   const categories = [
     {
       key: "karo-hali",
-      label: "Karo Halı",
+      label: t("nav.karoHali"),
       color: "#66101F",
     },
     {
       key: "cim-hali",
-      label: "Çim Halı",
+      label: t("nav.cimHali"),
       color: "#2d6a4f",
     },
   ];
@@ -292,7 +290,7 @@ const BlogDetail: React.FC = () => {
         {/* Breadcrumb */}
         <Breadcrumb
           items={[
-            { label: "Ana Sayfa", url: "/" },
+            { label: t("nav.home"), url: "/" },
             { label: t("nav.blog"), url: "/blog" },
             { label: title },
           ]}
@@ -309,7 +307,7 @@ const BlogDetail: React.FC = () => {
           <div
             className="blog-reading-bar"
             role="toolbar"
-            aria-label={"Okuma araçları"}
+            aria-label={t("blog.readingTools")}
           >
             <span className="blog-reading-bar__label">Aa</span>
 
@@ -318,8 +316,8 @@ const BlogDetail: React.FC = () => {
               className={`blog-reading-bar__btn ${fontSize === "sm" ? "active" : ""}`}
               onClick={decreaseFontSize}
               disabled={fontSize === "sm"}
-              title={"Yazıyı Küçült"}
-              aria-label={"Yazı boyutunu küçült"}
+              title={t("blog.decreaseFont")}
+              aria-label={t("blog.decreaseFontAria")}
             >
               <ZoomOut size={17} />
             </button>
@@ -329,8 +327,8 @@ const BlogDetail: React.FC = () => {
               className={`blog-reading-bar__btn ${fontSize === "lg" ? "active" : ""}`}
               onClick={increaseFontSize}
               disabled={fontSize === "lg"}
-              title={"Yazıyı Büyüt"}
-              aria-label={"Yazı boyutunu büyüt"}
+              title={t("blog.increaseFont")}
+              aria-label={t("blog.increaseFontAria")}
             >
               <ZoomIn size={17} />
             </button>
@@ -344,10 +342,8 @@ const BlogDetail: React.FC = () => {
                     type="button"
                     className="blog-reading-bar__btn blog-reading-bar__btn--tts"
                     onClick={startTTS}
-                    title={"Sesli Dinle"}
-                    aria-label={
-                      "Sesli okumayı başlat"
-                    }
+                    title={t("blog.listenTTS")}
+                    aria-label={t("blog.listenTTSAria")}
                   >
                     <Volume2 size={17} />
                   </button>
@@ -357,8 +353,8 @@ const BlogDetail: React.FC = () => {
                     type="button"
                     className="blog-reading-bar__btn blog-reading-bar__btn--tts speaking"
                     onClick={pauseTTS}
-                    title={"Duraklat"}
-                    aria-label={"Okumayı duraklat"}
+                    title={t("blog.pauseTTS")}
+                    aria-label={t("blog.pauseTTSAria")}
                   >
                     <Pause size={17} />
                   </button>
@@ -368,8 +364,8 @@ const BlogDetail: React.FC = () => {
                     type="button"
                     className="blog-reading-bar__btn blog-reading-bar__btn--tts paused"
                     onClick={resumeTTS}
-                    title={"Devam Et"}
-                    aria-label={"Okumaya devam et"}
+                    title={t("blog.resumeTTS")}
+                    aria-label={t("blog.resumeTTSAria")}
                   >
                     <Play size={17} />
                   </button>
@@ -379,8 +375,8 @@ const BlogDetail: React.FC = () => {
                     type="button"
                     className="blog-reading-bar__btn blog-reading-bar__btn--stop"
                     onClick={stopTTS}
-                    title={"Durdur"}
-                    aria-label={"Okumayı durdur"}
+                    title={t("blog.stopTTS")}
+                    aria-label={t("blog.stopTTSAria")}
                   >
                     <Square size={15} />
                   </button>
@@ -394,8 +390,8 @@ const BlogDetail: React.FC = () => {
               type="button"
               className="blog-reading-bar__btn"
               onClick={handlePrint}
-              title={"Yazdır"}
-              aria-label={"Makaleyi yazdır"}
+              title={t("blog.print")}
+              aria-label={t("blog.printAria")}
             >
               <Printer size={17} />
             </button>
@@ -427,11 +423,7 @@ const BlogDetail: React.FC = () => {
               <div className="blog-detail__image-wrap">
                 <img
                   src={post.image}
-                  alt={
-                    false
-                      ? title
-                      : `Zemin Kaplama Blog Dekorasyon Görseli: ${title}`
-                  }
+                  alt={`Zemin Kaplama Blog Dekorasyon Görseli: ${title}`}
                   className="blog-detail__image"
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).style.display =
@@ -488,9 +480,7 @@ const BlogDetail: React.FC = () => {
                       <figure className="blog-figure">
                         <img
                           src={src}
-                          alt={
-                            false ? alt : `Blog İçerik Görseli: ${alt || title}`
-                          }
+                          alt={`Blog İçerik Görseli: ${alt || title}`}
                           className="blog-figure__img"
                         />
                         {alt && (
@@ -511,7 +501,7 @@ const BlogDetail: React.FC = () => {
                 <div className="blog-detail__tags">
                   <span className="blog-detail__tags-label">
                     <Tag size={14} />
-                    {"Etiketler:"}
+                    {t("blog.tags")}
                   </span>
                   <div className="blog-detail__tags-list">
                     {post.tags.map((tag) => (
@@ -527,19 +517,17 @@ const BlogDetail: React.FC = () => {
               <div className="blog-detail__share-strip">
                 <span className="blog-detail__share-label">
                   <Share2 size={15} />
-                  {"Bu yazıyı paylaş"}
+                  {t("blog.sharePost")}
                 </span>
                 <div className="blog-detail__share-btns">
                   {/* WhatsApp */}
                   <a
-                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent((`Oku: ${title}`) + " " + (typeof window !== "undefined" ? window.location.href : ""))}`}
+                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent(t("share.blogShareText", { siteName: SITE_NAME, title }) + " " + (typeof window !== "undefined" ? window.location.href : ""))}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="sb-icon-btn"
-                    title={"WhatsApp'ta Paylaş"}
-                    aria-label={
-                      "WhatsApp'ta Paylaş"
-                    }
+                    title={t("share.whatsappShare")}
+                    aria-label={t("share.whatsappShare")}
                   >
                     <WhatsAppIcon />
                   </a>
@@ -549,10 +537,8 @@ const BlogDetail: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="sb-icon-btn"
-                    title={"LinkedIn'de Paylaş"}
-                    aria-label={
-                      "LinkedIn'de Paylaş"
-                    }
+                    title={t("share.linkedinShare")}
+                    aria-label={t("share.linkedinShare")}
                   >
                     <LinkedInIcon />
                   </a>
@@ -561,22 +547,14 @@ const BlogDetail: React.FC = () => {
                     type="button"
                     onClick={handleCopyLink}
                     className={`sb-icon-btn ${copied ? "copied" : ""}`}
-                    title={
-                      copied
-                        ? false
-                          ? "Copied!"
-                          : "Kopyalandı!"
-                        : false
-                          ? "Copy Link"
-                          : "Bağlantıyı Kopyala"
-                    }
-                    aria-label={"Bağlantıyı Kopyala"}
+                    title={copied ? t("share.copied") : t("share.copyLink")}
+                    aria-label={t("share.copyLink")}
                   >
                     {copied ? <Check size={16} /> : <Copy size={16} />}
                   </button>
                   {copied && (
                     <span className="sb-copied-toast">
-                      {"Kopyalandı!"}
+                      {t("share.linkCopiedToast")}
                     </span>
                   )}
                 </div>
@@ -599,19 +577,17 @@ const BlogDetail: React.FC = () => {
                   <Search size={15} />
                 </span>
                 <h3 className="blog-sidebar__title">
-                  {"Yazılarda Ara"}
+                  {t("blog.searchPosts")}
                 </h3>
               </div>
               <div className="blog-sidebar__search-wrap">
                 <input
                   type="search"
                   className="blog-sidebar__search-input"
-                  placeholder={"Ara…"}
+                  placeholder={t("blog.searchPlaceholder")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  aria-label={
-                    "Blog yazılarında ara"
-                  }
+                  aria-label={t("blog.searchAria")}
                 />
                 <Search size={16} className="blog-sidebar__search-icon" />
               </div>
@@ -620,7 +596,7 @@ const BlogDetail: React.FC = () => {
                 <div className="blog-sidebar__search-results">
                   {filteredSearch.length === 0 ? (
                     <p className="blog-sidebar__no-results">
-                      {"Sonuç bulunamadı."}
+                      {t("blog.noResults")}
                     </p>
                   ) : (
                     filteredSearch.map((p) => (
@@ -651,7 +627,7 @@ const BlogDetail: React.FC = () => {
                   <Tag size={15} />
                 </span>
                 <h3 className="blog-sidebar__title">
-                  {"Kategoriler"}
+                  {t("blog.categories")}
                 </h3>
               </div>
               <div className="blog-sidebar__categories">
@@ -688,7 +664,7 @@ const BlogDetail: React.FC = () => {
                   <ChevronRight size={15} />
                 </span>
                 <h3 className="blog-sidebar__title">
-                  {"Diğer Yazılarımız"}
+                  {t("blog.otherPosts")}
                 </h3>
               </div>
               <div className="blog-sidebar__posts">
@@ -739,16 +715,8 @@ const BlogDetail: React.FC = () => {
 
       {/* Quote CTA Banner */}
       <QuoteCtaBanner
-        title={
-          false
-            ? "Get a Quote for Your Project Related to This Topic!"
-            : "Okuduğunuz Konuyla İlgili Projeniz İçin Teklif Alın!"
-        }
-        subtitle={
-          false
-            ? "Request project-specific discounted price quotes for carpet tiles, acoustic flooring, and artificial grass models mentioned in our guide."
-            : "Rehberimizde incelediğiniz ürünler, akustik karo halılar ve çim halı modelleri için projenize özel indirimli fiyat teklifi isteyin."
-        }
+        title={t("blog.detailQuoteBannerTitle")}
+        subtitle={t("blog.detailQuoteBannerSubtitle")}
       />
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./Pagination.css";
 
@@ -13,6 +14,7 @@ const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   onPageChange,
 }) => {
+  const { t } = useTranslation();
   if (totalPages <= 1) return null;
 
   const pages: number[] = [];
@@ -31,7 +33,7 @@ const Pagination: React.FC<PaginationProps> = ({
         className="pagination__btn pagination__btn--nav"
         disabled={currentPage === 1}
         onClick={() => handlePageClick(currentPage - 1)}
-        aria-label="Önceki Sayfa"
+        aria-label={t("pagination.prevPage")}
       >
         <ChevronLeft size={18} />
       </button>
@@ -50,7 +52,7 @@ const Pagination: React.FC<PaginationProps> = ({
         className="pagination__btn pagination__btn--nav"
         disabled={currentPage === totalPages}
         onClick={() => handlePageClick(currentPage + 1)}
-        aria-label="Sonraki Sayfa"
+        aria-label={t("pagination.nextPage")}
       >
         <ChevronRight size={18} />
       </button>
