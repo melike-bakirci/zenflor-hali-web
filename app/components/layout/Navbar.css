@@ -63,6 +63,15 @@
   color: #ffffff;
 }
 
+.navbar__topbar-sahibinden {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.navbar__topbar-sahibinden:hover {
+  color: #ffe800;
+}
+
 /* Main nav */
 .navbar__main {
   height: 66px;

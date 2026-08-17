@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Menu, X, Home, Phone } from "lucide-react";
-import { SITE_NAME } from "~/lib/constants";
+import { SITE_NAME, SAHIBINDEN_URL } from "~/lib/constants";
+import SahibindenIcon from "~/components/ui/SahibindenIcon";
 import "./Navbar.css";
 
 const WhatsAppIcon: React.FC<{ size?: number }> = ({ size = 14 }) => (
@@ -74,6 +75,16 @@ const Navbar: React.FC = () => {
             >
               <WhatsAppIcon size={14} />
               <span>{t("contact.phoneValue")}</span>
+            </a>
+            <a
+              href={SAHIBINDEN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar__topbar-item navbar__topbar-sahibinden"
+              title="Sahibinden İlanlarımız"
+            >
+              <SahibindenIcon size={14} />
+              <span>Sahibinden İlanlarımız</span>
             </a>
           </div>
         </div>

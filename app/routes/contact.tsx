@@ -5,7 +5,8 @@ import SectionTitle from "~/components/ui/SectionTitle";
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import QuoteCtaBanner from "~/components/ui/QuoteCtaBanner";
 import { seoMeta } from "~/lib/seo";
-import { SITE_NAME, SITE_URL } from "~/lib/constants";
+import { SITE_NAME, SITE_URL, SAHIBINDEN_URL } from "~/lib/constants";
+import SahibindenIcon from "~/components/ui/SahibindenIcon";
 import "./contact.css";
 
 const InstagramIcon = () => (
@@ -358,6 +359,16 @@ const Contact: React.FC = () => {
                     title="TikTok"
                   >
                     <TiktokIcon />
+                  </a>
+                  <a
+                    href={SAHIBINDEN_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact__social-link contact__social-link--sahibinden"
+                    aria-label="sahibinden.com mağazamızı ziyaret edin"
+                    title="sahibinden.com"
+                  >
+                    <SahibindenIcon size={20} />
                   </a>
                 </div>
               </div>

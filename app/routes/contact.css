@@ -221,7 +221,8 @@ a.contact__info-item:hover .contact__info-icon {
 .contact__social-link--linkedin:hover,
 .contact__social-link--facebook:hover,
 .contact__social-link--youtube:hover,
-.contact__social-link--tiktok:hover {
+.contact__social-link--tiktok:hover,
+.contact__social-link--sahibinden:hover {
   background: #e5e7eb;
   color: #111827;
 }

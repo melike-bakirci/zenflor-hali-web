@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { SITE_NAME } from "~/lib/constants";
+import { SITE_NAME, SAHIBINDEN_URL } from "~/lib/constants";
+import SahibindenIcon from "~/components/ui/SahibindenIcon";
 import "./Footer.css";
 
 const InstagramIcon = () => (
@@ -164,6 +165,16 @@ const Footer: React.FC = () => {
                 title="TikTok"
               >
                 <TiktokIcon />
+              </a>
+              <a
+                href={SAHIBINDEN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="sahibinden.com"
+                className="footer__social-link footer__social-link--sahibinden"
+                title="sahibinden.com Mağazamız"
+              >
+                <SahibindenIcon size={20} />
               </a>
             </div>
           </div>
