@@ -1,6 +1,7 @@
 import React from "react";
 import { Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { SAHIBINDEN_URL } from "~/lib/constants";
 import "./FloatingContact.css";
 
 const WhatsAppIcon = () => (
@@ -28,7 +29,17 @@ const FloatingContact: React.FC = () => {
 
   return (
     <div className="floating-contact">
-      {/* WhatsApp Button */}
+      {/* 1. Telefon (Call Button) */}
+      <a
+        href={`tel:${phoneNumber}`}
+        className="floating-contact__btn floating-contact__btn--call"
+        aria-label={t("floatingContact.call", "Hemen Arayın")}
+        title={t("floatingContact.call", "Hemen Arayın")}
+      >
+        <Phone size={22} />
+      </a>
+
+      {/* 2. WhatsApp Button */}
       <a
         href={whatsappUrl}
         target="_blank"
@@ -40,14 +51,22 @@ const FloatingContact: React.FC = () => {
         <WhatsAppIcon />
       </a>
 
-      {/* Call Button */}
+      {/* 3. Sahibinden Button */}
       <a
-        href={`tel:${phoneNumber}`}
-        className="floating-contact__btn floating-contact__btn--call"
-        aria-label={t("floatingContact.call", "Hemen Arayın")}
-        title={t("floatingContact.call", "Hemen Arayın")}
+        href={SAHIBINDEN_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="floating-contact__btn floating-contact__btn--sahibinden"
+        aria-label={t("floatingContact.sahibinden", "Sahibinden Mağazamız")}
+        title={t("floatingContact.sahibinden", "Sahibinden Mağazamız")}
       >
-        <Phone size={22} />
+        <img
+          src="/sahibinden_logo.png"
+          alt="sahibinden.com"
+          width="48"
+          height="48"
+          className="floating-contact__sahibinden-img"
+        />
       </a>
     </div>
   );

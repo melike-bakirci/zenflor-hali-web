@@ -26,6 +26,15 @@
   outline: none;
 }
 
+.floating-contact__btn--call {
+  background-color: #66101f;
+}
+
+.floating-contact__btn--call:hover {
+  background-color: #520d19;
+  transform: scale(1.05);
+}
+
 .floating-contact__btn--whatsapp {
   background-color: #25d366;
 }
@@ -35,13 +44,22 @@
   transform: scale(1.05);
 }
 
-.floating-contact__btn--call {
-  background-color: #66101f;
+.floating-contact__btn--sahibinden {
+  background-color: #ffe800;
+  overflow: hidden;
+  padding: 0;
 }
 
-.floating-contact__btn--call:hover {
-  background-color: #520d19;
+.floating-contact__btn--sahibinden:hover {
   transform: scale(1.05);
+}
+
+.floating-contact__sahibinden-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 
 .floating-contact__btn:active {
