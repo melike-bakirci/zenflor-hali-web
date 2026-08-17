@@ -64,12 +64,11 @@
 }
 
 .navbar__topbar-sahibinden {
-  color: #f8fafc;
-  font-weight: 600;
+  color: #e2e8f0;
 }
 
 .navbar__topbar-sahibinden:hover {
-  color: #ffe800;
+  color: #ffffff;
 }
 
 /* Main nav */

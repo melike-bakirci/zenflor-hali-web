@@ -172,9 +172,9 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 aria-label="sahibinden.com"
                 className="footer__social-link footer__social-link--sahibinden"
-                title="sahibinden.com Mağazamız"
+                title="Sahibinden Mağazamız"
               >
-                <SahibindenIcon size={20} />
+                <SahibindenIcon size={18} />
               </a>
             </div>
           </div>

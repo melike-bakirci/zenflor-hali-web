@@ -81,10 +81,10 @@ const Navbar: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="navbar__topbar-item navbar__topbar-sahibinden"
-              title="Sahibinden İlanlarımız"
+              title="Sahibinden Mağazamız"
             >
               <SahibindenIcon size={14} />
-              <span>Sahibinden İlanlarımız</span>
+              <span>Sahibinden Mağazamız</span>
             </a>
           </div>
         </div>
