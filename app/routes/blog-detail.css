@@ -151,7 +151,7 @@
    ============================================================ */
 .blog-reading-bar {
   position: sticky;
-  top: calc(var(--navbar-height, 90px) + 1.5rem);
+  top: calc(var(--navbar-height, 104px) + 1.5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -654,11 +654,11 @@
    ============================================================ */
 .blog-detail__sidebar {
   position: sticky;
-  top: calc(var(--navbar-height, 90px) + 1.5rem);
+  top: calc(var(--navbar-height, 104px) + 1.5rem);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-height: calc(100vh - var(--navbar-height, 90px) - 3rem);
+  max-height: calc(100vh - var(--navbar-height, 104px) - 3rem);
   overflow-y: auto;
   overflow-x: visible;
   padding-right: 2px;

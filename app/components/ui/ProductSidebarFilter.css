@@ -8,8 +8,8 @@
   flex-direction: column;
   gap: 1.5rem;
   position: sticky;
-  top: 90px;
-  max-height: calc(100vh - 110px);
+  top: calc(var(--navbar-height, 104px) + 1rem);
+  max-height: calc(100vh - var(--navbar-height, 104px) - 2rem);
   overflow-y: auto;
 }
 

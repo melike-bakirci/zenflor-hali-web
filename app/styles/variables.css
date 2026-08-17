@@ -81,5 +81,11 @@
 
   /* === LAYOUT === */
   --container-max: 1240px;
-  --navbar-height: 90px;
+  --navbar-height: 104px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 92px;
+  }
 }
