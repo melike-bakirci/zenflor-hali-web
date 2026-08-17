@@ -2,9 +2,16 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .layout__main {
   flex: 1;
   padding-top: var(--navbar-height);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }

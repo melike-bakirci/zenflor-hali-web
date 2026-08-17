@@ -1,6 +1,15 @@
-@import "./variables.css";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-/* Keep custom scroll, selection, animations from index.css */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 /* === CONTAINER === */
 .container {
