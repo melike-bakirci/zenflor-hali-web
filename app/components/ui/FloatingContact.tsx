@@ -6,8 +6,8 @@ import "./FloatingContact.css";
 
 const WhatsAppIcon = () => (
   <svg
-    width="24"
-    height="24"
+    width="20"
+    height="20"
     viewBox="0 0 24 24"
     fill="currentColor"
     aria-hidden="true"
@@ -36,7 +36,7 @@ const FloatingContact: React.FC = () => {
         aria-label={t("floatingContact.call", "Hemen Arayın")}
         title={t("floatingContact.call", "Hemen Arayın")}
       >
-        <Phone size={22} />
+        <Phone size={20} />
       </a>
 
       {/* 2. WhatsApp Button */}

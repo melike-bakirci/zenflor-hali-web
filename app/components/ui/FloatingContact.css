@@ -13,17 +13,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   text-decoration: none;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
   border: none;
   outline: none;
+}
+
+.floating-contact__btn svg {
+  width: 20px;
+  height: 20px;
 }
 
 .floating-contact__btn--call {
@@ -66,15 +71,21 @@
   transform: scale(0.95);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .floating-contact {
-    bottom: 16px;
-    left: 16px;
-    gap: 10px;
+    bottom: 12px;
+    left: 12px;
+    gap: 8px;
   }
 
   .floating-contact__btn {
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  }
+
+  .floating-contact__btn svg {
+    width: 18px;
+    height: 18px;
   }
 }
