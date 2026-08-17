@@ -10,6 +10,14 @@
   min-height: 440px;
   overflow: hidden;
   background-color: #0f172a;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.hero-slider:active,
+.hero-slider.is-dragging {
+  cursor: grabbing;
 }
 
 .hero-slide {

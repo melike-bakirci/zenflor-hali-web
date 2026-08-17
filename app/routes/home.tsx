@@ -142,6 +142,74 @@ const Home: React.FC = () => {
     setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
   };
 
+  // Touch and mouse drag swipe handling
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartX = useRef<number | null>(null);
+  const dragStartY = useRef<number | null>(null);
+  const hasMoved = useRef(false);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    dragStartX.current = e.touches[0].clientX;
+    dragStartY.current = e.touches[0].clientY;
+    hasMoved.current = false;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (dragStartX.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    const diffX = dragStartX.current - touchEndX;
+    const diffY = (dragStartY.current || 0) - touchEndY;
+
+    // Trigger only if horizontal swipe exceeds 45px and is larger than vertical movement
+    if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+    dragStartX.current = null;
+    dragStartY.current = null;
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    // Only drag on primary (left) button
+    if (e.button !== 0) return;
+    dragStartX.current = e.clientX;
+    dragStartY.current = e.clientY;
+    hasMoved.current = false;
+    setIsDragging(true);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (dragStartX.current === null) return;
+    if (Math.abs(e.clientX - dragStartX.current) > 5) {
+      hasMoved.current = true;
+    }
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (dragStartX.current === null) return;
+    const diffX = dragStartX.current - e.clientX;
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+    dragStartX.current = null;
+    dragStartY.current = null;
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    dragStartX.current = null;
+    dragStartY.current = null;
+    setIsDragging(false);
+  };
+
   const featuredKaro = karoHaliProducts.filter((p) => p.featured).slice(0, 4);
   const featuredCim = cimHaliProducts.filter((p) => p.featured).slice(0, 4);
   const featuredReferences = referenceProjects
@@ -153,8 +221,14 @@ const Home: React.FC = () => {
     <div className="home page-enter">
       {/* ===== HERO SLIDER ===== */}
       <section
-        className="hero-slider"
+        className={`hero-slider ${isDragging ? "is-dragging" : ""}`}
         aria-label="Hero slider"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
       >
         {heroSlides.map((slide, index) => (
           <div
