@@ -28,6 +28,74 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
     ? formatPriceParts(priceFeature.value)
     : null;
 
+  // Karo halı specific specification extractor (reads directly from each product's own features in exact requested order)
+  const getKaroSpecs = () => {
+    if (!features || features.length === 0) return "";
+
+    const normalize = (s: string) =>
+      s
+        .replace(/İ/g, "i")
+        .replace(/I/g, "i")
+        .replace(/ı/g, "i")
+        .replace(/Ğ/g, "g")
+        .replace(/ğ/g, "g")
+        .replace(/Ü/g, "u")
+        .replace(/ü/g, "u")
+        .replace(/Ş/g, "s")
+        .replace(/ş/g, "s")
+        .replace(/Ö/g, "o")
+        .replace(/ö/g, "o")
+        .replace(/Ç/g, "c")
+        .replace(/ç/g, "c")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+    // 1. İplik Cinsi (Kısa form: %100 PP, %100 PA)
+    let yarn = features.find((f) => normalize(f.label).includes("iplik"))?.value;
+    if (yarn) {
+      const normYarn = normalize(yarn);
+      if (
+        normYarn.includes("polyamit") ||
+        normYarn.includes("poliamid") ||
+        normYarn.includes("polyamide") ||
+        normYarn.includes("naylon") ||
+        normYarn.includes("pa")
+      ) {
+        yarn = "%100 PA";
+      } else if (
+        normYarn.includes("polipropilen") ||
+        normYarn.includes("polypropylene") ||
+        normYarn.includes("pp")
+      ) {
+        yarn = "%100 PP";
+      }
+    }
+
+    // 2. Yapı
+    const structure = features.find((f) => normalize(f.label).includes("yapi"))?.value;
+
+    // 3. Ebat
+    const dimensions = features.find((f) => normalize(f.label).includes("ebat"))?.value;
+
+    // 4. Birincil Taban
+    const primaryBacking =
+      features.find((f) => normalize(f.label).includes("birincil"))?.value ||
+      features.find((f) => normalize(f.label).includes("taban"))?.value;
+
+    // 5. İlmek Aralığı
+    const gauge = features.find(
+      (f) => normalize(f.label).includes("ilmek") || normalize(f.label).includes("aralik")
+    )?.value;
+
+    const specs = [yarn, structure, dimensions, primaryBacking, gauge].filter(
+      (val): val is string => Boolean(val && val.trim() !== "")
+    );
+
+    return specs.length > 0 ? specs.join(", ") : shortDesc || "";
+  };
+
   return (
     <Link
       to={`${basePath}/${product.slug}`}
@@ -68,7 +136,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
           </span>
         </div>
         <h3 className="product-card__name">{name}</h3>
-        {shortDesc && <p className="product-card__desc">{shortDesc}</p>}
+
+        {product.category === "karo-hali" ? (
+          <p className="product-card__desc">{getKaroSpecs()}</p>
+        ) : (
+          shortDesc && <p className="product-card__desc">{shortDesc}</p>
+        )}
         <div className="product-card__footer">
           {discountInfo.hasDiscount ? (
             <div className="product-card__price-box">
