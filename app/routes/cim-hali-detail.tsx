@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link, Navigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import ProductCard from "~/components/ui/ProductCard";
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import { cimHaliProducts } from "~/data/cimHaliProducts";
@@ -82,11 +82,6 @@ const CimHaliDetail: React.FC = () => {
             { label: name },
           ]}
         />
-        <nav className="pd-breadcrumb" aria-label="Breadcrumb">
-          <Link to="/cim-hali" className="pd-breadcrumb__back">
-            <ArrowLeft size={16} /> {t("products.backToList")}
-          </Link>
-        </nav>
 
         {/* Main */}
         <div className="pd-main">

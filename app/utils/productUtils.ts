@@ -25,8 +25,13 @@ export const roundUpTo5 = (price: number): number => {
   return Math.ceil(price / 5) * 5;
 };
 
-export const formatPriceString = (priceStr?: string): string => {
-  if (!priceStr) return "";
+export interface PriceParts {
+  amount: string; // e.g. "580,00 ₺"
+  unit: string; // e.g. "/ m²" or ""
+}
+
+export const formatPriceParts = (priceStr?: string): PriceParts => {
+  if (!priceStr) return { amount: "", unit: "" };
 
   const hasPerM2 =
     priceStr.toLowerCase().includes("/ m²") ||
@@ -34,7 +39,7 @@ export const formatPriceString = (priceStr?: string): string => {
 
   // Extract numeric part
   const cleanVal = priceStr.replace(/[^0-9.,]/g, "").trim();
-  if (!cleanVal) return priceStr;
+  if (!cleanVal) return { amount: priceStr, unit: "" };
 
   let normalized = cleanVal;
   if (normalized.includes(".") && normalized.includes(",")) {
@@ -44,7 +49,7 @@ export const formatPriceString = (priceStr?: string): string => {
   }
 
   const num = parseFloat(normalized);
-  if (isNaN(num)) return priceStr;
+  if (isNaN(num)) return { amount: priceStr, unit: "" };
 
   const roundedNum = roundUpTo5(num);
 
@@ -53,7 +58,16 @@ export const formatPriceString = (priceStr?: string): string => {
     maximumFractionDigits: 2,
   });
 
-  return `${formattedNum} ₺${hasPerM2 ? " / m²" : ""}`;
+  return {
+    amount: `${formattedNum} ₺`,
+    unit: hasPerM2 ? "/ m²" : "",
+  };
+};
+
+export const formatPriceString = (priceStr?: string): string => {
+  const parts = formatPriceParts(priceStr);
+  if (!parts.amount) return "";
+  return `${parts.amount}${parts.unit ? ` ${parts.unit}` : ""}`;
 };
 
 export const getProductPrice = (product: Product): number => {
@@ -113,6 +127,8 @@ export interface ProductDiscountInfo {
   originalPrice: number;
   formattedSellingPrice: string;
   formattedOriginalPrice: string;
+  originalPriceParts: PriceParts;
+  sellingPriceParts: PriceParts;
   discountAmount: number;
 }
 
@@ -154,7 +170,13 @@ export const getProductDiscountInfo = (
     maximumFractionDigits: 2,
   });
 
-  const formattedOriginalPrice = `${formattedOriginalNum} ₺${hasPerM2 ? " / m²" : ""}`;
+  const originalPriceParts: PriceParts = {
+    amount: `${formattedOriginalNum} ₺`,
+    unit: hasPerM2 ? "/ m²" : "",
+  };
+
+  const sellingPriceParts = formatPriceParts(priceValueStr);
+  const formattedOriginalPrice = `${originalPriceParts.amount}${originalPriceParts.unit ? ` ${originalPriceParts.unit}` : ""}`;
   const formattedSellingPrice = formatPriceString(priceValueStr);
 
   return {
@@ -163,6 +185,8 @@ export const getProductDiscountInfo = (
     originalPrice,
     formattedSellingPrice,
     formattedOriginalPrice,
+    originalPriceParts,
+    sellingPriceParts,
     discountAmount,
   };
 };

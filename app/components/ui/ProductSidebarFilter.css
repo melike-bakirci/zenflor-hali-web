@@ -67,12 +67,12 @@
 }
 
 .filter-group__title {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.925rem;
+  font-weight: 600;
   color: #1f2937;
   margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  text-transform: none;
+  letter-spacing: -0.01em;
 }
 
 .filter-group__options {

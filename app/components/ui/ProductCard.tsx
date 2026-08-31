@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { ArrowRight, Tag } from "lucide-react";
 import type { Product } from "~/types/product";
 import {
-  formatPriceString,
+  formatPriceParts,
   getProductDiscountInfo,
 } from "~/utils/productUtils";
 import "./ProductCard.css";
@@ -24,6 +24,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
   );
 
   const discountInfo = getProductDiscountInfo(product);
+  const normalPriceParts = priceFeature
+    ? formatPriceParts(priceFeature.value)
+    : null;
 
   return (
     <Link
@@ -70,19 +73,40 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
           {discountInfo.hasDiscount ? (
             <div className="product-card__price-box">
               <span className="product-card__old-price">
-                {discountInfo.formattedOriginalPrice}
+                <span>{discountInfo.originalPriceParts.amount}</span>
+                {discountInfo.originalPriceParts.unit && (
+                  <span className="product-card__price-unit">
+                    {discountInfo.originalPriceParts.unit}
+                  </span>
+                )}
               </span>
               <span className="product-card__price product-card__price--discounted">
-                {discountInfo.formattedSellingPrice}
+                <span className="product-card__price-amount">
+                  {discountInfo.sellingPriceParts.amount}
+                </span>
+                {discountInfo.sellingPriceParts.unit && (
+                  <span className="product-card__price-unit">
+                    {discountInfo.sellingPriceParts.unit}
+                  </span>
+                )}
               </span>
             </div>
-          ) : priceFeature ? (
+          ) : normalPriceParts ? (
             <span className="product-card__price">
-              {formatPriceString(priceFeature.value)}
+              <span className="product-card__price-amount">
+                {normalPriceParts.amount}
+              </span>
+              {normalPriceParts.unit && (
+                <span className="product-card__price-unit">
+                  {normalPriceParts.unit}
+                </span>
+              )}
             </span>
           ) : null}
-          <span className="product-card__link">
-            {t("products.viewDetails")}
+          <span
+            className="product-card__circle-btn"
+            aria-label={t("products.viewDetails")}
+          >
             <ArrowRight size={14} />
           </span>
         </div>

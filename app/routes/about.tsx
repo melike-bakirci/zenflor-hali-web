@@ -86,20 +86,10 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Vision & Mission */}
       <section className="section about__mission-section">
         <div className="container">
-          <SectionTitle title={t("about.missionTitle")} center />
           <div className="about__mv-grid">
-            <div className="about__mv-card" id="mission-card">
-              <div className="about__mv-icon">
-                <Target size={32} />
-              </div>
-              <h2 className="about__mv-title">
-                {t("about.missionTitle")}
-              </h2>
-              <p className="about__mv-text">{t("about.missionText")}</p>
-            </div>
             <div className="about__mv-card" id="vision-card">
               <div className="about__mv-icon about__mv-icon--vision">
                 <Eye size={32} />
@@ -108,6 +98,15 @@ const About: React.FC = () => {
                 {t("about.visionTitle")}
               </h2>
               <p className="about__mv-text">{t("about.visionText")}</p>
+            </div>
+            <div className="about__mv-card" id="mission-card">
+              <div className="about__mv-icon">
+                <Target size={32} />
+              </div>
+              <h2 className="about__mv-title">
+                {t("about.missionTitle")}
+              </h2>
+              <p className="about__mv-text">{t("about.missionText")}</p>
             </div>
           </div>
         </div>
