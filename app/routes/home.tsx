@@ -14,6 +14,7 @@ import {
   referenceProjects,
   type ReferenceProject,
 } from "~/data/referencesData";
+import { getProductPrice } from "~/utils/productUtils";
 import QuoteCtaBanner from "~/components/ui/QuoteCtaBanner";
 import { seoMeta } from "~/lib/seo";
 import { SITE_NAME, SITE_URL } from "~/lib/constants";
@@ -113,11 +114,13 @@ const Home: React.FC = () => {
       title: t("home.heroSlides.0.title"),
       subtitle: t("home.heroSlides.0.subtitle"),
       image: SLIDE_IMAGES[0],
+      link: "/karo-hali",
     },
     {
       title: t("home.heroSlides.1.title"),
       subtitle: t("home.heroSlides.1.subtitle"),
       image: SLIDE_IMAGES[1],
+      link: "/cim-hali",
     },
   ];
 
@@ -207,8 +210,15 @@ const Home: React.FC = () => {
     setIsDragging(false);
   };
 
-  const featuredKaro = karoHaliProducts.filter((p) => p.featured).slice(0, 4);
-  const featuredCim = cimHaliProducts.filter((p) => p.featured).slice(0, 4);
+  const karoHomeSlugs = ["sedef-42", "akin-08", "mercan-71", "vera-01"];
+  const featuredKaro = karoHomeSlugs
+    .map((slug) => karoHaliProducts.find((p) => p.slug === slug))
+    .filter((p): p is (typeof karoHaliProducts)[0] => Boolean(p));
+
+  const featuredCim = [...cimHaliProducts]
+    .filter((p) => getProductPrice(p) > 0)
+    .sort((a, b) => getProductPrice(a) - getProductPrice(b))
+    .slice(0, 4);
   const featuredReferences = referenceProjects
     .filter((r) => r.featured)
     .slice(0, 4);
@@ -244,8 +254,8 @@ const Home: React.FC = () => {
               <span className="hero-slide__subtitle">{slide.subtitle}</span>
               <h1 className="hero-slide__title">{slide.title}</h1>
               <div className="hero-slide__actions">
-                <Link to="/iletisim" className="hero-btn hero-btn--primary">
-                  <span>{t("home.heroCtaContact")}</span>
+                <Link to={slide.link} className="hero-btn hero-btn--primary">
+                  <span>{t("home.viewProducts")}</span>
                 </Link>
                 <a
                   href="tel:+905302708487"

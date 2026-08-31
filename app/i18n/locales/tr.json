@@ -178,6 +178,9 @@
   "references": {
     "title": "Uygulama Galerisi",
     "subtitle": "Ofis, otel vb. projelerde tamamlanan zemin kaplama uygulamalarımız ve referanslarımız",
+    "filterAll": "Tümü",
+    "filterKaro": "Karo Halı",
+    "filterCim": "Çim Halı",
     "prevImage": "Önceki Görsel",
     "nextImage": "Sonraki Görsel",
     "close": "Kapat",
@@ -314,7 +317,7 @@
   "banner": {
     "defaultTitle": "Projeniz için Teklif Alın!",
     "defaultSubtitle": "Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın.",
-    "defaultPhoneText": "Hemen Arayın: +90 530 270 84 87",
+    "defaultPhoneText": "Hemen Arayın",
     "defaultWhatsappText": "WhatsApp ile Teklif Alın",
     "defaultWhatsappMessage": "Merhaba, projem için fiyat teklifi ve detaylı bilgi almak istiyorum."
   },

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSearchParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import ReferenceCard from "~/components/ui/ReferenceCard";
 import ReferenceModal from "~/components/ui/ReferenceModal";
@@ -24,8 +25,38 @@ export function meta() {
 
 const References: React.FC = () => {
   const { t } = useTranslation();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selectedCategory = searchParams.get("kategori") || "all";
   const [selectedProject, setSelectedProject] =
     useState<ReferenceProject | null>(null);
+
+  const handleCategoryChange = (cat: string) => {
+    const nextParams = new URLSearchParams(searchParams);
+    if (cat === "all") {
+      nextParams.delete("kategori");
+    } else {
+      nextParams.set("kategori", cat);
+    }
+    setSearchParams(nextParams, { replace: true });
+  };
+
+  const filteredProjects = referenceProjects.filter((project) => {
+    if (selectedCategory === "karo-hali") {
+      return (
+        project.productType.toLowerCase().includes("karo") ||
+        project.category === "office" ||
+        project.category === "hotel"
+      );
+    }
+    if (selectedCategory === "cim-hali") {
+      return (
+        project.productType.toLowerCase().includes("çim") ||
+        project.productType.toLowerCase().includes("cim") ||
+        project.category === "landscape"
+      );
+    }
+    return true;
+  });
 
   return (
     <div className="references-page page-enter">
@@ -56,9 +87,34 @@ const References: React.FC = () => {
       {/* Finished Application Visual Gallery Section */}
       <section className="section references-gallery-sec" id="ref-gallery">
         <div className="container">
+          {/* Category Filter Tabs */}
+          <div className="references-category-tabs">
+            <button
+              type="button"
+              className={`references-category-tab ${selectedCategory === "all" ? "active" : ""}`}
+              onClick={() => handleCategoryChange("all")}
+            >
+              {t("references.filterAll")}
+            </button>
+            <button
+              type="button"
+              className={`references-category-tab ${selectedCategory === "karo-hali" ? "active" : ""}`}
+              onClick={() => handleCategoryChange("karo-hali")}
+            >
+              {t("references.filterKaro")}
+            </button>
+            <button
+              type="button"
+              className={`references-category-tab ${selectedCategory === "cim-hali" ? "active" : ""}`}
+              onClick={() => handleCategoryChange("cim-hali")}
+            >
+              {t("references.filterCim")}
+            </button>
+          </div>
+
           {/* Grid */}
-          <div className="grid-4 references-grid">
-            {referenceProjects.map((project) => (
+          <div className="references-grid">
+            {filteredProjects.map((project) => (
               <ReferenceCard
                 key={project.id}
                 project={project}
