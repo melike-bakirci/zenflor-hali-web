@@ -44,6 +44,7 @@ export function meta({ params }: MetaArgs) {
         : `${SITE_URL}/logo-nobg.png`,
       description: product.description,
       sku: product.id,
+      mpn: product.slug,
       category: "Çim Halı",
       brand: {
         "@type": "Brand",
@@ -54,10 +55,13 @@ export function meta({ params }: MetaArgs) {
         url: `${SITE_URL}/cim-hali/${product.slug}`,
         priceCurrency: "TRY",
         price: getProductPrice(product),
+        priceValidUntil: "2027-12-31",
+        itemCondition: "https://schema.org/NewCondition",
         availability: "https://schema.org/InStock",
         seller: {
           "@type": "Organization",
           name: SITE_NAME,
+          url: SITE_URL,
         },
       },
     },
