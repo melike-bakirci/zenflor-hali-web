@@ -496,3 +496,166 @@ export const filterAndSortProducts = (
 
   return result;
 };
+
+export const DEFAULT_FILTER_STATE: FilterState = {
+  searchQuery: "",
+  sortOption: "price-asc",
+  selectedYarnTypes: [],
+  selectedColors: [],
+  selectedDimensions: [],
+  selectedStructures: [],
+  selectedBacking: [],
+  priceRange: [0, Infinity],
+};
+
+const getParamValues = (
+  searchParams: URLSearchParams,
+  keys: string[],
+): string[] => {
+  const values: string[] = [];
+  for (const key of keys) {
+    const all = searchParams.getAll(key);
+    for (const item of all) {
+      if (item) {
+        const splitVals = item
+          .split(",")
+          .map((v) => v.trim())
+          .filter(Boolean);
+        values.push(...splitVals);
+      }
+    }
+  }
+  return Array.from(new Set(values));
+};
+
+export const parseFilterParams = (
+  searchParams: URLSearchParams,
+): { filters: FilterState; currentPage: number } => {
+  const searchQuery =
+    searchParams.get("q") ||
+    searchParams.get("arama") ||
+    searchParams.get("search") ||
+    "";
+
+  const rawSort =
+    searchParams.get("sirala") ||
+    searchParams.get("siralama") ||
+    searchParams.get("sort") ||
+    "";
+  const validSorts: SortOption[] = [
+    "price-asc",
+    "price-desc",
+    "name-asc",
+    "name-desc",
+  ];
+  const sortOption: SortOption = validSorts.includes(rawSort as SortOption)
+    ? (rawSort as SortOption)
+    : "price-asc";
+
+  const selectedYarnTypes = getParamValues(searchParams, [
+    "iplik",
+    "yarn",
+    "iplik-cinsi",
+  ]);
+  const selectedColors = getParamValues(searchParams, ["renk", "color"]);
+  const selectedDimensions = getParamValues(searchParams, [
+    "ebat",
+    "boyut",
+    "dimension",
+    "kalinlik",
+    "size",
+  ]);
+  const selectedStructures = getParamValues(searchParams, [
+    "yapi",
+    "structure",
+  ]);
+  const selectedBacking = getParamValues(searchParams, ["taban", "backing"]);
+
+  const minStr =
+    searchParams.get("minFiyat") ||
+    searchParams.get("min_price") ||
+    searchParams.get("minPrice") ||
+    searchParams.get("min");
+  const maxStr =
+    searchParams.get("maxFiyat") ||
+    searchParams.get("max_price") ||
+    searchParams.get("maxPrice") ||
+    searchParams.get("max");
+
+  const minPrice =
+    minStr && !isNaN(Number(minStr)) ? Math.max(0, Number(minStr)) : 0;
+  const maxPrice =
+    maxStr && !isNaN(Number(maxStr)) ? Number(maxStr) : Infinity;
+
+  const pageStr =
+    searchParams.get("sayfa") ||
+    searchParams.get("page") ||
+    searchParams.get("p");
+  const currentPage =
+    pageStr && !isNaN(Number(pageStr)) && Number(pageStr) >= 1
+      ? Math.floor(Number(pageStr))
+      : 1;
+
+  return {
+    filters: {
+      searchQuery,
+      sortOption,
+      selectedYarnTypes,
+      selectedColors,
+      selectedDimensions,
+      selectedStructures,
+      selectedBacking,
+      priceRange: [minPrice, maxPrice],
+    },
+    currentPage,
+  };
+};
+
+export const filtersToSearchParams = (
+  filters: FilterState,
+  currentPage: number = 1,
+): URLSearchParams => {
+  const params = new URLSearchParams();
+
+  if (filters.searchQuery && filters.searchQuery.trim()) {
+    params.set("q", filters.searchQuery.trim());
+  }
+
+  if (filters.sortOption && filters.sortOption !== "price-asc") {
+    params.set("sirala", filters.sortOption);
+  }
+
+  if (filters.selectedYarnTypes && filters.selectedYarnTypes.length > 0) {
+    params.set("iplik", filters.selectedYarnTypes.join(","));
+  }
+
+  if (filters.selectedColors && filters.selectedColors.length > 0) {
+    params.set("renk", filters.selectedColors.join(","));
+  }
+
+  if (filters.selectedDimensions && filters.selectedDimensions.length > 0) {
+    params.set("ebat", filters.selectedDimensions.join(","));
+  }
+
+  if (filters.selectedStructures && filters.selectedStructures.length > 0) {
+    params.set("yapi", filters.selectedStructures.join(","));
+  }
+
+  if (filters.selectedBacking && filters.selectedBacking.length > 0) {
+    params.set("taban", filters.selectedBacking.join(","));
+  }
+
+  if (filters.priceRange[0] > 0) {
+    params.set("minFiyat", String(filters.priceRange[0]));
+  }
+
+  if (filters.priceRange[1] < Infinity) {
+    params.set("maxFiyat", String(filters.priceRange[1]));
+  }
+
+  if (currentPage > 1) {
+    params.set("sayfa", String(currentPage));
+  }
+
+  return params;
+};

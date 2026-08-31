@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useMemo } from "react";
+import { useSearchParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import ProductCard from "~/components/ui/ProductCard";
 import Breadcrumb from "~/components/ui/Breadcrumb";
@@ -9,6 +10,8 @@ import ActiveFilters from "~/components/ui/ActiveFilters";
 import { cimHaliProducts } from "~/data/cimHaliProducts";
 import {
   filterAndSortProducts,
+  parseFilterParams,
+  filtersToSearchParams,
   type FilterState,
   type SortOption,
 } from "~/utils/productUtils";
@@ -32,56 +35,49 @@ export function meta() {
 
 const CimHali: React.FC = () => {
   const { t } = useTranslation();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const [filters, setFilters] = useState<FilterState>({
-    searchQuery: "",
-    sortOption: "price-asc",
-    selectedYarnTypes: [],
-    selectedColors: [],
-    selectedDimensions: [],
-    selectedStructures: [],
-    priceRange: [0, Infinity],
-  });
+  const { filters, currentPage } = useMemo(() => {
+    return parseFilterParams(searchParams);
+  }, [searchParams]);
 
   const filteredProducts = useMemo(() => {
     return filterAndSortProducts(cimHaliProducts, filters);
   }, [filters]);
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE) || 1;
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const safeCurrentPage = Math.min(Math.max(1, currentPage), totalPages);
+  const startIndex = (safeCurrentPage - 1) * ITEMS_PER_PAGE;
   const currentProducts = filteredProducts.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE,
   );
 
+  const updateFilters = (newFilters: FilterState) => {
+    const nextParams = filtersToSearchParams(newFilters, 1);
+    setSearchParams(nextParams, { replace: true });
+  };
+
   const handleSearchChange = (query: string) => {
-    setFilters((prev) => ({ ...prev, searchQuery: query }));
-    setCurrentPage(1);
+    updateFilters({ ...filters, searchQuery: query });
   };
 
   const handleSortChange = (sort: SortOption) => {
-    setFilters((prev) => ({ ...prev, sortOption: sort }));
-    setCurrentPage(1);
+    updateFilters({ ...filters, sortOption: sort });
   };
 
   const handleFilterChange = (newFilters: FilterState) => {
-    setFilters(newFilters);
-    setCurrentPage(1);
+    updateFilters(newFilters);
   };
 
   const handleResetFilters = () => {
-    setFilters({
-      searchQuery: "",
-      sortOption: "price-asc",
-      selectedYarnTypes: [],
-      selectedColors: [],
-      selectedDimensions: [],
-      selectedStructures: [],
-      priceRange: [0, Infinity],
-    });
-    setCurrentPage(1);
+    setSearchParams(new URLSearchParams(), { replace: true });
+  };
+
+  const handlePageChange = (page: number) => {
+    const nextParams = filtersToSearchParams(filters, page);
+    setSearchParams(nextParams, { replace: false });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -152,9 +148,9 @@ const CimHali: React.FC = () => {
 
                   {totalPages > 1 && (
                     <Pagination
-                      currentPage={currentPage}
+                      currentPage={safeCurrentPage}
                       totalPages={totalPages}
-                      onPageChange={(page) => setCurrentPage(page)}
+                      onPageChange={handlePageChange}
                     />
                   )}
                 </>
