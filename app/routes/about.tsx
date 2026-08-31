@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Target, Eye, Globe } from "lucide-react";
+import { Target, Eye } from "lucide-react";
 import SectionTitle from "~/components/ui/SectionTitle";
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import QuoteCtaBanner from "~/components/ui/QuoteCtaBanner";
@@ -55,32 +55,12 @@ const About: React.FC = () => {
           </div>
 
           <div className="about__story-visual">
-            <div className="about__story-card about__story-card--main">
-              <div className="about__story-card-pattern" aria-hidden="true" />
-              <div className="about__story-card-content">
-                <span className="about__logo-big">{SITE_NAME}</span>
-                <span className="about__brand-text">
-                  {t("about.brandSubtitle")}
-                </span>
-                <span className="about__year-text">{t("about.since2006")}</span>
-              </div>
-            </div>
-            <div className="about__story-card about__story-card--accent">
-              <div className="about__web-links">
-                {[1, 2, 3, 4].map((item) => (
-                  <a
-                    key={item}
-                    href="https://mineflofiyatlar.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="about__web-icon-link"
-                    title={t("about.minefloLinkTitle")}
-                    aria-label={t("about.minefloLinkTitle")}
-                  >
-                    <Globe size={26} />
-                  </a>
-                ))}
-              </div>
+            <div className="about__story-image-wrap">
+              <img
+                src="/images/zenflor-karo-hali.jpeg"
+                alt="Zenflor Karo Halı"
+                className="about__story-img"
+              />
             </div>
           </div>
         </div>
