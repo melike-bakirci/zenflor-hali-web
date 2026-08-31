@@ -23,6 +23,7 @@ import {
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import { blogPosts } from "~/data/blogPosts";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { normalizeSearchText } from "~/utils/productUtils";
 import QuoteCtaBanner from "~/components/ui/QuoteCtaBanner";
 import { seoMeta } from "~/lib/seo";
@@ -436,6 +437,7 @@ const BlogDetail: React.FC = () => {
                 style={{ fontSize: FONT_SIZES[fontSize] }}
               >
                 <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
                   components={{
                     table: ({ children }) => (
                       <div className="blog-table-wrap">
@@ -454,6 +456,7 @@ const BlogDetail: React.FC = () => {
                       <h3 className="blog-h3">{children}</h3>
                     ),
                     p: ({ children }) => <p className="blog-p">{children}</p>,
+                    hr: () => null,
                     ul: ({ children }) => (
                       <ul className="blog-ul">{children}</ul>
                     ),
@@ -474,6 +477,25 @@ const BlogDetail: React.FC = () => {
                     pre: ({ children }) => (
                       <pre className="blog-pre">{children}</pre>
                     ),
+                    a: ({ href, children }) => {
+                      if (href?.startsWith("/")) {
+                        return (
+                          <Link to={href} className="blog-inline-link">
+                            {children}
+                          </Link>
+                        );
+                      }
+                      return (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="blog-inline-link"
+                        >
+                          {children}
+                        </a>
+                      );
+                    },
                     img: () => null,
                   }}
                 >
