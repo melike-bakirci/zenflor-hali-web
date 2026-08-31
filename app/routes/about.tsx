@@ -1,19 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Target, Eye, Leaf, Award, ShieldCheck, Sparkles, Globe } from "lucide-react";
+import { Target, Eye, Globe } from "lucide-react";
 import SectionTitle from "~/components/ui/SectionTitle";
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import QuoteCtaBanner from "~/components/ui/QuoteCtaBanner";
 import { seoMeta } from "~/lib/seo";
 import { SITE_NAME } from "~/lib/constants";
 import "./about.css";
-
-const VALUES = [
-  { icon: <Award size={22} />, key: "about.value1" },
-  { icon: <ShieldCheck size={22} />, key: "about.value2" },
-  { icon: <Sparkles size={22} />, key: "about.value3" },
-  { icon: <Leaf size={22} />, key: "about.value4" },
-];
 
 export function meta() {
   return seoMeta({
@@ -59,27 +52,6 @@ const About: React.FC = () => {
             <SectionTitle title={t("about.story")} />
             <p className="about__para">{t("about.storyText1")}</p>
             <p className="about__para">{t("about.storyText2")}</p>
-
-            <div className="about__story-stats">
-              <div className="about__story-stat">
-                <span className="about__story-stat-value">20</span>
-                <span className="about__story-stat-label">
-                  {t("home.statsYears")}
-                </span>
-              </div>
-              <div className="about__story-stat">
-                <span className="about__story-stat-value">20.000+</span>
-                <span className="about__story-stat-label">
-                  {t("home.statsProjects")}
-                </span>
-              </div>
-              <div className="about__story-stat">
-                <span className="about__story-stat-value">500+</span>
-                <span className="about__story-stat-label">
-                  {t("home.statsProducts")}
-                </span>
-              </div>
-            </div>
           </div>
 
           <div className="about__story-visual">
@@ -137,21 +109,6 @@ const About: React.FC = () => {
               </h2>
               <p className="about__mv-text">{t("about.visionText")}</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="section about__values-section">
-        <div className="container">
-          <SectionTitle title={t("about.valuesTitle")} center />
-          <div className="about__values-grid">
-            {VALUES.map((v, i) => (
-              <div key={i} className="about__value-item" id={`value-${i + 1}`}>
-                <div className="about__value-icon">{v.icon}</div>
-                <span className="about__value-label">{t(v.key)}</span>
-              </div>
-            ))}
           </div>
         </div>
       </section>

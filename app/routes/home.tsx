@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, ChevronLeft, ChevronRight, Phone } from "lucide-react";
 import SectionTitle from "~/components/ui/SectionTitle";
@@ -91,8 +91,6 @@ export function meta() {
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
-
-  const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
 
   // Parallax on scroll
@@ -325,100 +323,6 @@ const Home: React.FC = () => {
                 <span className="home__about-stat-label">
                   {t("home.statsReferences")}
                 </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== CATEGORIES ===== */}
-      <section className="section home__categories" id="categories">
-        <div className="container">
-          <SectionTitle
-            title={t("home.categoriesTitle")}
-            subtitle={t("home.categoriesSubtitle")}
-            center
-          />
-          <div className="home__cat-grid">
-            {/* Karo Halı */}
-            <div
-              className="home__cat-card"
-              onClick={() => navigate("/karo-hali")}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") navigate("/karo-hali");
-              }}
-            >
-              <div className="home__cat-img-wrapper">
-                <img
-                  src="/images/cat-karo-office.png"
-                  alt="Ofis ve Ticari Akustik Karo Halı Modelleri ve Uygulamaları"
-                  className="home__cat-img"
-                />
-              </div>
-              <div className="home__cat-content">
-                <h3 className="home__cat-title">{t("home.karoHaliCat")}</h3>
-                <p className="home__cat-subtitle">
-                  {t("home.karoHaliCatSubtitle")}
-                </p>
-                <div className="home__cat-desc">
-                  <p>{t("home.karoHaliCatDesc")}</p>
-                </div>
-                <div className="home__cat-footer">
-                  <span className="btn btn-primary home__cat-btn">
-                    {t("home.viewProducts")}{" "}
-                    <ChevronRight size={16} />
-                  </span>
-                  <a
-                    href="tel:+905302708487"
-                    className="home__cat-phone"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Phone size={14} /> +90 530 270 84 87
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Çim Halı */}
-            <div
-              className="home__cat-card"
-              onClick={() => navigate("/cim-hali")}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") navigate("/cim-hali");
-              }}
-            >
-              <div className="home__cat-img-wrapper">
-                <img
-                  src="/images/cat-cim-landscape.png"
-                  alt="Bahçe ve Balkon İçin Dekoratif Suni Çim Halı Modelleri"
-                  className="home__cat-img"
-                />
-              </div>
-              <div className="home__cat-content">
-                <h3 className="home__cat-title">{t("home.cimHaliCat")}</h3>
-                <p className="home__cat-subtitle">
-                  {t("home.cimHaliCatSubtitle")}
-                </p>
-                <div className="home__cat-desc">
-                  <p>{t("home.cimHaliCatDesc")}</p>
-                </div>
-                <div className="home__cat-footer">
-                  <span className="btn btn-primary home__cat-btn">
-                    {t("home.viewProducts")}{" "}
-                    <ChevronRight size={16} />
-                  </span>
-                  <a
-                    href="tel:+905302708487"
-                    className="home__cat-phone"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Phone size={14} /> +90 530 270 84 87
-                  </a>
-                </div>
               </div>
             </div>
           </div>
