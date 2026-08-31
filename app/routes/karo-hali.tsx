@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import SectionTitle from "~/components/ui/SectionTitle";
 import ProductCard from "~/components/ui/ProductCard";
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import Pagination from "~/components/ui/Pagination";
@@ -113,11 +112,6 @@ const KaroHali: React.FC = () => {
       {/* Products */}
       <section className="section">
         <div className="container">
-          <SectionTitle
-            title={t("products.allProducts")}
-            subtitle={t("products.productCount", { count: karoHaliProducts.length })}
-          />
-
           <div className="product-page-layout">
             {/* Left Sidebar Filter Bar */}
             <ProductSidebarFilter
