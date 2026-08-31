@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
     { to: "/hakkimizda", label: t("nav.about") },
     { to: "/karo-hali", label: t("nav.karoHali") },
     { to: "/cim-hali", label: t("nav.cimHali") },
-    { to: "/referanslarimiz", label: t("nav.references") },
+    { to: "/galeri", label: t("nav.references") },
     { to: "/blog", label: t("nav.blog") },
     { to: "/iletisim", label: t("nav.contact") },
   ];

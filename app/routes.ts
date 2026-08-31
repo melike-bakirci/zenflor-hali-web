@@ -7,7 +7,7 @@ export default [
   route("karo-hali/:slug", "./routes/karo-hali-detail.tsx"),
   route("cim-hali", "./routes/cim-hali.tsx"),
   route("cim-hali/:slug", "./routes/cim-hali-detail.tsx"),
-  route("referanslarimiz", "./routes/references.tsx", { id: "references" }),
+  route("galeri", "./routes/references.tsx", { id: "gallery" }),
   route("blog", "./routes/blog.tsx"),
   route("blog/:slug", "./routes/blog-detail.tsx"),
   route("iletisim", "./routes/contact.tsx"),

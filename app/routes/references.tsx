@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import SectionTitle from "~/components/ui/SectionTitle";
 import ReferenceCard from "~/components/ui/ReferenceCard";
 import ReferenceModal from "~/components/ui/ReferenceModal";
-import ClientLogos from "~/components/ui/ClientLogos";
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import QuoteCtaBanner from "~/components/ui/QuoteCtaBanner";
 import {
@@ -16,11 +14,11 @@ import "./references.css";
 
 export function meta() {
   return seoMeta({
-    title: `Kurumsal Zemin Kaplama Referanslarımız | ${SITE_NAME}`,
-    description: `${SITE_NAME} kurumsal zemin kaplama referansları. Ofis, otel, hastane ve kurumsal projeler için ucuz, uygun ve profesyonel bitmiş akustik karo halı ve suni çim halı uygulamaları.`,
-    canonicalUrl: "/referanslarimiz",
+    title: `Uygulama Galerisi | ${SITE_NAME}`,
+    description: `${SITE_NAME} kurumsal zemin kaplama uygulama galerisi. Ofis, otel, hastane ve kurumsal projeler için bitmiş akustik karo halı ve suni çim halı uygulamalarımızın görselleri.`,
+    canonicalUrl: "/galeri",
     keywords:
-      "zemin kaplama referansları, ucuz karo halı referansları, uygun ofis halısı, otel halısı uygulamaları, ticari zemin kaplama referanslar",
+      "zemin kaplama galerisi, karo halı uygulama görselleri, çim halı fotoğrafları, ofis halısı uygulamaları, otel halısı fotoğrafları",
   });
 }
 
@@ -55,29 +53,12 @@ const References: React.FC = () => {
         />
       </div>
 
-      {/* Corporate Clients Logos Section */}
-      <section className="section references-clients-sec">
-        <div className="container">
-          <ClientLogos
-            limit={4}
-            title={t("references.clientsTitle")}
-            subtitle={t("references.clientsSubtitle")}
-          />
-        </div>
-      </section>
-
       {/* Finished Application Visual Gallery Section */}
       <section className="section references-gallery-sec" id="ref-gallery">
         <div className="container">
-          <SectionTitle
-            title={t("references.galleryTitle")}
-            subtitle={t("references.gallerySubtitle")}
-            center
-          />
-
           {/* Grid */}
           <div className="grid-4 references-grid">
-            {referenceProjects.slice(0, 4).map((project) => (
+            {referenceProjects.map((project) => (
               <ReferenceCard
                 key={project.id}
                 project={project}

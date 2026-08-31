@@ -8,7 +8,7 @@ const staticRoutes = [
   "/hakkimizda",
   "/karo-hali",
   "/cim-hali",
-  "/referanslarimiz",
+  "/galeri",
   "/blog",
   "/iletisim",
   "/gizlilik",

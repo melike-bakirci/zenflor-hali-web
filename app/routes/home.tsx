@@ -76,7 +76,7 @@ export function meta() {
             "@type": "SiteNavigationElement",
             position: 3,
             name: "Uygulama Galerisi",
-            url: `${SITE_URL}/referanslarimiz`,
+            url: `${SITE_URL}/galeri`,
           },
           {
             "@type": "SiteNavigationElement",
@@ -466,7 +466,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ===== REFERANSLARIMIZ SECTION ===== */}
+      {/* ===== GALERİ SECTION ===== */}
       <section className="section home__references" id="home-references">
         <div className="container">
           <div className="home__featured-header">
@@ -475,7 +475,7 @@ const Home: React.FC = () => {
               subtitle={t("home.referencesSectionSubtitle")}
             />
             <Link
-              to="/referanslarimiz"
+              to="/galeri"
               className="btn btn-outline home__view-all"
             >
               {t("home.viewAllReferences")}{" "}

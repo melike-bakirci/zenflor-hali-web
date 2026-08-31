@@ -195,7 +195,7 @@ const Footer: React.FC = () => {
               <Link to="/cim-hali" className="footer__nav-link">
                 {t("nav.cimHali")}
               </Link>
-              <Link to="/referanslarimiz" className="footer__nav-link">
+              <Link to="/galeri" className="footer__nav-link">
                 {t("nav.references")}
               </Link>
               <Link to="/blog" className="footer__nav-link">
