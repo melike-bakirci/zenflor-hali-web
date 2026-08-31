@@ -269,7 +269,11 @@ const Home: React.FC = () => {
 
             <div className="container hero-slide__content">
               <span className="hero-slide__subtitle">{slide.subtitle}</span>
-              <h1 className="hero-slide__title">{slide.title}</h1>
+              {index === 0 ? (
+                <h1 className="hero-slide__title">{slide.title}</h1>
+              ) : (
+                <h2 className="hero-slide__title">{slide.title}</h2>
+              )}
               <div className="hero-slide__actions">
                 <Link to={slide.link} className="hero-btn hero-btn--primary">
                   <span>{t("home.viewProducts")}</span>

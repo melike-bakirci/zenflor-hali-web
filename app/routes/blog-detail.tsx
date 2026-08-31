@@ -42,15 +42,25 @@ export function meta({ params }: MetaArgs) {
     canonicalUrl: `/blog/${post.slug}`,
     type: "article",
     image: post.image,
+    breadcrumbs: [
+      { label: "Ana Sayfa", url: "/" },
+      { label: "Blog", url: "/blog" },
+      { label: post.title, url: `/blog/${post.slug}` },
+    ],
     schema: {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: post.title,
+      description: post.excerpt,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/blog/${post.slug}`,
+      },
       image: post.image
         ? `${SITE_URL}${post.image}`
         : `${SITE_URL}/logo-nobg.png`,
       author: {
-        "@type": "Person",
+        "@type": "Organization",
         name: post.author || SITE_NAME,
       },
       publisher: {
@@ -62,6 +72,7 @@ export function meta({ params }: MetaArgs) {
         },
       },
       datePublished: post.date,
+      dateModified: post.date,
     },
   });
 }

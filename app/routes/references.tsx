@@ -20,6 +20,10 @@ export function meta() {
     canonicalUrl: "/galeri",
     keywords:
       "zemin kaplama galerisi, karo halı uygulama görselleri, çim halı fotoğrafları, ofis halısı uygulamaları, otel halısı fotoğrafları",
+    breadcrumbs: [
+      { label: "Ana Sayfa", url: "/" },
+      { label: "Uygulama Galerisi", url: "/galeri" },
+    ],
   });
 }
 

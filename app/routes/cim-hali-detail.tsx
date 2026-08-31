@@ -30,6 +30,11 @@ export function meta({ params }: MetaArgs) {
     canonicalUrl: `/cim-hali/${product.slug}`,
     image: product.image,
     type: "product",
+    breadcrumbs: [
+      { label: "Ana Sayfa", url: "/" },
+      { label: "Çim Halı", url: "/cim-hali" },
+      { label: product.name, url: `/cim-hali/${product.slug}` },
+    ],
     schema: {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -38,12 +43,22 @@ export function meta({ params }: MetaArgs) {
         ? `${SITE_URL}${product.image}`
         : `${SITE_URL}/logo-nobg.png`,
       description: product.description,
+      sku: product.id,
+      category: "Çim Halı",
+      brand: {
+        "@type": "Brand",
+        name: SITE_NAME,
+      },
       offers: {
         "@type": "Offer",
         url: `${SITE_URL}/cim-hali/${product.slug}`,
         priceCurrency: "TRY",
         price: getProductPrice(product),
         availability: "https://schema.org/InStock",
+        seller: {
+          "@type": "Organization",
+          name: SITE_NAME,
+        },
       },
     },
   });

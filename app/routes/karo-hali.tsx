@@ -30,6 +30,10 @@ export function meta() {
     canonicalUrl: "/karo-hali",
     keywords:
       "ticari karo halı, ofis karo halı fiyatları, istanbul karo halı, sancaktepe ofis halısı, sarıgazi zemin kaplama, yanmaz karo halı, antistatik halı, karo halı m2 fiyatı",
+    breadcrumbs: [
+      { label: "Ana Sayfa", url: "/" },
+      { label: "Karo Halı", url: "/karo-hali" },
+    ],
   });
 }
 

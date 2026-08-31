@@ -30,6 +30,11 @@ export function meta({ params }: MetaArgs) {
     canonicalUrl: `/karo-hali/${product.slug}`,
     image: product.image,
     type: "product",
+    breadcrumbs: [
+      { label: "Ana Sayfa", url: "/" },
+      { label: "Karo Halı", url: "/karo-hali" },
+      { label: product.name, url: `/karo-hali/${product.slug}` },
+    ],
     schema: {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -38,12 +43,22 @@ export function meta({ params }: MetaArgs) {
         ? `${SITE_URL}${product.image}`
         : `${SITE_URL}/logo-nobg.png`,
       description: product.description,
+      sku: product.id,
+      category: "Karo Halı",
+      brand: {
+        "@type": "Brand",
+        name: SITE_NAME,
+      },
       offers: {
         "@type": "Offer",
         url: `${SITE_URL}/karo-hali/${product.slug}`,
         priceCurrency: "TRY",
         price: getProductPrice(product),
         availability: "https://schema.org/InStock",
+        seller: {
+          "@type": "Organization",
+          name: SITE_NAME,
+        },
       },
     },
   });

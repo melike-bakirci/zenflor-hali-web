@@ -30,6 +30,10 @@ export function meta() {
     canonicalUrl: "/cim-hali",
     keywords:
       "suni çim halı, dekoratif çim halı fiyatları, istanbul çim halı satan yerler, sancaktepe çim halı, sarıgazi suni çim, balkon çim halı, bahçe çim halısı",
+    breadcrumbs: [
+      { label: "Ana Sayfa", url: "/" },
+      { label: "Çim Halı", url: "/cim-hali" },
+    ],
   });
 }
 

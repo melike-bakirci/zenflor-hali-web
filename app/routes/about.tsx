@@ -15,6 +15,10 @@ export function meta() {
     canonicalUrl: "/hakkimizda",
     keywords:
       "zenflor hakkında, zemin kaplama firmaları, karo halı firması, çim halı satan yerler, istanbul halı firmaları",
+    breadcrumbs: [
+      { label: "Ana Sayfa", url: "/" },
+      { label: "Hakkımızda", url: "/hakkimizda" },
+    ],
   });
 }
 

@@ -17,6 +17,10 @@ export function meta() {
     canonicalUrl: "/blog",
     keywords:
       "zemin kaplama blog, karo halı rehberi, çim halı nasıl serilir, ofis dekorasyon fikirleri, zemin kaplama trendleri",
+    breadcrumbs: [
+      { label: "Ana Sayfa", url: "/" },
+      { label: "Blog", url: "/blog" },
+    ],
   });
 }
 
