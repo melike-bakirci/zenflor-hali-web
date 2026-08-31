@@ -62,7 +62,10 @@ export function meta() {
         url: SITE_URL,
         potentialAction: {
           "@type": "SearchAction",
-          target: `${SITE_URL}/arama?q={search_term_string}`,
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${SITE_URL}/karo-hali?q={search_term_string}`,
+          },
           "query-input": "required name=search_term_string",
         },
       },

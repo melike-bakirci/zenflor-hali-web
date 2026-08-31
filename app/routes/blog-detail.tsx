@@ -73,6 +73,8 @@ export function meta({ params }: MetaArgs) {
       },
       datePublished: post.date,
       dateModified: post.date,
+      articleSection: post.category,
+      keywords: post.tags ? post.tags.join(", ") : undefined,
     },
   });
 }

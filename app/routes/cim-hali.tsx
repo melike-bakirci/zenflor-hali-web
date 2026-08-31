@@ -17,7 +17,7 @@ import {
 } from "~/utils/productUtils";
 import QuoteCtaBanner from "~/components/ui/QuoteCtaBanner";
 import { seoMeta } from "~/lib/seo";
-import { SITE_NAME } from "~/lib/constants";
+import { SITE_NAME, SITE_URL } from "~/lib/constants";
 import "./product-list.css";
 
 const ITEMS_PER_PAGE = 12;
@@ -34,6 +34,25 @@ export function meta() {
       { label: "Ana Sayfa", url: "/" },
       { label: "Çim Halı", url: "/cim-hali" },
     ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: `ÇİM HALI - Dekoratif Çim Halı ve Suni Çim Modelleri | ${SITE_NAME}`,
+      description:
+        "Bahçe, balkon ve peyzaj alanları için dört mevsim yeşil kalan suni çim halı modelleri. Merkezimiz Sarıgazi Sancaktepe'den tüm Türkiye'ye toptan ve perakende çim halı satışı.",
+      url: `${SITE_URL}/cim-hali`,
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: cimHaliProducts.length,
+        itemListElement: cimHaliProducts.map((product, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: product.name,
+          url: `${SITE_URL}/cim-hali/${product.slug}`,
+          image: product.image ? `${SITE_URL}${product.image}` : undefined,
+        })),
+      },
+    },
   });
 }
 

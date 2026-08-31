@@ -13,7 +13,9 @@ export function Layout({ children }: { children: ReactNode }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#8b181b" />
         <link rel="icon" type="image/png" href="/logo-nobg.png" />
+        <link rel="apple-touch-icon" href="/logo-nobg.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

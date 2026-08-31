@@ -60,20 +60,31 @@ export function seoMeta({
   ];
 
   if (keywords) descriptors.push({ name: "keywords", content: keywords });
-  if (noindex)
+  if (noindex) {
     descriptors.push({ name: "robots", content: "noindex, nofollow" });
+  } else {
+    descriptors.push({
+      name: "robots",
+      content: "index, follow, max-image-preview:large",
+    });
+  }
 
   descriptors.push({ tagName: "link", rel: "canonical", href: url });
+  descriptors.push({ property: "og:locale", content: "tr_TR" });
   descriptors.push({ property: "og:type", content: type });
   descriptors.push({ property: "og:title", content: title });
   descriptors.push({ property: "og:description", content: description });
   descriptors.push({ property: "og:url", content: url });
   descriptors.push({ property: "og:site_name", content: SITE_NAME });
   descriptors.push({ property: "og:image", content: imageUrl });
+  descriptors.push({ property: "og:image:alt", content: title });
+  descriptors.push({ property: "og:image:width", content: "1200" });
+  descriptors.push({ property: "og:image:height", content: "630" });
   descriptors.push({ name: "twitter:card", content: "summary_large_image" });
   descriptors.push({ name: "twitter:title", content: title });
   descriptors.push({ name: "twitter:description", content: description });
   descriptors.push({ name: "twitter:image", content: imageUrl });
+  descriptors.push({ name: "twitter:image:alt", content: title });
 
   const allSchemas: (Record<string, any> | string)[] = [];
 

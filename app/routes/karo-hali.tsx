@@ -17,7 +17,7 @@ import {
 } from "~/utils/productUtils";
 import QuoteCtaBanner from "~/components/ui/QuoteCtaBanner";
 import { seoMeta } from "~/lib/seo";
-import { SITE_NAME } from "~/lib/constants";
+import { SITE_NAME, SITE_URL } from "~/lib/constants";
 import "./product-list.css";
 
 const ITEMS_PER_PAGE = 12;
@@ -34,6 +34,25 @@ export function meta() {
       { label: "Ana Sayfa", url: "/" },
       { label: "Karo Halı", url: "/karo-hali" },
     ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: `Ticari ve Ofis Karo Halı Modelleri & Fiyatları | ${SITE_NAME}`,
+      description:
+        "Yüksek yaya trafiğine dayanıklı ofis karo halı modelleri. İstanbul Sancaktepe ve Sarıgazi dahil tüm Türkiye'ye en uygun karo halı m² fiyatları ve zemin kaplama çözümleri.",
+      url: `${SITE_URL}/karo-hali`,
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: karoHaliProducts.length,
+        itemListElement: karoHaliProducts.map((product, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: product.name,
+          url: `${SITE_URL}/karo-hali/${product.slug}`,
+          image: product.image ? `${SITE_URL}${product.image}` : undefined,
+        })),
+      },
+    },
   });
 }
 
