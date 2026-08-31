@@ -118,6 +118,10 @@ export function meta() {
     canonicalUrl: "/iletisim",
     keywords:
       "zenflor iletişim, karo halı telefon, çim halı iletişim, zemin kaplama iletişim, sancaktepe karo halı, sarıgazi halı firmaları, istanbul zemin kaplama",
+    breadcrumbs: [
+      { label: "Ana Sayfa", url: "/" },
+      { label: "İletişim", url: "/iletisim" },
+    ],
     schema: {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -125,14 +129,37 @@ export function meta() {
       image: `${SITE_URL}/logo-nobg.png`,
       telephone: "+905302708487",
       email: "zenflormarket@gmail.com",
+      priceRange: "₺₺",
+      url: SITE_URL,
+      sameAs: [SAHIBINDEN_URL],
       address: {
         "@type": "PostalAddress",
         streetAddress: "Leman Sk. No:4",
         addressLocality: "Sancaktepe",
         addressRegion: "İstanbul",
+        postalCode: "34785",
         addressCountry: "TR",
       },
-      url: SITE_URL,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 41.0028,
+        longitude: 29.2315,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ],
+          opens: "09:00",
+          closes: "19:00",
+        },
+      ],
     },
   });
 }
