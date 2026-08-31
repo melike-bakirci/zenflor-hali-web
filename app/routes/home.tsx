@@ -255,8 +255,15 @@ const Home: React.FC = () => {
             <div
               key={`bg-${index}-${index === currentSlide ? "active" : "idle"}`}
               className="hero-slide__bg"
-              style={{ backgroundImage: `url(${slide.image})` }}
             >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="hero-slide__img"
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "low"}
+                decoding={index === 0 ? "sync" : "async"}
+              />
               <div className="hero-slide__overlay"></div>
             </div>
 
@@ -332,6 +339,7 @@ const Home: React.FC = () => {
                   alt={`${SITE_NAME} Karo Halı ve Zemin Çözümleri`}
                   className="home__about-img"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

@@ -112,6 +112,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           src={product.image}
           alt={`Uygun fiyatlı ve ucuz ${name} modelleri`}
           className="product-card__image"
+          loading="lazy"
+          decoding="async"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = "none";
             (e.currentTarget.nextSibling as HTMLElement)?.removeAttribute(

@@ -77,6 +77,7 @@ const ReferenceModal: React.FC<ReferenceModalProps> = ({
               `Kurumsal Zemin Kaplama Uygulama Referans Görseli: ${project.title}`
             }
             className="ref-modal__pure-img"
+            decoding="async"
           />
 
           {images.length > 1 && (

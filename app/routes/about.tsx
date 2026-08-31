@@ -60,6 +60,8 @@ const About: React.FC = () => {
                 src="/images/zenflor-karo-hali.jpeg"
                 alt="Zenflor Karo Halı"
                 className="about__story-img"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

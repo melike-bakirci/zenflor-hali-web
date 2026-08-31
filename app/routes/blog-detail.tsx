@@ -124,6 +124,26 @@ const BlogDetail: React.FC = () => {
   // Search
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Reading scroll progress
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight <= 0) {
+        setScrollProgress(0);
+        return;
+      }
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(Math.min(100, Math.max(0, progress)));
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [slug]);
+
   // Copy link
   const [copied, setCopied] = useState(false);
 
@@ -287,6 +307,21 @@ const BlogDetail: React.FC = () => {
 
   return (
     <div className="blog-detail-page page-enter">
+      {/* Top Bordo Reading Progress Bar */}
+      <div
+        className="blog-reading-progress"
+        role="progressbar"
+        aria-valuenow={Math.round(scrollProgress)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label="Okuma İlerlemesi"
+      >
+        <div
+          className="blog-reading-progress__bar"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
       <div className="blog-detail">
         <div className="blog-detail__wrapper container">
         {/* Breadcrumb */}
@@ -424,6 +459,9 @@ const BlogDetail: React.FC = () => {
                   src={post.image}
                   alt={`Zemin Kaplama Blog Dekorasyon Görseli: ${title}`}
                   className="blog-detail__image"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).style.display =
                       "none";
@@ -680,6 +718,8 @@ const BlogDetail: React.FC = () => {
                           src={p.image}
                           alt={pTitle}
                           className="blog-sidebar__post-img"
+                          loading="lazy"
+                          decoding="async"
                           onError={(e) => {
                             (
                               e.currentTarget as HTMLImageElement

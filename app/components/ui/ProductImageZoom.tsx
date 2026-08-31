@@ -186,6 +186,9 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
           src={currentImage}
           alt={`${alt} - ${currentIndex + 1}`}
           className="pd-image"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           onError={onError}
         />
         {badge && <span className="pd-badge badge-dark">{badge}</span>}
@@ -373,6 +376,8 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
                       src={imgUrl}
                       alt={`${alt} thumbnail ${idx + 1}`}
                       className="pd-lightbox-thumb-img"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </button>
                 ))}

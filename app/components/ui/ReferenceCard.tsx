@@ -35,6 +35,7 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({
           }
           className="ref-card__img"
           loading="lazy"
+          decoding="async"
         />
         <div className="ref-card__overlay">
           <span className="ref-card__zoom-icon">

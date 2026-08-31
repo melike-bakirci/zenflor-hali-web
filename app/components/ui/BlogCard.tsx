@@ -31,6 +31,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
           src={post.image}
           alt={`Zemin Kaplama Blog ve Dekorasyon: ${title}`}
           className="blog-card__image"
+          loading="lazy"
+          decoding="async"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = "none";
             (e.currentTarget.nextSibling as HTMLElement)?.removeAttribute(
