@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Target, Eye } from "lucide-react";
+import { Target, Eye, Globe, ExternalLink } from "lucide-react";
 import SectionTitle from "~/components/ui/SectionTitle";
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import QuoteCtaBanner from "~/components/ui/QuoteCtaBanner";
@@ -68,6 +68,17 @@ const About: React.FC = () => {
                 decoding="async"
               />
             </div>
+            <a
+              href="https://zenparke.com.tr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about__story-link"
+              title="ZenFlor Parke Sitemiz"
+            >
+              <Globe size={18} className="about__story-link-icon" />
+              <span>ZenFlor Parke Sitemiz</span>
+              <ExternalLink size={14} className="about__story-link-arrow" />
+            </a>
           </div>
         </div>
       </section>

@@ -37,6 +37,8 @@
 /* Story Visual Image */
 .about__story-visual {
   display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
   width: 100%;
 }
 
@@ -72,6 +74,54 @@
 
 .about__story-image-wrap:hover .about__story-img {
   transform: scale(1.03);
+}
+
+.about__story-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.25rem;
+  background: var(--color-bg-card, #ffffff);
+  border: 1px solid var(--color-border-card, rgba(226, 232, 240, 0.9));
+  border-radius: var(--radius-card, 12px);
+  color: var(--color-text-primary, #0f172a);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: all var(--transition-base, 200ms cubic-bezier(0.16, 1, 0.3, 1));
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about__story-link:hover {
+  background: var(--color-primary, #66101f);
+  color: #ffffff;
+  border-color: var(--color-primary, #66101f);
+  box-shadow: 0 8px 20px rgba(102, 16, 31, 0.18);
+  transform: translateY(-2px);
+}
+
+.about__story-link-icon {
+  color: var(--color-primary, #66101f);
+  transition: color 200ms ease;
+  flex-shrink: 0;
+}
+
+.about__story-link:hover .about__story-link-icon {
+  color: #ffffff;
+}
+
+.about__story-link-arrow {
+  margin-left: auto;
+  opacity: 0.6;
+  transition: transform 200ms ease, opacity 200ms ease;
+  flex-shrink: 0;
+}
+
+.about__story-link:hover .about__story-link-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }
 
 /* ===== MISSION / VISION SECTION ===== */
