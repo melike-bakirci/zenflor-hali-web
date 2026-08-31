@@ -100,24 +100,37 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
     }
   };
 
-  // Mouse wheel zoom
-  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const delta = e.deltaY < 0 ? 0.35 : -0.35;
-    setScale((prev) => {
-      const next = Math.max(1, Math.min(3.5, Number((prev + delta).toFixed(2))));
-      if (next === 1) {
-        setMousePos({ x: 50, y: 50 });
-      } else if (lightboxImgRef.current) {
-        const rect = lightboxImgRef.current.getBoundingClientRect();
-        const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
-        const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
-        setMousePos({ x, y });
-      }
-      return next;
-    });
-  };
+  const centerRef = useRef<HTMLDivElement>(null);
+
+  // Non-passive wheel event to reliably prevent page scroll while zooming
+  useEffect(() => {
+    if (!isModalOpen) return;
+    const el = centerRef.current;
+    if (!el) return;
+
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const delta = e.deltaY < 0 ? 0.35 : -0.35;
+      setScale((prev) => {
+        const next = Math.max(1, Math.min(3.5, Number((prev + delta).toFixed(2))));
+        if (next === 1) {
+          setMousePos({ x: 50, y: 50 });
+        } else if (lightboxImgRef.current) {
+          const rect = lightboxImgRef.current.getBoundingClientRect();
+          const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+          const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+          setMousePos({ x, y });
+        }
+        return next;
+      });
+    };
+
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => {
+      el.removeEventListener("wheel", onWheel);
+    };
+  }, [isModalOpen]);
 
   const handleDownload = async (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -337,18 +350,30 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
 
           {/* Center Image Container with Double Click & Mouse Zoom */}
           <div
+            ref={centerRef}
             className={`pd-lightbox-center ${scale > 1 ? "is-zoomed" : ""}`}
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              if (e.target !== lightboxImgRef.current) {
+                setIsModalOpen(false);
+              }
+            }}
             onDoubleClick={handleDoubleClick}
             onMouseMove={handleMouseMove}
-            onWheel={handleWheel}
           >
-            <div className="pd-lightbox-img-wrapper">
+            <div
+              className="pd-lightbox-img-wrapper"
+              onClick={(e) => {
+                if (e.target !== lightboxImgRef.current) {
+                  setIsModalOpen(false);
+                }
+              }}
+            >
               <img
                 ref={lightboxImgRef}
                 src={currentImage}
                 alt={`${alt} - ${currentIndex + 1}`}
                 className="pd-lightbox-img"
+                onClick={(e) => e.stopPropagation()}
                 style={{
                   transformOrigin: `${mousePos.x}% ${mousePos.y}%`,
                   transform: `scale(${scale})`,

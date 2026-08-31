@@ -83,6 +83,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .ref-modal__pure-img {
@@ -91,6 +92,16 @@
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+.ref-modal__pure-img.is-zoomed {
+  cursor: zoom-out;
+  transition: none;
 }
 
 .ref-modal__nav-btn {
