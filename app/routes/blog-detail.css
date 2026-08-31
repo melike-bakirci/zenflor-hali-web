@@ -19,7 +19,7 @@
   display: grid;
   grid-template-columns: 54px 1fr minmax(280px, 320px);
   gap: 1.75rem;
-  align-items: flex-start;
+  align-items: start;
   margin-top: 1.25rem;
 }
 
@@ -149,8 +149,6 @@
    FLOATING READING BAR (Responsive: Vertical on PC / Horizontal on Mobile)
    ============================================================ */
 .blog-reading-bar {
-  position: sticky;
-  top: calc(var(--navbar-height, 104px) + 1.5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,8 +158,6 @@
   border-radius: 14px;
   padding: 10px 6px;
   box-shadow: none;
-  z-index: 10;
-  align-self: flex-start;
   width: 54px;
   box-sizing: border-box;
 }
@@ -660,21 +656,10 @@
    SIDEBAR (Desktop Sticky / Mobile Responsive Section)
    ============================================================ */
 .blog-detail__sidebar {
-  position: sticky;
-  top: calc(var(--navbar-height, 104px) + 1.5rem);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-height: calc(100vh - var(--navbar-height, 104px) - 3rem);
-  overflow-y: auto;
-  overflow-x: visible;
-  padding-right: 2px;
-  scrollbar-width: none;
   min-width: 0;
-}
-
-.blog-detail__sidebar::-webkit-scrollbar {
-  display: none;
 }
 
 .blog-sidebar__card {
