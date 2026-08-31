@@ -243,7 +243,7 @@ const Footer: React.FC = () => {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p className="footer__copyright">
-            © {year} {SITE_NAME} Karo & Çim Halı. {t("footer.rights")}
+            © {year} {SITE_NAME} Karo & Çim Halı Çözümleri. {t("footer.rights")}
           </p>
           <div className="footer__legal">
             <Link to="/gizlilik" className="footer__legal-link">
