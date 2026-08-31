@@ -11,8 +11,6 @@ export const blogPosts: BlogPost[] = [
     content: `
 Karo halı, ofis zemin kaplaması söz konusu olduğunda en esnek ve pratik çözümlerden biridir. Ancak doğru ürünü seçmek için birkaç temel faktörü göz önünde bulundurmak gerekir.
 
-![Karo Halı Uygulaması](/images/blog-karo-detail.png)
-
 ## 1. Trafik Yoğunluğunu Belirleyin
 
 Ofisinizdeki koridorlar, toplantı odaları ve giriş alanları farklı trafik yüklerine maruz kalır. Yoğun trafik alanları için twisted pile veya loop pile ürünler tercih edilmelidir.
@@ -48,8 +46,6 @@ Karo halının altına uygulanacak alt taban (underlayment), akustik ve termal k
       "Sentetik çim halınızı yıllarca ilk günkü görünümünde tutmak için mevsimsel bakım önerileri.",
     content: `
 Sentetik çim, gerçek çime göre çok daha az bakım gerektirir. Ancak uzun ömürlü ve estetik görünümünü korumak için bazı rutin işlemler şarttır.
-
-![Sentetik Çim Detayı](/images/blog-cim-detail.png)
 
 ## İlkbahar Bakımı
 

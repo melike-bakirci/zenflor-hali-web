@@ -285,8 +285,9 @@ const BlogDetail: React.FC = () => {
   ];
 
   return (
-    <div className="blog-detail page-enter">
-      <div className="blog-detail__wrapper container">
+    <div className="blog-detail-page page-enter">
+      <div className="blog-detail">
+        <div className="blog-detail__wrapper container">
         {/* Breadcrumb */}
         <Breadcrumb
           items={[
@@ -295,12 +296,6 @@ const BlogDetail: React.FC = () => {
             { label: title },
           ]}
         />
-
-        <nav className="blog-detail__breadcrumb" aria-label="Breadcrumb">
-          <Link to="/blog" className="blog-detail__back">
-            <ArrowLeft size={16} /> {t("blog.backToBlog")}
-          </Link>
-        </nav>
 
         <div className="blog-detail__layout">
           {/* ── LEFT READING BAR (sticky, grid col 1) ── */}
@@ -479,42 +474,12 @@ const BlogDetail: React.FC = () => {
                     pre: ({ children }) => (
                       <pre className="blog-pre">{children}</pre>
                     ),
-                    img: ({ src, alt }) => (
-                      <figure className="blog-figure">
-                        <img
-                          src={src}
-                          alt={`Blog İçerik Görseli: ${alt || title}`}
-                          className="blog-figure__img"
-                        />
-                        {alt && (
-                          <figcaption className="blog-figure__caption">
-                            {alt}
-                          </figcaption>
-                        )}
-                      </figure>
-                    ),
+                    img: () => null,
                   }}
                 >
                   {content}
                 </ReactMarkdown>
               </div>
-
-              {/* Tags */}
-              {post.tags && post.tags.length > 0 && (
-                <div className="blog-detail__tags">
-                  <span className="blog-detail__tags-label">
-                    <Tag size={14} />
-                    {t("blog.tags")}
-                  </span>
-                  <div className="blog-detail__tags-list">
-                    {post.tags.map((tag) => (
-                      <span key={tag} className="blog-detail__tag">
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
 
               {/* Share Strip */}
               <div className="blog-detail__share-strip">
@@ -715,14 +680,15 @@ const BlogDetail: React.FC = () => {
           </aside>
         </div>
       </div>
-
-      {/* Quote CTA Banner */}
-      <QuoteCtaBanner
-        title={t("blog.detailQuoteBannerTitle")}
-        subtitle={t("blog.detailQuoteBannerSubtitle")}
-      />
     </div>
-  );
+
+    {/* Quote CTA Banner */}
+    <QuoteCtaBanner
+      title={t("blog.detailQuoteBannerTitle")}
+      subtitle={t("blog.detailQuoteBannerSubtitle")}
+    />
+  </div>
+);
 };
 
 export default BlogDetail;

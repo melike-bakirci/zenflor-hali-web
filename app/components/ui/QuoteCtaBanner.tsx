@@ -60,8 +60,8 @@ const QuoteCtaBanner: React.FC<QuoteCtaBannerProps> = ({
         <p className="quote-cta__subtitle">{displaySubtitle}</p>
         <div className="quote-cta__actions">
           {/* Left Button: Direct Phone Call */}
-          <a href={`tel:${phoneNumber}`} className="btn btn-primary btn-lg">
-            <Phone size={18} />
+          <a href={`tel:${phoneNumber}`} className="btn btn-primary quote-cta__btn">
+            <Phone size={16} />
             <span>{displayPhoneText}</span>
           </a>
 
@@ -70,7 +70,7 @@ const QuoteCtaBanner: React.FC<QuoteCtaBannerProps> = ({
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-whatsapp btn-lg"
+            className="btn btn-whatsapp quote-cta__btn"
           >
             <WhatsAppIcon />
             <span>{displayWhatsappText}</span>

@@ -4,9 +4,8 @@
 
 /* ── Outer wrapper ── */
 .blog-detail {
-  padding: 2.5rem 0 5rem;
+  padding: 2.5rem 0 3.5rem;
   background: #f8fafc;
-  min-height: 70vh;
 }
 
 .blog-detail__wrapper {
