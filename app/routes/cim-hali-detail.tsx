@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link, Navigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { Phone } from "lucide-react";
+import { Phone, LayoutGrid, List } from "lucide-react";
 import ProductCard from "~/components/ui/ProductCard";
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import { cimHaliProducts } from "~/data/cimHaliProducts";
@@ -65,6 +65,7 @@ const CimHaliDetail: React.FC = () => {
     (f) => f.label === "Fiyat" || f.label === "Price",
   );
   const others = cimHaliProducts.filter((p) => p.slug !== slug).slice(0, 4);
+  const [otherViewMode, setOtherViewMode] = useState<"grid" | "list">("grid");
   const discountInfo = getProductDiscountInfo(product);
 
   return (
@@ -175,10 +176,37 @@ const CimHaliDetail: React.FC = () => {
 
         {/* Other Products */}
         <section className="pd-others">
-          <h2 className="pd-others-title">{t("products.otherProducts")}</h2>
-          <div className="grid-4">
+          <div className="pd-others-header">
+            <h2 className="pd-others-title">{t("products.otherProducts")}</h2>
+            <div className="view-mode-toggle" role="group" aria-label="Görünüm Modu">
+              <button
+                type="button"
+                className={`view-mode-btn ${otherViewMode === "grid" ? "active" : ""}`}
+                onClick={() => setOtherViewMode("grid")}
+                title={t("products.gridView")}
+                aria-label={t("products.gridView")}
+              >
+                <LayoutGrid size={18} />
+              </button>
+              <button
+                type="button"
+                className={`view-mode-btn ${otherViewMode === "list" ? "active" : ""}`}
+                onClick={() => setOtherViewMode("list")}
+                title={t("products.listView")}
+                aria-label={t("products.listView")}
+              >
+                <List size={18} />
+              </button>
+            </div>
+          </div>
+          <div className={otherViewMode === "list" ? "products-list-view" : "grid-4"}>
             {others.map((p) => (
-              <ProductCard key={p.id} product={p} basePath="/cim-hali" />
+              <ProductCard
+                key={p.id}
+                product={p}
+                basePath="/cim-hali"
+                viewMode={otherViewMode}
+              />
             ))}
           </div>
         </section>

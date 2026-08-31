@@ -220,13 +220,68 @@
   margin-top: 1.5rem;
 }
 
+.pd-others-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  gap: 1rem;
+}
+
 .pd-others-title {
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--color-text-primary, #0f172a);
-  margin-bottom: 1.75rem;
+  margin-bottom: 0;
   letter-spacing: -0.02em;
 }
+
+/* View Mode Switcher */
+.view-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-bg-surface, #f1f5f9);
+  border: 1px solid var(--color-border, #e2e8f0);
+  padding: 3px;
+  border-radius: var(--radius-btn, 8px);
+  gap: 2px;
+}
+
+.view-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary, #64748b);
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+  transition: all var(--transition-fast, 150ms ease);
+  padding: 0;
+}
+
+.view-mode-btn:hover {
+  color: var(--color-text-primary, #0f172a);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.view-mode-btn.active {
+  background: #ffffff;
+  color: var(--color-primary, #66101f);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+  font-weight: 700;
+}
+
+/* Products List View Layout */
+.products-list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
 
 /* =======================================
    RESPONSIVE BREAKPOINTS

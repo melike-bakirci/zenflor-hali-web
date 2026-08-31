@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { LayoutGrid, List } from "lucide-react";
 import type { SortOption } from "~/utils/productUtils";
 import "./ProductFilterBar.css";
 
@@ -9,6 +10,8 @@ interface ProductFilterBarProps {
   sortOption: SortOption;
   onSortChange: (sort: SortOption) => void;
   totalCount: number;
+  viewMode?: "grid" | "list";
+  onViewModeChange?: (mode: "grid" | "list") => void;
 }
 
 const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
@@ -17,6 +20,8 @@ const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
   sortOption,
   onSortChange,
   totalCount,
+  viewMode = "grid",
+  onViewModeChange,
 }) => {
   const { t } = useTranslation();
   const [inputValue, setInputValue] = useState(searchQuery);
@@ -133,6 +138,29 @@ const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
             </svg>
           </div>
         </div>
+
+        {onViewModeChange && (
+          <div className="view-mode-toggle" role="group" aria-label="Görünüm Modu">
+            <button
+              type="button"
+              className={`view-mode-btn ${viewMode === "grid" ? "active" : ""}`}
+              onClick={() => onViewModeChange("grid")}
+              title={t("products.gridView")}
+              aria-label={t("products.gridView")}
+            >
+              <LayoutGrid size={18} />
+            </button>
+            <button
+              type="button"
+              className={`view-mode-btn ${viewMode === "list" ? "active" : ""}`}
+              onClick={() => onViewModeChange("list")}
+              title={t("products.listView")}
+              aria-label={t("products.listView")}
+            >
+              <List size={18} />
+            </button>
+          </div>
+        )}
 
         <div className="product-filter-bar__count">
           {t("products.showingProducts", { count: totalCount })}

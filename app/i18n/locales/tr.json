@@ -104,6 +104,8 @@
     "showingProducts": "{{count}} ürün",
     "sampleRequest": "Numune Talebi",
     "discountBadge": "{{amount}} ₺ İndirim",
+    "gridView": "Izgara Görünümü",
+    "listView": "Liste Görünümü",
     "karoQuoteBannerTitle": "Karo Halı Projeniz İçin Teklif Alın!",
     "karoQuoteBannerSubtitle": "Ofis, otel ve ticari alanlarınız için zemin ölçülerinize uygun özel karo halı fiyat teklifi ve ücretsiz numune isteyin.",
     "cimQuoteBannerTitle": "Çim Halı Projeniz İçin Teklif Alın!",

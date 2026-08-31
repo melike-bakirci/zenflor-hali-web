@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Search, X, ZoomIn, ZoomOut, Download, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, X, Download, ChevronLeft, ChevronRight } from "lucide-react";
 import "./ProductImageZoom.css";
 
 interface ProductImageZoomProps {

@@ -12,9 +12,14 @@ import "./ProductCard.css";
 interface ProductCardProps {
   product: Product;
   basePath: string;
+  viewMode?: "grid" | "list";
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+  product,
+  basePath,
+  viewMode = "grid",
+}) => {
   const { t } = useTranslation();
   const name = product.name;
   const shortDesc = product.shortDesc;
@@ -99,7 +104,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, basePath }) => {
   return (
     <Link
       to={`${basePath}/${product.slug}`}
-      className="product-card card"
+      className={`product-card card ${viewMode === "list" ? "product-card--list" : ""}`}
       id={`product-${product.id}`}
     >
       <div className="product-card__image-wrap">

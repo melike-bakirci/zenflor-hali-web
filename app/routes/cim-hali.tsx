@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import ProductCard from "~/components/ui/ProductCard";
@@ -36,6 +36,7 @@ export function meta() {
 const CimHali: React.FC = () => {
   const { t } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   const { filters, currentPage } = useMemo(() => {
     return parseFilterParams(searchParams);
@@ -126,6 +127,8 @@ const CimHali: React.FC = () => {
                 sortOption={filters.sortOption}
                 onSortChange={handleSortChange}
                 totalCount={filteredProducts.length}
+                viewMode={viewMode}
+                onViewModeChange={setViewMode}
               />
 
               <ActiveFilters
@@ -136,12 +139,13 @@ const CimHali: React.FC = () => {
 
               {filteredProducts.length > 0 ? (
                 <>
-                  <div className="grid-4">
+                  <div className={viewMode === "list" ? "products-list-view" : "grid-4"}>
                     {currentProducts.map((product) => (
                       <ProductCard
                         key={product.id}
                         product={product}
                         basePath="/cim-hali"
+                        viewMode={viewMode}
                       />
                     ))}
                   </div>

@@ -177,6 +177,45 @@
   border-left: 1px solid #e5e7eb;
 }
 
+/* View Mode Switcher */
+.product-filter-bar .view-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-bg-surface, #f1f5f9);
+  border: 1px solid var(--color-border, #e2e8f0);
+  padding: 3px;
+  border-radius: var(--radius-btn, 8px);
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.product-filter-bar .view-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary, #64748b);
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+  transition: all var(--transition-fast, 150ms ease);
+  padding: 0;
+}
+
+.product-filter-bar .view-mode-btn:hover {
+  color: var(--color-text-primary, #0f172a);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.product-filter-bar .view-mode-btn.active {
+  background: #ffffff;
+  color: var(--color-primary, #66101f);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+  font-weight: 700;
+}
+
 @media (max-width: 768px) {
   .product-filter-bar {
     flex-direction: column;
