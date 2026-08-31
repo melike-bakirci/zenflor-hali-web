@@ -2,14 +2,94 @@
 .pd-zoom-trigger {
   position: relative;
   cursor: zoom-in;
-}
-
-.pd-zoom-trigger:hover .pd-image {
-  transform: scale(1.02);
+  overflow: hidden;
 }
 
 .pd-zoom-trigger .pd-image {
-  transition: transform 300ms ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Slider Navigation Arrows */
+.pd-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #111827;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.pd-nav-arrow--prev {
+  left: 0.875rem;
+}
+
+.pd-nav-arrow--next {
+  right: 0.875rem;
+}
+
+.pd-nav-arrow:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.pd-nav-arrow:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+/* Gallery Container */
+.pd-gallery-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Slider Dots (Circles Indicating Images Count - Outside Image) */
+.pd-slider-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0 0.25rem;
+  width: 100%;
+}
+
+.pd-slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pd-slider-dot:hover {
+  background: #94a3b8;
+  transform: scale(1.2);
+}
+
+.pd-slider-dot--active {
+  background: #111827;
+  width: 22px;
+  border-radius: 9999px;
 }
 
 /* Minimalist Action Buttons Overlay on Product Image */
@@ -17,7 +97,7 @@
   position: absolute;
   bottom: 0.875rem;
   right: 0.875rem;
-  z-index: 3;
+  z-index: 4;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -35,7 +115,7 @@
   color: #111827;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  box-shadow: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 200ms ease;
   cursor: pointer;
 }
@@ -44,9 +124,7 @@
   background: #f3f4f6;
   color: #111827;
   border-color: #d1d5db;
-  color: #111827;
   transform: scale(1.1);
-  box-shadow: none;
 }
 
 /* === MINIMALIST FULLSCREEN BACKDROP === */
@@ -129,6 +207,40 @@
   border-color: #d1d5db;
 }
 
+/* Modal Navigation Arrows */
+.pd-modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.pd-modal-arrow--prev {
+  left: 1.5rem;
+}
+
+.pd-modal-arrow--next {
+  right: 1.5rem;
+}
+
+.pd-modal-arrow:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.08);
+}
+
 /* Minimalist Viewport */
 .pd-minimal-viewport {
   width: 100%;
@@ -151,6 +263,44 @@
   border-radius: 4px;
 }
 
+/* Modal Dots Navigation */
+.pd-modal-dots {
+  position: absolute;
+  bottom: 3.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 9999px;
+}
+
+.pd-modal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.pd-modal-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.pd-modal-dot--active {
+  background: #ffffff;
+  width: 20px;
+  border-radius: 9999px;
+}
+
 /* Minimalist Bottom Hint */
 .pd-minimal-bottom-hint {
   position: absolute;
@@ -169,6 +319,26 @@
 }
 
 @media (max-width: 640px) {
+  .pd-nav-arrow {
+    width: 34px;
+    height: 34px;
+  }
+  .pd-nav-arrow--prev {
+    left: 0.5rem;
+  }
+  .pd-nav-arrow--next {
+    right: 0.5rem;
+  }
+  .pd-modal-arrow {
+    width: 38px;
+    height: 38px;
+  }
+  .pd-modal-arrow--prev {
+    left: 0.75rem;
+  }
+  .pd-modal-arrow--next {
+    right: 0.75rem;
+  }
   .pd-minimal-topbar {
     top: 1rem;
     left: 1rem;

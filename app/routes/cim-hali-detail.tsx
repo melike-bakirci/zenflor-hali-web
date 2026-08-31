@@ -85,6 +85,15 @@ const CimHaliDetail: React.FC = () => {
           <div className="pd-media-col">
             <ProductImageZoom
               src={product.image}
+              images={
+                product.gallery && product.gallery.length > 0
+                  ? [product.image, ...product.gallery]
+                  : [
+                      product.image,
+                      "/images/cat-cim-landscape.png",
+                      "/images/cat-cim-balcony.png",
+                    ]
+              }
               alt={name}
               badge={
                 discountInfo.hasDiscount
