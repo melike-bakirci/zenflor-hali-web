@@ -221,77 +221,234 @@
   color: var(--color-primary, #66101f);
   padding: 0.5rem;
   border-radius: var(--radius-btn, 8px);
-  transition: background 150ms ease;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background 150ms ease, color 150ms ease;
 }
 
 .navbar__mobile-toggle:hover {
   background: var(--color-bg-surface, #f8fafc);
+  color: var(--color-primary-dark, #500d18);
 }
 
-/* Mobile menu */
-.navbar__mobile {
-  position: absolute;
-  top: 100%;
-  left: 0;
+/* Mobile Drawer Backdrop */
+.navbar__drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar__drawer-backdrop--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile Drawer Panel */
+.navbar__drawer {
+  position: fixed;
+  top: 0;
   right: 0;
+  bottom: 0;
+  width: 85vw;
+  max-width: 330px;
+  height: 100dvh;
+  height: 100vh;
   background: #ffffff;
-  border-bottom: 1px solid var(--color-border, #e2e8f0);
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
-  padding: 0.75rem 0 1.25rem;
-  animation: fadeInUp 0.2s ease forwards;
-  z-index: 999;
-}
-
-.navbar__mobile-links {
+  z-index: 1101;
   display: flex;
   flex-direction: column;
-  padding: 0 0.75rem;
+  box-shadow: -10px 0 35px rgba(15, 23, 42, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  overflow: hidden;
 }
 
-.navbar__mobile-link {
-  padding: 0.75rem 1rem;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--color-text-secondary, #475569);
-  border-radius: var(--radius-btn, 8px);
-  transition:
-    color 150ms ease,
-    background 150ms ease;
+.navbar__drawer--open {
+  transform: translateX(0);
 }
 
-.navbar__mobile-link:hover {
-  color: var(--color-primary, #66101f);
-  background: rgba(102, 16, 31, 0.05);
-}
-
-.navbar__mobile-link--active {
-  color: var(--color-primary, #66101f) !important;
-  background: rgba(102, 16, 31, 0.08);
-}
-
-.navbar__mobile-bottom {
-  padding: 0.75rem 1.75rem 0;
-  border-top: 1px solid var(--color-border, #e2e8f0);
-  margin-top: 0.75rem;
+/* Drawer Header */
+.navbar__drawer-header {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  min-height: 64px;
+  flex-shrink: 0;
 }
 
-.navbar__mobile-bottom .lang-switcher__btn {
-  color: var(--color-text-secondary, #475569);
-  font-size: 0.85rem;
+.navbar__drawer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
 }
 
-.navbar__mobile-bottom .lang-switcher__btn:hover {
-  color: var(--color-primary, #66101f);
+.navbar__drawer-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
 }
 
-.navbar__mobile-bottom .lang-switcher__btn--active {
-  color: var(--color-primary, #66101f);
+.navbar__drawer-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
 }
 
-.navbar__mobile-bottom .lang-switcher__sep {
+.navbar__drawer-logo-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--color-text-primary, #0f172a);
+}
+
+.navbar__drawer-logo-tagline {
+  font-size: 0.625rem;
   color: var(--color-text-muted, #64748b);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.navbar__drawer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.navbar__drawer-close:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Drawer Body Navigation */
+.navbar__drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+}
+
+.navbar__drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.navbar__drawer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #1e293b);
+  text-decoration: none;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.navbar__drawer-link-text {
+  flex: 1;
+}
+
+.navbar__drawer-link-arrow {
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.navbar__drawer-link:hover {
+  background: #f8fafc;
+  color: var(--color-primary, #66101f);
+}
+
+.navbar__drawer-link:hover .navbar__drawer-link-arrow {
+  color: var(--color-primary, #66101f);
+  transform: translateX(3px);
+}
+
+.navbar__drawer-link--active {
+  background: #f8f1f1 !important;
+  color: var(--color-primary, #66101f) !important;
+  font-weight: 700;
+}
+
+.navbar__drawer-link--active .navbar__drawer-link-arrow {
+  color: var(--color-primary, #66101f) !important;
+}
+
+/* Drawer Footer Contact List */
+.navbar__drawer-footer {
+  padding: 1.25rem 1.25rem 1.75rem;
+  border-top: 1px solid #f1f5f9;
+  flex-shrink: 0;
+  background: #ffffff;
+}
+
+.navbar__drawer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.navbar__drawer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #475569;
+  text-decoration: none;
+  padding: 0.2rem 0;
+  transition: color 150ms ease;
+}
+
+.navbar__drawer-contact-icon {
+  color: #64748b;
+  flex-shrink: 0;
+  transition: color 150ms ease;
+}
+
+.navbar__drawer-contact-item:hover {
+  color: var(--color-primary, #66101f);
+}
+
+.navbar__drawer-contact-item:hover .navbar__drawer-contact-icon {
+  color: var(--color-primary, #66101f);
+}
+
+.navbar__drawer-contact-item--text {
+  cursor: default;
+}
+
+.navbar__drawer-contact-item--text:hover {
+  color: #475569;
+}
+
+.navbar__drawer-contact-item--text:hover .navbar__drawer-contact-icon {
+  color: #64748b;
 }
 
 /* Responsive: Tablet and Desktop Transition */
