@@ -1,0 +1,120 @@
+.active-filters-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.65rem 1.15rem;
+  margin-top: -0.65rem;
+  margin-bottom: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  animation: activeFiltersFadeIn 0.2s ease-out;
+}
+
+@keyframes activeFiltersFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.active-filters-bar__left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  min-width: 0;
+}
+
+.active-filters-bar__title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.active-filters-bar__tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.active-filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #eff4f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  padding: 0.25rem 0.65rem 0.25rem 0.75rem;
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  line-height: 1.25;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.active-filter-tag:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+.active-filter-tag__close {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.active-filter-tag:hover .active-filter-tag__close {
+  color: #dc2626;
+  transform: scale(1.15);
+}
+
+.active-filters-bar__clear-all {
+  background: transparent;
+  border: none;
+  color: #dc2626;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-left: auto;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.active-filters-bar__clear-all:hover {
+  color: #b91c1c;
+  background: #fef2f2;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .active-filters-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .active-filters-bar__clear-all {
+    margin-left: 0;
+    align-self: flex-end;
+    padding: 0;
+  }
+}

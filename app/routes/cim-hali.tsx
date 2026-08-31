@@ -5,6 +5,7 @@ import Breadcrumb from "~/components/ui/Breadcrumb";
 import Pagination from "~/components/ui/Pagination";
 import ProductFilterBar from "~/components/ui/ProductFilterBar";
 import ProductSidebarFilter from "~/components/ui/ProductSidebarFilter";
+import ActiveFilters from "~/components/ui/ActiveFilters";
 import { cimHaliProducts } from "~/data/cimHaliProducts";
 import {
   filterAndSortProducts,
@@ -129,6 +130,12 @@ const CimHali: React.FC = () => {
                 sortOption={filters.sortOption}
                 onSortChange={handleSortChange}
                 totalCount={filteredProducts.length}
+              />
+
+              <ActiveFilters
+                filters={filters}
+                onFilterChange={handleFilterChange}
+                onResetFilters={handleResetFilters}
               />
 
               {filteredProducts.length > 0 ? (

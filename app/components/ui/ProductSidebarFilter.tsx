@@ -269,38 +269,42 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
             {t("filters.priceRange")}
           </h4>
           <div className="price-inputs">
-            <div className="price-input-field">
-              <input
-                type="number"
-                min={minAvailablePrice}
-                max={tempPriceMax !== "" ? Number(tempPriceMax) : maxAvailablePrice}
-                value={tempPriceMin}
-                onChange={(e) =>
-                  setTempPriceMin(e.target.value === "" ? "" : Number(e.target.value))
-                }
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") handlePriceApply();
-                }}
-                placeholder={minAvailablePrice ? String(minAvailablePrice) : "0"}
-              />
-              <span>₺</span>
+            <div className="price-input-col">
+              <span className="price-input-label">{t("filters.minPrice", "Min (₺)")}</span>
+              <div className="price-input-field">
+                <input
+                  type="number"
+                  min={minAvailablePrice}
+                  max={tempPriceMax !== "" ? Number(tempPriceMax) : maxAvailablePrice}
+                  value={tempPriceMin}
+                  onChange={(e) =>
+                    setTempPriceMin(e.target.value === "" ? "" : Number(e.target.value))
+                  }
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") handlePriceApply();
+                  }}
+                  placeholder={minAvailablePrice ? String(minAvailablePrice) : "0"}
+                />
+              </div>
             </div>
             <span className="price-dash">-</span>
-            <div className="price-input-field">
-              <input
-                type="number"
-                min={tempPriceMin !== "" ? Number(tempPriceMin) : minAvailablePrice}
-                max={maxAvailablePrice}
-                value={tempPriceMax}
-                onChange={(e) =>
-                  setTempPriceMax(e.target.value === "" ? "" : Number(e.target.value))
-                }
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") handlePriceApply();
-                }}
-                placeholder={maxAvailablePrice ? String(maxAvailablePrice) : ""}
-              />
-              <span>₺</span>
+            <div className="price-input-col">
+              <span className="price-input-label">{t("filters.maxPrice", "Max (₺)")}</span>
+              <div className="price-input-field">
+                <input
+                  type="number"
+                  min={tempPriceMin !== "" ? Number(tempPriceMin) : minAvailablePrice}
+                  max={maxAvailablePrice}
+                  value={tempPriceMax}
+                  onChange={(e) =>
+                    setTempPriceMax(e.target.value === "" ? "" : Number(e.target.value))
+                  }
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") handlePriceApply();
+                  }}
+                  placeholder={maxAvailablePrice ? String(maxAvailablePrice) : ""}
+                />
+              </div>
             </div>
           </div>
           <div className="price-actions">

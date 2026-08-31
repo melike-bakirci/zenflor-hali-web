@@ -112,7 +112,8 @@
   "filters": {
     "filterProducts": "Ürünleri Filtrele",
     "filtersTitle": "Filtreler",
-    "clearAll": "Tümünü Temizle",
+    "clearAll": "Tümünü Kaldır",
+    "activeFilters": "Aktif Filtreler:",
     "yarnType": "İplik Cinsi",
     "color": "Renk",
     "dimension": "Kalınlık",
@@ -121,6 +122,8 @@
     "structure": "Yapı",
     "backing": "Taban",
     "priceRange": "Fiyat Aralığı",
+    "minPrice": "Min (₺)",
+    "maxPrice": "Max (₺)",
     "applyPrice": "Fiyat Uygula",
     "showFilters": "Filtreleri Göster"
   },
