@@ -21,10 +21,9 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
   const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [zoomLevel, setZoomLevel] = useState(2.2);
+  const [scale, setScale] = useState(1);
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
-  const [isHovering, setIsHovering] = useState(false);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const lightboxImgRef = useRef<HTMLImageElement>(null);
   const touchStartXRef = useRef<number | null>(null);
 
   // Normalize image list
@@ -33,10 +32,14 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
   const hasMultipleImages = imageList.length > 1;
 
   const prevImage = useCallback(() => {
+    setScale(1);
+    setMousePos({ x: 50, y: 50 });
     setCurrentIndex((prev) => (prev - 1 + imageList.length) % imageList.length);
   }, [imageList.length]);
 
   const nextImage = useCallback(() => {
+    setScale(1);
+    setMousePos({ x: 50, y: 50 });
     setCurrentIndex((prev) => (prev + 1) % imageList.length);
   }, [imageList.length]);
 
@@ -44,6 +47,7 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") {
+        setScale(1);
         setIsModalOpen(false);
       } else if (e.key === "ArrowLeft") {
         prevImage();
@@ -60,6 +64,8 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
       window.addEventListener("keydown", handleKeyDown);
     } else {
       document.body.style.overflow = "";
+      setScale(1);
+      setMousePos({ x: 50, y: 50 });
     }
 
     return () => {
@@ -68,51 +74,49 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
     };
   }, [isModalOpen, handleKeyDown]);
 
+  // Mouse move pan when zoomed in
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!imageRef.current) return;
-    const rect = imageRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    setMousePos({
-      x: Math.max(0, Math.min(100, x)),
-      y: Math.max(0, Math.min(100, y)),
-    });
+    if (!lightboxImgRef.current) return;
+    const rect = lightboxImgRef.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+    const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+    setMousePos({ x, y });
   };
 
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!imageRef.current || e.touches.length === 0) return;
-    const rect = imageRef.current.getBoundingClientRect();
-    const touch = e.touches[0];
-    const x = ((touch.clientX - rect.left) / rect.width) * 100;
-    const y = ((touch.clientY - rect.top) / rect.height) * 100;
-    setMousePos({
-      x: Math.max(0, Math.min(100, x)),
-      y: Math.max(0, Math.min(100, y)),
-    });
-  };
-
-  // Touch swipe support for main slider
-  const handleSliderTouchStart = (e: React.TouchEvent) => {
-    touchStartXRef.current = e.touches[0].clientX;
-  };
-
-  const handleSliderTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartXRef.current === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartXRef.current - touchEndX;
-    if (Math.abs(diff) > 40) {
-      if (diff > 0) {
-        nextImage();
-      } else {
-        prevImage();
-      }
-    }
-    touchStartXRef.current = null;
-  };
-
-  const toggleZoomLevel = (e: React.MouseEvent) => {
+  // Double click to zoom in / out
+  const handleDoubleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
-    setZoomLevel((prev) => (prev > 1.8 ? 1.5 : 2.5));
+    if (scale > 1) {
+      setScale(1);
+      setMousePos({ x: 50, y: 50 });
+    } else {
+      if (lightboxImgRef.current) {
+        const rect = lightboxImgRef.current.getBoundingClientRect();
+        const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+        const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+        setMousePos({ x, y });
+      }
+      setScale(2.4);
+    }
+  };
+
+  // Mouse wheel zoom
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const delta = e.deltaY < 0 ? 0.35 : -0.35;
+    setScale((prev) => {
+      const next = Math.max(1, Math.min(3.5, Number((prev + delta).toFixed(2))));
+      if (next === 1) {
+        setMousePos({ x: 50, y: 50 });
+      } else if (lightboxImgRef.current) {
+        const rect = lightboxImgRef.current.getBoundingClientRect();
+        const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+        const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+        setMousePos({ x, y });
+      }
+      return next;
+    });
   };
 
   const handleDownload = async (e: React.MouseEvent) => {
@@ -148,6 +152,25 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
       link.click();
       document.body.removeChild(link);
     }
+  };
+
+  // Touch swipe support for main slider
+  const handleSliderTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+  };
+
+  const handleSliderTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartXRef.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartXRef.current - touchEndX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        nextImage();
+      } else {
+        prevImage();
+      }
+    }
+    touchStartXRef.current = null;
   };
 
   return (
@@ -239,7 +262,7 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
         </div>
       )}
 
-      {/* Minimalist Fullscreen Zoom Lightbox Modal */}
+      {/* Fullscreen Lightbox Modal Matching Reference UI */}
       {isModalOpen && (
         <div
           className="pd-modal-backdrop"
@@ -247,118 +270,115 @@ const ProductImageZoom: React.FC<ProductImageZoomProps> = ({
         >
           {/* Top Bar Floating Controls */}
           <div
-            className="pd-minimal-topbar"
+            className="pd-lightbox-topbar"
             onClick={(e) => e.stopPropagation()}
           >
-            <span className="pd-minimal-title">
-              {alt} {hasMultipleImages ? `(${currentIndex + 1} / ${imageList.length})` : ""}
-            </span>
-            <div className="pd-minimal-actions">
+            <div className="pd-lightbox-header-left">
+              <span className="pd-lightbox-title">{alt.toUpperCase()}</span>
+              {hasMultipleImages && (
+                <span className="pd-lightbox-counter">
+                  {currentIndex + 1} / {imageList.length}
+                </span>
+              )}
+            </div>
+
+            <div className="pd-lightbox-actions">
               <button
                 type="button"
-                className="pd-minimal-btn"
+                className="pd-lightbox-action-btn"
                 onClick={handleDownload}
                 title={t("zoom.download")}
+                aria-label={t("zoom.download")}
               >
-                <Download size={18} />
+                <Download size={20} />
               </button>
               <button
                 type="button"
-                className="pd-minimal-btn"
-                onClick={toggleZoomLevel}
-                title={
-                  zoomLevel > 1.8
-                    ? t("zoom.zoomOut")
-                    : t("zoom.zoomIn")
-                }
-              >
-                {zoomLevel > 1.8 ? <ZoomOut size={18} /> : <ZoomIn size={18} />}
-              </button>
-              <button
-                type="button"
-                className="pd-minimal-close"
+                className="pd-lightbox-action-btn pd-lightbox-action-btn--close"
                 onClick={() => setIsModalOpen(false)}
                 title={t("zoom.closeEsc")}
+                aria-label={t("zoom.closeEsc")}
               >
                 <X size={20} />
               </button>
             </div>
           </div>
 
-          {/* Modal Navigation Arrows */}
+          {/* Modal Navigation Arrows (Left / Right) */}
           {hasMultipleImages && (
             <>
               <button
                 type="button"
-                className="pd-modal-arrow pd-modal-arrow--prev"
+                className="pd-lightbox-arrow pd-lightbox-arrow--prev"
                 aria-label="Önceki Görsel"
                 onClick={(e) => {
                   e.stopPropagation();
                   prevImage();
                 }}
               >
-                <ChevronLeft size={28} />
+                <ChevronLeft size={26} />
               </button>
               <button
                 type="button"
-                className="pd-modal-arrow pd-modal-arrow--next"
+                className="pd-lightbox-arrow pd-lightbox-arrow--next"
                 aria-label="Sonraki Görsel"
                 onClick={(e) => {
                   e.stopPropagation();
                   nextImage();
                 }}
               >
-                <ChevronRight size={28} />
+                <ChevronRight size={26} />
               </button>
             </>
           )}
 
-          {/* Pure Viewport Container */}
+          {/* Center Image Container with Double Click & Mouse Zoom */}
           <div
-            className="pd-minimal-viewport"
+            className={`pd-lightbox-center ${scale > 1 ? "is-zoomed" : ""}`}
             onClick={(e) => e.stopPropagation()}
+            onDoubleClick={handleDoubleClick}
             onMouseMove={handleMouseMove}
-            onTouchMove={handleTouchMove}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => {
-              setIsHovering(false);
-              setMousePos({ x: 50, y: 50 });
-            }}
+            onWheel={handleWheel}
           >
-            <img
-              ref={imageRef}
-              src={currentImage}
-              alt={`${alt} - ${currentIndex + 1}`}
-              className="pd-minimal-image"
-              style={{
-                transformOrigin: `${mousePos.x}% ${mousePos.y}%`,
-                transform: isHovering ? `scale(${zoomLevel})` : "scale(1)",
-              }}
-            />
+            <div className="pd-lightbox-img-wrapper">
+              <img
+                ref={lightboxImgRef}
+                src={currentImage}
+                alt={`${alt} - ${currentIndex + 1}`}
+                className="pd-lightbox-img"
+                style={{
+                  transformOrigin: `${mousePos.x}% ${mousePos.y}%`,
+                  transform: `scale(${scale})`,
+                }}
+              />
+            </div>
           </div>
 
-          {/* Modal Dots Navigation */}
+          {/* Bottom Thumbnail Strip Container */}
           {hasMultipleImages && (
             <div
-              className="pd-modal-dots"
+              className="pd-lightbox-thumbs-container"
               onClick={(e) => e.stopPropagation()}
             >
-              {imageList.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  className={`pd-modal-dot ${idx === currentIndex ? "pd-modal-dot--active" : ""}`}
-                  aria-label={`Görsel ${idx + 1}`}
-                  onClick={() => setCurrentIndex(idx)}
-                />
-              ))}
+              <div className="pd-lightbox-thumbs-track">
+                {imageList.map((imgUrl, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    className={`pd-lightbox-thumb ${idx === currentIndex ? "pd-lightbox-thumb--active" : ""}`}
+                    onClick={() => setCurrentIndex(idx)}
+                    aria-label={`Görsel ${idx + 1}`}
+                  >
+                    <img
+                      src={imgUrl}
+                      alt={`${alt} thumbnail ${idx + 1}`}
+                      className="pd-lightbox-thumb-img"
+                    />
+                  </button>
+                ))}
+              </div>
             </div>
           )}
-
-          {/* Minimalist Bottom Hint */}
-          <div className="pd-minimal-bottom-hint">
-            <span>{t("zoom.panHint")}</span>
-          </div>
         </div>
       )}
     </div>

@@ -127,20 +127,21 @@
   transform: scale(1.1);
 }
 
-/* === MINIMALIST FULLSCREEN BACKDROP === */
+/* === FULLSCREEN LIGHTBOX MODAL === */
 .pd-modal-backdrop {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: rgba(10, 10, 10, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(15, 20, 26, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
   animation: pdFadeIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
 }
 
 @keyframes pdFadeIn {
@@ -152,12 +153,12 @@
   }
 }
 
-/* Minimalist Top Bar Controls */
-.pd-minimal-topbar {
+/* Lightbox Top Bar */
+.pd-lightbox-topbar {
   position: absolute;
-  top: 1.25rem;
-  left: 1.5rem;
-  right: 1.5rem;
+  top: 1.5rem;
+  left: 2rem;
+  right: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -165,50 +166,68 @@
   pointer-events: none;
 }
 
-.pd-minimal-title {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+.pd-lightbox-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   pointer-events: auto;
 }
 
-.pd-minimal-actions {
+.pd-lightbox-title {
+  color: #ffffff;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.pd-lightbox-counter {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.pd-lightbox-actions {
   display: flex;
   align-items: center;
   gap: 0.625rem;
   pointer-events: auto;
 }
 
-.pd-minimal-btn,
-.pd-minimal-close {
+.pd-lightbox-action-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: #111827;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
   cursor: pointer;
-  transition: all 150ms ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 180ms ease;
 }
 
-.pd-minimal-btn:hover,
-.pd-minimal-close:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.05);
+.pd-lightbox-action-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.06);
 }
 
-.pd-minimal-close:hover {
-  background: #f3f4f6;
-  color: #111827;
-  border-color: #d1d5db;
+.pd-lightbox-action-btn:active {
+  transform: scale(0.96);
 }
 
-/* Modal Navigation Arrows */
-.pd-modal-arrow {
+/* Modal Floating Navigation Arrows */
+.pd-lightbox-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -219,135 +238,166 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   color: #ffffff;
   cursor: pointer;
   transition: all 180ms ease;
 }
 
-.pd-modal-arrow--prev {
-  left: 1.5rem;
+.pd-lightbox-arrow--prev {
+  left: 2rem;
 }
 
-.pd-modal-arrow--next {
-  right: 1.5rem;
+.pd-lightbox-arrow--next {
+  right: 2rem;
 }
 
-.pd-modal-arrow:hover {
-  background: rgba(255, 255, 255, 0.25);
+.pd-lightbox-arrow:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.35);
   transform: translateY(-50%) scale(1.08);
 }
 
-/* Minimalist Viewport */
-.pd-minimal-viewport {
+.pd-lightbox-arrow:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+/* Center Image Viewport */
+.pd-lightbox-center {
   width: 100%;
   height: 100%;
-  max-width: 1200px;
-  max-height: 85vh;
+  max-width: 960px;
+  max-height: 72vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: auto;
+  padding: 0 1rem;
+  cursor: zoom-in;
+}
+
+.pd-lightbox-center.is-zoomed {
+  cursor: zoom-out;
+}
+
+.pd-lightbox-img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 70vh;
   overflow: hidden;
-  cursor: crosshair;
-  user-select: none;
+  border-radius: 16px;
 }
 
-.pd-minimal-image {
-  max-width: 90%;
-  max-height: 90%;
+.pd-lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
   object-fit: contain;
-  transition: transform 100ms ease-out;
-  border-radius: 4px;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  transition: transform 120ms ease-out;
+  user-select: none;
+  pointer-events: auto;
 }
 
-/* Modal Dots Navigation */
-.pd-modal-dots {
+/* Bottom Thumbnail Strip Container */
+.pd-lightbox-thumbs-container {
   position: absolute;
-  bottom: 3.25rem;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10000;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 9999px;
+  justify-content: center;
 }
 
-.pd-modal-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  border: none;
+.pd-lightbox-thumbs-track {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: rgba(26, 32, 44, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.pd-lightbox-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: transparent;
   padding: 0;
   cursor: pointer;
-  transition: all 200ms ease;
+  opacity: 0.6;
+  transition: all 180ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.pd-modal-dot:hover {
-  background: rgba(255, 255, 255, 0.8);
+.pd-lightbox-thumb:hover {
+  opacity: 0.9;
 }
 
-.pd-modal-dot--active {
-  background: #ffffff;
-  width: 20px;
-  border-radius: 9999px;
+.pd-lightbox-thumb--active {
+  opacity: 1;
+  border-color: #ffffff;
+  transform: scale(1.05);
 }
 
-/* Minimalist Bottom Hint */
-.pd-minimal-bottom-hint {
-  position: absolute;
-  bottom: 1.25rem;
-  z-index: 10000;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.7);
-  padding: 0.4rem 1rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
-  pointer-events: none;
+.pd-lightbox-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
-@media (max-width: 640px) {
-  .pd-nav-arrow {
-    width: 34px;
-    height: 34px;
-  }
-  .pd-nav-arrow--prev {
-    left: 0.5rem;
-  }
-  .pd-nav-arrow--next {
-    right: 0.5rem;
-  }
-  .pd-modal-arrow {
-    width: 38px;
-    height: 38px;
-  }
-  .pd-modal-arrow--prev {
-    left: 0.75rem;
-  }
-  .pd-modal-arrow--next {
-    right: 0.75rem;
-  }
-  .pd-minimal-topbar {
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .pd-lightbox-topbar {
     top: 1rem;
     left: 1rem;
     right: 1rem;
   }
-  .pd-minimal-title {
-    font-size: 0.8125rem;
+  .pd-lightbox-title {
+    font-size: 0.9375rem;
   }
-  .pd-minimal-bottom-hint {
-    display: none;
+  .pd-lightbox-action-btn {
+    width: 38px;
+    height: 38px;
+  }
+  .pd-lightbox-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  .pd-lightbox-arrow--prev {
+    left: 0.75rem;
+  }
+  .pd-lightbox-arrow--next {
+    right: 0.75rem;
+  }
+  .pd-lightbox-center {
+    max-height: 65vh;
+  }
+  .pd-lightbox-img {
+    max-height: 62vh;
+    border-radius: 12px;
+  }
+  .pd-lightbox-thumbs-container {
+    bottom: 1rem;
+  }
+  .pd-lightbox-thumb {
+    width: 40px;
+    height: 40px;
   }
 }
