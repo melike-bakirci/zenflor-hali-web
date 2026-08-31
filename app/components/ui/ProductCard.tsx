@@ -101,6 +101,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
     return specs.length > 0 ? specs.join(", ") : shortDesc || "";
   };
 
+  const imageAlt =
+    product.category === "karo-hali"
+      ? `${name} Karo Halı - Akustik Zemin Kaplama`
+      : `${name} Çim Halı - Peyzaj ve Dekoratif Zemin Kaplama`;
+
   return (
     <Link
       to={`${basePath}/${product.slug}`}
@@ -110,7 +115,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="product-card__image-wrap">
         <img
           src={product.image}
-          alt={`Uygun fiyatlı ve ucuz ${name} modelleri`}
+          alt={imageAlt}
           className="product-card__image"
           loading="lazy"
           decoding="async"
