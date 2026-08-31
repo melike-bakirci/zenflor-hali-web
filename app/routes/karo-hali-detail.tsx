@@ -114,13 +114,9 @@ const KaroHaliDetail: React.FC = () => {
           {/* Info */}
           <div className="pd-info">
             <h1 className="pd-name font-display">{name}</h1>
-            <p className="pd-desc">{description}</p>
 
             {priceFeature && (
               <div className="pd-price-box">
-                <span className="pd-price-label">
-                  {t("products.unitPrice")}
-                </span>
                 {discountInfo.hasDiscount ? (
                   <div className="pd-price-discount-wrap">
                     <span className="pd-price-old">
@@ -140,6 +136,8 @@ const KaroHaliDetail: React.FC = () => {
                 )}
               </div>
             )}
+
+            <p className="pd-desc">{description}</p>
 
             {/* Metrekare & Fiyat Hesaplayıcı */}
             <AreaCalculator
