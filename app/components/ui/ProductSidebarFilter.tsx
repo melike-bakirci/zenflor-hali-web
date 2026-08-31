@@ -5,7 +5,7 @@ import {
   type FilterState,
   getProductPrice,
   getProductDimension,
-  getProductBacking,
+  getProductStructure,
   getProductYarnType,
   getProductColor,
 } from "~/utils/productUtils";
@@ -26,6 +26,7 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
 }) => {
   const { t } = useTranslation();
   const [isOpenMobile, setIsOpenMobile] = useState(false);
+  const isKaroHali = products.some((p) => p.category === "karo-hali");
 
   // Extract available filter options dynamically from current category products
   const availableYarnTypes = Array.from(
@@ -39,8 +40,8 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
     new Set(products.map(getProductDimension).filter(Boolean)),
   );
 
-  const availableBackings = Array.from(
-    new Set(products.map(getProductBacking).filter(Boolean)),
+  const availableStructures = Array.from(
+    new Set(products.map(getProductStructure).filter(Boolean)),
   );
 
   // Calculate min and max price among products
@@ -50,25 +51,21 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
     ? Math.ceil(Math.max(...prices))
     : 2000;
 
-  const [tempPriceMin, setTempPriceMin] = useState<number>(
-    filters.priceRange[0] === 0 ? minAvailablePrice : filters.priceRange[0],
+  const [tempPriceMin, setTempPriceMin] = useState<number | "">(
+    filters.priceRange[0] === 0 ? "" : filters.priceRange[0],
   );
-  const [tempPriceMax, setTempPriceMax] = useState<number>(
-    filters.priceRange[1] === Infinity
-      ? maxAvailablePrice
-      : filters.priceRange[1],
+  const [tempPriceMax, setTempPriceMax] = useState<number | "">(
+    filters.priceRange[1] === Infinity ? "" : filters.priceRange[1],
   );
 
   useEffect(() => {
     setTempPriceMin(
-      filters.priceRange[0] === 0 ? minAvailablePrice : filters.priceRange[0],
+      filters.priceRange[0] === 0 ? "" : filters.priceRange[0],
     );
     setTempPriceMax(
-      filters.priceRange[1] === Infinity
-      ? maxAvailablePrice
-      : filters.priceRange[1],
+      filters.priceRange[1] === Infinity ? "" : filters.priceRange[1],
     );
-  }, [filters.priceRange, minAvailablePrice, maxAvailablePrice]);
+  }, [filters.priceRange]);
 
   const handleYarnTypeToggle = (yarn: string) => {
     const current = filters.selectedYarnTypes || [];
@@ -94,18 +91,20 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
     onFilterChange({ ...filters, selectedDimensions: updated });
   };
 
-  const handleBackingToggle = (backing: string) => {
-    const current = filters.selectedBacking || [];
-    const updated = current.includes(backing)
-      ? current.filter((b) => b !== backing)
-      : [...current, backing];
-    onFilterChange({ ...filters, selectedBacking: updated });
+  const handleStructureToggle = (structure: string) => {
+    const current = filters.selectedStructures || [];
+    const updated = current.includes(structure)
+      ? current.filter((s) => s !== structure)
+      : [...current, structure];
+    onFilterChange({ ...filters, selectedStructures: updated });
   };
 
   const handlePriceApply = () => {
+    const minVal = tempPriceMin === "" ? 0 : Number(tempPriceMin);
+    const maxVal = tempPriceMax === "" ? Infinity : Number(tempPriceMax);
     onFilterChange({
       ...filters,
-      priceRange: [tempPriceMin, tempPriceMax],
+      priceRange: [minVal, maxVal],
     });
   };
 
@@ -113,9 +112,9 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
     (filters.selectedYarnTypes && filters.selectedYarnTypes.length > 0) ||
     (filters.selectedColors && filters.selectedColors.length > 0) ||
     (filters.selectedDimensions && filters.selectedDimensions.length > 0) ||
-    (filters.selectedBacking && filters.selectedBacking.length > 0) ||
-    filters.priceRange[0] > minAvailablePrice ||
-    filters.priceRange[1] < maxAvailablePrice ||
+    (filters.selectedStructures && filters.selectedStructures.length > 0) ||
+    (filters.priceRange[0] > 0 && filters.priceRange[0] > minAvailablePrice) ||
+    (filters.priceRange[1] < Infinity && filters.priceRange[1] < maxAvailablePrice) ||
     filters.searchQuery !== "";
 
   return (
@@ -168,15 +167,6 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
               {t("filters.filtersTitle")}
             </h3>
           </div>
-          {hasActiveFilters && (
-            <button
-              type="button"
-              className="product-sidebar-filter__clear-btn"
-              onClick={onResetFilters}
-            >
-              {t("filters.clearAll")}
-            </button>
-          )}
           <button
             type="button"
             className="product-sidebar-filter__close-mobile"
@@ -194,23 +184,17 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
               {t("filters.yarnType")}
             </h4>
             <div className="filter-group__options">
-              {availableYarnTypes.map((yarn) => {
-                const count = products.filter(
-                  (p) => getProductYarnType(p) === yarn,
-                ).length;
-                return (
-                  <label key={yarn} className="filter-checkbox-label">
-                    <input
-                      type="checkbox"
-                      checked={(filters.selectedYarnTypes || []).includes(yarn)}
-                      onChange={() => handleYarnTypeToggle(yarn)}
-                    />
-                    <span className="checkbox-custom" />
-                    <span className="checkbox-text">{yarn}</span>
-                    <span className="filter-count-badge">({count})</span>
-                  </label>
-                );
-              })}
+              {availableYarnTypes.map((yarn) => (
+                <label key={yarn} className="filter-checkbox-label">
+                  <input
+                    type="checkbox"
+                    checked={(filters.selectedYarnTypes || []).includes(yarn)}
+                    onChange={() => handleYarnTypeToggle(yarn)}
+                  />
+                  <span className="checkbox-custom" />
+                  <span className="checkbox-text">{yarn}</span>
+                </label>
+              ))}
             </div>
           </div>
         )}
@@ -239,7 +223,7 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
         {availableDimensions.length > 0 && (
           <div className="filter-group">
             <h4 className="filter-group__title">
-              {t("filters.dimension")}
+              {isKaroHali ? t("filters.size", "Boyut") : t("filters.dimension", "Kalınlık")}
             </h4>
             <div className="filter-group__options">
               {availableDimensions.map((dim) => (
@@ -257,22 +241,22 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
           </div>
         )}
 
-        {/* 4. Backing / Technical Features Filter (If present) */}
-        {availableBackings.length > 0 && (
+        {/* 4. Structure / Yapı Filter (for Karo Halı) */}
+        {availableStructures.length > 0 && (
           <div className="filter-group">
             <h4 className="filter-group__title">
-              {t("filters.backing")}
+              {t("filters.structure")}
             </h4>
             <div className="filter-group__options">
-              {availableBackings.map((backing) => (
-                <label key={backing} className="filter-checkbox-label">
+              {availableStructures.map((structure) => (
+                <label key={structure} className="filter-checkbox-label">
                   <input
                     type="checkbox"
-                    checked={(filters.selectedBacking || []).includes(backing)}
-                    onChange={() => handleBackingToggle(backing)}
+                    checked={(filters.selectedStructures || []).includes(structure)}
+                    onChange={() => handleStructureToggle(structure)}
                   />
                   <span className="checkbox-custom" />
-                  <span className="checkbox-text">{backing}</span>
+                  <span className="checkbox-text">{structure}</span>
                 </label>
               ))}
             </div>
@@ -289,10 +273,15 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
               <input
                 type="number"
                 min={minAvailablePrice}
-                max={tempPriceMax}
+                max={tempPriceMax !== "" ? Number(tempPriceMax) : maxAvailablePrice}
                 value={tempPriceMin}
-                onChange={(e) => setTempPriceMin(Number(e.target.value))}
-                placeholder="Min"
+                onChange={(e) =>
+                  setTempPriceMin(e.target.value === "" ? "" : Number(e.target.value))
+                }
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handlePriceApply();
+                }}
+                placeholder={minAvailablePrice ? String(minAvailablePrice) : "0"}
               />
               <span>₺</span>
             </div>
@@ -300,22 +289,40 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
             <div className="price-input-field">
               <input
                 type="number"
-                min={tempPriceMin}
+                min={tempPriceMin !== "" ? Number(tempPriceMin) : minAvailablePrice}
                 max={maxAvailablePrice}
                 value={tempPriceMax}
-                onChange={(e) => setTempPriceMax(Number(e.target.value))}
-                placeholder="Max"
+                onChange={(e) =>
+                  setTempPriceMax(e.target.value === "" ? "" : Number(e.target.value))
+                }
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handlePriceApply();
+                }}
+                placeholder={maxAvailablePrice ? String(maxAvailablePrice) : ""}
               />
               <span>₺</span>
             </div>
           </div>
-          <button
-            type="button"
-            className="btn btn-secondary price-apply-btn"
-            onClick={handlePriceApply}
-          >
-            {t("filters.applyPrice")}
-          </button>
+          <div className="price-actions">
+            <button
+              type="button"
+              className="btn btn-primary price-apply-btn"
+              onClick={handlePriceApply}
+            >
+              {t("filters.applyPrice")}
+            </button>
+            <button
+              type="button"
+              className="btn btn-secondary price-clear-btn"
+              onClick={() => {
+                setTempPriceMin("");
+                setTempPriceMax("");
+                onResetFilters();
+              }}
+            >
+              {t("products.clearSearch")}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Drawer Bottom Action */}

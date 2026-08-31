@@ -115,10 +115,13 @@
     "clearAll": "Tümünü Temizle",
     "yarnType": "İplik Cinsi",
     "color": "Renk",
-    "dimension": "Boyut / Ebat",
-    "backing": "Taban / Özellik",
-    "priceRange": "Fiyat Aralığı (₺ / m²)",
-    "applyPrice": "Fiyatı Uygula",
+    "dimension": "Kalınlık",
+    "size": "Boyut",
+    "thickness": "Kalınlık",
+    "structure": "Yapı",
+    "backing": "Taban",
+    "priceRange": "Fiyat Aralığı",
+    "applyPrice": "Fiyat Uygula",
     "showFilters": "Filtreleri Göster"
   },
   "zoom": {

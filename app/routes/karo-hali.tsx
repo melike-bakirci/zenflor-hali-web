@@ -40,7 +40,7 @@ const KaroHali: React.FC = () => {
     selectedYarnTypes: [],
     selectedColors: [],
     selectedDimensions: [],
-    selectedBacking: [],
+    selectedStructures: [],
     priceRange: [0, Infinity],
   });
 
@@ -77,7 +77,7 @@ const KaroHali: React.FC = () => {
       selectedYarnTypes: [],
       selectedColors: [],
       selectedDimensions: [],
-      selectedBacking: [],
+      selectedStructures: [],
       priceRange: [0, Infinity],
     });
     setCurrentPage(1);

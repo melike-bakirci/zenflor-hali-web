@@ -1094,7 +1094,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Dokuma Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.0 mm" },
       { label: "Toplam Yükseklik", value: "5.4 mm" },
@@ -1130,7 +1130,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Dokuma Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.5 mm" },
       { label: "Toplam Yükseklik", value: "5.2 mm" },
@@ -1157,7 +1157,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Dokuma Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.5 mm" },
       { label: "Toplam Yükseklik", value: "5.2 mm" },
@@ -1184,7 +1184,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Dokuma Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.5 mm" },
       { label: "Toplam Yükseklik", value: "5.2 mm" },
@@ -1213,7 +1213,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Bükümlü Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.0 mm" },
       { label: "Toplam Yükseklik", value: "5.8 mm" },
@@ -1240,7 +1240,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Bükümlü Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.0 mm" },
       { label: "Toplam Yükseklik", value: "5.8 mm" },
@@ -1267,7 +1267,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Bükümlü Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.0 mm" },
       { label: "Toplam Yükseklik", value: "5.8 mm" },
@@ -1294,7 +1294,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Bükümlü Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.0 mm" },
       { label: "Toplam Yükseklik", value: "5.8 mm" },
@@ -1321,7 +1321,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Bükümlü Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.0 mm" },
       { label: "Toplam Yükseklik", value: "5.8 mm" },
@@ -1348,7 +1348,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Bükümlü Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.0 mm" },
       { label: "Toplam Yükseklik", value: "5.8 mm" },
@@ -1375,7 +1375,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Bükümlü Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.0 mm" },
       { label: "Toplam Yükseklik", value: "5.8 mm" },
@@ -1402,7 +1402,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Bükümlü Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.0 mm" },
       { label: "Toplam Yükseklik", value: "5.8 mm" },
@@ -1429,7 +1429,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Bükümlü Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.0 mm" },
       { label: "Toplam Yükseklik", value: "5.8 mm" },
@@ -1456,7 +1456,7 @@ export const karoHaliProducts: Product[] = [
     image: "/images/hero-karo-hali.jpeg",
     features: [
       { label: "Yapı", value: "Bükümlü Bukle Hav" },
-      { label: "İplik Cinsi", value: "%100 Polyamide / Naylon (PA)" },
+      { label: "İplik Cinsi", value: "%100 Polyamit (PA)" },
       { label: "İlmek Aralığı", value: "1/10 İnç" },
       { label: "Hav Yüksekliği", value: "3.0 mm" },
       { label: "Toplam Yükseklik", value: "5.8 mm" },

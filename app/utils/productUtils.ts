@@ -10,7 +10,8 @@ export interface FilterState {
   selectedYarnTypes: string[]; // e.g. ['%100 Polipropilen Fiber', '%100 PP'] for Karo Halı
   selectedColors: string[]; // e.g. ['Yeşil', 'Mavi', 'Yeşil (Sarı Otlu)'] for Çim Halı
   selectedDimensions: string[]; // e.g. ['50 cm x 50 cm', '25 cm x 100 cm', '7 mm', '20 mm']
-  selectedBacking: string[]; // e.g. ['Saf Bitüm', 'Yumuşatılmış', 'Bitüm']
+  selectedStructures?: string[]; // e.g. ['Tufting Düz İlmekli', 'Düz İlmekli', 'Dokuma Bukle Hav']
+  selectedBacking?: string[]; // optional
   priceRange: [number, number]; // [min, max]
 }
 
@@ -180,6 +181,16 @@ export const getProductBacking = (product: Product): string => {
     (f) => normalizeSearchText(f.label).includes("ikincil taban"),
   );
   return backingFeature ? backingFeature.value : "";
+};
+
+export const getProductStructure = (product: Product): string => {
+  const structureFeature = product.features?.find(
+    (f) =>
+      normalizeSearchText(f.label) === "yapi" ||
+      normalizeSearchText(f.label).includes("yapi") ||
+      normalizeSearchText(f.label).includes("yuzey yapisi"),
+  );
+  return structureFeature ? structureFeature.value : "";
 };
 
 export const getProductYarnType = (
@@ -422,11 +433,21 @@ export const filterAndSortProducts = (
     });
   }
 
-  // 5. Backing / Feature Filter (if relevant)
+  // 5. Structure / Yapı Filter (for Karo Halı)
+  if (filters.selectedStructures && filters.selectedStructures.length > 0) {
+    result = result.filter((p) => {
+      const structure = normalizeSearchText(getProductStructure(p));
+      return filters.selectedStructures?.some((selectedStructure) =>
+        structure.includes(normalizeSearchText(selectedStructure)),
+      );
+    });
+  }
+
+  // Backing Filter (if present)
   if (filters.selectedBacking && filters.selectedBacking.length > 0) {
     result = result.filter((p) => {
       const backing = normalizeSearchText(getProductBacking(p));
-      return filters.selectedBacking.some((selectedBacking) =>
+      return filters.selectedBacking?.some((selectedBacking) =>
         backing.includes(normalizeSearchText(selectedBacking)),
       );
     });
