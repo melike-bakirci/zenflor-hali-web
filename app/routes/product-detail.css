@@ -144,77 +144,11 @@
   white-space: nowrap;
 }
 
-/* Tabs Section */
-.pd-tabs-container {
-  margin: 1.75rem 0 0;
-  width: 100%;
-}
-
-.pd-tabs-header {
-  display: flex;
-  gap: 0.5rem;
-  border-bottom: 2px solid var(--color-border, #e2e8f0);
-  margin-bottom: 1.25rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.pd-tab-btn {
-  background: none;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--color-text-muted, #64748b);
-  cursor: pointer;
-  position: relative;
-  transition: all 200ms ease;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-  white-space: nowrap;
-}
-
-.pd-tab-btn:hover {
-  color: #111827;
-}
-
-.pd-tab-btn.active {
-  color: #111827;
-  border-bottom-color: #111827;
-}
-
-.pd-tabs-content {
-  min-height: 100px;
-}
-
-.pd-tab-pane {
-  animation: fadeIn 200ms ease-in-out;
-}
-
-.pd-desc-text {
-  font-size: 0.95rem;
-  color: var(--color-text-secondary, #475569);
-  line-height: 1.75;
-  background: var(--color-bg-surface, #f8fafc);
-  padding: 1.25rem;
-  border-radius: var(--radius-btn, 8px);
-  border: 1px solid var(--color-border, #e2e8f0);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Features */
 .pd-features {
+  margin-top: 2rem;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .pd-features-title {
@@ -385,8 +319,8 @@
     text-align: center;
   }
 
-  /* Açıklama ve Özellikler bölümü tam paylaşım bölümü üstünde */
-  .pd-tabs-container {
+  /* Özellikler bölümü tam paylaşım bölümü üstünde */
+  .pd-features {
     order: 7;
     margin-top: 0;
     margin-bottom: 1.5rem;
@@ -468,19 +402,6 @@
     justify-content: center;
   }
 
-  .pd-tab-btn {
-    flex: 1;
-    text-align: center;
-    padding: 0.65rem 0.75rem;
-    font-size: 0.9rem;
-  }
-
-  .pd-desc-text {
-    padding: 1rem;
-    font-size: 0.9rem;
-    line-height: 1.65;
-  }
-
   .pd-feature {
     padding: 0.75rem 0;
   }
@@ -512,11 +433,6 @@
 
   .pd-price-discount-wrap {
     gap: 0.375rem 0.5rem;
-  }
-
-  .pd-tab-btn {
-    padding: 0.5rem 0.5rem;
-    font-size: 0.8125rem;
   }
 
   .pd-actions .btn {

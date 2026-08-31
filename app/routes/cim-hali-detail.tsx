@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams, Link, Navigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Mail } from "lucide-react";
@@ -22,10 +22,10 @@ import type { MetaArgs } from "react-router";
 export function meta({ params }: MetaArgs) {
   const product = cimHaliProducts.find((p) => p.slug === params.slug);
   if (!product) {
-    return seoMeta({ title: `Çim Halı | ${SITE_NAME}`, description: "" });
+    return seoMeta({ title: `ÇİM HALI | ${SITE_NAME}`, description: "" });
   }
   return seoMeta({
-    title: `${product.name} Çim Halı | ${SITE_NAME}`,
+    title: `${product.name} ÇİM HALI | ${SITE_NAME}`,
     description: product.shortDesc || product.description,
     canonicalUrl: `/cim-hali/${product.slug}`,
     image: product.image,
@@ -52,10 +52,6 @@ export function meta({ params }: MetaArgs) {
 const CimHaliDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t } = useTranslation();
-
-  const [activeTab, setActiveTab] = useState<"description" | "features">(
-    "description",
-  );
 
   const product = cimHaliProducts.find((p) => p.slug === slug);
 
@@ -85,7 +81,7 @@ const CimHaliDetail: React.FC = () => {
 
         {/* Main */}
         <div className="pd-main">
-          {/* Left Column: Image & Tabbed Details */}
+          {/* Left Column: Image & Features */}
           <div className="pd-media-col">
             <ProductImageZoom
               src={product.image}
@@ -97,46 +93,22 @@ const CimHaliDetail: React.FC = () => {
               }
             />
 
-            {/* Tabbed Section: Açıklama & Özellikler */}
-            <div className="pd-tabs-container">
-              <div className="pd-tabs-header">
-                <button
-                  type="button"
-                  className={`pd-tab-btn ${activeTab === "description" ? "active" : ""}`}
-                  onClick={() => setActiveTab("description")}
-                >
-                  {t("products.description")}
-                </button>
-                <button
-                  type="button"
-                  className={`pd-tab-btn ${activeTab === "features" ? "active" : ""}`}
-                  onClick={() => setActiveTab("features")}
-                >
-                  {t("products.features")}
-                </button>
+            {/* Features Section */}
+            {features.length > 0 && (
+              <div className="pd-features">
+                <h2 className="pd-features-title">{t("products.features")}</h2>
+                <div className="pd-features-grid">
+                  {features
+                    .filter((f) => f.label !== "Fiyat" && f.label !== "Price")
+                    .map((f) => (
+                      <div key={f.label} className="pd-feature">
+                        <span className="pd-feature-label">{f.label}</span>
+                        <span className="pd-feature-value">{f.value}</span>
+                      </div>
+                    ))}
+                </div>
               </div>
-
-              <div className="pd-tabs-content">
-                {activeTab === "description" && (
-                  <div className="pd-tab-pane pd-desc-pane">
-                    <p className="pd-desc-text">{description}</p>
-                  </div>
-                )}
-
-                {activeTab === "features" && (
-                  <div className="pd-tab-pane pd-features-pane">
-                    <div className="pd-features-grid">
-                      {features.map((f) => (
-                        <div key={f.label} className="pd-feature">
-                          <span className="pd-feature-label">{f.label}</span>
-                          <span className="pd-feature-value">{f.value}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
+            )}
           </div>
 
           {/* Info */}
