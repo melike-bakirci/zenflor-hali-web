@@ -226,10 +226,6 @@ const Contact: React.FC = () => {
         <div className="container contact__grid">
           {/* Info */}
           <div className="contact__info">
-            <SectionTitle
-              title={t("contact.infoTitle")}
-            />
-
             <div className="contact__info-list">
               <a
                 href="https://maps.app.goo.gl/cyQwTaXrGfFNJmyTA"

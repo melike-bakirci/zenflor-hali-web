@@ -657,10 +657,6 @@
     overflow: hidden;
   }
 
-  .home__blog-grid .blog-card__excerpt {
-    display: none !important;
-  }
-
   .home__blog-grid .blog-card__link {
     font-size: 0.68rem;
     padding-top: 0.25rem;

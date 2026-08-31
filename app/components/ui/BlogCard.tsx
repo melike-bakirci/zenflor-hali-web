@@ -13,7 +13,6 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   const { t } = useTranslation();
 
   const title = post.title;
-  const excerpt = post.excerpt;
   const category = post.category;
 
   const formattedDate = new Date(post.date).toLocaleDateString(
@@ -59,7 +58,6 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
           </span>
         </div>
         <h3 className="blog-card__title">{title}</h3>
-        <p className="blog-card__excerpt">{excerpt}</p>
         <span className="blog-card__link">
           {t("blog.readMore")} <ArrowRight size={14} />
         </span>

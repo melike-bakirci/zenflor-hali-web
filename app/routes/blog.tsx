@@ -1,7 +1,6 @@
 import React from "react";
 import { useSearchParams } from "react-router";
 import { useTranslation } from "react-i18next";
-import SectionTitle from "~/components/ui/SectionTitle";
 import BlogCard from "~/components/ui/BlogCard";
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import QuoteCtaBanner from "~/components/ui/QuoteCtaBanner";
@@ -77,8 +76,6 @@ const Blog: React.FC = () => {
 
       <section className="section">
         <div className="container">
-          <SectionTitle title={t("blog.recentPosts")} />
-
           <div className="blog-category-tabs">
             <button
               type="button"
