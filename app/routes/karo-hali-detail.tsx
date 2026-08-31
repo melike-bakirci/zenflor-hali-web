@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link, Navigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { Mail } from "lucide-react";
+import { Phone } from "lucide-react";
 import ProductCard from "~/components/ui/ProductCard";
 import Breadcrumb from "~/components/ui/Breadcrumb";
 import { karoHaliProducts } from "~/data/karoHaliProducts";
@@ -156,13 +156,13 @@ const KaroHaliDetail: React.FC = () => {
 
             {/* CTA */}
             <div className="pd-actions">
-              <Link
-                to="/iletisim"
+              <a
+                href="tel:+905302708487"
                 className="btn btn-primary btn-lg"
                 id="product-info-request"
               >
-                <Mail size={18} /> {t("products.sampleRequest")}
-              </Link>
+                <Phone size={18} /> {t("products.sampleRequest")}
+              </a>
               <Link to="/karo-hali" className="btn btn-outline btn-lg">
                 {t("products.allProducts")}
               </Link>

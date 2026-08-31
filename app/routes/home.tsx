@@ -1,7 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
-import { ArrowRight, ChevronLeft, ChevronRight, Phone } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Phone,
+  Award,
+  CheckSquare,
+  LayoutGrid,
+  Building2,
+} from "lucide-react";
 import SectionTitle from "~/components/ui/SectionTitle";
 import ProductCard from "~/components/ui/ProductCard";
 import BlogCard from "~/components/ui/BlogCard";
@@ -315,25 +324,54 @@ const Home: React.FC = () => {
                 {t("home.aboutCta")} <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="home__about-stats">
-              <div className="home__about-stat">
-                <span className="home__about-stat-number">20</span>
-                <span className="home__about-stat-label">{t("home.statsYears")}</span>
+            <div className="home__about-visual">
+              <div className="home__about-image-wrap">
+                <img
+                  src="/images/zenflor-karo-hali.jpeg"
+                  alt={`${SITE_NAME} Karo Halı ve Zemin Çözümleri`}
+                  className="home__about-img"
+                  loading="lazy"
+                />
               </div>
-              <div className="home__about-stat">
-                <span className="home__about-stat-number">20.000+</span>
-                <span className="home__about-stat-label">{t("home.statsProjects")}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== BORDO YATAY İSTATİSTİK BANNERI ===== */}
+      <section className="home__stats-banner" aria-label="İstatistikler">
+        <div className="container">
+          <div className="home__stats-banner-grid">
+            <div className="home__stats-banner-item">
+              <div className="home__stats-banner-icon-wrap">
+                <Award size={24} strokeWidth={1.8} />
               </div>
-              <div className="home__about-stat">
-                <span className="home__about-stat-number">500+</span>
-                <span className="home__about-stat-label">{t("home.statsProducts")}</span>
+              <span className="home__stats-banner-number">20</span>
+              <span className="home__stats-banner-label">{t("home.statsYears")}</span>
+            </div>
+
+            <div className="home__stats-banner-item">
+              <div className="home__stats-banner-icon-wrap">
+                <CheckSquare size={24} strokeWidth={1.8} />
               </div>
-              <div className="home__about-stat">
-                <span className="home__about-stat-number">10.000+</span>
-                <span className="home__about-stat-label">
-                  {t("home.statsReferences")}
-                </span>
+              <span className="home__stats-banner-number">20.000+</span>
+              <span className="home__stats-banner-label">{t("home.statsProjects")}</span>
+            </div>
+
+            <div className="home__stats-banner-item">
+              <div className="home__stats-banner-icon-wrap">
+                <LayoutGrid size={24} strokeWidth={1.8} />
               </div>
+              <span className="home__stats-banner-number">500+</span>
+              <span className="home__stats-banner-label">{t("home.statsProducts")}</span>
+            </div>
+
+            <div className="home__stats-banner-item">
+              <div className="home__stats-banner-icon-wrap">
+                <Building2 size={24} strokeWidth={1.8} />
+              </div>
+              <span className="home__stats-banner-number">10.000+</span>
+              <span className="home__stats-banner-label">{t("home.statsReferences")}</span>
             </div>
           </div>
         </div>
