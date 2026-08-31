@@ -1,16 +1,6 @@
-export interface ReferenceClient {
-  id: string;
-  name: string;
-  industry: string;
-  logoText: string;
-  accentColor: string;
-  location: string;
-}
-
 export interface ReferenceProject {
   id: string;
   title: string;
-  clientName: string;
   category: "office" | "hotel" | "architecture" | "landscape";
   categoryLabel: string;
   location: string;
@@ -23,78 +13,10 @@ export interface ReferenceProject {
   featured: boolean;
 }
 
-export const referenceClients: ReferenceClient[] = [
-  {
-    id: "client-1",
-    name: "Zorlu Holding Plaza",
-    industry: "Finans & İş Merkezi",
-    logoText: "ZORLU",
-    accentColor: "#1E3A8A",
-    location: "İstanbul",
-  },
-  {
-    id: "client-2",
-    name: "Hilton Hotels & Resorts",
-    industry: "Otelcilik & Turizm",
-    logoText: "HILTON",
-    accentColor: "#0284C7",
-    location: "Antalya",
-  },
-  {
-    id: "client-3",
-    name: "Zen Holding",
-    industry: "İnşaat & Taahhüt",
-    logoText: "ZEN",
-    accentColor: "#B91C1C",
-    location: "İstanbul",
-  },
-  {
-    id: "client-4",
-    name: "Nurol Gayrimenkul",
-    industry: "Gayrimenkul & Proje",
-    logoText: "NUROL",
-    accentColor: "#047857",
-    location: "Muğla",
-  },
-  {
-    id: "client-5",
-    name: "Skylight Mimarlık",
-    industry: "Mimarlık & İç Tasarım",
-    logoText: "SKYLIGHT",
-    accentColor: "#6D28D9",
-    location: "İzmir",
-  },
-  {
-    id: "client-6",
-    name: "Vadistanbul Ofisleri",
-    industry: "Kurumsal Plaza",
-    logoText: "VADİSTANBUL",
-    accentColor: "#C05621",
-    location: "İstanbul",
-  },
-  {
-    id: "client-7",
-    name: "Garanti BBVA Teknoloji",
-    industry: "Teknoloji Kampüsü",
-    logoText: "GARANTİ",
-    accentColor: "#15803D",
-    location: "İstanbul",
-  },
-  {
-    id: "client-8",
-    name: "Acıbadem Sağlık Grubu",
-    industry: "Sağlık Binaları",
-    logoText: "ACIBADEM",
-    accentColor: "#0369A1",
-    location: "İstanbul",
-  },
-];
-
 export const referenceProjects: ReferenceProject[] = [
   {
     id: "ref-proj-1",
     title: "Maslak Plaza Yönetici Katı Karo Halı Uygulaması",
-    clientName: "Zorlu Holding Plaza",
     category: "office",
     categoryLabel: "Ofis & Plaza",
     location: "Maslak, İstanbul",
@@ -114,7 +36,6 @@ export const referenceProjects: ReferenceProject[] = [
   {
     id: "ref-proj-2",
     title: "Antalya Resort & Spa Otel Koridor ve Balo Salonu",
-    clientName: "Hilton Hotels & Resorts",
     category: "hotel",
     categoryLabel: "Otel & Turizm",
     location: "Belek, Antalya",
@@ -134,7 +55,6 @@ export const referenceProjects: ReferenceProject[] = [
   {
     id: "ref-proj-3",
     title: "Vadistanbul Ofis Kompleksi Akustik Zemin Projesi",
-    clientName: "Vadistanbul Ofisleri",
     category: "office",
     categoryLabel: "Ofis & Plaza",
     location: "Sarıyer, İstanbul",
@@ -154,7 +74,6 @@ export const referenceProjects: ReferenceProject[] = [
   {
     id: "ref-proj-4",
     title: "Skylight Mimarlık Stüdyosu Özel Tasarım Karo Halı",
-    clientName: "Skylight Mimarlık",
     category: "architecture",
     categoryLabel: "Mimarlık & Tasarım",
     location: "Alsancak, İzmir",
@@ -174,7 +93,6 @@ export const referenceProjects: ReferenceProject[] = [
   {
     id: "ref-proj-5",
     title: "Bodrum Luxury Villa & Sosyal Tesis Sentetik Çim Peyzajı",
-    clientName: "Nurol Gayrimenkul",
     category: "landscape",
     categoryLabel: "Peyzaj & Çim Halı",
     location: "Yalıkavak, Bodrum",
@@ -194,7 +112,6 @@ export const referenceProjects: ReferenceProject[] = [
   {
     id: "ref-proj-6",
     title: "Garanti BBVA Teknoloji Kampüsü Akustik Karo Halı",
-    clientName: "Garanti BBVA Teknoloji",
     category: "office",
     categoryLabel: "Ofis & Plaza",
     location: "Pendik, İstanbul",
@@ -214,7 +131,6 @@ export const referenceProjects: ReferenceProject[] = [
   {
     id: "ref-proj-7",
     title: "Rönesans Tower Teras & Dinlenme Alanı Çim Halı Projesi",
-    clientName: "Rönesans Holding",
     category: "landscape",
     categoryLabel: "Peyzaj & Çim Halı",
     location: "Ataşehir, İstanbul",
@@ -234,7 +150,6 @@ export const referenceProjects: ReferenceProject[] = [
   {
     id: "ref-proj-8",
     title: "Acıbadem Genel Merkez İdari Binalar Modüler Zemin",
-    clientName: "Acıbadem Sağlık Grubu",
     category: "office",
     categoryLabel: "Ofis & Plaza",
     location: "Kadıköy, İstanbul",

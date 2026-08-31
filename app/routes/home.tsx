@@ -5,7 +5,6 @@ import { ArrowRight, ChevronLeft, ChevronRight, Phone } from "lucide-react";
 import SectionTitle from "~/components/ui/SectionTitle";
 import ProductCard from "~/components/ui/ProductCard";
 import BlogCard from "~/components/ui/BlogCard";
-import ClientLogos from "~/components/ui/ClientLogos";
 import ReferenceCard from "~/components/ui/ReferenceCard";
 import ReferenceModal from "~/components/ui/ReferenceModal";
 import { karoHaliProducts } from "~/data/karoHaliProducts";
@@ -322,7 +321,7 @@ const Home: React.FC = () => {
                 <span className="home__about-stat-label">{t("home.statsProducts")}</span>
               </div>
               <div className="home__about-stat">
-                <span className="home__about-stat-number">1000+</span>
+                <span className="home__about-stat-number">10.000+</span>
                 <span className="home__about-stat-label">
                   {t("home.statsReferences")}
                 </span>
@@ -481,11 +480,6 @@ const Home: React.FC = () => {
               {t("home.viewAllReferences")}{" "}
               <ArrowRight size={16} />
             </Link>
-          </div>
-
-          {/* Client Logos Carousel/Grid */}
-          <div className="home__client-logos-wrapper">
-            <ClientLogos limit={4} />
           </div>
 
           {/* Finished Application Projects Cards */}
