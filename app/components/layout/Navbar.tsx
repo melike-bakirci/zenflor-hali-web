@@ -74,17 +74,17 @@ const Navbar: React.FC = () => {
               title={t("nav.whatsappContact")}
             >
               <WhatsAppIcon size={14} />
-              <span>{t("contact.phoneValue")}</span>
+              <span>WhatsApp</span>
             </a>
             <a
               href={SAHIBINDEN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="navbar__topbar-item navbar__topbar-sahibinden"
-              title="Sahibinden Mağazamız"
+              title="Sahibinden"
             >
               <SahibindenIcon size={14} />
-              <span>Sahibinden Mağazamız</span>
+              <span>Sahibinden</span>
             </a>
           </div>
         </div>

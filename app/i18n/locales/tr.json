@@ -1,13 +1,13 @@
 {
   "nav": {
     "home": "Ana Sayfa",
-    "about": "Biz Kimiz?",
+    "about": "Hakkımızda",
     "karoHali": "Karo Halı",
     "cimHali": "Çim Halı",
-    "references": "Neler Yaptık?",
+    "references": "Galeri",
     "blog": "Blog",
     "contact": "İletişim",
-    "tagline": "Karo & Çim Halı Çözümleri",
+    "tagline": "KARO & ÇİM HALI ÇÖZÜMLERİ",
     "address": "Leman Sk. No:4, Sancaktepe",
     "callUs": "Bizi Arayın",
     "whatsappContact": "WhatsApp İletişim",
@@ -29,7 +29,7 @@
     "prevSlide": "Önceki Slayt",
     "nextSlide": "Sonraki Slayt",
     "slideDot": "Slayt {{index}}",
-    "aboutBadge": "Biz Kimiz?",
+    "aboutBadge": "ZENFLOR HAKKINDA",
     "aboutHeading": "20 Yıllık Deneyimle Zemin Kaplama Çözümleri",
     "aboutDesc": "{{siteName}} olarak 2006'dan bu yana ofis, otel, plaza ve peyzaj projelerinde karo halı ve çim halı çözümleri sunuyoruz. Yüzlerce kurumsal referans ve binlerce başarılı uygulama ile sektörde güvenilir bir isim olmaya devam ediyoruz.",
     "aboutCta": "Bizi Yakından Tanıyın",
@@ -50,19 +50,19 @@
     "karoSectionSubtitle": "En çok tercih edilen karo halı modellerimiz",
     "cimSectionTitle": "Çim Halı Koleksiyonumuz",
     "cimSectionSubtitle": "Premium sentetik çim halı çözümlerimiz",
-    "referencesSectionTitle": "Referanslarımız",
+    "referencesSectionTitle": "Uygulama Galerisi",
     "referencesSectionSubtitle": "Ofis, otel, plaza ve mimarlık projelerinde tamamlanan bitmiş zemin kaplama uygulamalarımız",
     "viewAllReferences": "Tüm Referansları Gör",
     "quoteBannerTitle": "Projeniz için Teklif Alın!",
     "quoteBannerSubtitle": "Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın."
   },
   "about": {
-    "title": "Biz Kimiz?",
+    "title": "ZenFlor Hakkında",
     "subtitle": "Hayalinizdeki zeminleri gerçeğe dönüştüren yol arkadaşınız",
     "story": "Hikayemiz",
     "storyText1": "2006 yılında İstanbul'da küçük bir heyecanla başlayan yolculuğumuz, bugün Türkiye'nin dört bir yanına ulaşan kocaman bir aileye dönüştü. Yaşam ve çalışma alanlarına değer katma tutkusuyla çıktığımız bu yolda, her projeyi kendi yerimizmiş gibi özenle ele alıyoruz.",
     "storyText2": "Karo ve çim halıdan başlayarak geniş bir yelpazede, aklınızdaki fikri gerçeğe dönüştürmek için çalışıyoruz. Yılların bize kattığı tecrübeyi, enerjimizle harmanlayarak mekanlarınıza sıcaklık, şıklık ve konfor taşıyoruz. En büyük gururumuz ise, yıllardır bizi tercih eden ve dostumuz olan mutlu müşterilerimiz.",
-    "brandSubtitle": "Karo & Çim Halı Çözümleri",
+    "brandSubtitle": "KARO & ÇİM HALI ÇÖZÜMLERİ",
     "since2006": "2006'dan beri...",
     "minefloLinkTitle": "Mineflo & PVC Sitemiz",
     "missionTitle": "Misyonumuz",
@@ -170,7 +170,7 @@
     "detailQuoteBannerSubtitle": "Rehberimizde incelediğiniz ürünler, akustik karo halılar ve çim halı modelleri için projenize özel indirimli fiyat teklifi isteyin."
   },
   "references": {
-    "title": "Referanslarımız",
+    "title": "Uygulama Galerisi",
     "subtitle": "Ofis, otel vb. projelerde tamamlanan zemin kaplama uygulamalarımız ve referanslarımız",
     "clientsTitle": "Değerli Müşterilerimiz",
     "clientsSubtitle": "Zemin çözümlerimizde bizi tercih eden seçkin şirket, otel ve mimarlık kurumları",
@@ -220,7 +220,7 @@
     "kvkkTitle": "KVKK Aydınlatma Metni",
     "cookiesTitle": "Çerez Politikası",
     "lastUpdate": "Son Güncelleme: Ağustos 2026",
-    "companyTag": "{{siteName}} Karo & Çim Halı Çözümleri",
+    "companyTag": "{{siteName}} KARO & ÇİM HALI ÇÖZÜMLERİ",
     "kvkkTag": "6698 Sayılı KVKK Kapsamında",
     "cookiesTag": "{{siteName}} Web Site Çerezleri",
     "privacyIntro": "{{siteName}} olarak, web sitemizi ziyaret eden kullanıcılarımızın ve müşterilerimizin kişisel verilerinin gizliliğine ve güvenliğine büyük önem vermekteyiz. İşbu Gizlilik Politikası, web sitemiz üzerinden toplanan bilgilerin nasıl işlendiğini ve korunduğunu açıklamaktadır.",
@@ -327,14 +327,6 @@
     "notFound": "Eyvah, aradığınız sayfayı bulamadık!",
     "backHome": "Ana Sayfaya Dön",
     "backToTop": "En Yukarı Çık"
-  },
-  "floatingContact": {
-    "whatsapp": "WhatsApp'tan Bize Yazın",
-    "whatsappShort": "WhatsApp",
-    "call": "Hemen Arayın",
-    "callShort": "Ara",
-    "sahibinden": "Sahibinden Mağazamız",
-    "defaultMessage": "Merhaba, ürünleriniz ve hizmetleriniz hakkında bilgi almak istiyorum."
   },
   "areaCalculator": {
     "title": "Maliyetinizi Hemen Hesaplayın",

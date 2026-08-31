@@ -75,7 +75,7 @@ export function meta() {
           {
             "@type": "SiteNavigationElement",
             position: 3,
-            name: "Referanslarımız",
+            name: "Uygulama Galerisi",
             url: `${SITE_URL}/referanslarimiz`,
           },
           {
@@ -92,7 +92,7 @@ export function meta() {
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
-  
+
   const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
 

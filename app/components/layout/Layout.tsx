@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import BackToTop from "~/components/ui/BackToTop";
-import FloatingContact from "~/components/ui/FloatingContact";
 import "./Layout.css";
 
 interface LayoutProps {
@@ -17,7 +16,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
       <Footer />
-      <FloatingContact />
       <BackToTop />
     </div>
   );
