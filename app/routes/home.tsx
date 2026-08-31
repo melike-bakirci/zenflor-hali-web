@@ -16,6 +16,7 @@ import ProductCard from "~/components/ui/ProductCard";
 import BlogCard from "~/components/ui/BlogCard";
 import ReferenceCard from "~/components/ui/ReferenceCard";
 import ReferenceModal from "~/components/ui/ReferenceModal";
+import AnimatedCounter from "~/components/ui/AnimatedCounter";
 import { karoHaliProducts } from "~/data/karoHaliProducts";
 import { cimHaliProducts } from "~/data/cimHaliProducts";
 import { blogPosts } from "~/data/blogPosts";
@@ -346,7 +347,11 @@ const Home: React.FC = () => {
               <div className="home__stats-banner-icon-wrap">
                 <Award size={24} strokeWidth={1.8} />
               </div>
-              <span className="home__stats-banner-number">20</span>
+              <AnimatedCounter
+                target={20}
+                duration={600}
+                className="home__stats-banner-number"
+              />
               <span className="home__stats-banner-label">{t("home.statsYears")}</span>
             </div>
 
@@ -354,7 +359,12 @@ const Home: React.FC = () => {
               <div className="home__stats-banner-icon-wrap">
                 <CheckSquare size={24} strokeWidth={1.8} />
               </div>
-              <span className="home__stats-banner-number">20.000+</span>
+              <AnimatedCounter
+                target={20000}
+                suffix="+"
+                duration={900}
+                className="home__stats-banner-number"
+              />
               <span className="home__stats-banner-label">{t("home.statsProjects")}</span>
             </div>
 
@@ -362,7 +372,12 @@ const Home: React.FC = () => {
               <div className="home__stats-banner-icon-wrap">
                 <LayoutGrid size={24} strokeWidth={1.8} />
               </div>
-              <span className="home__stats-banner-number">500+</span>
+              <AnimatedCounter
+                target={500}
+                suffix="+"
+                duration={700}
+                className="home__stats-banner-number"
+              />
               <span className="home__stats-banner-label">{t("home.statsProducts")}</span>
             </div>
 
@@ -370,7 +385,12 @@ const Home: React.FC = () => {
               <div className="home__stats-banner-icon-wrap">
                 <Building2 size={24} strokeWidth={1.8} />
               </div>
-              <span className="home__stats-banner-number">10.000+</span>
+              <AnimatedCounter
+                target={10000}
+                suffix="+"
+                duration={850}
+                className="home__stats-banner-number"
+              />
               <span className="home__stats-banner-label">{t("home.statsReferences")}</span>
             </div>
           </div>
