@@ -40,7 +40,7 @@
 /* Image */
 .pd-image-wrap {
   position: relative;
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius-card, 12px);
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -269,7 +269,7 @@
   /* Natural Mobile Element Flow */
   .pd-image-wrap {
     order: 1;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 1 / 1;
     margin-bottom: 1.25rem;
   }
 
@@ -357,7 +357,7 @@
   }
 
   .pd-image-wrap {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
     border-radius: 10px;
     margin-bottom: 1rem;
   }
