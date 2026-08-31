@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zenflor.com/sitemap.xml
+Sitemap: https://zenhali.com.tr/sitemap.xml

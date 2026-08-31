@@ -158,6 +158,65 @@
   color: var(--color-gray-700, #334155);
 }
 
+.legal__sub-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-gray-800, #1e293b);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal__note-box {
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  background-color: #fff9eb;
+  border-left: 4px solid #f59e0b;
+  border-radius: 4px 8px 8px 4px;
+  font-size: 0.95rem;
+  color: #78350f;
+  line-height: 1.6;
+}
+
+.legal__note-box strong {
+  color: #92400e;
+}
+
+.legal__table-wrapper {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-200, #e2e8f0);
+}
+
+.legal__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.legal__table th {
+  background-color: var(--color-gray-100, #f1f5f9);
+  color: var(--color-gray-800, #1e293b);
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-gray-200, #e2e8f0);
+}
+
+.legal__table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-gray-100, #f1f5f9);
+  color: var(--color-gray-700, #334155);
+}
+
+.legal__table tr:last-child td {
+  border-bottom: none;
+}
+
+.legal__table tr:hover td {
+  background-color: #fafbfc;
+}
+
 /* Callout & Contact Box */
 .legal__contact-box {
   margin-top: 3rem;
@@ -202,6 +261,48 @@
 
 .legal__contact-email:hover {
   text-decoration: underline;
+}
+
+.legal__contact-link {
+  color: var(--color-gray-800, #1e293b);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--color-gray-300, #cbd5e1);
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.legal__contact-link:hover {
+  color: var(--color-primary, #66101f);
+  text-decoration-color: var(--color-primary, #66101f);
+}
+
+.legal__link {
+  color: var(--color-primary, #66101f);
+  text-decoration: underline;
+  text-decoration-color: rgba(102, 16, 31, 0.4);
+  text-underline-offset: 2px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.legal__link:hover {
+  color: #831427;
+  text-decoration-color: #831427;
+}
+
+.legal__table-link {
+  color: var(--color-primary, #66101f);
+  text-decoration: underline;
+  text-decoration-color: rgba(102, 16, 31, 0.3);
+  text-underline-offset: 2px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.legal__table-link:hover {
+  color: #831427;
+  text-decoration-color: #831427;
 }
 
 /* Responsive adjustments */

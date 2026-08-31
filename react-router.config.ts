@@ -11,8 +11,8 @@ const staticRoutes = [
   "/galeri",
   "/blog",
   "/iletisim",
-  "/gizlilik",
-  "/kosullar",
+  "/gizlilik-politikasi",
+  "/kullanim-kosullari",
   "/kvkk",
   "/cerez-politikasi",
 ];

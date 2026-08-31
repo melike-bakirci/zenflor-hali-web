@@ -246,11 +246,11 @@ const Footer: React.FC = () => {
             © {year} {SITE_NAME} Karo & Çim Halı Çözümleri. {t("footer.rights")}
           </p>
           <div className="footer__legal">
-            <Link to="/gizlilik" className="footer__legal-link">
+            <Link to="/gizlilik-politikasi" className="footer__legal-link">
               {t("footer.privacy")}
             </Link>
             <span className="footer__legal-sep">·</span>
-            <Link to="/kosullar" className="footer__legal-link">
+            <Link to="/kullanim-kosullari" className="footer__legal-link">
               {t("footer.terms")}
             </Link>
             <span className="footer__legal-sep">·</span>
