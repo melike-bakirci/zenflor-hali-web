@@ -15,7 +15,7 @@ import "./references.css";
 
 export function meta() {
   return seoMeta({
-    title: `Uygulama Galerisi | ${SITE_NAME}`,
+    title: `Karo Halı ve Çim Halı Uygulama Galerisi | ${SITE_NAME}`,
     description: `${SITE_NAME} kurumsal zemin kaplama uygulama galerisi. Ofis, otel, hastane ve kurumsal projeler için bitmiş akustik karo halı ve suni çim halı uygulamalarımızın görselleri.`,
     canonicalUrl: "/galeri",
     keywords:

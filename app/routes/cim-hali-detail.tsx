@@ -22,10 +22,10 @@ import type { MetaArgs } from "react-router";
 export function meta({ params }: MetaArgs) {
   const product = cimHaliProducts.find((p) => p.slug === params.slug);
   if (!product) {
-    return seoMeta({ title: `ÇİM HALI | ${SITE_NAME}`, description: "" });
+    return seoMeta({ title: `Çim Halı | ${SITE_NAME}`, description: "" });
   }
   return seoMeta({
-    title: `${product.name} ÇİM HALI | ${SITE_NAME}`,
+    title: `${product.name} Çim Halı | ${SITE_NAME}`,
     description: product.shortDesc || product.description,
     canonicalUrl: `/cim-hali/${product.slug}`,
     image: product.image,

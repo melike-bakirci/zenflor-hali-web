@@ -10,7 +10,7 @@ import "./about.css";
 
 export function meta() {
   return seoMeta({
-    title: `Hakkımızda | ${SITE_NAME}`,
+    title: `Hakkımızda |  Güvenilir Zemin Kaplama Çözümleri | ${SITE_NAME} `,
     description: `${SITE_NAME} zemin çözümleri hakkında bilgi edinin. 20 yılı aşkın tecrübe ile ticari ofis karo halı ve peyzaj çim halı toptan ve perakende satışı.`,
     canonicalUrl: "/hakkimizda",
     keywords:
