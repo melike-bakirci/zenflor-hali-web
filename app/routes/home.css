@@ -641,8 +641,8 @@
 /* --- Mobile Devices (max-width: 640px) --- */
 @media (max-width: 640px) {
   .hero-slider {
-    height: 420px;
-    min-height: 380px;
+    height: clamp(500px, 70vh, 580px);
+    min-height: 500px;
   }
 
   .hero-slide__content {
@@ -823,8 +823,8 @@
 /* --- Small Mobile Phones (max-width: 380px) --- */
 @media (max-width: 380px) {
   .hero-slider {
-    height: 400px;
-    min-height: 360px;
+    height: clamp(460px, 66vh, 520px);
+    min-height: 460px;
   }
 
   .hero-slide__content {

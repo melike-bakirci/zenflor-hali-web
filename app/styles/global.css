@@ -89,7 +89,7 @@ body {
 
 @media (max-width: 768px) {
   .page-hero {
-    padding: 3rem 0 2.5rem;
+    padding: 3.75rem 0 3.25rem;
     border-bottom: 1.5px solid #cbd5e1;
     box-shadow: 0 4px 14px -1px rgba(15, 23, 42, 0.07), 0 2px 4px rgba(15, 23, 42, 0.04);
   }
