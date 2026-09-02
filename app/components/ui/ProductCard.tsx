@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
-import { ArrowRight, Tag } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Product } from "~/types/product";
 import {
   formatPriceParts,
@@ -136,14 +136,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
               (e.currentTarget as HTMLImageElement).style.display = "none";
             }}
           />
-        )}
-        {discountInfo.hasDiscount && (
-          <div className="product-card__discount-badge">
-            <Tag size={12} />
-            <span>
-              {t("products.discountBadge", { amount: discountInfo.discountAmount })}
-            </span>
-          </div>
         )}
         <div className="product-card__overlay">
           <span className="btn btn-primary product-card__cta">

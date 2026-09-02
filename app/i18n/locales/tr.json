@@ -51,10 +51,10 @@
     "cimSectionTitle": "Çim Halı Koleksiyonumuz",
     "cimSectionSubtitle": "Premium sentetik çim halı çözümlerimiz",
     "referencesSectionTitle": "Uygulama Galerisi",
-    "referencesSectionSubtitle": "Ofis, otel, plaza ve mimarlık projelerinde tamamlanan bitmiş zemin kaplama uygulamalarımız",
+    "referencesSectionSubtitle": "Ev, ofis ve ticari mekanlar için halı zemin uygulamalarımız",
     "viewAllReferences": "Tümü",
     "quoteBannerTitle": "Projeniz için Teklif Alın!",
-    "quoteBannerSubtitle": "Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın."
+    "quoteBannerSubtitle": "Detaylı bilgi ve fiyat teklifi için bize ulaşabilirsiniz"
   },
   "about": {
     "title": "ZenFlor Hakkında",
@@ -74,8 +74,8 @@
     "value2": "Sonsuz Güvene",
     "value3": "Sürekli Gelişime",
     "value4": "Doğayı Korumaya",
-    "quoteBannerTitle": "Kurumsal Zemin Projeleriniz İçin Teklif Alın!",
-    "quoteBannerSubtitle": "20 yılı aşkın tecrübemiz ve uzman ekibimizle ticari alanlarınız için en doğru zemin kaplama çözümünü ve teklifini sunuyoruz."
+    "quoteBannerTitle": "Projenizi Birlikte Planlayalım!",
+    "quoteBannerSubtitle": "20+ yıllık tecrübemiz ve uzman ekibimizle mekanınıza değer katalım"
   },
   "products": {
     "karoHali": "Karo Halı",
@@ -188,7 +188,7 @@
     "nextImage": "Sonraki Görsel",
     "close": "Kapat",
     "quoteBannerTitle": "Sizin Projeniz İçin De Teklif Hazırlayalım!",
-    "quoteBannerSubtitle": "Tamamladığımız yüzlerce kurumsal zemin projesi gibi, alanınıza özel ücretsiz yerinde keşif, numune kataloğu ve en uygun fiyat teklifi fırsatından yararlanın."
+    "quoteBannerSubtitle": "Hayalinizdeki zemin projesini uzman ekibimizle hayata geçirin"
   },
   "contact": {
     "title": "Bize Ulaşın",
@@ -218,7 +218,7 @@
     "messagePlaceholder": "Aklınızdan geçenleri bizimle paylaşın...",
     "mapAria": "Harita Konumu",
     "quoteBannerTitle": "Projeniz İçin Doğrudan Teklif Alın!",
-    "quoteBannerSubtitle": "Müşteri temsilcimizle görüşmek ve anında teklif almak için telefon hattımızdan veya WhatsApp üzerinden bize ulaşın."
+    "quoteBannerSubtitle": "Telefon veya WhatsApp üzerinden uzman ekibimize anında ulaşabilirsiniz."
   },
   "legal": {
     "heroTitle": "Yasal Bilgilendirme",
@@ -319,7 +319,7 @@
   },
   "banner": {
     "defaultTitle": "Projeniz için Teklif Alın!",
-    "defaultSubtitle": "Proje detaylarınızla birlikte iletişime geçin, uzman ekibimizden hemen teklif ve danışmanlık alın.",
+    "defaultSubtitle": "Detaylı bilgi ve fiyat teklifi için bize ulaşabilirsiniz",
     "defaultPhoneText": "Hemen Arayın",
     "defaultWhatsappText": "WhatsApp ile Teklif Alın",
     "defaultWhatsappMessage": "Merhaba, projem için fiyat teklifi ve detaylı bilgi almak istiyorum."
