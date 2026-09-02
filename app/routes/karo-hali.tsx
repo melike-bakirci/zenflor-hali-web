@@ -24,7 +24,7 @@ const ITEMS_PER_PAGE = 12;
 
 export function meta() {
   return seoMeta({
-    title: `Ticari ve Ofis Karo Halı Modelleri & Fiyatları | ${SITE_NAME}`,
+    title: `Ticari ve Ofis Karo Halı Modelleri | En Ucuz Fiyatlar | ${SITE_NAME}`,
     description:
       "Yüksek yaya trafiğine dayanıklı ofis karo halı modelleri. İstanbul Sancaktepe ve Sarıgazi dahil tüm Türkiye'ye en uygun karo halı m² fiyatları ve zemin kaplama çözümleri.",
     canonicalUrl: "/karo-hali",
@@ -37,7 +37,7 @@ export function meta() {
     schema: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: `Ticari ve Ofis Karo Halı Modelleri & Fiyatları | ${SITE_NAME}`,
+      name: `Ticari ve Ofis Karo Halı Modelleri | En Ucuz Fiyatlar | ${SITE_NAME}`,
       description:
         "Yüksek yaya trafiğine dayanıklı ofis karo halı modelleri. İstanbul Sancaktepe ve Sarıgazi dahil tüm Türkiye'ye en uygun karo halı m² fiyatları ve zemin kaplama çözümleri.",
       url: `${SITE_URL}/karo-hali`,

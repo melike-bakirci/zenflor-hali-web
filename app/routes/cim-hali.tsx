@@ -24,7 +24,7 @@ const ITEMS_PER_PAGE = 12;
 
 export function meta() {
   return seoMeta({
-    title: `Dekoratif Çim Halı Modelleri ve Fiyatları | ${SITE_NAME}`,
+    title: `Dekoratif Çim Halı Modelleri | En Ucuz Fiyatlar | ${SITE_NAME}`,
     description:
       "Bahçe, balkon ve peyzaj alanları için dört mevsim yeşil kalan suni çim halı modelleri. Merkezimiz Sarıgazi Sancaktepe'den tüm Türkiye'ye toptan ve perakende çim halı satışı.",
     canonicalUrl: "/cim-hali",
@@ -37,7 +37,7 @@ export function meta() {
     schema: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: `Çim Halı - Dekoratif Çim Halı ve Suni Çim Modelleri | ${SITE_NAME}`,
+      name: `Dekoratif Çim Halı Modelleri | En Ucuz Fiyatlar | ${SITE_NAME}`,
       description:
         "Bahçe, balkon ve peyzaj alanları için dört mevsim yeşil kalan suni çim halı modelleri. Merkezimiz Sarıgazi Sancaktepe'den tüm Türkiye'ye toptan ve perakende çim halı satışı.",
       url: `${SITE_URL}/cim-hali`,

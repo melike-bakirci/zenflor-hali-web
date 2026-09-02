@@ -113,7 +113,7 @@ const checkWorkingHours = () => {
 
 export function meta() {
   return seoMeta({
-    title: `İletişim & Adres Bilgileri | ${SITE_NAME}`,
+    title: `İletişim & Fiyat Teklifi Al | Sancaktepe Zemin Kaplama Mağazası | ${SITE_NAME}`,
     description: `${SITE_NAME} İstanbul Sancaktepe Sarıgazi merkez ofisi ile iletişime geçin. Karo halı ve çim halı numune talepleri, adres ve Türkiye geneli projelerinize özel fiyat teklifleri.`,
     canonicalUrl: "/iletisim",
     keywords:
