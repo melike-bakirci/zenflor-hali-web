@@ -71,20 +71,19 @@ export function meta({ params }: MetaArgs) {
 const KaroHaliDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t } = useTranslation();
+  const [otherViewMode, setOtherViewMode] = useState<"grid" | "list">("grid");
 
   const product = karoHaliProducts.find((p) => p.slug === slug);
 
-  const name = product ? product.name : "";
-  const description = product ? product.description : "";
-  const features = product ? product.features : [];
-
   if (!product) return <Navigate to="/karo-hali" replace />;
 
+  const name = product.name;
+  const description = product.description;
+  const features = product.features || [];
   const priceFeature = features.find(
     (f) => f.label === "Fiyat" || f.label === "Price",
   );
   const others = karoHaliProducts.filter((p) => p.slug !== slug).slice(0, 4);
-  const [otherViewMode, setOtherViewMode] = useState<"grid" | "list">("grid");
   const discountInfo = getProductDiscountInfo(product);
 
   return (

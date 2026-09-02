@@ -256,27 +256,7 @@
 
 /* Mobile Responsive Filter Bar */
 .sidebar-filter-mobile-toggle {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  background: #111827;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.9375rem;
-  cursor: pointer;
-  margin-bottom: 0.875rem;
-  position: relative;
-  box-shadow: none;
-  transition: all 0.2s ease;
-}
-
-.sidebar-filter-mobile-toggle:hover {
-  background: #374151;
+  display: none !important;
 }
 
 .filter-active-dot {
@@ -294,7 +274,7 @@
 
 @media (max-width: 991px) {
   .sidebar-filter-mobile-toggle {
-    display: flex;
+    display: none !important;
   }
 
   .sidebar-filter-overlay {

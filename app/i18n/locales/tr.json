@@ -113,6 +113,7 @@
   },
   "filters": {
     "filterProducts": "Ürünleri Filtrele",
+    "filterButton": "Filtrele",
     "filtersTitle": "Filtreler",
     "clearAll": "Tümünü Kaldır",
     "activeFilters": "Aktif Filtreler:",

@@ -16,6 +16,8 @@ interface ProductSidebarFilterProps {
   filters: FilterState;
   onFilterChange: (newFilters: FilterState) => void;
   onResetFilters: () => void;
+  isOpenMobile?: boolean;
+  onCloseMobile?: () => void;
 }
 
 const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
@@ -23,9 +25,34 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
   filters,
   onFilterChange,
   onResetFilters,
+  isOpenMobile: controlledIsOpenMobile,
+  onCloseMobile,
 }) => {
   const { t } = useTranslation();
-  const [isOpenMobile, setIsOpenMobile] = useState(false);
+  const [internalIsOpenMobile, setInternalIsOpenMobile] = useState(false);
+  const isOpenMobile =
+    controlledIsOpenMobile !== undefined
+      ? controlledIsOpenMobile
+      : internalIsOpenMobile;
+
+  const handleClose = () => {
+    if (onCloseMobile) {
+      onCloseMobile();
+    } else {
+      setInternalIsOpenMobile(false);
+    }
+  };
+
+  const handleToggle = () => {
+    if (controlledIsOpenMobile !== undefined) {
+      if (controlledIsOpenMobile && onCloseMobile) {
+        onCloseMobile();
+      }
+    } else {
+      setInternalIsOpenMobile((prev) => !prev);
+    }
+  };
+
   const isKaroHali = products.some((p) => p.category === "karo-hali");
 
   // Extract available filter options dynamically from current category products
@@ -119,11 +146,11 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
 
   return (
     <>
-      {/* Mobile Toggle Button */}
+      {/* Mobile Toggle Button (hidden by default when using filter bar button) */}
       <button
         type="button"
         className="sidebar-filter-mobile-toggle"
-        onClick={() => setIsOpenMobile(!isOpenMobile)}
+        onClick={handleToggle}
       >
         <svg
           width="20"
@@ -143,7 +170,7 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
       {isOpenMobile && (
         <div
           className="sidebar-filter-overlay"
-          onClick={() => setIsOpenMobile(false)}
+          onClick={handleClose}
           aria-hidden="true"
         />
       )}
@@ -170,7 +197,7 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
           <button
             type="button"
             className="product-sidebar-filter__close-mobile"
-            onClick={() => setIsOpenMobile(false)}
+            onClick={handleClose}
             aria-label="Close filters"
           >
             ✕
@@ -334,7 +361,7 @@ const ProductSidebarFilter: React.FC<ProductSidebarFilterProps> = ({
           <button
             type="button"
             className="btn btn-primary product-sidebar-filter__apply-btn"
-            onClick={() => setIsOpenMobile(false)}
+            onClick={handleClose}
           >
             {t("filters.showFilters")}
           </button>

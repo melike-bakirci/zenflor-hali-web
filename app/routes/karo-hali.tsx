@@ -60,10 +60,22 @@ const KaroHali: React.FC = () => {
   const { t } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [isFilterMobileOpen, setIsFilterMobileOpen] = useState(false);
 
   const { filters, currentPage } = useMemo(() => {
     return parseFilterParams(searchParams);
   }, [searchParams]);
+
+  const hasActiveFilters = useMemo(() => {
+    return (
+      (filters.selectedYarnTypes && filters.selectedYarnTypes.length > 0) ||
+      (filters.selectedColors && filters.selectedColors.length > 0) ||
+      (filters.selectedDimensions && filters.selectedDimensions.length > 0) ||
+      (filters.selectedStructures && filters.selectedStructures.length > 0) ||
+      filters.priceRange[0] > 0 ||
+      filters.priceRange[1] < Infinity
+    );
+  }, [filters]);
 
   const filteredProducts = useMemo(() => {
     return filterAndSortProducts(karoHaliProducts, filters);
@@ -140,6 +152,8 @@ const KaroHali: React.FC = () => {
               filters={filters}
               onFilterChange={handleFilterChange}
               onResetFilters={handleResetFilters}
+              isOpenMobile={isFilterMobileOpen}
+              onCloseMobile={() => setIsFilterMobileOpen(false)}
             />
 
             {/* Main Product Content Area */}
@@ -152,6 +166,8 @@ const KaroHali: React.FC = () => {
                 totalCount={filteredProducts.length}
                 viewMode={viewMode}
                 onViewModeChange={setViewMode}
+                onOpenFilter={() => setIsFilterMobileOpen(true)}
+                hasActiveFilters={hasActiveFilters}
               />
 
               <ActiveFilters

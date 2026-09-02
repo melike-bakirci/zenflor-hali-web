@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { LayoutGrid, List } from "lucide-react";
+import { LayoutGrid, List, SlidersHorizontal } from "lucide-react";
 import type { SortOption } from "~/utils/productUtils";
 import "./ProductFilterBar.css";
 
@@ -12,6 +12,8 @@ interface ProductFilterBarProps {
   totalCount: number;
   viewMode?: "grid" | "list";
   onViewModeChange?: (mode: "grid" | "list") => void;
+  onOpenFilter?: () => void;
+  hasActiveFilters?: boolean;
 }
 
 const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
@@ -22,6 +24,8 @@ const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
   totalCount,
   viewMode = "grid",
   onViewModeChange,
+  onOpenFilter,
+  hasActiveFilters = false,
 }) => {
   const { t } = useTranslation();
   const [inputValue, setInputValue] = useState(searchQuery);
@@ -106,6 +110,19 @@ const ProductFilterBar: React.FC<ProductFilterBarProps> = ({
       </form>
 
       <div className="product-filter-bar__right">
+        {onOpenFilter && (
+          <button
+            type="button"
+            className="product-filter-bar__mobile-filter-btn"
+            onClick={onOpenFilter}
+            aria-label={t("filters.filterButton", "Filtrele")}
+          >
+            <SlidersHorizontal size={15} className="product-filter-bar__filter-icon" />
+            <span>{t("filters.filterButton", "Filtrele")}</span>
+            {hasActiveFilters && <span className="product-filter-bar__filter-dot" />}
+          </button>
+        )}
+
         <div className="product-filter-bar__sort-wrapper">
           <label
             htmlFor="product-sort-select"
