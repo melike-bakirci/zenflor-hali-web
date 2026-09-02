@@ -224,12 +224,19 @@
 
   .about__story-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2.25rem;
   }
 
   .about__story-visual {
-    max-width: 600px;
+    order: -1;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
+  }
+
+  .about__story-image-wrap {
+    min-height: auto;
+    aspect-ratio: 16 / 10;
   }
 
   .about__mv-grid {
@@ -251,7 +258,7 @@
   }
 
   .about__story-grid {
-    gap: 2rem;
+    gap: 1.75rem;
   }
 
   .about__para {
@@ -260,6 +267,8 @@
   }
 
   .about__story-image-wrap {
+    min-height: auto;
+    aspect-ratio: 16 / 10;
     border-radius: var(--radius-card, 14px);
   }
 
