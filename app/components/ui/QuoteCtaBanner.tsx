@@ -51,7 +51,7 @@ const QuoteCtaBanner: React.FC<QuoteCtaBannerProps> = ({
   );
 
   const cleanWhatsappNumber = whatsappNumber.replace("+", "");
-  const whatsappUrl = `https://wa.me/${cleanWhatsappNumber}`;
+  const whatsappUrl = `https://wa.me/${cleanWhatsappNumber}?text=${defaultMsg}`;
 
   return (
     <section className={`quote-cta ${className}`} id={id}>

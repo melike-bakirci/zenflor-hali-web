@@ -524,50 +524,12 @@
 
 /* Mobile (768px and below) */
 @media (max-width: 768px) {
-  .navbar__main {
-    height: 60px;
-  }
-
   .navbar__topbar {
-    height: 30px;
-    min-height: 30px;
-  }
-
-  .navbar__topbar-inner {
-    flex-wrap: nowrap;
-    overflow: hidden;
-    justify-content: center;
-    gap: 0.25rem;
-    padding: 0 0.35rem;
-  }
-
-  .navbar__topbar-left {
-    flex-wrap: nowrap;
-    justify-content: center;
-    width: 100%;
-    gap: 0.5rem;
-  }
-
-  /* Hide the WhatsApp link on mobile to save space (keep normal phone) */
-  .navbar__topbar-whatsapp {
     display: none !important;
   }
 
-  .navbar__topbar-item {
-    white-space: nowrap;
-    font-size: 0.58rem;
-    gap: 0.2rem;
-    letter-spacing: -0.01em;
-  }
-
-  .navbar__topbar-item svg {
-    width: 11px;
-    height: 11px;
-    flex-shrink: 0;
-  }
-
-  .navbar__topbar .lang-switcher {
-    display: none;
+  .navbar__main {
+    height: 60px;
   }
 }
 
@@ -575,34 +537,5 @@
   .navbar__logo-tagline {
     display: none;
   }
-
-  .navbar__topbar-inner {
-    padding: 0 0.25rem;
-  }
-
-  .navbar__topbar-left {
-    gap: 0.35rem;
-    justify-content: space-around;
-  }
-
-  .navbar__topbar-item {
-    font-size: 0.52rem;
-    gap: 0.15rem;
-  }
-
-  .navbar__topbar-item svg {
-    width: 10px;
-    height: 10px;
-  }
 }
 
-@media (max-width: 360px) {
-  .navbar__topbar-left {
-    gap: 0.2rem;
-  }
-
-  .navbar__topbar-item {
-    font-size: 0.46rem;
-    gap: 0.1rem;
-  }
-}

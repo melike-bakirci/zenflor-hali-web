@@ -271,7 +271,6 @@ const Home: React.FC = () => {
             </div>
 
             <div className="container hero-slide__content">
-              <span className="hero-slide__subtitle">{slide.subtitle}</span>
               {index === 0 ? (
                 <h1 className="hero-slide__title">{slide.title}</h1>
               ) : (
