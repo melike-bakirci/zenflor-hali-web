@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Target, Eye, Globe, ExternalLink } from "lucide-react";
 import SectionTitle from "~/components/ui/SectionTitle";
@@ -54,8 +55,19 @@ const About: React.FC = () => {
         <div className="container about__story-grid">
           <div className="about__story-text">
             <SectionTitle title={t("about.story")} />
-            <p className="about__para">{t("about.storyText1")}</p>
-            <p className="about__para">{t("about.storyText2")}</p>
+            <p className="about__para">
+              2006 yılında İstanbul'da başlayan yolculuğumuz, bugün Türkiye'nin dört bir yanına ulaşan bir hizmete dönüştü. Yaşam ve çalışma alanlarına değer katma tutkusuyla çıktığımız bu yolda, her projeyi kendi yerimizmiş gibi özenle ele alıyoruz.
+            </p>
+            <p className="about__para">
+              <Link to="/karo-hali">Karo halı</Link> ve{" "}
+              <Link to="/cim-hali">çim halı</Link> başta olmak üzere geniş bir
+              yelpazede, aklınızdaki fikri gerçeğe dönüştürmek için çalışıyoruz.
+              Yılların bize kattığı tecrübeyle mekanlarınıza sıcaklık, şıklık ve
+              konfor taşıyoruz.{" "}
+              <Link to="/galeri">Uygulama galerimizde</Link> hayata geçirdiğimiz
+              projeleri inceleyebilir, aklınızdaki fikirler için{" "}
+              <Link to="/iletisim">bizimle iletişime geçebilirsiniz</Link>.
+            </p>
           </div>
 
           <div className="about__story-visual">

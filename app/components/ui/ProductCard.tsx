@@ -6,6 +6,7 @@ import type { Product } from "~/types/product";
 import {
   formatPriceParts,
   getProductDiscountInfo,
+  getProductSecondaryImage,
 } from "~/utils/productUtils";
 import "./ProductCard.css";
 
@@ -29,6 +30,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   );
 
   const discountInfo = getProductDiscountInfo(product);
+  const secondaryImage = getProductSecondaryImage(product);
   const normalPriceParts = priceFeature
     ? formatPriceParts(priceFeature.value)
     : null;
@@ -116,16 +118,25 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <img
           src={product.image}
           alt={imageAlt}
-          className="product-card__image"
+          className="product-card__image product-card__image--primary"
           loading="lazy"
           decoding="async"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = "none";
-            (e.currentTarget.nextSibling as HTMLElement)?.removeAttribute(
-              "style",
-            );
           }}
         />
+        {secondaryImage && (
+          <img
+            src={secondaryImage}
+            alt={`${imageAlt} - 2`}
+            className="product-card__image product-card__image--secondary"
+            loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).style.display = "none";
+            }}
+          />
+        )}
         {discountInfo.hasDiscount && (
           <div className="product-card__discount-badge">
             <Tag size={12} />

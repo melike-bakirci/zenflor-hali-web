@@ -235,6 +235,30 @@ export const getProductColor = (product: Product): string => {
   return colorFeature ? colorFeature.value : "";
 };
 
+export const getProductSecondaryImage = (product: Product): string | null => {
+  if (product.gallery && product.gallery.length > 0) {
+    const second = product.gallery.find((img) => img && img !== product.image);
+    if (second) return second;
+    return product.gallery[0];
+  }
+
+  if (product.category === "karo-hali") {
+    if (product.image === "/images/hero-karo-hali.jpeg") {
+      return "/images/cat-karo-office.png";
+    }
+    return "/images/cat-karo-office.png";
+  }
+
+  if (product.category === "cim-hali") {
+    if (product.image === "/images/hero-cim-hali.jpeg") {
+      return "/images/cat-cim-landscape.png";
+    }
+    return "/images/cat-cim-landscape.png";
+  }
+
+  return null;
+};
+
 /**
  * Arama metinlerini büyük/küçük harf ve Türkçe karakter hassasiyetinden arındırır.
  * MAVİ, MAVI, mavi, maVi, mavı gibi tüm varyasyonları "mavi" haline getirir.
